@@ -9,7 +9,9 @@ model and maker–checker review workflow and rebuilds the data layer on a prope
 double-entry, append-only ledger.
 
 **Status: Phase 1 — database foundation complete, ETA client built but unproven.**
-No user interface yet.
+
+**[▶ Live demo](https://ghassanmazen00.github.io/b2b-project/)** — runs the real
+schema in your browser. No server, no sign-up, no real data.
 
 ---
 
@@ -49,6 +51,41 @@ draft ──submit──▶ pending_review ──approve──▶ posted ──c
                                          once ETA-cleared)
 ```
 
+## The demo
+
+`docs/` is a self-contained demo that runs **the actual migrations** inside
+PostgreSQL compiled to WebAssembly. Nothing about the accounting is mocked:
+posting, the balance constraint, immutability, and the six-role permission
+model are the same SQL that would run in production, so a customer sees what
+the system really does rather than a picture of it.
+
+It takes about 20 seconds to start — that is a real database being created and
+migrated in the browser — then everything is instant. Roughly 18 MB of the
+repository is the vendored WASM engine, which is why the demo works with no
+network connection at all once loaded.
+
+The **الضوابط** (Guarantees) screen is the point of it: each button runs a
+genuinely forbidden operation and shows PostgreSQL's own refusal. Several run
+with row-level security switched off, which proves the stronger claim — even
+with full database privileges, a posted entry cannot be altered.
+
+Rebuild after changing any migration:
+
+```bash
+npm run demo:build     # regenerates docs/schema.js from supabase/migrations
+npm run demo:serve     # http://localhost:8000
+```
+
+### Publishing it
+
+GitHub Pages, serving the `docs/` folder:
+
+**Settings → Pages → Source: _Deploy from a branch_ → Branch: `main` (or this
+branch) → Folder: `/docs` → Save.**
+
+The site appears at `https://<user>.github.io/b2b-project/` within a minute or
+two. Nothing else is required — there is no build step and no workflow.
+
 ## Layout
 
 ```
@@ -64,6 +101,12 @@ supabase/migrations/    schema, in order
   0009_rls                  multi-tenant isolation + role permissions
   0010_reporting            trial balance, statements, ageing, queue health
   0011_provisioning         one-call tenant setup w/ Egyptian CoA
+
+docs/                   browser demo — GitHub Pages serves this folder
+  index.html, app.js        Arabic RTL interface
+  seed.js                   demo data, created through the real workflow
+  schema.js                 GENERATED from supabase/migrations
+  vendor/pglite/            PostgreSQL compiled to WebAssembly
 
 eta/                    ETA e-invoicing client (TypeScript)
   src/canonical.ts          canonical serialisation  ← UNVERIFIED, see below

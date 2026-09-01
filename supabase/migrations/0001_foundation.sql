@@ -6,7 +6,17 @@
 -- exact same policies run under `psql` in tests, where we set the GUC by hand.
 -- =============================================================================
 
-create extension if not exists "pgcrypto";
+-- gen_random_uuid() is core Postgres since 13, so pgcrypto is not required.
+-- Avoiding it keeps the schema loadable anywhere Postgres runs -- including
+-- WASM builds, where the contrib extension is unavailable.
+do $$
+begin
+  if current_setting('server_version_num')::int < 130000 then
+    raise exception 'PostgreSQL 13 or newer is required (gen_random_uuid)';
+  end if;
+end $$;
+
+-- Needed for the exclusion constraints that stop fiscal periods overlapping.
 create extension if not exists "btree_gist";
 
 create schema if not exists app;

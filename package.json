@@ -1,0 +1,12 @@
+{
+  "name": "azb",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Business management system for Egyptian SMEs",
+  "scripts": {
+    "test": "./scripts/test.sh",
+    "demo:build": "node scripts/build-demo.mjs",
+    "demo:serve": "npm run demo:build && python3 -m http.server 8000 --directory docs"
+  }
+}
