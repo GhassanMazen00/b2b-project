@@ -8,7 +8,8 @@ which is a customer receivables ledger. This project keeps that system's role
 model and maker–checker review workflow and rebuilds the data layer on a proper
 double-entry, append-only ledger.
 
-**Status: Phase 1, database foundation.** No application code yet.
+**Status: Phase 1 — database foundation complete, ETA client built but unproven.**
+No user interface yet.
 
 ---
 
@@ -64,7 +65,18 @@ supabase/migrations/    schema, in order
   0010_reporting            trial balance, statements, ageing, queue health
   0011_provisioning         one-call tenant setup w/ Egyptian CoA
 
+eta/                    ETA e-invoicing client (TypeScript)
+  src/canonical.ts          canonical serialisation  ← UNVERIFIED, see below
+  src/hash.ts               SHA-256 over the canonical UTF-8 bytes
+  src/sign.ts               e-seal interface + development stub
+  src/document.ts           ETA document shape + arithmetic validation
+  src/load.ts               our schema → ETA document
+  src/client.ts             OAuth2 token cache + submission
+  src/worker.ts             drains eta_submission
+  test/golden/              conformance fixtures
+
 db/tests/               113 assertions covering the invariants
+eta/test/                25 assertions, incl. the worker end-to-end
 scripts/test.sh         rebuild a scratch DB, migrate, run everything
 ```
 
@@ -73,11 +85,13 @@ scripts/test.sh         rebuild a scratch DB, migrate, run everything
 Needs a local PostgreSQL 16+ you can create databases on.
 
 ```bash
+cd eta && npm install && cd ..   # once
 ./scripts/test.sh
 ```
 
 It drops and recreates `azb_test`, applies every migration in order, runs the
-suite, and finishes with a two-session concurrency check on the ETA queue.
+SQL suite, runs the TypeScript package against that same database, and
+finishes with a two-session concurrency check on the queue.
 
 ## Design notes
 
@@ -106,14 +120,38 @@ Workers lease rows with `FOR UPDATE SKIP LOCKED`, failures back off
 exponentially to a one-hour cap, and a crashed worker's lease is reclaimed
 after ten minutes.
 
+## The one thing to verify before going live
+
+`eta/src/canonical.ts` implements the authority's canonical serialisation from
+its published *approach* rather than from the specification itself, because
+`sdk.invoicing.eta.gov.eg` was unreachable from the environment this was
+written in. Everything downstream of it — hashing, signing, submission, the
+queue — is independent of those rules and is tested.
+
+If the serialisation is wrong, every document is rejected with an unhelpful
+error, which is exactly the failure mode that makes ETA integrations expensive.
+So it is isolated in one file with a conformance harness around it:
+
+```bash
+cd eta && npm run golden:update   # regenerate from the current serialiser
+```
+
+`eta/test/golden/expected.canonical.txt` currently holds **our own output**, so
+today the harness is only a regression guard. Replace that file and
+`expected.hash.txt` with output from the ETA integration toolkit for the same
+input (`eta/test/golden/input.json`) and it becomes a real conformance check.
+That is the single highest-value hour anyone can spend on this project.
+
 ## What is not built yet
 
-Inventory, purchasing and costing; the general ledger reports beyond a trial
-balance; POS and e-receipt; payroll; the ETA client itself (canonical
-serialisation, hashing, e-seal signing); and any user interface.
+Inventory, purchasing and costing; general ledger reports beyond a trial
+balance; POS and e-receipt; payroll; and any user interface.
 
-The ETA client is the highest-uncertainty item and should be spiked against the
-authority's preproduction environment before more is built on top of this.
+The ETA client exists but has never spoken to the authority. It needs
+preproduction credentials (`ETA_CLIENT_ID` / `ETA_CLIENT_SECRET`, issued when a
+company registers its ERP) and a signing certificate before that can change.
+`eta/src/sign.ts` ships only a development signer, which produces
+structurally-shaped placeholder seals and refuses to run in production.
 
 ## A note on validation
 

@@ -40,6 +40,18 @@ psql -d "${DB}" -tA -F'  ' -c "
 read -r TOTAL PASSED <<<"$(psql -d "${DB}" -tA -F' ' -c \
   "select count(*), count(*) filter (where passed) from tst.result;")"
 
+# TypeScript package: serialisation, hashing, and the worker end-to-end
+# against the database this script just built.
+if [ -d "${ROOT}/eta/node_modules" ]; then
+  echo "── eta package ────────────────────────────────────────"
+  ETA_RC=0
+  ( cd "${ROOT}/eta" && AZB_TEST_DB="${DB}" npm test --silent 2>&1 \
+      | grep -E "^# (pass|fail)|^not ok" ) || ETA_RC=1
+else
+  echo "── eta package ── skipped (run: cd eta && npm install)"
+  ETA_RC=0
+fi
+
 # Two-session check that SQL alone cannot express.
 psql -d "${DB}" -q -c "update eta_submission set state='pending',
   next_attempt_at=now(), locked_by=null, locked_at=null;"
@@ -49,6 +61,10 @@ CONC_RC=0
 echo "───────────────────────────────────────────────────────"
 if [ "${CONC_RC}" -ne 0 ]; then
   echo "  concurrency check FAILED"
+  exit 1
+fi
+if [ "${ETA_RC}" -ne 0 ]; then
+  echo "  eta package tests FAILED"
   exit 1
 fi
 if [ "${TOTAL}" -eq "${PASSED}" ] && [ "${TOTAL}" -gt 0 ] \
