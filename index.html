@@ -3,298 +3,232 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>سند — مواقع وأنظمة لأعمالك بسعر معلن</title>
-<meta name="description" content="نبني مواقع ومتاجر وأنظمة إدارة للشركات في مصر والخليج. سعر معلن من البداية، تسليم خلال أسبوعين، ودعم يومي بالعربي.">
-<meta property="og:title" content="سند — مواقع وأنظمة لأعمالك بسعر معلن">
-<meta property="og:description" content="سعر واضح من البداية، تسليم خلال أسبوعين، ودعم يومي بالعربي.">
+<title>برق — أنظمة ومواقع تُبنى بسرعة البرق</title>
+<meta name="description" content="استوديو تقني يبني المواقع والمتاجر وأنظمة إدارة الأعمال والأتمتة لشركات مصر والخليج. سعر معلن، تسليم في أسبوعين، ودعم يومي.">
+<meta property="og:title" content="برق — أنظمة ومواقع تُبنى بسرعة البرق">
+<meta property="og:description" content="سعر معلن. تسليم في أسبوعين. دعم يومي بالعربي.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B1110'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23D99A3E'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#04060B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2304060B'/%3E%3Cpath d='M18 5l-8 12h5l-2 10 9-13h-5z' fill='%235B9DFF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/app.css">
 </head>
-<body>
+<body class="lock">
 
-<nav class="nav">
+<div id="pre">
+  <div class="mark"><span data-ar>برق</span><span data-en>BARQ</span><i class="bar"></i></div>
+  <div class="pct"><span class="num" id="preN">0</span>%</div>
+</div>
+
+<canvas id="field"></canvas>
+<div class="nofield" id="nofield" hidden></div>
+
+<nav class="nav" id="nav">
   <div class="wrap">
-    <a class="logo" href="#"><span class="dot"></span><span>سند</span></a>
+    <a class="brand" href="#"><span class="spark"></span><span data-ar>برق</span><span data-en>BARQ</span></a>
     <div class="navlinks">
-      <a href="#packages"><span data-ar>الأسعار</span><span data-en>Pricing</span></a>
-      <a href="#services"><span data-ar>خدماتنا</span><span data-en>Services</span></a>
-      <a href="#process"><span data-ar>طريقة الشغل</span><span data-en>Process</span></a>
-      <a href="#faq"><span data-ar>أسئلة شائعة</span><span data-en>FAQ</span></a>
+      <a href="#work"><span data-ar>ماذا نبني</span><span data-en>What we build</span></a>
+      <a href="#pricing"><span data-ar>الأسعار</span><span data-en>Pricing</span></a>
+      <a href="#contact"><span data-ar>تواصل</span><span data-en>Contact</span></a>
     </div>
-    <div class="navtools">
-      <button class="lang" id="langBtn" type="button">English</button>
-      <a class="btn btn-gold" href="#contact" style="padding:9px 16px;font-size:.88rem">
-        <span data-ar>اطلب عرض سعر</span><span data-en>Get a quote</span>
-      </a>
+    <div class="navend">
+      <button class="lang" id="langBtn" type="button">EN</button>
+      <a class="btn btn-main btn-sm" href="#contact"><span data-ar>ابدأ مشروعك</span><span data-en>Start a project</span></a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow">
-      <span data-ar>مصر · الخليج · الشرق الأوسط</span>
-      <span data-en>Egypt · Gulf · Middle East</span>
-    </span>
-    <h1>
-      <span data-ar>مواقع وأنظمة لأعمالك، <em>بسعر معلن</em> وتسليم سريع.</span>
-      <span data-en>Websites and business systems, at a <em>published price</em>, delivered fast.</span>
+    <div class="tagline rv"><span data-ar>مصر · الخليج · الشرق الأوسط</span><span data-en>Egypt · Gulf · Middle East</span></div>
+    <h1 class="lines">
+      <span data-ar><i>نبني أنظمة</i></span><span data-ar><i>تشتغل <b class="glow">بسرعة البرق</b></i></span>
+      <span data-en><i>We build systems</i></span><span data-en><i>that move at <b class="glow">lightning speed</b></i></span>
     </h1>
-    <p class="sub">
-      <span data-ar>تعرف السعر قبل ما تكلمنا، وتستلم خلال أسبوعين، ومعاك حد ترجع له كل يوم لو احتجت. من <span class="num">٣٠٠</span> دولار للموقع، و<span class="num">٥٠</span> دولار شهرياً للاستضافة والمتابعة.</span>
-      <span data-en>You see the price before you contact us, you receive the work within two weeks, and there is a named person to answer you every working day. From <span class="num">$300</span> for a site, and <span class="num">$50</span> a month for hosting and care.</span>
+    <p class="sub rv">
+      <span data-ar>مواقع ومتاجر وأنظمة إدارة وأتمتة — لشركات مصر والخليج. السعر معلن قبل ما تكلمنا، والتسليم في أسبوعين، ومعاك حد ترجع له كل يوم.</span>
+      <span data-en>Websites, stores, business systems and automation for companies across Egypt and the Gulf. The price is published before you call, the work lands in two weeks, and a named person answers you every working day.</span>
     </p>
-    <div class="acts">
-      <a class="btn btn-gold" href="#contact">
-        <span data-ar>كلّمنا على واتساب</span><span data-en>Message us on WhatsApp</span>
-      </a>
-      <a class="btn btn-ghost" href="#packages">
-        <span data-ar>شوف الأسعار</span><span data-en>See pricing</span>
-      </a>
+    <div class="acts rv">
+      <a class="btn btn-main" href="#contact"><span data-ar>ابدأ مشروعك</span><span data-en>Start a project</span></a>
+      <a class="btn btn-line" href="#pricing"><span data-ar>شوف الأسعار</span><span data-en>See the pricing</span></a>
     </div>
   </div>
-  <div class="trust">
-    <div>
-      <b><span data-ar>تسليم في أسبوعين</span><span data-en>Two-week delivery</span></b>
-      <span data-ar>مش ٦ شهور</span><span data-en>Not six months</span>
-    </div>
-    <div>
-      <b><span data-ar>سعر ثابت مكتوب</span><span data-en>Fixed written price</span></b>
-      <span data-ar>بدون مفاجآت في الآخر</span><span data-en>No surprises at the end</span>
-    </div>
-    <div>
-      <b><span data-ar>دعم يومي بالعربي</span><span data-en>Daily Arabic support</span></b>
-      <span data-ar>الأحد–الخميس، رد خلال ٢٤ ساعة</span><span data-en>Sun–Thu, reply within 24h</span>
-    </div>
-    <div>
-      <b><span data-ar>الشغل ملكك</span><span data-en>You own the work</span></b>
-      <span data-ar>الكود والدومين باسمك</span><span data-en>Code and domain in your name</span>
-    </div>
-  </div>
+  <div class="cue"><i></i><span data-ar>انزل</span><span data-en>Scroll</span></div>
 </header>
 
-<section id="packages">
+<section class="pad manifesto">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker"><span data-ar>الأسعار</span><span data-en>Pricing</span></span>
-      <h2><span data-ar>أسعارنا معلنة. غيرنا بيقولك «حسب المشروع».</span><span data-en>Our prices are published. Everyone else says "it depends".</span></h2>
-      <p>
-        <span data-ar>اختر السوق بتاعك، وشوف السعر. العرض النهائي بيكون مكتوب وثابت قبل ما نبدأ.</span>
-        <span data-en>Pick your market and see the price. The final quote is written and fixed before any work starts.</span>
-      </p>
-    </div>
+    <p class="lines">
+      <span data-ar><i>شغلك دلوقتي <em>متفرّق</em> —</i></span>
+      <span data-ar><i>ورق وإكسل وواتساب</i></span>
+      <span data-ar><i>ودفاتر. إحنا بنحوّله</i></span>
+      <span data-ar><i><span class="hi">لنظام واحد يمشي لوحده.</span></i></span>
+      <span data-en><i>Your business runs on <em>scattered</em></i></span>
+      <span data-en><i>paper, spreadsheets, WhatsApp</i></span>
+      <span data-en><i>and notebooks. We turn it into</i></span>
+      <span data-en><i><span class="hi">one system that runs itself.</span></i></span>
+    </p>
+  </div>
+</section>
 
-    <div class="market" role="group">
-      <button type="button" id="mEG" aria-pressed="true"><span data-ar>مصر</span><span data-en>Egypt</span></button>
-      <button type="button" id="mGulf" aria-pressed="false"><span data-ar>الخليج والشرق الأوسط</span><span data-en>Gulf &amp; Middle East</span></button>
-    </div>
+<section class="pad solidbg" id="work">
+  <div class="wrap">
+    <div class="kick rv"><b>01</b><span data-ar>ماذا نبني</span><span data-en>What we build</span></div>
+    <h2 class="rv"><span data-ar>كل حاجة تقنية شغلك محتاجها</span><span data-en>Everything your business runs on</span></h2>
+    <p class="lede rv"><span data-ar>من موقع بسيط لنظام كامل يدير مخازنك وفواتيرك وموظفينك.</span><span data-en>From a simple site to a full system running your stock, invoices and staff.</span></p>
 
-    <div class="pkgs">
-      <article class="pkg">
-        <h3><span data-ar>موقع تعريفي</span><span data-en>Business site</span></h3>
-        <p class="for"><span data-ar>لشركة أو مكتب عايز وجود محترم على الإنترنت</span><span data-en>For a company or office that needs a credible presence</span></p>
-        <div class="price"><span class="num" data-price="site">$300</span> <span class="cur" data-ar>فما فوق</span><span class="cur" data-en>and up</span></div>
-        <div class="local" data-local="site"></div>
-        <span class="when"><span data-ar>التسليم: ١٠ أيام</span><span data-en>Delivery: 10 days</span></span>
-        <ul>
-          <li><span data-ar>حتى ٥ صفحات</span><span data-en>Up to 5 pages</span></li>
-          <li><span data-ar>عربي وإنجليزي</span><span data-en>Arabic and English</span></li>
-          <li><span data-ar>يشتغل على الموبايل بشكل ممتاز</span><span data-en>Properly built for mobile</span></li>
-          <li><span data-ar>زر واتساب وخرائط جوجل</span><span data-en>WhatsApp button and Google Maps</span></li>
-          <li><span data-ar>نموذج تواصل يوصلك على الإيميل</span><span data-en>Contact form delivered to your inbox</span></li>
-          <li><span data-ar>تهيئة أساسية لمحركات البحث</span><span data-en>Basic search-engine setup</span></li>
-        </ul>
-        <a class="btn btn-line" href="#contact"><span data-ar>اطلب العرض</span><span data-en>Request a quote</span></a>
-      </article>
-
-      <article class="pkg flag">
-        <span class="tag"><span data-ar>الأكثر طلباً</span><span data-en>Most popular</span></span>
-        <h3><span data-ar>متجر إلكتروني</span><span data-en>Online store</span></h3>
-        <p class="for"><span data-ar>لمحل أو علامة تجارية عايزة تبيع أونلاين</span><span data-en>For a shop or brand that wants to sell online</span></p>
-        <div class="price"><span class="num" data-price="shop">$700</span> <span class="cur" data-ar>فما فوق</span><span class="cur" data-en>and up</span></div>
-        <div class="local" data-local="shop"></div>
-        <span class="when"><span data-ar>التسليم: ٣ أسابيع</span><span data-en>Delivery: 3 weeks</span></span>
-        <ul>
-          <li><span data-ar>كتالوج منتجات بصور وأسعار</span><span data-en>Product catalogue with photos and prices</span></li>
-          <li><span data-ar>سلة شراء ودفع إلكتروني</span><span data-en>Cart and online payment</span></li>
-          <li><span data-ar>فوري، باي موب، إنستاباي، وتحويل بنكي</span><span data-en>Fawry, Paymob, InstaPay, bank transfer</span></li>
-          <li><span data-ar>لوحة لإدارة الطلبات والمخزون</span><span data-en>Dashboard for orders and stock</span></li>
-          <li><span data-ar>إشعار واتساب لكل طلب جديد</span><span data-en>WhatsApp alert on every new order</span></li>
-          <li><span data-ar>تدريب لك ولموظفينك</span><span data-en>Training for you and your staff</span></li>
-        </ul>
-        <a class="btn btn-dark" href="#contact"><span data-ar>اطلب العرض</span><span data-en>Request a quote</span></a>
-      </article>
-
-      <article class="pkg">
-        <h3><span data-ar>نظام إدارة أعمال</span><span data-en>Business system</span></h3>
-        <p class="for"><span data-ar>لما الإكسل والورق ما بقاش كفاية</span><span data-en>For when spreadsheets and paper stop coping</span></p>
-        <div class="price"><span class="num" data-price="system">$1,500</span> <span class="cur" data-ar>فما فوق</span><span class="cur" data-en>and up</span></div>
-        <div class="local" data-local="system"></div>
-        <span class="when"><span data-ar>التسليم: ٤–٦ أسابيع</span><span data-en>Delivery: 4–6 weeks</span></span>
-        <ul>
-          <li><span data-ar>مخزون وفواتير وعملاء وموردين</span><span data-en>Stock, invoices, customers, suppliers</span></li>
-          <li><span data-ar>صلاحيات مختلفة لكل موظف</span><span data-en>A different permission level per employee</span></li>
-          <li><span data-ar>مراجعة واعتماد قبل أي قيد</span><span data-en>Review and approval before anything is posted</span></li>
-          <li><span data-ar>تقارير وكشوف حساب</span><span data-en>Reports and account statements</span></li>
-          <li><span data-ar>ربط منظومة الفاتورة الإلكترونية</span><span data-en>Egyptian e-invoicing integration</span></li>
-          <li><span data-ar>يشتغل على الموبايل والكمبيوتر</span><span data-en>Works on phone and desktop</span></li>
-        </ul>
-        <a class="btn btn-line" href="#contact"><span data-ar>اطلب العرض</span><span data-en>Request a quote</span></a>
-      </article>
-
-      <article class="pkg">
-        <h3><span data-ar>أتمتة وتوفير وقت</span><span data-en>Automation</span></h3>
-        <p class="for"><span data-ar>شغل يدوي بيتكرر كل يوم؟ خلّيه يمشي لوحده</span><span data-en>Manual work repeating daily? Make it run itself</span></p>
-        <div class="price"><span class="num" data-price="auto">$400</span> <span class="cur" data-ar>فما فوق</span><span class="cur" data-en>and up</span></div>
-        <div class="local" data-local="auto"></div>
-        <span class="when"><span data-ar>التسليم: ١–٢ أسبوع</span><span data-en>Delivery: 1–2 weeks</span></span>
-        <ul>
-          <li><span data-ar>ردود واتساب تلقائية للعملاء</span><span data-en>Automatic WhatsApp replies</span></li>
-          <li><span data-ar>تقارير يومية تتبعت لوحدها</span><span data-en>Daily reports that send themselves</span></li>
-          <li><span data-ar>نقل بيانات بين برامجك بدون إدخال يدوي</span><span data-en>Data moved between your tools without retyping</span></li>
-          <li><span data-ar>فواتير وإيصالات تتولد تلقائي</span><span data-en>Invoices and receipts generated automatically</span></li>
-          <li><span data-ar>تنبيهات للمخزون والمتأخرات</span><span data-en>Alerts for stock and overdue payments</span></li>
-        </ul>
-        <a class="btn btn-line" href="#contact"><span data-ar>اطلب العرض</span><span data-en>Request a quote</span></a>
-      </article>
+    <div class="caps">
+      <article class="cap rv"><span class="no">01</span>
+        <h3><span data-ar>مواقع الشركات</span><span data-en>Company sites</span></h3>
+        <p><span data-ar>موقع سريع ومحترم يعرّف بشغلك، يظهر في جوجل، ويشتغل على الموبايل زي الكمبيوتر.</span><span data-en>Fast, credible, built to be found on Google and to work as well on a phone as a desktop.</span></p>
+        <i class="line"></i></article>
+      <article class="cap rv"><span class="no">02</span>
+        <h3><span data-ar>المتاجر الإلكترونية</span><span data-en>Online stores</span></h3>
+        <p><span data-ar>بيع أونلاين بدفع محلي — فوري، باي موب، إنستاباي — وإدارة طلبات بسيطة مش محتاجة خبرة.</span><span data-en>Sell online with local payment — Fawry, Paymob, InstaPay — and order management that needs no training.</span></p>
+        <i class="line"></i></article>
+      <article class="cap rv"><span class="no">03</span>
+        <h3><span data-ar>أنظمة إدارة الأعمال</span><span data-en>Business systems</span></h3>
+        <p><span data-ar>مخزون وفواتير وعملاء وصلاحيات وتقارير ومراجعة قبل الاعتماد — مبني على مقاس شغلك.</span><span data-en>Stock, invoicing, customers, permissions, reports and review-before-approval — built to fit how you actually work.</span></p>
+        <i class="line"></i></article>
+      <article class="cap rv"><span class="no">04</span>
+        <h3><span data-ar>الفاتورة الإلكترونية</span><span data-en>E-invoicing</span></h3>
+        <p><span data-ar>ربط نظامك بمنظومة مصلحة الضرائب المصرية، وتجهيز أكواد الأصناف، والتعامل مع الرفض قبل ما يحصل.</span><span data-en>Connected to the Egyptian Tax Authority, item codes prepared, rejections caught before they happen.</span></p>
+        <i class="line"></i></article>
+      <article class="cap rv"><span class="no">05</span>
+        <h3><span data-ar>الأتمتة</span><span data-en>Automation</span></h3>
+        <p><span data-ar>الشغل اليدوي اللي بيتكرر كل يوم يتحوّل لخطوات تمشي لوحدها وأنت نايم.</span><span data-en>The manual work that repeats every day becomes steps that run while you sleep.</span></p>
+        <i class="line"></i></article>
+      <article class="cap rv"><span class="no">06</span>
+        <h3><span data-ar>لوحات التقارير</span><span data-en>Dashboards</span></h3>
+        <p><span data-ar>أرقام شغلك كلها في صفحة واحدة، محدّثة لحظياً، تفتحها من الموبايل وأنت في أي مكان.</span><span data-en>Every number in one place, live, open from your phone wherever you are.</span></p>
+        <i class="line"></i></article>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0">
+<section class="pad">
   <div class="wrap">
-    <div class="care">
+    <div class="stats">
+      <div class="stat rv"><div class="v"><span class="num" data-count="14">0</span><span> <span data-ar>يوم</span><span data-en>days</span></span></div><div class="k"><span data-ar>متوسط التسليم للموقع</span><span data-en>Typical delivery for a site</span></div></div>
+      <div class="stat rv"><div class="v"><span>$</span><span class="num" data-count="300">0</span></div><div class="k"><span data-ar>نقطة البداية، معلنة مش «حسب المشروع»</span><span data-en>Starting price, published not "it depends"</span></div></div>
+      <div class="stat rv"><div class="v"><span class="num" data-count="24">0</span><span> <span data-ar>ساعة</span><span data-en>hours</span></span></div><div class="k"><span data-ar>أقصى وقت للرد عليك</span><span data-en>Longest you ever wait for a reply</span></div></div>
+      <div class="stat rv"><div class="v"><span class="num" data-count="100">0</span><span>%</span></div><div class="k"><span data-ar>الكود والدومين ملكك</span><span data-en>Of the code and domain are yours</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad solidbg" id="pricing">
+  <div class="wrap">
+    <div class="kick rv"><b>02</b><span data-ar>الأسعار</span><span data-en>Pricing</span></div>
+    <h2 class="rv"><span data-ar>أسعارنا معلنة. غيرنا بيقولك «حسب المشروع».</span><span data-en>Our prices are public. Everyone else says "it depends".</span></h2>
+    <p class="lede rv" style="margin-bottom:34px"><span data-ar>اختر السوق بتاعك. العرض النهائي مكتوب وثابت قبل ما نبدأ.</span><span data-en>Pick your market. The final quote is written and fixed before any work begins.</span></p>
+
+    <div class="market rv" role="group">
+      <button type="button" id="mEG" aria-pressed="true"><span data-ar>مصر</span><span data-en>Egypt</span></button>
+      <button type="button" id="mGulf" aria-pressed="false"><span data-ar>الخليج</span><span data-en>Gulf</span></button>
+    </div>
+
+    <div class="plans">
+      <article class="plan rv">
+        <h3><span data-ar>موقع تعريفي</span><span data-en>Business site</span></h3>
+        <p class="who"><span data-ar>لشركة عايزة وجود محترم على الإنترنت</span><span data-en>For a company that needs a credible presence</span></p>
+        <div class="amt" data-price="site">$300</div><div class="note" data-local="site"></div>
+        <div class="when"><span data-ar>التسليم: ١٠ أيام</span><span data-en>Delivery: 10 days</span></div>
+        <ul>
+          <li><span data-ar>حتى ٥ صفحات، عربي وإنجليزي</span><span data-en>Up to 5 pages, Arabic and English</span></li>
+          <li><span data-ar>مبني للموبايل أولاً</span><span data-en>Built mobile-first</span></li>
+          <li><span data-ar>واتساب وخرائط ونموذج تواصل</span><span data-en>WhatsApp, Maps, contact form</span></li>
+          <li><span data-ar>تهيئة لمحركات البحث</span><span data-en>Search-engine setup</span></li>
+        </ul>
+        <a class="btn btn-line" href="#contact"><span data-ar>اطلب العرض</span><span data-en>Request a quote</span></a>
+      </article>
+
+      <article class="plan key rv">
+        <span class="flag"><span data-ar>الأكثر طلباً</span><span data-en>Most asked</span></span>
+        <h3><span data-ar>متجر إلكتروني</span><span data-en>Online store</span></h3>
+        <p class="who"><span data-ar>لمحل أو علامة عايزة تبيع أونلاين</span><span data-en>For a shop or brand selling online</span></p>
+        <div class="amt" data-price="shop">$700</div><div class="note" data-local="shop"></div>
+        <div class="when"><span data-ar>التسليم: ٣ أسابيع</span><span data-en>Delivery: 3 weeks</span></div>
+        <ul>
+          <li><span data-ar>كتالوج وسلة ودفع إلكتروني</span><span data-en>Catalogue, cart, online payment</span></li>
+          <li><span data-ar>فوري وباي موب وإنستاباي</span><span data-en>Fawry, Paymob, InstaPay</span></li>
+          <li><span data-ar>لوحة إدارة الطلبات والمخزون</span><span data-en>Orders and stock dashboard</span></li>
+          <li><span data-ar>إشعار واتساب لكل طلب</span><span data-en>WhatsApp alert per order</span></li>
+        </ul>
+        <a class="btn btn-main" href="#contact"><span data-ar>اطلب العرض</span><span data-en>Request a quote</span></a>
+      </article>
+
+      <article class="plan rv">
+        <h3><span data-ar>نظام إدارة</span><span data-en>Business system</span></h3>
+        <p class="who"><span data-ar>لما الإكسل والورق ما بقاش كفاية</span><span data-en>When spreadsheets stop coping</span></p>
+        <div class="amt" data-price="system">$1,500</div><div class="note" data-local="system"></div>
+        <div class="when"><span data-ar>التسليم: ٤–٦ أسابيع</span><span data-en>Delivery: 4–6 weeks</span></div>
+        <ul>
+          <li><span data-ar>مخزون وفواتير وعملاء وموردين</span><span data-en>Stock, invoices, customers, suppliers</span></li>
+          <li><span data-ar>صلاحيات ومراجعة قبل الاعتماد</span><span data-en>Permissions and review before posting</span></li>
+          <li><span data-ar>تقارير وكشوف حساب</span><span data-en>Reports and statements</span></li>
+          <li><span data-ar>ربط الفاتورة الإلكترونية</span><span data-en>E-invoicing integration</span></li>
+        </ul>
+        <a class="btn btn-line" href="#contact"><span data-ar>اطلب العرض</span><span data-en>Request a quote</span></a>
+      </article>
+
+      <article class="plan rv">
+        <h3><span data-ar>أتمتة</span><span data-en>Automation</span></h3>
+        <p class="who"><span data-ar>شغل يدوي بيتكرر؟ خلّيه يمشي لوحده</span><span data-en>Work repeating daily? Make it run itself</span></p>
+        <div class="amt" data-price="auto">$400</div><div class="note" data-local="auto"></div>
+        <div class="when"><span data-ar>التسليم: ١–٢ أسبوع</span><span data-en>Delivery: 1–2 weeks</span></div>
+        <ul>
+          <li><span data-ar>ردود واتساب تلقائية</span><span data-en>Automatic WhatsApp replies</span></li>
+          <li><span data-ar>تقارير تتبعت لوحدها</span><span data-en>Reports that send themselves</span></li>
+          <li><span data-ar>نقل بيانات بين برامجك</span><span data-en>Data moved between your tools</span></li>
+          <li><span data-ar>تنبيهات مخزون ومتأخرات</span><span data-en>Stock and overdue alerts</span></li>
+        </ul>
+        <a class="btn btn-line" href="#contact"><span data-ar>اطلب العرض</span><span data-en>Request a quote</span></a>
+      </article>
+    </div>
+
+    <div class="care rv">
       <div>
         <h3><span data-ar>باقة المتابعة الشهرية</span><span data-en>The monthly care plan</span></h3>
-        <p>
-          <span data-ar>الموقع مش منتج بتشتريه مرة وخلاص. الباقة دي بتخلي موقعك شغال وآمن ومحدَّث، ومعاك حد ترجع له.</span>
-          <span data-en>A site is not something you buy once and forget. This keeps yours online, secure and current — with someone to go back to.</span>
-        </p>
-        <div class="big"><span class="num" data-price="care">$50</span><small data-ar> / شهرياً</small><small data-en> / month</small></div>
-        <div class="local" data-local="care" style="color:var(--on-dark-2);margin-top:6px"></div>
+        <p class="lede" style="margin-bottom:20px"><span data-ar>الموقع مش حاجة بتشتريها مرة وخلاص. دي بتخليه شغال وآمن ومحدَّث، ومعاك حد ترجع له.</span><span data-en>A site is not bought once and forgotten. This keeps yours online, secure and current — with someone to go back to.</span></p>
+        <div class="amt"><span class="num" data-price="care">$50</span><small data-ar> / شهرياً</small><small data-en> / month</small></div>
+        <div class="note" data-local="care" style="color:var(--text-3);margin-top:8px"></div>
       </div>
       <ul>
         <li><span data-ar>استضافة سريعة ودومين وشهادة أمان</span><span data-en>Fast hosting, domain and SSL</span></li>
-        <li><span data-ar>نسخة احتياطية يومية</span><span data-en>Daily backups</span></li>
-        <li><span data-ar>تحديثات أمان ومتابعة الأعطال</span><span data-en>Security updates and uptime monitoring</span></li>
-        <li><span data-ar>تعديلات على المحتوى حتى ساعتين شهرياً</span><span data-en>Up to two hours of content changes a month</span></li>
-        <li><span data-ar>دعم واتساب، الأحد–الخميس، رد خلال ٢٤ ساعة</span><span data-en>WhatsApp support, Sun–Thu, reply within 24 hours</span></li>
-        <li><span data-ar>تقدر توقفها أي وقت ونسلمك ملفاتك</span><span data-en>Cancel any time and we hand over your files</span></li>
+        <li><span data-ar>نسخة احتياطية يومية ومتابعة الأعطال</span><span data-en>Daily backups and uptime monitoring</span></li>
+        <li><span data-ar>تعديلات حتى ساعتين شهرياً</span><span data-en>Up to two hours of changes a month</span></li>
+        <li><span data-ar>دعم واتساب، الأحد–الخميس، رد خلال ٢٤ ساعة</span><span data-en>WhatsApp support, Sun–Thu, reply within 24h</span></li>
+        <li><span data-ar>توقفها أي وقت ونسلمك ملفاتك</span><span data-en>Cancel any time, files handed over</span></li>
       </ul>
     </div>
   </div>
 </section>
 
-<section id="services" style="background:var(--paper-2)">
+<section class="cta" id="contact">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker"><span data-ar>الخدمات</span><span data-en>Services</span></span>
-      <h2><span data-ar>أي حاجة تقنية شغلك محتاجها</span><span data-en>Whatever technology your business runs on</span></h2>
-    </div>
-    <div class="svcs">
-      <div class="svc"><div class="mark">01</div><b><span data-ar>مواقع الشركات</span><span data-en>Company websites</span></b><p><span data-ar>موقع سريع ومحترم يعرّف بشغلك ويجيب لك عملاء من جوجل.</span><span data-en>A fast, credible site that explains your business and brings customers from search.</span></p></div>
-      <div class="svc"><div class="mark">02</div><b><span data-ar>المتاجر الإلكترونية</span><span data-en>Online stores</span></b><p><span data-ar>بيع منتجاتك أونلاين مع دفع محلي وإدارة طلبات بسيطة.</span><span data-en>Sell online with local payment methods and simple order management.</span></p></div>
-      <div class="svc"><div class="mark">03</div><b><span data-ar>أنظمة إدارة الأعمال</span><span data-en>Business systems</span></b><p><span data-ar>مخزون وفواتير وعملاء وصلاحيات وتقارير — مبني على مقاس شغلك.</span><span data-en>Stock, invoicing, customers, permissions and reports — built to fit how you work.</span></p></div>
-      <div class="svc"><div class="mark">04</div><b><span data-ar>الفاتورة الإلكترونية</span><span data-en>E-invoicing</span></b><p><span data-ar>ربط نظامك بمنظومة مصلحة الضرائب المصرية، وتجهيز أكواد الأصناف.</span><span data-en>Connect your system to the Egyptian Tax Authority and prepare your item codes.</span></p></div>
-      <div class="svc"><div class="mark">05</div><b><span data-ar>الأتمتة</span><span data-en>Automation</span></b><p><span data-ar>الشغل اليدوي المتكرر يتحول لخطوات تمشي لوحدها.</span><span data-en>Repetitive manual work turned into steps that run themselves.</span></p></div>
-      <div class="svc"><div class="mark">06</div><b><span data-ar>لوحات التقارير</span><span data-en>Dashboards</span></b><p><span data-ar>أرقام شغلك في صفحة واحدة، محدَّثة لحظياً، تفتحها من الموبايل.</span><span data-en>Your numbers on one page, live, open from your phone.</span></p></div>
-      <div class="svc"><div class="mark">07</div><b><span data-ar>التطبيقات الداخلية</span><span data-en>Internal tools</span></b><p><span data-ar>أداة صغيرة لفريقك تحل مشكلة بعينها، بدل برنامج ضخم مش محتاجه.</span><span data-en>A small tool that solves one real problem, instead of software you do not need.</span></p></div>
-      <div class="svc"><div class="mark">08</div><b><span data-ar>الصيانة والدعم</span><span data-en>Care and support</span></b><p><span data-ar>استضافة ونسخ احتياطي وتعديلات ودعم يومي بسعر شهري ثابت.</span><span data-en>Hosting, backups, changes and daily support at a flat monthly price.</span></p></div>
-    </div>
-  </div>
-</section>
-
-<section id="process">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker"><span data-ar>طريقة الشغل</span><span data-en>How it works</span></span>
-      <h2><span data-ar>أربع خطوات، وكل واحدة واضحة</span><span data-en>Four steps, each of them clear</span></h2>
-    </div>
-    <div class="steps">
-      <div class="step"><b><span data-ar>مكالمة ١٥ دقيقة</span><span data-en>A 15-minute call</span></b><p><span data-ar>نسمع منك شغلك بيمشي إزاي وإيه اللي مضايقك فيه. مجاناً وبدون التزام.</span><span data-en>We listen to how your business runs and what is getting in the way. Free, no commitment.</span></p></div>
-      <div class="step"><b><span data-ar>عرض مكتوب خلال ٢٤ ساعة</span><span data-en>A written quote within 24 hours</span></b><p><span data-ar>بالسعر النهائي والمدة وكل حاجة داخلة وخارجة. مفيش «حسب المشروع».</span><span data-en>Final price, timeline, and exactly what is in and out. No "it depends".</span></p></div>
-      <div class="step"><b><span data-ar>التنفيذ وأنت شايف</span><span data-en>We build, in the open</span></b><p><span data-ar>رابط تشوف عليه الشغل أول بأول، وتقول رأيك قبل التسليم مش بعده.</span><span data-en>A link to watch it take shape, so you comment before delivery, not after.</span></p></div>
-      <div class="step"><b><span data-ar>التسليم والمتابعة</span><span data-en>Handover and care</span></b><p><span data-ar>تدريب لك ولفريقك، وبعدها باقة المتابعة لو حبيت. الملفات ملكك في الحالتين.</span><span data-en>Training for you and your team, then the care plan if you want it. The files are yours either way.</span></p></div>
-    </div>
-  </div>
-</section>
-
-<section id="faq" style="background:var(--paper-2)">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker"><span data-ar>أسئلة شائعة</span><span data-en>Questions</span></span>
-      <h2><span data-ar>الأسئلة اللي بتتسأل كل مرة</span><span data-en>The questions we get every time</span></h2>
-    </div>
-    <div class="faq">
-      <details open>
-        <summary><span data-ar>ليه السعر أقل من مكاتب تانية؟</span><span data-en>Why is the price lower than other agencies?</span></summary>
-        <div class="ans"><span data-ar>لأن وقت التنفيذ أقل، مش لأن الشغل أقل. بنستخدم أدوات حديثة بتختصر الشغل المتكرر، فالمشروع اللي بياخد شهرين في مكتب تقليدي بنسلمه في أسبوعين. وبنوفر الفرق ده عليك بدل ما ناخده.</span><span data-en>Because the work takes less time, not because it is worth less. We use modern tooling that removes the repetitive parts, so a project that takes a traditional agency two months takes us two weeks. We pass that difference to you instead of keeping it.</span></div>
-      </details>
-      <details>
-        <summary><span data-ar>السعر ده نهائي ولا هيزيد بعدين؟</span><span data-en>Is the price final, or will it grow later?</span></summary>
-        <div class="ans"><span data-ar>نهائي. العرض بيكون مكتوب وفيه بالظبط إيه اللي داخل وإيه اللي مش داخل. لو طلبت إضافة بره الاتفاق، بنسعّرها ونوافق عليها قبل ما نبدأ فيها — مش في الفاتورة الأخيرة.</span><span data-en>Final. The quote is written and states exactly what is included and what is not. If you ask for something outside it, we price and agree that before starting — not on the final invoice.</span></div>
-      </details>
-      <details>
-        <summary><span data-ar>الموقع بيبقى ملكي ولا ملككم؟</span><span data-en>Do I own the site, or do you?</span></summary>
-        <div class="ans"><span data-ar>ملكك بالكامل. الدومين بيتسجل باسمك، والكود بيتسلّم لك، ولو قررت تمشي في أي وقت بناخد نسخة كاملة ونسلمهالك. إحنا مش بنمسك الشغل رهينة.</span><span data-en>Entirely yours. The domain is registered in your name, the code is handed over, and if you leave at any point we package everything up for you. We do not hold your work hostage.</span></div>
-      </details>
-      <details>
-        <summary><span data-ar>باقة الـ٥٠ دولار إلزامية؟</span><span data-en>Is the $50 plan compulsory?</span></summary>
-        <div class="ans"><span data-ar>لأ. تقدر تاخد الموقع وتستضيفه عند أي حد. بس معظم أصحاب الأعمال بيفضلوا ما يتعاملوش مع الاستضافة والنسخ الاحتياطي والتحديثات، وده اللي الباقة بتعمله.</span><span data-en>No. You can take the site and host it anywhere. Most business owners simply prefer not to deal with hosting, backups and updates — which is what the plan covers.</span></div>
-      </details>
-      <details>
-        <summary><span data-ar>يعني إيه «دعم يومي»؟</span><span data-en>What does "daily support" actually mean?</span></summary>
-        <div class="ans"><span data-ar>معناه إن في حد بالاسم بيرد عليك على واتساب، الأحد لحد الخميس، خلال ٢٤ ساعة على الأكثر — وغالباً أسرع بكتير. التعديلات البسيطة داخلة في الباقة لحد ساعتين شهرياً. الشغل الأكبر بنسعّره قبل ما نبدأ.</span><span data-en>It means a named person replies to you on WhatsApp, Sunday to Thursday, within 24 hours at the latest — usually much sooner. Small changes are included up to two hours a month. Anything larger is quoted before we start.</span></div>
-      </details>
-      <details>
-        <summary><span data-ar>بتشتغلوا مع عملاء بره مصر؟</span><span data-en>Do you work with clients outside Egypt?</span></summary>
-        <div class="ans"><span data-ar>أيوه — السعودية والإمارات والكويت وقطر وباقي المنطقة. الاجتماعات أونلاين، والتعاقد والدفع بالدولار أو بالتحويل البنكي. الأسعار للخليج مختلفة وموضحة فوق لما تختار السوق.</span><span data-en>Yes — Saudi Arabia, the UAE, Kuwait, Qatar and the wider region. Meetings are online, contracts and payment in USD or by bank transfer. Gulf pricing is shown above when you select that market.</span></div>
-      </details>
-      <details>
-        <summary><span data-ar>لو مش عارف أنا محتاج إيه بالظبط؟</span><span data-en>What if I am not sure what I need?</span></summary>
-        <div class="ans"><span data-ar>ده الطبيعي. احكي لنا شغلك ماشي إزاي وإيه اللي بيضيع وقتك، وإحنا نقول لك إيه اللي يستاهل يتعمل وإيه اللي ممكن تستنى عليه. المكالمة دي مجانية وما فيهاش ضغط.</span><span data-en>That is normal. Tell us how your business runs and where your time goes, and we will say what is worth building and what can wait. The call is free and there is no pressure.</span></div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="contact">
-  <div class="wrap">
-    <h2><span data-ar>احكي لنا عن شغلك</span><span data-en>Tell us about your business</span></h2>
-    <p>
-      <span data-ar>مكالمة ١٥ دقيقة، وعرض سعر مكتوب خلال ٢٤ ساعة. مجاناً وبدون أي التزام.</span>
-      <span data-en>A 15-minute call, and a written quote within 24 hours. Free, with no obligation.</span>
-    </p>
-    <div class="acts">
-      <a class="btn btn-gold" id="waMain" href="#"><span data-ar>واتساب</span><span data-en>WhatsApp</span></a>
-      <a class="btn btn-ghost" id="mailMain" href="#"><span data-ar>إيميل</span><span data-en>Email</span></a>
+    <h2 class="rv"><span data-ar>احكي لنا عن شغلك</span><span data-en>Tell us about your business</span></h2>
+    <p class="lede rv"><span data-ar>مكالمة ١٥ دقيقة، وعرض سعر مكتوب خلال ٢٤ ساعة. مجاناً وبدون أي التزام.</span><span data-en>A 15-minute call, and a written quote within 24 hours. Free, no obligation.</span></p>
+    <div class="acts rv">
+      <a class="btn btn-main" id="waMain" href="#"><span data-ar>واتساب</span><span data-en>WhatsApp</span></a>
+      <a class="btn btn-line" id="mailMain" href="#"><span data-ar>إيميل</span><span data-en>Email</span></a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap cols">
-    <div>
-      <a class="logo" href="#" style="margin-bottom:8px"><span class="dot"></span><span>سند</span></a>
-      <p style="max-width:34ch">
-        <span data-ar>مواقع وأنظمة وأتمتة للشركات في مصر والخليج.</span>
-        <span data-en>Websites, systems and automation for companies in Egypt and the Gulf.</span>
-      </p>
-    </div>
-    <div class="social">
+  <div class="wrap">
+    <a class="brand" href="#"><span class="spark"></span><span data-ar>برق</span><span data-en>BARQ</span></a>
+    <div class="links">
       <a href="#" data-social="whatsapp">WhatsApp</a>
       <a href="#" data-social="instagram">Instagram</a>
       <a href="#" data-social="linkedin">LinkedIn</a>
       <a href="#" data-social="facebook">Facebook</a>
     </div>
-    <div>
-      <span class="num">© 2026</span>
-      <span data-ar> سند</span><span data-en> Sanad</span>
-    </div>
+    <div class="fine"><span class="num">© 2026</span> <span data-ar>برق</span><span data-en>BARQ</span></div>
   </div>
 </footer>
 
@@ -302,6 +236,9 @@
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35M12.04 21.5h-.01a9.47 9.47 0 0 1-4.83-1.32l-.35-.2-3.59.94.96-3.5-.23-.36a9.42 9.42 0 0 1-1.45-5.04c0-5.22 4.26-9.47 9.5-9.47 2.54 0 4.92.99 6.71 2.78a9.4 9.4 0 0 1 2.78 6.7c0 5.22-4.26 9.47-9.5 9.47M20.46 3.54A11.78 11.78 0 0 0 12.04 0C5.5 0 .19 5.3.18 11.82c0 2.08.55 4.11 1.59 5.9L.08 24l6.42-1.68a11.85 11.85 0 0 0 5.54 1.41h.01c6.53 0 11.85-5.3 11.85-11.82a11.74 11.74 0 0 0-3.44-8.37"/></svg>
 </a>
 
-<script src="assets/app.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script type="module" src="assets/js/app.js"></script>
 </body>
 </html>
