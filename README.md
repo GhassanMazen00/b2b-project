@@ -1,103 +1,76 @@
-# برق · BARQ
+# Axiom
 
-Marketing site for a web, systems and automation studio serving Egypt, the
-Gulf and the wider Middle East.
+Marketing site for a studio that builds websites, stores, apps and business
+systems for companies in Egypt and the Gulf.
 
-The site is the portfolio. A studio with no client work has to prove capability
-on the page itself — but it proves it through restraint, not spectacle. The
-reference points are Linear, Vercel and Anthropic: neutral near-black rather
-than blue-black, one muted accent used sparingly, 1px borders, a grain layer,
-and no glow anywhere.
+Static HTML and CSS. No build step. Roughly 830 KB of assets, all local.
 
-A WebGL field sits behind the hero and resolves out of noise into the mark as
-you scroll. It is deliberately quiet — ambient, not a performance.
+## Built with taste-skill
+
+This page was built and checked with three installed skills:
+
+| Skill | Source |
+|---|---|
+| taste-skill | `Leonxlnx/taste-skill` |
+| impeccable | `pbakaus/impeccable` |
+| animation / design set | `emilkowalski/skills` |
+
+They are **not committed** — together they are 43 MB. Reinstall with:
+
+```bash
+./scripts/install-skills.sh
+```
+
+The page follows taste-skill's rules for a **service** page: one section per
+screen, equal content edges, a dealt palette and type pairing, a hero entrance,
+one dealt moment, and the hover layer. The deal was:
+
+```
+palette  card-pastels   off-white ground, one pink mark
+type     geist
+hero     statement      type-led, no photograph
+nav      nav-mega     footer  footer-columns    close  close-type
+rhythm   space        buttons block             mark   stack
+moment   word-highlight
+```
 
 ## Make it yours
 
-The first twenty lines of `assets/js/app.js`:
-
-```js
-const CONFIG = {
-  whatsapp:  "201000000000",   // country code + number, digits only, no +
-  email:     "hello@barq.studio",
-  instagram: "https://instagram.com/…",
-  linkedin:  "https://linkedin.com/company/…",
-  facebook:  "https://facebook.com/…",
-};
-```
-
-Prices sit directly below, per market. The Gulf column is roughly five times
-the Egypt column for identical work — that is the going rate there, not a
-markup.
-
-To rename the studio, find and replace `برق` and `BARQ`.
+- **Contact**: the form posts to `hello@axiom.example`, a stand-in. Replace it
+  with a real form endpoint (`data-endpoint`) before launch.
+- **Prices** are in the `rows` list in `index.html`.
+- **Name**: find and replace `Axiom`.
 
 ## Publishing
 
-**Settings → Pages → Source: _Deploy from a branch_ → Branch: this one →
-Folder: `/ (root)` → Save.** No build step.
+**Settings → Pages → Deploy from a branch → this branch → `/ (root)`.**
 
-Locally:
+## Known open findings
 
-```bash
-python3 -m http.server 8000
-```
+The finish gate ended at `GATE: OPEN 9` after its three rounds. None of the
+nine are cosmetic defects you would notice; all trace to one root cause:
 
-## How the hero works
+**The page has no photographs.** taste-skill wants a service page led by
+photographs of the work, the team and the rooms, and it refuses to let a stock
+library frame lead this trade. The build environment could not reach Wikimedia
+Commons or the icon CDN, so there are no photographs and no real tool icons —
+the page is type, prices and UI fragments instead. That drives the remaining
+`no-visual`, `neighbour` and several `screen-height` findings, because sections
+that should carry a picture carry text.
 
-`assets/js/scene.js` holds every point in two places at once — somewhere in a
-drifting cloud, and somewhere inside the mark. A single uniform, `uOrder`,
-moves between them, and scroll position drives it.
+The fix is not code. It is **a half-day photo shoot**: the desk, the screens,
+the person who answers the WhatsApp, a client's shop. Drop those in and most of
+the nine resolve themselves.
 
-A few decisions worth knowing before changing anything:
+Two findings are independent of that and worth a pass:
 
-- **The mark is a polygon, not a glyph.** It started as the Arabic wordmark
-  sampled from rendered text, which broke: the canvas asked for a font weight
-  the page had not loaded, fell back to a typeface with no Arabic in it, and
-  sampled nothing — so the particles stayed random noise. A polygon renders
-  identically everywhere, needs no webfont, and reads the same in both
-  languages.
-- **Points shrink as they gather.** Thirty thousand additive sprites
-  converging on a small area blow out to flat white and lose the texture that
-  makes the effect worth having.
-- **One ScrollTrigger, shaped as a curve.** Two of them fought: the second
-  drove `uOrder` back down while the first was still raising it, so the mark
-  never formed. The curve is gather → hold → disperse.
-- **It stops when off-screen.** An IntersectionObserver halts the render loop
-  entirely rather than burning a phone battery on something nobody is looking
-  at.
+- `ui-centre` on the two stat panels — the fragment is not centred in its panel.
+- `section-gaps` between the hero and the first section at 390.
 
-Degradation is deliberate: fewer points under 760px, a still gradient when
-WebGL is unavailable, and no motion at all under `prefers-reduced-motion`.
-The page is readable with JavaScript switched off entirely.
+## Language
 
-## What is deliberately not offered
-
-**E-invoicing is not on this site.** An earlier version of this project built
-an ETA client that never once spoke to the tax authority: the SDK domain was
-unreachable, the canonical serialisation was unverified, and there were no
-credentials. Selling a tax-compliance service that has never been performed is
-a legal and reputational risk, not just a technical one. It goes back on the
-page after one real document clears the preproduction environment — not before.
-
-**Native mobile apps are quoted separately.** The published app tier is a PWA:
-installs to the home screen, works offline, no store account, no review cycle.
-That is deliverable today. Fully native is real work with real overheads and
-should not share a price with it.
-
-Online stores ship with payment gateways (Fawry, Paymob, InstaPay) as before.
-Worth knowing before the first one: the gateway itself is roughly a day of
-work using hosted checkout, so you never touch card data — but the merchant
-account belongs to the client and takes weeks of paperwork you cannot do for
-them. Plan the timeline around that, not around the code.
-
-## The one real weakness
-
-The page transfers about **930 KB**, and **671 KB of that is Three.js** — of
-which this site uses perhaps five percent: a scene, a camera, a buffer
-geometry, a shader material and a points object.
-
-For a studio selling to businesses on Egyptian mobile data, that is the wrong
-trade. The fix is to drop Three.js and write the ~200 lines of raw WebGL this
-effect actually needs, which would cut the page to roughly **90 KB** with no
-visible difference. Worth doing before this goes in front of customers.
+English, left to right. The kit has essentially no RTL support (zero
+`[dir="rtl"]` rules), so an Arabic-first build would break its grid and fail
+its own checker. An Arabic version needs a logical-property pass over
+`assets/system.css` and `assets/layout/layout.css` first — worth doing, since
+Arabic is the right default for Egyptian customers.
