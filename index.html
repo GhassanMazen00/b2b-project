@@ -1,286 +1,353 @@
 <!doctype html>
-<!-- plan line 1: service (a studio that is hired).
-     plan line 2: palette card-pastels, type geist, hero statement, nav-mega, footer-columns,
-     close-type, rhythm space, buttons block, mark stack, moment word-highlight. The off-white
-     ground and one pink mark answer a studio whose work is other people's screens: the page stays
-     paper, the single bright mark is the only thing that shouts, as the studio's work is.
-     sections: hero (type, 1) · services (rows + prices, 1) · process (3 steps, UI fragments, 1)
-     · promise (word-highlight moment, 1) · questions (faq, 1) · contact (booking form, 1)
-     · footer.closing (close-type + footer-columns).
-     No photographs: the brief supplies none and the library may not lead this trade (PH-02);
-     the page is type, prices and real UI fragments. -->
-<html lang="en" data-type="service" data-radius="soft" data-buttons="block" data-motion>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Axiom: websites and business systems for companies in Egypt and the Gulf</title>
-<meta name="description" content="Axiom builds the website, store, app or internal system a company runs on. Prices are published, the work lands in two weeks, and a named person answers every working day.">
+<title>Axiom — websites and business systems for Egypt and the Gulf</title>
+<meta name="description" content="Axiom builds the website, store, app or internal system your company runs on. Published prices from $300, delivered in two weeks, with a named person answering every working day.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Axiom: websites and business systems for companies in Egypt and the Gulf">
-<meta property="og:description" content="Published prices, two-week delivery, and a named person who answers every working day.">
-<meta property="og:image" content="share.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#f7f7f5">
-<meta name="site-kind" content="other">
-<meta name="page-type" content="service">
+<meta property="og:title" content="Axiom — websites and business systems for Egypt and the Gulf">
+<meta property="og:description" content="Published prices. Two-week delivery. A named person who answers every working day.">
+<meta name="theme-color" content="#FBFAF8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0B0C'/%3E%3Cpath d='M9 23 16 8l7 15h-3.6L16 15l-3.4 8z' fill='%23CE1264'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/system.css">
-<link rel="stylesheet" href="assets/ui/cards.css">
-<link rel="stylesheet" href="assets/motion/motion.css">
-<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
-<link rel="stylesheet" href="assets/layout/layout.css">
-<link rel="stylesheet" href="assets/icons/icon.css">
-<link rel="stylesheet" href="assets/ui/chat/fragment.css">
-<link rel="stylesheet" href="assets/ui/checklist/fragment.css">
-<link rel="stylesheet" href="assets/ui/pipeline-board/fragment.css">
-<link rel="stylesheet" href="assets/ui/stat/fragment.css">
-<style>
-:root {
-  --p-bg: #f7f7f5; --p-surface: #ebebe8; --p-ink: #000000; --p-muted: #4b4b47;
-  --p-accent: #d0106f; --p-accent-ink: #ffffff; --p-action: #d0106f; --p-action-ink: #ffffff;
-  --p-inv-bg: #000000; --p-inv-surface: #010101; --p-inv-ink: #f7f7f5; --p-inv-muted: #9d9d9a;
-  --p-inv-accent: #d0106f; --p-inv-accent-ink: #ffffff; --p-inv-action: #d0106f; --p-inv-action-ink: #ffffff;
-  --font-display: "Geist", system-ui, sans-serif;
-  --font-text: "Geist", system-ui, sans-serif;
-  --display-weight: 400;
-  --display-tracking: -0.035em;
-  --display-tracking-xl: -0.045em;
-}
-</style>
-<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
-<link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body id="top">
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="nav">
+<header class="nav" id="nav">
   <div class="wrap nav__bar">
-    <a class="skip-link" href="#main">Skip to content</a>
-    <a class="nav__logo" href="#top"><span class="mark" data-mark="stack" aria-hidden="true"></span>Axiom</a>
+    <a class="logo" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 20 12 4l8 16h-4.1L12 12.3 8.1 20z"/></svg>Axiom</a>
     <nav class="nav__links" aria-label="Main">
-      <div class="nav__item">
-        <a class="nav__link" href="#services">Work <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav__menu">
-          <div class="wrap grid">
-            <div class="menu-col span-3"><p class="t-label">Build</p><a href="#services">Websites<span>Five pages, two languages</span></a><a href="#services">Online stores<span>Fawry and Paymob checkout</span></a></div>
-            <div class="menu-col span-3"><p class="t-label">Run</p><a href="#services">Business systems<span>Stock, invoices, staff</span></a><a href="#services">Monthly care<span>Hosting and daily support</span></a></div>
-          </div>
-        </div>
-      </div>
-      <div class="nav__item"><a class="nav__link" href="#services">Pricing</a></div>
-      <div class="nav__item"><a class="nav__link" href="#process">Process</a></div>
-      <div class="nav__item"><a class="nav__link" href="#questions">Questions</a></div>
+      <a href="#build">What we build</a>
+      <a href="#system">Live system</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#questions">Questions</a>
     </nav>
-    <div class="nav__actions">
-      <a class="btn btn--primary" href="#contact">Get a quote</a>
+    <div class="nav__end">
+      <a class="btn btn--ghost" href="#system">See it working</a>
+      <a class="btn btn--pri" href="#contact">Get a quote</a>
     </div>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
   </div>
 </header>
 
 <main id="main">
 
-  <section class="hero hero--statement" data-enter aria-labelledby="hero-h">
-    <div class="wrap"><div class="hero-text hero__in">
+  <section class="hero">
+    <div class="wrap hero__grid">
       <div>
-        <h1 id="hero-h">Websites and systems for Egypt and the Gulf</h1>
-        <p class="hero__lead">Axiom builds the website, store, app or internal system your company runs on. The price is published before you call, the work lands in two weeks, and a named person answers you every working day.</p>
-        <div class="btn-row"><a class="btn btn--primary" href="#contact">Get a quote</a><a class="btn btn--secondary" href="#services">See the price list</a></div>
+        <span class="eyebrow">Egypt · Gulf · Middle East</span>
+        <h1>We build the systems your business runs on.</h1>
+        <p class="lede">Websites, stores, apps and the internal software that keeps stock, invoices and customers in one place. The price is published before you call, and the work lands in two weeks.</p>
+        <div class="hero__acts">
+          <a class="btn btn--pri btn--lg" href="#contact">Get a quote</a>
+          <a class="btn btn--line btn--lg" href="#system">Try the live system</a>
+        </div>
+        <dl class="hero__facts">
+          <div><dt>Websites from</dt><dd>$300</dd></div>
+          <div><dt>Delivery</dt><dd>14 days</dd></div>
+          <div><dt>Reply within</dt><dd>24 hours</dd></div>
+          <div><dt>You own</dt><dd>Everything</dd></div>
+        </dl>
       </div>
-      <dl class="hero__facts">
-        <div><dt>A website starts at</dt><dd>$300</dd></div>
-        <div><dt>Typical delivery</dt><dd>14 days</dd></div>
-        <div><dt>Longest reply</dt><dd>24 hours</dd></div>
-        <div><dt>Code and domain</dt><dd>Yours, in your name</dd></div>
-      </dl>
-    </div></div>
+
+      <div class="frame rv" data-app="1">
+        <div class="frame__bar">
+          <div class="frame__dots"><i></i><i></i><i></i></div>
+          <span class="frame__title">axiom — wholesale</span>
+          <span class="frame__live"><i></i>LIVE</span>
+        </div>
+        <div class="app">
+          <aside class="app__side">
+            <h5>Workspace</h5>
+            <div class="app__nav" role="tablist">
+              <button role="tab" aria-selected="true" data-view="orders"><span class="dot"></span>Orders<span class="count" data-count="orders">6</span></button>
+              <button role="tab" aria-selected="false" data-view="stock"><span class="dot"></span>Stock<span class="count" data-count="stock">5</span></button>
+              <button role="tab" aria-selected="false" data-view="customers"><span class="dot"></span>Customers<span class="count" data-count="customers">4</span></button>
+            </div>
+          </aside>
+          <div class="app__main">
+            <div class="app__head">
+              <h4 data-title>Orders</h4>
+              <span class="sub" data-sub>today</span>
+              <div class="right">
+                <button class="mini" type="button" data-act="pay">Mark paid</button>
+                <button class="mini mini--pri" type="button" data-act="new">New order</button>
+              </div>
+            </div>
+            <div data-body></div>
+            <div class="app__foot">
+              <div><span>Orders</span><b data-stat="orders">6</b></div>
+              <div><span>Unpaid</span><b data-stat="due">EGP 18,400</b></div>
+              <div><span>Today</span><b data-stat="total">EGP 46,120</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="section" id="services" aria-labelledby="services-h" style="--h: 1">
-    <div class="wrap grid">
-      <div class="span-5">
-        <div class="section-head">
-          <h2 id="services-h">Six things we build, with the price on each</h2>
-          <p>Every quote is written and fixed before the work starts.</p>
+  <section class="pad" id="build">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="eyebrow">What we build</span>
+        <h2>Six things, each with the price on it</h2>
+        <p class="lede">Every quote is written and fixed before work starts. Anything outside it is priced and agreed first — never added to the final invoice.</p>
+      </div>
+      <div class="builds rv">
+        <article class="build">
+          <span class="build__n">01</span><h3>Business website</h3>
+          <p>Five pages in Arabic and English, built mobile-first, structured so Google can actually find you.</p>
+          <div class="price"><span>from $300</span><em>10 days</em></div>
+        </article>
+        <article class="build">
+          <span class="build__n">02</span><h3>Online store</h3>
+          <p>Catalogue, cart and checkout through Fawry, Paymob or InstaPay, with a dashboard your staff can run.</p>
+          <div class="price"><span>from $700</span><em>3 weeks</em></div>
+        </article>
+        <article class="build">
+          <span class="build__n">03</span><h3>Business system</h3>
+          <p>Stock, invoices, customers and staff permissions in one place — the kind running at the top of this page.</p>
+          <div class="price"><span>from $1,500</span><em>4–6 weeks</em></div>
+        </article>
+        <article class="build">
+          <span class="build__n">04</span><h3>Mobile app</h3>
+          <p>Installs from the browser to the home screen, works offline, sends notifications. No app store needed.</p>
+          <div class="price"><span>from $900</span><em>3–4 weeks</em></div>
+        </article>
+        <article class="build">
+          <span class="build__n">05</span><h3>Automation</h3>
+          <p>The work that repeats every morning — reports, reminders, re-typing between two tools — runs itself.</p>
+          <div class="price"><span>from $400</span><em>1–2 weeks</em></div>
+        </article>
+        <article class="build">
+          <span class="build__n">06</span><h3>Monthly care</h3>
+          <p>Hosting, domain, backups, security updates, two hours of changes, and someone who answers.</p>
+          <div class="price"><span>$50 / month</span><em>ongoing</em></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad stage" id="system">
+    <div class="wrap">
+      <div class="head rv" style="max-width:720px">
+        <span class="eyebrow eyebrow--d">Live, not a screenshot</span>
+        <h2>This is the software, running in your browser</h2>
+        <p class="lede">Most studios show you a picture of a dashboard. This one works — add an order, mark it paid, switch to stock and watch the numbers move. It is the same kind of system we build for a wholesaler, a clinic or a workshop, in Arabic or English.</p>
+      </div>
+
+      <div class="frame rv" data-app="2" style="box-shadow:0 30px 80px -40px rgba(0,0,0,.85)">
+        <div class="frame__bar">
+          <div class="frame__dots"><i></i><i></i><i></i></div>
+          <span class="frame__title">axiom — نظام الطلبات</span>
+          <span class="frame__live"><i></i>LIVE</span>
         </div>
-        <ul class="rows">
-          <li><span class="rows__name">Business website</span><p>Five pages in Arabic and English, built mobile-first.</p><span class="rows__value">from $300</span></li>
-          <li><span class="rows__name">Online store</span><p>Cart and checkout through Fawry, Paymob or InstaPay.</p><span class="rows__value">from $700</span></li>
-          <li><span class="rows__name">Mobile app</span><p>Installs from the browser and works offline.</p><span class="rows__value">from $900</span></li>
-          <li><span class="rows__name">Business system</span><p>Stock, invoices, customers and staff permissions.</p><span class="rows__value">from $1,500</span></li>
-          <li><span class="rows__name">Automation</span><p>Work that repeats every day runs on its own.</p><span class="rows__value">from $400</span></li>
-          <li><span class="rows__name">Monthly care</span><p>Hosting, backups and support Sunday to Thursday.</p><span class="rows__value">$50 a month</span></li>
+        <div class="app" style="min-height:460px">
+          <aside class="app__side">
+            <h5>Workspace</h5>
+            <div class="app__nav" role="tablist">
+              <button role="tab" aria-selected="true" data-view="orders"><span class="dot"></span>Orders<span class="count" data-count="orders">6</span></button>
+              <button role="tab" aria-selected="false" data-view="stock"><span class="dot"></span>Stock<span class="count" data-count="stock">5</span></button>
+              <button role="tab" aria-selected="false" data-view="customers"><span class="dot"></span>Customers<span class="count" data-count="customers">4</span></button>
+            </div>
+          </aside>
+          <div class="app__main">
+            <div class="app__head">
+              <h4 data-title>Orders</h4>
+              <span class="sub" data-sub>today</span>
+              <div class="right">
+                <button class="mini" type="button" data-act="pay">Mark paid</button>
+                <button class="mini mini--pri" type="button" data-act="new">New order</button>
+              </div>
+            </div>
+            <div data-body></div>
+            <div class="app__foot">
+              <div><span>Orders</span><b data-stat="orders">6</b></div>
+              <div><span>Unpaid</span><b data-stat="due">EGP 18,400</b></div>
+              <div><span>Today</span><b data-stat="total">EGP 46,120</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" id="process">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="eyebrow">How it works</span>
+        <h2>Four steps, and you can stop after any of them</h2>
+      </div>
+      <div class="steps rv">
+        <div class="step"><b>01</b><h3>Send the brief</h3><p>Tell us what the business does and what slows it down. Fifteen minutes is enough, and no call is needed if you would rather write.</p></div>
+        <div class="step"><b>02</b><h3>Read the quote</h3><p>A written price and a delivery date within 24 hours, listing exactly what is in and what is out. Nothing is billed yet.</p></div>
+        <div class="step"><b>03</b><h3>Watch the build</h3><p>A link to the work as it happens, so you comment while changes are cheap rather than after delivery.</p></div>
+        <div class="step"><b>04</b><h3>Take the keys</h3><p>Training for your staff, the domain in your name, the code handed over. The monthly plan only if you want it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="pad" id="pricing">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="eyebrow">Pricing</span>
+        <h2>Our prices are public</h2>
+        <p class="lede">Most studios say "it depends". Pick your market and read the number. Gulf projects cost more because the market pays more, not because the work differs.</p>
+      </div>
+      <div class="market rv" role="group" aria-label="Market">
+        <button type="button" id="mEG" aria-pressed="true">Egypt</button>
+        <button type="button" id="mGulf" aria-pressed="false">Gulf</button>
+      </div>
+      <div class="plans rv">
+        <article class="plan">
+          <h3>Business website</h3>
+          <p class="who">A credible presence that Google can find.</p>
+          <div class="amt" data-price="site">$300</div>
+          <div class="per">one-off · 10 days</div>
+          <ul>
+            <li>Up to 5 pages, Arabic and English</li>
+            <li>Built mobile-first</li>
+            <li>WhatsApp, Maps and contact form</li>
+            <li>Search-engine setup</li>
+          </ul>
+          <a class="btn btn--line" href="#contact">Get a quote</a>
+        </article>
+        <article class="plan plan--key">
+          <span class="plan__tag">Most asked</span>
+          <h3>Online store</h3>
+          <p class="who">Sell online and take money properly.</p>
+          <div class="amt" data-price="shop">$700</div>
+          <div class="per">one-off · 3 weeks</div>
+          <ul>
+            <li>Catalogue, cart and checkout</li>
+            <li>Fawry, Paymob and InstaPay</li>
+            <li>Orders and stock dashboard</li>
+            <li>WhatsApp alert on every order</li>
+          </ul>
+          <a class="btn btn--pri" href="#contact">Get a quote</a>
+        </article>
+        <article class="plan">
+          <h3>Mobile app</h3>
+          <p class="who">On the home screen, working offline.</p>
+          <div class="amt" data-price="app">$900</div>
+          <div class="per">one-off · 3–4 weeks</div>
+          <ul>
+            <li>Installs from the browser</li>
+            <li>Works without a connection</li>
+            <li>Push notifications</li>
+            <li>Fully native quoted separately</li>
+          </ul>
+          <a class="btn btn--line" href="#contact">Get a quote</a>
+        </article>
+        <article class="plan">
+          <h3>Business system</h3>
+          <p class="who">When spreadsheets stop coping.</p>
+          <div class="amt" data-price="system">$1,500</div>
+          <div class="per">one-off · 4–6 weeks</div>
+          <ul>
+            <li>Stock, invoices, customers, suppliers</li>
+            <li>Permissions and approval before posting</li>
+            <li>Reports and account statements</li>
+            <li>Runs on phone and desktop</li>
+          </ul>
+          <a class="btn btn--line" href="#contact">Get a quote</a>
+        </article>
+      </div>
+
+      <div class="care rv">
+        <div>
+          <h3>Monthly care</h3>
+          <p class="lede" style="margin-bottom:16px">A site is not bought once and forgotten. This keeps yours online, secure and current, with a named person to go back to.</p>
+          <div class="amt" data-price="care">$50</div>
+          <div class="per muted">per month · cancel any time</div>
+        </div>
+        <ul>
+          <li>Hosting, domain and SSL certificate</li>
+          <li>Daily backups and uptime monitoring</li>
+          <li>Security updates as they are released</li>
+          <li>Up to two hours of changes a month</li>
+          <li>WhatsApp support, Sunday to Thursday, reply within 24 hours</li>
+          <li>Leave whenever you like — we hand over the files</li>
         </ul>
-        <a class="link" href="#contact">Ask what yours would cost</a>
-      </div>
-      <div class="span-6 start-7">
-        <div class="panel" style="--p-h: 420px">
-          <div class="stage at-rise fit stage--fade-br">
-            <div class="ui ui-panel ui-stat" data-ui="stat">
-              <div class="ui-stat__head"><div class="ui-title">A website, start to live</div></div>
-              <div class="ui-stat__value">14 days</div>
-              <div class="ui-stat__meta">Quote in 24 hours, then two weeks of build</div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <section class="section g2m" id="process" aria-labelledby="process-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="process-h">Start in 3 steps</h2>
-        <p>Nothing is billed until the written quote is agreed.</p>
+  <hr class="rule">
+
+  <section class="pad" id="questions">
+    <div class="wrap faq">
+      <div class="rv">
+        <span class="eyebrow">Questions</span>
+        <h2>The ones we get every week</h2>
+        <p class="lede" style="margin-top:12px">Anything else, ask before you commit to anything at all.</p>
       </div>
-      <div class="grid">
-        <article class="card card--row span-4">
-          <span class="step-num">1</span>
-          <h3>Send the brief</h3>
-          <p>Tell us what the business does and what slows it down. Fifteen minutes on a call is enough.</p>
-          <div class="panel" style="--p-h: 336px">
-            <div class="stage at-rise fit stage--fade-br">
-              <div class="ui ui-panel ui-chat" data-ui="chat">
-                <div class="ui-chat__head"><div class="ui-title">Brief</div></div>
-                <div class="ui-chat__body">
-                  <div class="ui-msg"><span class="ui-msg__who">You</span><p>We sell fabric wholesale. Orders come by phone and get written in a notebook.</p></div>
-                  <div class="ui-msg ui-msg--them"><span class="ui-msg__who">Axiom</span><p>How many orders in a normal week?</p></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="card card--row span-4">
-          <span class="step-num">2</span>
-          <h3>Read the quote</h3>
-          <p>A written price and a delivery date within 24 hours, listing what is in and what is out.</p>
-          <div class="panel" style="--p-h: 336px">
-            <div class="stage at-rise fit stage--fade-br">
-              <div class="ui ui-panel ui-checks" data-ui="checklist">
-                <div class="ui-checks__head"><div class="ui-title">Quote 1042</div><span class="ui-spacer"></span><div class="ui-meta">Fixed</div></div>
-                <ul class="ui-checks__list">
-                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Order entry and stock</span></li>
-                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Customer statements</span></li>
-                  <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Delivery notes, if wanted</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="card card--row span-4">
-          <span class="step-num">3</span>
-          <h3>Watch the build</h3>
-          <p>A link to the work in progress, so you comment while it is cheap to change, not after.</p>
-          <div class="panel" style="--p-h: 336px">
-            <div class="stage at-rise fit stage--fade-br">
-              <div class="ui ui-panel ui-board" data-ui="pipeline-board">
-                <div class="ui-board__head"><div class="ui-title">This week</div></div>
-                <div class="ui-board__cols">
-                  <div class="ui-board__col"><p class="ui-meta">Building</p><div class="ui-chip">Order screen</div></div>
-                  <div class="ui-board__col"><p class="ui-meta">Ready</p><div class="ui-chip">Stock list</div><div class="ui-chip">Login</div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
+      <div class="faq__list rv">
+        <div class="faq__item"><h3>Why is the price lower than other studios?</h3><p>Because the work takes less time, not because it is worth less. Modern tooling removes the repetitive parts, so a job that takes two months elsewhere takes us two weeks. We pass that on instead of keeping it.</p></div>
+        <div class="faq__item"><h3>Is the price final?</h3><p>Yes. The quote is written and lists what is included. Anything extra is priced and agreed before it starts, never added at the end.</p></div>
+        <div class="faq__item"><h3>Who owns the site and the domain?</h3><p>You do. The domain is registered in your name and the code is handed over. If you leave, we package everything up for you first.</p></div>
+        <div class="faq__item"><h3>Is the monthly plan compulsory?</h3><p>No. Take the site and host it anywhere. Most owners would simply rather not deal with hosting, backups and updates, which is what the plan covers.</p></div>
+        <div class="faq__item"><h3>What does daily support actually mean?</h3><p>A named person replies on WhatsApp, Sunday to Thursday, within 24 hours and usually much sooner. Small changes are included up to two hours a month. Larger work is quoted first.</p></div>
+        <div class="faq__item"><h3>Do you work outside Egypt?</h3><p>Yes, across Saudi Arabia, the UAE, Kuwait and Qatar. Meetings are online and contracts are in US dollars. Gulf pricing is shown above when you switch market.</p></div>
+        <div class="faq__item"><h3>Can you add payments to a store I already have?</h3><p>Yes. Fawry and Paymob both offer hosted checkout, so we never touch card data. The merchant account is yours to open and the paperwork takes a few weeks, so plan around that rather than around the code.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section statement" id="promise" data-moment="word-highlight" aria-label="How we price" style="--h: 1">
-    <div class="wrap">
-      <p class="t-label">How we price</p>
-      <p class="mo-wh__text">Most studios quote by the hour and finish when they finish. We publish the price, write the date down and carry the risk if the work takes longer than we thought. That is the whole difference, and it is <strong>the reason</strong> clients stay.</p>
-    </div>
-  </section>
-
-  <section class="section g2m" id="questions" aria-labelledby="questions-h">
-    <div class="wrap grid">
-      <div class="span-5">
-        <div class="section-head"><h2 id="questions-h">Questions</h2></div>
-        <p>Anything else, ask before you commit to anything.</p>
-        <a class="link" href="#contact">Ask a question</a>
+  <section class="pad stage" id="contact">
+    <div class="wrap contact">
+      <div class="rv">
+        <span class="eyebrow eyebrow--d">Start here</span>
+        <h2>Tell us what the business needs</h2>
+        <p class="lede" style="margin-top:12px">Send this and you get a written price and a delivery date back. There is no call until you want one, and nothing is billed until you agree the quote.</p>
+        <p class="lede" style="margin-top:18px;font-size:.9rem">We reply Sunday to Thursday, within 24 hours.</p>
       </div>
-      <div class="span-6 start-7">
-        <div class="faq">
-          <div class="faq__item"><h3>Why is the price lower than other studios?</h3><p>Because the work takes less time, not because it is worth less. Modern tooling removes the repetitive parts, so a job that takes two months elsewhere takes us two weeks.</p></div>
-          <div class="faq__item"><h3>Is the price final?</h3><p>Yes. The quote is written and lists what is included. Anything extra is priced and agreed before it starts, never added to the last invoice.</p></div>
-          <div class="faq__item"><h3>Who owns the site and the domain?</h3><p>Yes. The domain is registered in your name and the code is handed to you. If you leave, we package everything up first.</p></div>
-          <div class="faq__item"><h3>Is the monthly plan compulsory?</h3><p>No. Take the site and host it anywhere. Most owners would rather not deal with hosting, backups and updates, which is what the plan covers.</p></div>
-          <div class="faq__item"><h3>What does daily support mean?</h3><p>A named person replies on WhatsApp, Sunday to Thursday, within 24 hours. Small changes are included up to two hours a month. Larger work is quoted first.</p></div>
-          <div class="faq__item"><h3>Do you work outside Egypt?</h3><p>Yes, across the Gulf. Meetings are online and contracts are in US dollars. Gulf pricing differs from the list above and is quoted on request.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section g2m" id="contact" aria-labelledby="contact-h">
-    <div class="wrap grid">
-      <div class="span-5">
-        <div class="section-head"><h2 id="contact-h">Tell us what the business needs</h2></div>
-        <p>Send the form and you get a written price and a delivery date back, with no call until you want one.</p>
-        <p class="t-small muted">We reply Sunday to Thursday.</p>
-        <div class="panel" style="--p-h: 260px">
-          <div class="stage at-rise fit stage--fade-br">
-            <div class="ui ui-panel ui-stat" data-ui="stat">
-              <div class="ui-stat__head"><div class="ui-title">Reply time</div></div>
-              <div class="ui-stat__value">24 hours</div>
-              <div class="ui-stat__meta">Sunday to Thursday, from a named person</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="span-6 start-7">
-        <form class="booking-form" action="mailto:hello@axiom.example" method="post" data-form>
+      <form class="form rv" id="quote" novalidate>
+        <div class="two">
           <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
-          <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" type="text" autocomplete="organization" required></div>
+          <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" type="text" autocomplete="organization"></div>
+        </div>
+        <div class="two">
           <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-          <div class="field"><label for="f-need">What you need</label><select id="f-need" name="need"><option>Business website</option><option>Online store</option><option>Mobile app</option><option>Business system</option><option>Automation</option><option>Not sure yet</option></select></div>
-          <div class="field"><label for="f-note">What slows the business down</label><textarea id="f-note" name="note" rows="3"></textarea></div>
-          <div class="btn-row"><button class="btn btn--primary" type="submit">Get a quote</button></div>
-          <p class="form-status" data-form-status role="status"></p>
-        </form>
-      </div>
+          <div class="field"><label for="f-wa">WhatsApp</label><input id="f-wa" name="whatsapp" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="f-need">What you need</label>
+          <select id="f-need" name="need">
+            <option>Business website</option><option>Online store</option><option>Mobile app</option>
+            <option>Business system</option><option>Automation</option><option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-note">What slows the business down today</label><textarea id="f-note" name="note" rows="3"></textarea></div>
+        <button class="btn btn--pri btn--lg" type="submit">Get a quote</button>
+        <p class="muted" style="font-size:.8rem" data-form-status role="status"></p>
+      </form>
     </div>
   </section>
 
 </main>
 
-<footer class="footer closing" id="close" aria-labelledby="close-h">
+<footer>
   <div class="wrap">
-    <div class="closing__cta close--type">
-      <div class="section-head">
-        <h2 id="close-h">Get a written price in 24 hours</h2>
-        <p class="t-small muted">Free, and nothing is billed until you agree the quote.</p>
+    <div class="foot">
+      <div>
+        <a class="logo" href="#" style="margin-bottom:12px"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 20 12 4l8 16h-4.1L12 12.3 8.1 20z"/></svg>Axiom</a>
+        <p class="muted" style="font-size:.885rem;max-width:30ch">Websites, apps and business systems for companies in Egypt and the Gulf.</p>
       </div>
-      <a class="btn btn--primary btn--xl" href="#contact">Get a quote</a>
+      <div><h4>Build</h4><ul><li><a href="#build">Websites</a></li><li><a href="#build">Online stores</a></li><li><a href="#build">Mobile apps</a></li><li><a href="#build">Business systems</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#system">Live system</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#process">Process</a></li><li><a href="#questions">Questions</a></li></ul></div>
+      <div><h4>Talk</h4><ul><li><a href="#contact">Get a quote</a></li><li><a href="#contact">WhatsApp</a></li><li><a href="#contact">Email</a></li></ul></div>
     </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-4">
-          <a class="nav__logo" href="#top"><span class="mark" data-mark="stack" aria-hidden="true"></span>Axiom</a>
-          <p class="footer__lede">Websites and systems, built in two weeks.</p>
-        </div>
-        <div class="span-2 footer__col"><h3>Work</h3><ul><li><a href="#services">Websites</a></li><li><a href="#services">Online stores</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Pricing</h3><ul><li><a href="#services">Price list</a></li><li><a href="#services">Monthly care</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Process</h3><ul><li><a href="#process">How it works</a></li><li><a href="#questions">Questions</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Company</h3><ul><li><a href="#promise">How we price</a></li><li><a href="#contact">Contact</a></li></ul></div>
-      </div>
-      <div class="footer__legal">
-        <p>Axiom, 2026</p>
-        <div class="socials"></div>
-      </div>
-    </div>
+    <div class="foot__legal"><span>Axiom, 2026</span><span class="mono">Built in Cairo</span></div>
   </div>
 </footer>
 
-<script type="module" src="assets/system.js"></script>
-<script type="module" src="assets/motion/motion.js"></script>
-<script type="module" src="assets/layout/layout.js"></script>
-<script type="module" src="assets/ui/ui.js"></script>
-<script type="module" src="assets/moments/word-highlight/moment.js"></script>
+<script src="assets/js/site.js" type="module"></script>
 </body>
 </html>

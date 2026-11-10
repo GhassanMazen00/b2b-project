@@ -3,74 +3,57 @@
 Marketing site for a studio that builds websites, stores, apps and business
 systems for companies in Egypt and the Gulf.
 
-Static HTML and CSS. No build step. Roughly 830 KB of assets, all local.
+Static HTML, one stylesheet, one script. No build step, no framework, no
+dependencies. Around 40 KB of code plus Google Fonts.
 
-## Built with taste-skill
+## The point of it
 
-This page was built and checked with three installed skills:
+A studio with no client work cannot prove anything with a portfolio. So the
+site proves it by **running the product**: the dark frame in the hero, and the
+larger one halfway down, are a working order system — not a screenshot and not
+a video.
 
-| Skill | Source |
-|---|---|
-| taste-skill | `Leonxlnx/taste-skill` |
-| impeccable | `pbakaus/impeccable` |
-| animation / design set | `emilkowalski/skills` |
+Add an order and the row animates in, stock is drawn down, the customer's
+balance moves and the totals recompute. Mark one paid and the unpaid figure
+drops. Switch to Stock and anything under 60 m is flagged to reorder. Every
+number on screen is derived from state in `assets/js/site.js`; none of it is
+written into the markup.
 
-They are **not committed** — together they are 43 MB. Reinstall with:
-
-```bash
-./scripts/install-skills.sh
-```
-
-The page follows taste-skill's rules for a **service** page: one section per
-screen, equal content edges, a dealt palette and type pairing, a hero entrance,
-one dealt moment, and the hover layer. The deal was:
-
-```
-palette  card-pastels   off-white ground, one pink mark
-type     geist
-hero     statement      type-led, no photograph
-nav      nav-mega     footer  footer-columns    close  close-type
-rhythm   space        buttons block             mark   stack
-moment   word-highlight
-```
+That is the strongest thing an agency in this position can show, and it is
+honest — it demonstrates the kind of system we build without pretending it
+belongs to a client who does not exist.
 
 ## Make it yours
 
-- **Contact**: the form posts to `hello@axiom.example`, a stand-in. Replace it
-  with a real form endpoint (`data-endpoint`) before launch.
-- **Prices** are in the `rows` list in `index.html`.
-- **Name**: find and replace `Axiom`.
+| What | Where |
+|---|---|
+| Prices, both markets | `PRICES` at the bottom of `assets/js/site.js` |
+| Demo data (customers, stock) | `SEED` at the top of the same file |
+| Form endpoint | the `submit` handler at the end of `site.js` — currently it says it is not connected rather than faking a success |
+| Name | find and replace `Axiom` |
+| Colours and type | the `:root` block in `assets/css/site.css` |
 
 ## Publishing
 
 **Settings → Pages → Deploy from a branch → this branch → `/ (root)`.**
 
-## Known open findings
+## Verified
 
-The finish gate ended at `GATE: OPEN 9` after its three rounds. None of the
-nine are cosmetic defects you would notice; all trace to one root cause:
+Driven in Chromium at 1440 and 390: the system adds orders, recomputes unpaid
+and daily totals, draws down stock, switches views, the market toggle changes
+all five prices, no horizontal overflow on mobile, no console errors.
 
-**The page has no photographs.** taste-skill wants a service page led by
-photographs of the work, the team and the rooms, and it refuses to let a stock
-library frame lead this trade. The build environment could not reach Wikimedia
-Commons or the icon CDN, so there are no photographs and no real tool icons —
-the page is type, prices and UI fragments instead. That drives the remaining
-`no-visual`, `neighbour` and several `screen-height` findings, because sections
-that should carry a picture carry text.
+## Still to do
 
-The fix is not code. It is **a half-day photo shoot**: the desk, the screens,
-the person who answers the WhatsApp, a client's shop. Drop those in and most of
-the nine resolve themselves.
-
-Two findings are independent of that and worth a pass:
-
-- `ui-centre` on the two stat panels — the fragment is not centred in its panel.
-- `section-gaps` between the hero and the first section at 390.
-
-## Language
-
-English, left to right. The kit has essentially no RTL support (zero
-`[dir="rtl"]` rules), so an Arabic-first build would break its grid and fail
-its own checker. An Arabic version needs a logical-property pass over
-`assets/system.css` and `assets/layout/layout.css` first — worth doing, since
-Arabic is the right default for Egyptian customers.
+- **A real form endpoint.** The form validates and then tells the truth: it is
+  not wired up. Point it at Formspree, a Supabase function or your own
+  handler before launch.
+- **WhatsApp number and social links.** Currently the footer links are
+  anchors.
+- **Arabic version.** The system demo already renders Arabic customer and
+  product names, which is deliberate. A full Arabic page needs an RTL pass
+  over `site.css` — most of it already uses logical properties, so this is
+  bounded work, and Arabic is the right default for Egyptian customers.
+- **Real work to show.** The live system carries the page today. Replace it
+  with two or three actual client builds as soon as you have them; that beats
+  any demo.
