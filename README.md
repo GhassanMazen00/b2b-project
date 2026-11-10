@@ -4,8 +4,13 @@ Marketing site for a web, systems and automation studio serving Egypt, the
 Gulf and the wider Middle East.
 
 The site is the portfolio. A studio with no client work has to prove capability
-on the page itself, so the hero is a thirty-thousand-point WebGL field that
-resolves out of noise into the mark as you scroll.
+on the page itself — but it proves it through restraint, not spectacle. The
+reference points are Linear, Vercel and Anthropic: neutral near-black rather
+than blue-black, one muted accent used sparingly, 1px borders, a grain layer,
+and no glow anywhere.
+
+A WebGL field sits behind the hero and resolves out of noise into the mark as
+you scroll. It is deliberately quiet — ambient, not a performance.
 
 ## Make it yours
 
@@ -65,6 +70,26 @@ A few decisions worth knowing before changing anything:
 Degradation is deliberate: fewer points under 760px, a still gradient when
 WebGL is unavailable, and no motion at all under `prefers-reduced-motion`.
 The page is readable with JavaScript switched off entirely.
+
+## What is deliberately not offered
+
+**E-invoicing is not on this site.** An earlier version of this project built
+an ETA client that never once spoke to the tax authority: the SDK domain was
+unreachable, the canonical serialisation was unverified, and there were no
+credentials. Selling a tax-compliance service that has never been performed is
+a legal and reputational risk, not just a technical one. It goes back on the
+page after one real document clears the preproduction environment — not before.
+
+**Native mobile apps are quoted separately.** The published app tier is a PWA:
+installs to the home screen, works offline, no store account, no review cycle.
+That is deliverable today. Fully native is real work with real overheads and
+should not share a price with it.
+
+Online stores ship with payment gateways (Fawry, Paymob, InstaPay) as before.
+Worth knowing before the first one: the gateway itself is roughly a day of
+work using hosted checkout, so you never touch card data — but the merchant
+account belongs to the client and takes weeks of paperwork you cannot do for
+them. Plan the timeline around that, not around the code.
 
 ## The one real weakness
 

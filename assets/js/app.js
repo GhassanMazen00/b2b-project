@@ -19,8 +19,8 @@ const CONFIG = {
 };
 
 const PRICES = {
-  eg:   { site: 300,  shop: 700,  system: 1500, auto: 400,  care: 50 },
-  gulf: { site: 1500, shop: 3500, system: 7500, auto: 2000, care: 200 },
+  eg:   { site: 300,  shop: 700,  app: 900,  system: 1500, care: 50 },
+  gulf: { site: 1500, shop: 3500, app: 4500, system: 7500, care: 200 },
 };
 
 const SAR_PER_USD = 3.75;   // pegged, so this figure never goes stale

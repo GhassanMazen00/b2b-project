@@ -86,7 +86,7 @@ const VERT = /* glsl */`
   // Cheap layered turbulence. Real curl noise is prettier and costs far more
   // than it is worth at thirty thousand points on a mid-range phone.
   vec3 drift(vec3 p, float t, float seed) {
-    float a = t * 0.22 + seed * 6.2831;
+    float a = t * 0.12 + seed * 6.2831;
     return vec3(
       sin(a * 0.9 + p.y * 1.4) * 0.26 + sin(a * 0.31 + p.z * 0.7) * 0.14,
       cos(a * 0.7 + p.x * 1.1) * 0.22 + cos(a * 0.43 + p.z * 0.9) * 0.12,
@@ -115,7 +115,7 @@ const VERT = /* glsl */`
 
     // A band of light sweeping across on each strike.
     float band = smoothstep(0.45, 0.0, abs(pos.x - (uStrike * 4.0 - 2.0)));
-    vGlow = e * 0.42 + band * uStrike * 1.6 + 0.30;
+    vGlow = e * 0.34 + band * uStrike * 0.9 + 0.30;
 
     float size = uSize * (0.55 + aSeed * 0.9) * (1.0 - e * 0.42);
     gl_PointSize = size * (12.0 / -mv.z);
@@ -137,7 +137,7 @@ const FRAG = /* glsl */`
     if (alpha < 0.01) discard;
 
     vec3 col = mix(uCold, uHot, clamp(vGlow * 0.8 + vSeed * 0.2, 0.0, 1.0));
-    gl_FragColor = vec4(col, alpha * clamp(vGlow, 0.0, 1.25) * 0.72);
+    gl_FragColor = vec4(col, alpha * clamp(vGlow, 0.0, 1.0) * 0.6);
   }
 `;
 
@@ -161,7 +161,7 @@ export function createField(canvas, { shape = "bolt", word = "برق" } = {}) {
   camera.position.z = 5.2;
 
   const phone = innerWidth < 760;
-  const COUNT = phone ? 9000 : 30000;
+  const COUNT = phone ? 5000 : 14000;
 
   // Sample the bolt. If a wordmark is asked for instead and the font did not
   // load, the sample comes back nearly empty — fall back to the bolt rather
@@ -210,11 +210,11 @@ export function createField(canvas, { shape = "bolt", word = "برق" } = {}) {
   const uniforms = {
     uTime:    { value: 0 },
     uOrder:   { value: 0 },
-    uSize:    { value: phone ? 2.6 : 2.2 },
+    uSize:    { value: phone ? 1.8 : 1.6 },
     uPointer: { value: new THREE.Vector2(0, 0) },
     uStrike:  { value: 0 },
-    uCold:    { value: new THREE.Color("#3C7BE0") },
-    uHot:     { value: new THREE.Color("#DCEBFF") },
+    uCold:    { value: new THREE.Color("#2E3650") },
+    uHot:     { value: new THREE.Color("#AFBAD6") },
   };
 
   const points = new THREE.Points(geo, new THREE.ShaderMaterial({
@@ -257,8 +257,8 @@ export function createField(canvas, { shape = "bolt", word = "برق" } = {}) {
 
     if (!REDUCED) {
       nextStrike -= dt;
-      if (nextStrike <= 0) { strike = 1; nextStrike = 5 + Math.random() * 6; }
-      strike = Math.max(0, strike - dt * 1.6);
+      if (nextStrike <= 0) { strike = 1; nextStrike = 11 + Math.random() * 9; }
+      strike = Math.max(0, strike - dt * 1.1);
     }
 
     uniforms.uTime.value = REDUCED ? 0 : t;
