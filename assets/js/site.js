@@ -16,8 +16,8 @@ const T = {
     "fact.from":"Websites from","fact.delivery":"Delivery","fact.delivery.v":"14 days",
     "fact.reply":"Reply within","fact.reply.v":"24 hours","fact.own":"You own","fact.own.v":"Everything",
 
-    "work.eyebrow":"What we build","work.h2":"Four things, and what each one looks like",
-    "work.lede":"Not a list of services. Pick one and see the kind of thing you get, with the price and the delivery time attached.",
+    "work.eyebrow":"What we build","work.h2":"Five things, and what each one actually looks like",
+    "work.lede":"Not a list of services. Pick one and look at the screen you would get, with the price and the delivery time attached.",
     "tab.site":"Websites","tab.store":"Online stores","tab.app":"Mobile apps",
     "tab.system":"Business systems","tab.auto":"Automation",
 
@@ -92,6 +92,77 @@ const T = {
     "foot.build":"Build","foot.company":"Company","foot.talk":"Talk","foot.made":"Built in Cairo",
     "form.err":"Add an email we can reply to.",
     "form.todo":"Not connected yet — add your form endpoint in assets/js/site.js before launch.",
+
+    "sc.note":"Example screens. Real client work replaces them as it ships.",
+
+    "cl.brand":"Nile Dental",
+    "cl.n1":"Services","cl.n2":"Doctors","cl.n3":"Prices","cl.n4":"Contact","cl.cta":"Book now",
+    "cl.h1":"Dental care in Heliopolis, booked in thirty seconds.",
+    "cl.sub":"Six dentists, one published price list, and an appointment you pick yourself. No phone calls, no waiting for someone to ring you back.",
+    "cl.b1":"Book an appointment","cl.b2":"See the price list",
+    "cl.sh":"The three people ask for most",
+    "cl.s1h":"Scale and polish","cl.s1p":"Forty minutes, no anaesthetic, finished in one visit.","cl.s1pr":"EGP 450",
+    "cl.s2h":"Whitening","cl.s2p":"Three shades lighter on average, two sittings a week apart.","cl.s2pr":"EGP 2,400",
+    "cl.s3h":"Implants","cl.s3p":"Swiss titanium, three-year guarantee, paid over six months.","cl.s3pr":"from EGP 9,000",
+    "cl.dh":"Who you will actually see",
+    "cl.d1n":"Dr Yasmine Adel","cl.d1s":"Cosmetic · 11 years",
+    "cl.d2n":"Dr Omar Shafik","cl.d2s":"Implants · 14 years",
+    "cl.d3n":"Dr Hana Mostafa","cl.d3s":"Children · 8 years",
+    "cl.q":"I booked at eleven at night and I was in the chair the next morning. Nobody asked me to call back.",
+    "cl.qn":"Mariam S. · Sheraton",
+    "cl.bandh":"Open Saturday to Thursday, 10am until 9pm. 12 Nasr Road, Heliopolis.",
+    "cl.bandb":"Book an appointment",
+    "cl.f":"Nile Dental · 12 Nasr Road, Heliopolis, Cairo · 0100 123 4567",
+
+    "sh.brand":"Nile Fabrics","sh.n1":"Cotton","sh.n2":"Linen","sh.n3":"Silk","sh.n4":"Wholesale",
+    "sh.bag":"Cart · EGP 1,480","sh.h1":"Cotton by the metre",
+    "sh.count":"42 fabrics · delivered in Cairo within 48 hours","sh.per":"/ metre",
+    "sh.p1":"Egyptian cotton, 240gsm","sh.m1":"Natural · 150cm wide",
+    "sh.p2":"Denim, indigo wash","sh.m2":"In stock · 310 m",
+    "sh.p3":"Poplin, off-white","sh.m3":"Shirting · 145cm",
+    "sh.p4":"Wool blend, burgundy","sh.m4":"Winter · 160cm",
+    "sh.p5":"Linen, sage","sh.m5":"Pre-washed · 140cm",
+    "sh.p6":"Raw silk, gold","sh.m6":"Limited · 48 m left",
+    "sh.pay":"Pay with","sh.cod":"Cash on delivery",
+
+    "ap.hi":"Saturday, 14 March","ap.h2":"Today's deliveries",
+    "ap.sumlbl":"Collected today","ap.lbl":"ON THE ROAD · 4",
+    "ap.n1":"Mahmoud Hassan","ap.s1":"Nasr City · delivered 11:20",
+    "ap.n2":"Sara Abdelrahman","ap.s2":"Maadi · out for delivery",
+    "ap.n3":"Karim Fouad","ap.s3":"Zamalek · picked up 10:05",
+    "ap.n4":"Nour Eldin","ap.s4":"6th October · failed, retry",
+    "ap.t1":"Today","ap.t2":"Routes","ap.t3":"Cash","ap.t4":"More",
+
+    "sy.m1":"Dashboard","sy.m2":"Invoices","sy.m3":"Stock","sy.m4":"Customers",
+    "sy.m5":"Suppliers","sy.m6":"Reports","sy.m7":"Staff",
+    "sy.h2":"Invoices","sy.add":"+ New invoice",
+    "sy.k1":"Invoiced this month (EGP)","sy.k2":"Collected (EGP)","sy.k3":"Overdue (EGP)","sy.k4":"Open invoices",
+    "sy.chart":"Collected, last 8 weeks","sy.chartsub":"EGP thousands",
+    "sy.recent":"Recent invoices","sy.all":"View all 37",
+    "sy.th1":"Number","sy.th2":"Customer","sy.th3":"Date","sy.th4":"Amount","sy.th5":"Status",
+    "sy.c1":"El Shorouk Garments","sy.c2":"Zahran Textiles","sy.c3":"Maison Laila",
+    "sy.c4":"Gouna Interiors","sy.c5":"Arkan Uniforms",
+    "sy.ok":"Paid","sy.part":"Part paid","sy.due":"14 days overdue",
+
+    "au.h2":"Three automations, running since January",
+    "au.sb":"Nobody opens a spreadsheet for any of this any more.",
+    "au.trig":"TRIGGER","au.act":"ACTION","au.out":"RESULT",
+    "au.r1a":"New order on the store","au.r1b":"Create the invoice, reserve the stock","au.r1c":"WhatsApp to packing",
+    "au.r2a":"Stock under 60 metres","au.r2b":"Draft the purchase order","au.r2c":"Sent to the owner to approve",
+    "au.r3a":"Every day at 08:00","au.r3b":"Yesterday's sales and the overdue list","au.r3c":"Email and WhatsApp",
+    "au.s1":"Runs a day","au.s2":"Hours saved a month","au.s3":"Failures since January",
+    "sh.r1":"EGP 185 / metre","sh.r2":"EGP 240 / metre","sh.r3":"EGP 120 / metre",
+    "sh.r4":"EGP 410 / metre","sh.r5":"EGP 265 / metre","sh.r6":"EGP 620 / metre",
+    "ap.sumv":"EGP 12,480","ap.lbl2":"DELIVERED EARLIER · 9",
+    "ap.v1":"1,240","ap.v2":"860","ap.v3":"2,310","ap.v4":"540",
+    "ap.n5":"Rana Tarek","ap.s5":"Dokki · delivered 09:40","ap.v5":"980",
+    "ap.n6":"Ahmed Samir","ap.s6":"Heliopolis · delivered 09:05","ap.v6":"1,760",
+    "ap.n7":"Laila Mansour","ap.s7":"Garden City · delivered 08:30","ap.v7":"420",
+    "sy.d1":"12 Mar","sy.d2":"11 Mar","sy.d3":"09 Mar","sy.d4":"08 Mar","sy.d5":"06 Mar",
+    "sy.a1":"84,500","sy.a2":"31,200","sy.a3":"12,860","sy.a4":"57,400","sy.a5":"22,150",
+    "ch.d10":"10 days","ch.w3":"3 weeks","ch.off":"Offline","ch.push":"Push",
+    "ch.w34":"3–4 weeks","ch.roles":"Roles","ch.audit":"Audit trail","ch.w46":"4–6 weeks",
+    "ch.sched":"Scheduled","ch.wa":"WhatsApp","ch.w12":"1–2 weeks",
   },
 
   ar: {
@@ -104,8 +175,8 @@ const T = {
     "fact.from":"المواقع تبدأ من","fact.delivery":"التسليم","fact.delivery.v":"١٤ يوم",
     "fact.reply":"الرد خلال","fact.reply.v":"٢٤ ساعة","fact.own":"الملكية","fact.own.v":"كلها ليك",
 
-    "work.eyebrow":"اللي بنبنيه","work.h2":"أربع حاجات، وكل واحدة شكلها إيه",
-    "work.lede":"مش مجرد قايمة خدمات. اختار واحدة وشوف بنفسك هتستلم إيه، وبكام وفي خلال كام يوم.",
+    "work.eyebrow":"اللي بنبنيه","work.h2":"خمس حاجات، وكل واحدة شكلها إيه بالظبط",
+    "work.lede":"مش مجرد قايمة خدمات. اختار واحدة وبص على الشاشة اللي هتستلمها، وبكام وفي خلال كام يوم.",
     "tab.site":"المواقع","tab.store":"المتاجر الإلكترونية","tab.app":"تطبيقات الموبايل",
     "tab.system":"أنظمة إدارة الأعمال","tab.auto":"الأتمتة",
 
@@ -180,6 +251,77 @@ const T = {
     "foot.build":"اللي بنبنيه","foot.company":"الشركة","foot.talk":"تواصل","foot.made":"صُنع في القاهرة",
     "form.err":"اكتب إيميل نقدر نرد عليه.",
     "form.todo":"لسه مش متوصّل — ضيف عنوان النموذج في assets/js/site.js قبل الإطلاق.",
+
+    "sc.note":"شاشات توضيحية. بنستبدلها بأعمال عملاء حقيقية أول ما تنزل.",
+
+    "cl.brand":"نايل دنتال",
+    "cl.n1":"الخدمات","cl.n2":"الأطباء","cl.n3":"الأسعار","cl.n4":"تواصل","cl.cta":"احجز الآن",
+    "cl.h1":"علاج أسنان في مصر الجديدة، بتحجزه في ٣٠ ثانية.",
+    "cl.sub":"ستة أطباء، وقائمة أسعار معلنة، وميعاد تختاره إنت بنفسك. بدون مكالمات وبدون ما تستنى حد يرد عليك.",
+    "cl.b1":"احجز ميعاد","cl.b2":"شوف قائمة الأسعار",
+    "cl.sh":"أكتر تلات حاجات الناس بتطلبها",
+    "cl.s1h":"تنظيف وتلميع","cl.s1p":"أربعين دقيقة، بدون بنج، وتخلص في زيارة واحدة.","cl.s1pr":"٤٥٠ جنيه",
+    "cl.s2h":"تبييض","cl.s2p":"أفتح بتلات درجات في المتوسط، على جلستين بفارق أسبوع.","cl.s2pr":"٢٤٠٠ جنيه",
+    "cl.s3h":"زراعة","cl.s3p":"تيتانيوم سويسري، وضمان تلات سنين، وتقسيط على ستة أشهر.","cl.s3pr":"من ٩٠٠٠ جنيه",
+    "cl.dh":"الدكتور اللي هتقعد معاه فعلاً",
+    "cl.d1n":"د. ياسمين عادل","cl.d1s":"تجميل · ١١ سنة",
+    "cl.d2n":"د. عمر شفيق","cl.d2s":"زراعة · ١٤ سنة",
+    "cl.d3n":"د. هنا مصطفى","cl.d3s":"أطفال · ٨ سنين",
+    "cl.q":"حجزت الساعة ١١ بالليل وكنت على الكرسي الصبح. محدش قال لي كلمنا تاني.",
+    "cl.qn":"مريم س. · شيراتون",
+    "cl.bandh":"مفتوح من السبت للخميس، من ١٠ صباحاً لـ ٩ مساءً. ١٢ شارع النصر، مصر الجديدة.",
+    "cl.bandb":"احجز ميعاد",
+    "cl.f":"نايل دنتال · ١٢ شارع النصر، مصر الجديدة، القاهرة · ٠١٠٠ ١٢٣ ٤٥٦٧",
+
+    "sh.brand":"أقمشة النيل","sh.n1":"قطن","sh.n2":"كتان","sh.n3":"حرير","sh.n4":"جملة",
+    "sh.bag":"السلة · ١٤٨٠ جنيه","sh.h1":"قطن بالمتر",
+    "sh.count":"٤٢ قماش · التوصيل في القاهرة خلال ٤٨ ساعة","sh.per":"/ المتر",
+    "sh.p1":"قطن مصري، ٢٤٠ جرام","sh.m1":"طبيعي · عرض ١٥٠ سم",
+    "sh.p2":"جينز، صباغة نيلي","sh.m2":"متوفر · ٣١٠ متر",
+    "sh.p3":"بوبلين، أوف وايت","sh.m3":"قمصان · ١٤٥ سم",
+    "sh.p4":"خليط صوف، نبيتي","sh.m4":"شتوي · ١٦٠ سم",
+    "sh.p5":"كتان، أخضر فاتح","sh.m5":"مغسول مسبقاً · ١٤٠ سم",
+    "sh.p6":"حرير خام، ذهبي","sh.m6":"كمية محدودة · باقي ٤٨ متر",
+    "sh.pay":"الدفع بـ","sh.cod":"الدفع عند الاستلام",
+
+    "ap.hi":"السبت، ١٤ مارس","ap.h2":"توصيلات اليوم",
+    "ap.sumlbl":"المحصّل اليوم","ap.lbl":"في الطريق · ٤",
+    "ap.n1":"محمود حسن","ap.s1":"مدينة نصر · تم التسليم ١١:٢٠",
+    "ap.n2":"سارة عبدالرحمن","ap.s2":"المعادي · خرج للتسليم",
+    "ap.n3":"كريم فؤاد","ap.s3":"الزمالك · تم الاستلام ١٠:٠٥",
+    "ap.n4":"نور الدين","ap.s4":"٦ أكتوبر · فشل، إعادة محاولة",
+    "ap.t1":"اليوم","ap.t2":"الخطوط","ap.t3":"التحصيل","ap.t4":"المزيد",
+
+    "sy.m1":"الرئيسية","sy.m2":"الفواتير","sy.m3":"المخزون","sy.m4":"العملاء",
+    "sy.m5":"الموردين","sy.m6":"التقارير","sy.m7":"الموظفين",
+    "sy.h2":"الفواتير","sy.add":"+ فاتورة جديدة",
+    "sy.k1":"مفوتر هذا الشهر (جنيه)","sy.k2":"المحصّل (جنيه)","sy.k3":"متأخرات (جنيه)","sy.k4":"فواتير مفتوحة",
+    "sy.chart":"التحصيل، آخر ٨ أسابيع","sy.chartsub":"بالألف جنيه",
+    "sy.recent":"أحدث الفواتير","sy.all":"شوف الـ ٣٧ كلها",
+    "sy.th1":"الرقم","sy.th2":"العميل","sy.th3":"التاريخ","sy.th4":"المبلغ","sy.th5":"الحالة",
+    "sy.c1":"الشروق للملابس","sy.c2":"زهران للمنسوجات","sy.c3":"ميزون ليلى",
+    "sy.c4":"الجونة للديكور","sy.c5":"أركان يونيفورم",
+    "sy.ok":"مدفوعة","sy.part":"مدفوعة جزئياً","sy.due":"متأخرة ١٤ يوم",
+
+    "au.h2":"تلات أتمتات، شغالة من يناير",
+    "au.sb":"محدش بيفتح شيت إكسل لأي حاجة من دي تاني.",
+    "au.trig":"الحدث","au.act":"الإجراء","au.out":"النتيجة",
+    "au.r1a":"طلب جديد على المتجر","au.r1b":"إنشاء الفاتورة وحجز المخزون","au.r1c":"واتساب لقسم التجهيز",
+    "au.r2a":"المخزون أقل من ٦٠ متر","au.r2b":"تجهيز أمر شراء مبدئي","au.r2c":"بيروح للمالك للموافقة",
+    "au.r3a":"كل يوم الساعة ٨ صباحاً","au.r3b":"مبيعات امبارح وقايمة المتأخرات","au.r3c":"إيميل وواتساب",
+    "au.s1":"تشغيل في اليوم","au.s2":"ساعات موفّرة شهرياً","au.s3":"أعطال من يناير",
+    "sh.r1":"١٨٥ جنيه / المتر","sh.r2":"٢٤٠ جنيه / المتر","sh.r3":"١٢٠ جنيه / المتر",
+    "sh.r4":"٤١٠ جنيه / المتر","sh.r5":"٢٦٥ جنيه / المتر","sh.r6":"٦٢٠ جنيه / المتر",
+    "ap.sumv":"١٢٬٤٨٠ جنيه","ap.lbl2":"اتسلمت قبل كده · ٩",
+    "ap.v1":"١٬٢٤٠","ap.v2":"٨٦٠","ap.v3":"٢٬٣١٠","ap.v4":"٥٤٠",
+    "ap.n5":"رنا طارق","ap.s5":"الدقي · تم التسليم ٩:٤٠","ap.v5":"٩٨٠",
+    "ap.n6":"أحمد سمير","ap.s6":"مصر الجديدة · تم التسليم ٩:٠٥","ap.v6":"١٬٧٦٠",
+    "ap.n7":"ليلى منصور","ap.s7":"جاردن سيتي · تم التسليم ٨:٣٠","ap.v7":"٤٢٠",
+    "sy.d1":"١٢ مارس","sy.d2":"١١ مارس","sy.d3":"٩ مارس","sy.d4":"٨ مارس","sy.d5":"٦ مارس",
+    "sy.a1":"٨٤٬٥٠٠","sy.a2":"٣١٬٢٠٠","sy.a3":"١٢٬٨٦٠","sy.a4":"٥٧٬٤٠٠","sy.a5":"٢٢٬١٥٠",
+    "ch.d10":"١٠ أيام","ch.w3":"٣ أسابيع","ch.off":"أوفلاين","ch.push":"إشعارات",
+    "ch.w34":"٣–٤ أسابيع","ch.roles":"صلاحيات","ch.audit":"سجل تدقيق","ch.w46":"٤–٦ أسابيع",
+    "ch.sched":"مواعيد ثابتة","ch.wa":"واتساب","ch.w12":"أسبوع لأسبوعين",
   },
 };
 
@@ -205,7 +347,15 @@ function applyLang(next) {
   sel.innerHTML = "";
   for (const k of NEEDS) sel.append(new Option(dict[k], k));
 
+  // The example screens are pages in their own right, so they take the
+  // language and the direction too.
+  for (const sc of $$(".screen")) {
+    sc.dir = lang === "ar" ? "rtl" : "ltr";
+    sc.classList.toggle("ar", lang === "ar");
+  }
+
   $("#langBtn").textContent = lang === "ar" ? "English" : "العربية";
+  requestAnimationFrame(fitScreens);
   try { localStorage.setItem("axiom.lang", lang); } catch {}
 }
 
@@ -246,40 +396,90 @@ function initTabs() {
       for (const p of panes) p.classList.toggle("on", p.dataset.pane === t.dataset.tab);
       // Restart the animations inside the pane that just appeared.
       const live = panes.find((p) => p.dataset.pane === t.dataset.tab);
-      for (const n of $$(".chart i, .mock--scroll, .mk-prod", live)) {
+      for (const n of $$(".bars i, .scroller, .s-shop .p, .s-auto .w", live)) {
         n.style.animation = "none";
         void n.offsetWidth;
         n.style.animation = "";
       }
-      if (t.dataset.tab === "store") fillStore();
+      fitScreens();
       countUp(live);
     });
   }
 }
 
-/* The store grid builds itself so the tiles stagger in rather than
-   appearing all at once. */
-function fillStore() {
-  const grid = $("[data-store-grid]");
-  if (!grid) return;
-  grid.innerHTML = "";
-  for (let i = 0; i < 6; i++) {
-    const d = document.createElement("div");
-    d.className = "mk-prod";
-    d.style.animationDelay = `${i * 95}ms`;
-    d.innerHTML = `<div class="ph"></div><div class="mt">
-      <span class="mk-line lt" style="width:${62 + ((i * 13) % 28)}%;height:5px;display:block;margin-bottom:5px"></span>
-      <span class="mk-line hot" style="width:34px;height:5px;display:block"></span></div>`;
-    grid.append(d);
-  }
-  const badge = $("[data-cart]");
-  if (badge) {
-    let n = 0;
-    badge.textContent = "0";
-    const id = setInterval(() => {
-      n += 1; badge.textContent = n;
-      if (n >= 3) clearInterval(id);
-    }, 620);
+/* The clinic page appears twice (hero and the Websites tab), so it is
+   written once here. Every string is a dictionary key, so the example
+   screen is in Arabic when the site is. */
+const CLINIC = `
+<div class="hdr">
+  <span class="brand" data-i18n="cl.brand">Nile Dental</span>
+  <span class="lnk" data-i18n="cl.n1">Services</span>
+  <span class="lnk" data-i18n="cl.n2">Doctors</span>
+  <span class="lnk" data-i18n="cl.n3">Prices</span>
+  <span class="lnk" data-i18n="cl.n4">Contact</span>
+  <span class="cta" data-i18n="cl.cta">Book now</span>
+</div>
+<div class="hero">
+  <div>
+    <h1 data-i18n="cl.h1">Dental care in Heliopolis, booked in thirty seconds.</h1>
+    <p class="sub" data-i18n="cl.sub">Six dentists, one published price list, and an appointment you pick yourself.</p>
+    <div class="btns">
+      <span class="b1" data-i18n="cl.b1">Book an appointment</span>
+      <span class="b2" data-i18n="cl.b2">See the price list</span>
+    </div>
+  </div>
+  <div class="pic"></div>
+</div>
+<div class="sec">
+  <h2 data-i18n="cl.sh">The three people ask for most</h2>
+  <div class="strip">
+    <div class="card"><h3 data-i18n="cl.s1h">Scale and polish</h3><p data-i18n="cl.s1p"></p><p class="price" data-i18n="cl.s1pr">EGP 450</p></div>
+    <div class="card"><h3 data-i18n="cl.s2h">Whitening</h3><p data-i18n="cl.s2p"></p><p class="price" data-i18n="cl.s2pr">EGP 2,400</p></div>
+    <div class="card"><h3 data-i18n="cl.s3h">Implants</h3><p data-i18n="cl.s3p"></p><p class="price" data-i18n="cl.s3pr">from EGP 9,000</p></div>
+  </div>
+</div>
+<div class="sec">
+  <h2 data-i18n="cl.dh">Who you will actually see</h2>
+  <div class="strip">
+    <div class="doc"><span class="av"></span><div><h3 data-i18n="cl.d1n">Dr Yasmine Adel</h3><p data-i18n="cl.d1s"></p></div></div>
+    <div class="doc"><span class="av"></span><div><h3 data-i18n="cl.d2n">Dr Omar Shafik</h3><p data-i18n="cl.d2s"></p></div></div>
+    <div class="doc"><span class="av"></span><div><h3 data-i18n="cl.d3n">Dr Hana Mostafa</h3><p data-i18n="cl.d3s"></p></div></div>
+  </div>
+</div>
+<div class="quote">
+  <p data-i18n="cl.q"></p>
+  <span data-i18n="cl.qn">Mariam S.</span>
+</div>
+<div class="band">
+  <h2 data-i18n="cl.bandh">Open Saturday to Thursday, 10am until 9pm.</h2>
+  <span class="b1" data-i18n="cl.bandb">Book an appointment</span>
+</div>
+<div class="ft" data-i18n="cl.f">Nile Dental, 12 Nasr Road, Heliopolis, Cairo</div>
+`;
+
+function buildClinics() {
+  for (const n of $$("[data-clinic]")) n.innerHTML = CLINIC;
+}
+
+/* Each example is a real page laid out at its own design width, then
+   scaled into the frame. That is why it reads as a screenshot: the type,
+   spacing and colour are the ones the live page would have. */
+function fitScreens() {
+  for (const sc of $$(".screen")) {
+    const view = sc.parentElement;
+    const w = Number(sc.dataset.w) || 1280;
+    const avail = view.clientWidth;
+    if (!avail) continue;
+    // Below about a phone width, shrinking a 1280px page to fit makes the
+    // type unreadable, so hold a floor and let the frame crop instead.
+    const k = avail < 560 && w > 600 ? Math.max(avail / w, 0.5) : avail / w;
+    sc.style.width = w + "px";
+    sc.style.transform = "scale(" + k + ")";
+    if (sc.dataset.fit === "phone") continue;          // fixed-height frame
+    const h = sc.dataset.pan
+      ? Math.min(Number(sc.dataset.vh) * k, 470)
+      : sc.offsetHeight * k;
+    view.style.height = Math.round(h) + "px";
   }
 }
 
@@ -287,11 +487,12 @@ function fillStore() {
 function countUp(scope = document) {
   for (const el of $$("[data-tick]", scope)) {
     const to = Number(el.dataset.tick);
-    if (REDUCED) { el.textContent = to.toLocaleString("en-US"); continue; }
+    const loc = lang === "ar" ? "ar-EG" : "en-US";
+    if (REDUCED) { el.textContent = to.toLocaleString(loc); continue; }
     const t0 = performance.now(), dur = 1200;
     (function step(now) {
       const k = Math.min(1, (now - t0) / dur);
-      el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))).toLocaleString("en-US");
+      el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))).toLocaleString(loc);
       if (k < 1) requestAnimationFrame(step);
     })(t0);
   }
@@ -301,7 +502,8 @@ function countUp(scope = document) {
 function start() {
   paintPrices();
   initTabs();
-  fillStore();
+  fitScreens();
+  addEventListener("resize", fitScreens, { passive: true });
 
   $("#mEG").addEventListener("click",   () => { market = "eg";   paintPrices(); });
   $("#mGulf").addEventListener("click", () => { market = "gulf"; paintPrices(); });
@@ -328,6 +530,8 @@ function start() {
     s.textContent = (!email || !email.includes("@")) ? T[lang]["form.err"] : T[lang]["form.todo"];
   });
 }
+
+buildClinics();
 
 if (lang === "ar" || lang === "en") {
   // Returning visitor: skip the gate.
