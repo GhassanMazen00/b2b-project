@@ -1,5 +1,4 @@
 node_modules/
-.taste-skill/
-shots/
 .DS_Store
-.claude/skills/
+*.log
+.taste-skill/

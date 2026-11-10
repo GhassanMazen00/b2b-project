@@ -1,89 +1,118 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Axiom — websites and business systems for Egypt and the Gulf</title>
-<meta name="description" content="Axiom builds the website, store, app or internal system your company runs on. Published prices from $300, delivered in two weeks, with a named person answering every working day.">
+<title>Axiom — websites, apps and business systems</title>
+<meta name="description" content="Axiom builds websites, online stores, mobile apps and business systems for companies in Egypt and the Gulf. Published prices from $300, delivered in two weeks.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Axiom — websites and business systems for Egypt and the Gulf">
+<meta property="og:title" content="Axiom — websites, apps and business systems">
 <meta property="og:description" content="Published prices. Two-week delivery. A named person who answers every working day.">
-<meta name="theme-color" content="#FBFAF8">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0B0C'/%3E%3Cpath d='M9 23 16 8l7 15h-3.6L16 15l-3.4 8z' fill='%23CE1264'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#08090B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090B'/%3E%3Cpath d='M9 23 16 8l7 15h-3.6L16 15l-3.4 8z' fill='%23E0A75E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Readex+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
+<body class="locked">
+
+<!-- ============ language gate ============ -->
+<div id="gate">
+  <div class="gate__in">
+    <div class="gate__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 20 12 4l8 16h-4.1L12 12.3 8.1 20z"/></svg>Axiom</div>
+    <p class="gate__q">CHOOSE A LANGUAGE · اختر اللغة</p>
+    <div class="gate__btns">
+      <button class="gate__btn" type="button" data-lang="ar"><b>العربية</b><span>ARABIC</span></button>
+      <button class="gate__btn" type="button" data-lang="en"><b>English</b><span>ENGLISH</span></button>
+    </div>
+  </div>
+</div>
+
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
 <header class="nav" id="nav">
   <div class="wrap nav__bar">
     <a class="logo" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 20 12 4l8 16h-4.1L12 12.3 8.1 20z"/></svg>Axiom</a>
     <nav class="nav__links" aria-label="Main">
-      <a href="#build">What we build</a>
-      <a href="#system">Live system</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#process">Process</a>
-      <a href="#questions">Questions</a>
+      <a href="#work" data-i18n="nav.work">Our work</a>
+      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#questions" data-i18n="nav.faq">Questions</a>
     </nav>
     <div class="nav__end">
-      <a class="btn btn--ghost" href="#system">See it working</a>
-      <a class="btn btn--pri" href="#contact">Get a quote</a>
+      <button class="lang" id="langBtn" type="button">العربية</button>
+      <a class="btn btn--pri" href="#contact" data-i18n="cta.quote">Get a quote</a>
     </div>
   </div>
 </header>
 
 <main id="main">
 
+  <!-- ============ hero ============ -->
   <section class="hero">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap hero__grid">
       <div>
-        <span class="eyebrow">Egypt · Gulf · Middle East</span>
-        <h1>We build the systems your business runs on.</h1>
-        <p class="lede">Websites, stores, apps and the internal software that keeps stock, invoices and customers in one place. The price is published before you call, and the work lands in two weeks.</p>
+        <span class="eyebrow" data-i18n="hero.eyebrow">Egypt · Gulf · Middle East</span>
+        <h1 data-i18n="hero.h1">We build the systems your business runs on.</h1>
+        <p class="lede" data-i18n="hero.lede">Websites, online stores, mobile apps and the internal software that keeps stock, invoices and customers in one place. The price is published before you call.</p>
         <div class="hero__acts">
-          <a class="btn btn--pri btn--lg" href="#contact">Get a quote</a>
-          <a class="btn btn--line btn--lg" href="#system">Try the live system</a>
+          <a class="btn btn--pri btn--lg" href="#contact" data-i18n="cta.quote">Get a quote</a>
+          <a class="btn btn--line btn--lg" href="#work" data-i18n="cta.work">See our work</a>
         </div>
         <dl class="hero__facts">
-          <div><dt>Websites from</dt><dd>$300</dd></div>
-          <div><dt>Delivery</dt><dd>14 days</dd></div>
-          <div><dt>Reply within</dt><dd>24 hours</dd></div>
-          <div><dt>You own</dt><dd>Everything</dd></div>
+          <div><dt data-i18n="fact.from">Websites from</dt><dd class="mono">$300</dd></div>
+          <div><dt data-i18n="fact.delivery">Delivery</dt><dd data-i18n="fact.delivery.v">14 days</dd></div>
+          <div><dt data-i18n="fact.reply">Reply within</dt><dd data-i18n="fact.reply.v">24 hours</dd></div>
+          <div><dt data-i18n="fact.own">You own</dt><dd data-i18n="fact.own.v">Everything</dd></div>
         </dl>
       </div>
 
-      <div class="frame rv" data-app="1">
-        <div class="frame__bar">
-          <div class="frame__dots"><i></i><i></i><i></i></div>
-          <span class="frame__title">axiom — wholesale</span>
-          <span class="frame__live"><i></i>LIVE</span>
+      <!-- animated website mockup -->
+      <div class="browser rv">
+        <div class="browser__bar">
+          <div class="browser__dots"><i></i><i></i><i></i></div>
+          <div class="browser__url">nilefabrics.com</div>
         </div>
-        <div class="app">
-          <aside class="app__side">
-            <h5>Workspace</h5>
-            <div class="app__nav" role="tablist">
-              <button role="tab" aria-selected="true" data-view="orders"><span class="dot"></span>Orders<span class="count" data-count="orders">6</span></button>
-              <button role="tab" aria-selected="false" data-view="stock"><span class="dot"></span>Stock<span class="count" data-count="stock">5</span></button>
-              <button role="tab" aria-selected="false" data-view="customers"><span class="dot"></span>Customers<span class="count" data-count="customers">4</span></button>
+        <div class="browser__view" style="height:486px">
+          <div class="mock mock--scroll">
+            <div class="mk-nav">
+              <span class="mk-logo"></span>
+              <span class="mk-line" style="width:46px"></span>
+              <span style="flex:1"></span>
+              <span class="mk-line lt" style="width:32px"></span>
+              <span class="mk-line lt" style="width:28px"></span>
+              <span class="mk-line hot" style="width:40px;height:16px;border-radius:5px"></span>
             </div>
-          </aside>
-          <div class="app__main">
-            <div class="app__head">
-              <h4 data-title>Orders</h4>
-              <span class="sub" data-sub>today</span>
-              <div class="right">
-                <button class="mini" type="button" data-act="pay">Mark paid</button>
-                <button class="mini mini--pri" type="button" data-act="new">New order</button>
+            <div class="mk-hero">
+              <span class="mk-line" style="width:72%;height:15px;margin-bottom:9px"></span>
+              <span class="mk-line" style="width:52%;height:15px;margin-bottom:13px"></span>
+              <span class="mk-line lt" style="width:86%;height:7px;margin-bottom:6px"></span>
+              <span class="mk-line lt" style="width:64%;height:7px;margin-bottom:16px"></span>
+              <div class="mk-row"><span class="mk-btn"></span><span class="mk-btn sec"></span></div>
+            </div>
+            <div class="mk-pad"><div class="mk-img" style="height:132px"></div></div>
+            <div class="mk-pad">
+              <span class="mk-line" style="width:40%;height:10px;margin-bottom:12px"></span>
+              <div class="mk-grid3">
+                <div class="mk-card"><div class="mk-img" style="height:40px;margin-bottom:7px"></div><span class="mk-line lt" style="width:80%;height:5px"></span></div>
+                <div class="mk-card"><div class="mk-img" style="height:40px;margin-bottom:7px"></div><span class="mk-line lt" style="width:70%;height:5px"></span></div>
+                <div class="mk-card"><div class="mk-img" style="height:40px;margin-bottom:7px"></div><span class="mk-line lt" style="width:86%;height:5px"></span></div>
               </div>
             </div>
-            <div data-body></div>
-            <div class="app__foot">
-              <div><span>Orders</span><b data-stat="orders">6</b></div>
-              <div><span>Unpaid</span><b data-stat="due">EGP 18,400</b></div>
-              <div><span>Today</span><b data-stat="total">EGP 46,120</b></div>
+            <div class="mk-pad">
+              <div class="mk-img" style="height:96px;margin-bottom:12px"></div>
+              <span class="mk-line lt" style="width:92%;height:6px;margin-bottom:6px"></span>
+              <span class="mk-line lt" style="width:76%;height:6px;margin-bottom:6px"></span>
+              <span class="mk-line lt" style="width:84%;height:6px"></span>
+            </div>
+            <div class="mk-pad" style="border-top:1px solid var(--line)">
+              <div class="mk-grid3">
+                <span class="mk-line lt" style="height:5px"></span>
+                <span class="mk-line lt" style="height:5px"></span>
+                <span class="mk-line lt" style="height:5px"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -91,190 +120,282 @@
     </div>
   </section>
 
-  <section class="pad" id="build">
+  <!-- ============ work / examples ============ -->
+  <section class="pad" id="work">
     <div class="wrap">
       <div class="head rv">
-        <span class="eyebrow">What we build</span>
-        <h2>Six things, each with the price on it</h2>
-        <p class="lede">Every quote is written and fixed before work starts. Anything outside it is priced and agreed first — never added to the final invoice.</p>
-      </div>
-      <div class="builds rv">
-        <article class="build">
-          <span class="build__n">01</span><h3>Business website</h3>
-          <p>Five pages in Arabic and English, built mobile-first, structured so Google can actually find you.</p>
-          <div class="price"><span>from $300</span><em>10 days</em></div>
-        </article>
-        <article class="build">
-          <span class="build__n">02</span><h3>Online store</h3>
-          <p>Catalogue, cart and checkout through Fawry, Paymob or InstaPay, with a dashboard your staff can run.</p>
-          <div class="price"><span>from $700</span><em>3 weeks</em></div>
-        </article>
-        <article class="build">
-          <span class="build__n">03</span><h3>Business system</h3>
-          <p>Stock, invoices, customers and staff permissions in one place — the kind running at the top of this page.</p>
-          <div class="price"><span>from $1,500</span><em>4–6 weeks</em></div>
-        </article>
-        <article class="build">
-          <span class="build__n">04</span><h3>Mobile app</h3>
-          <p>Installs from the browser to the home screen, works offline, sends notifications. No app store needed.</p>
-          <div class="price"><span>from $900</span><em>3–4 weeks</em></div>
-        </article>
-        <article class="build">
-          <span class="build__n">05</span><h3>Automation</h3>
-          <p>The work that repeats every morning — reports, reminders, re-typing between two tools — runs itself.</p>
-          <div class="price"><span>from $400</span><em>1–2 weeks</em></div>
-        </article>
-        <article class="build">
-          <span class="build__n">06</span><h3>Monthly care</h3>
-          <p>Hosting, domain, backups, security updates, two hours of changes, and someone who answers.</p>
-          <div class="price"><span>$50 / month</span><em>ongoing</em></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="pad stage" id="system">
-    <div class="wrap">
-      <div class="head rv" style="max-width:720px">
-        <span class="eyebrow eyebrow--d">Live, not a screenshot</span>
-        <h2>This is the software, running in your browser</h2>
-        <p class="lede">Most studios show you a picture of a dashboard. This one works — add an order, mark it paid, switch to stock and watch the numbers move. It is the same kind of system we build for a wholesaler, a clinic or a workshop, in Arabic or English.</p>
+        <span class="eyebrow" data-i18n="work.eyebrow">What we build</span>
+        <h2 data-i18n="work.h2">Four things, and what each one looks like</h2>
+        <p class="lede" data-i18n="work.lede">Not a list of services. Pick one and see the kind of thing you get, with the price and the delivery time attached.</p>
       </div>
 
-      <div class="frame rv" data-app="2" style="box-shadow:0 30px 80px -40px rgba(0,0,0,.85)">
-        <div class="frame__bar">
-          <div class="frame__dots"><i></i><i></i><i></i></div>
-          <span class="frame__title">axiom — نظام الطلبات</span>
-          <span class="frame__live"><i></i>LIVE</span>
-        </div>
-        <div class="app" style="min-height:460px">
-          <aside class="app__side">
-            <h5>Workspace</h5>
-            <div class="app__nav" role="tablist">
-              <button role="tab" aria-selected="true" data-view="orders"><span class="dot"></span>Orders<span class="count" data-count="orders">6</span></button>
-              <button role="tab" aria-selected="false" data-view="stock"><span class="dot"></span>Stock<span class="count" data-count="stock">5</span></button>
-              <button role="tab" aria-selected="false" data-view="customers"><span class="dot"></span>Customers<span class="count" data-count="customers">4</span></button>
-            </div>
-          </aside>
-          <div class="app__main">
-            <div class="app__head">
-              <h4 data-title>Orders</h4>
-              <span class="sub" data-sub>today</span>
-              <div class="right">
-                <button class="mini" type="button" data-act="pay">Mark paid</button>
-                <button class="mini mini--pri" type="button" data-act="new">New order</button>
+      <div class="tabs rv" role="tablist">
+        <button class="tab" role="tab" aria-selected="true"  data-tab="site"   data-i18n="tab.site">Websites</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="store"  data-i18n="tab.store">Online stores</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="app"    data-i18n="tab.app">Mobile apps</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="system" data-i18n="tab.system">Business systems</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="auto"   data-i18n="tab.auto">Automation</button>
+      </div>
+
+      <div class="panes">
+
+        <!-- WEBSITE -->
+        <div class="pane on" data-pane="site">
+          <div>
+            <h3 data-i18n="p.site.h">A website that works on a phone first</h3>
+            <p data-i18n="p.site.p">Five pages in Arabic and English, fast on mobile data, structured so Google can actually find you. Built for a fabric wholesaler, a clinic or a workshop.</p>
+            <ul>
+              <li data-i18n="p.site.1">Up to five pages, both languages</li>
+              <li data-i18n="p.site.2">WhatsApp button, map and contact form</li>
+              <li data-i18n="p.site.3">Search-engine setup and a speed pass</li>
+              <li data-i18n="p.site.4">You own the domain and the code</li>
+            </ul>
+            <div class="tagrow"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">AR / EN</span><span class="chip">10 days</span></div>
+            <a class="btn btn--pri" href="#contact"><span data-i18n="cta.from">From</span>&nbsp;<span class="mono" data-price="site">$300</span></a>
+          </div>
+          <div class="shot">
+            <div class="browser" style="width:100%">
+              <div class="browser__bar"><div class="browser__dots"><i></i><i></i><i></i></div><div class="browser__url">elnilclinic.com</div></div>
+              <div class="browser__view" style="height:360px">
+                <div class="mock mock--scroll" style="animation-duration:15s">
+                  <div class="mk-nav"><span class="mk-logo"></span><span class="mk-line" style="width:40px"></span><span style="flex:1"></span><span class="mk-line lt" style="width:26px"></span><span class="mk-line hot" style="width:36px;height:15px;border-radius:5px"></span></div>
+                  <div class="mk-hero">
+                    <span class="mk-line" style="width:66%;height:14px;margin-bottom:8px"></span>
+                    <span class="mk-line" style="width:44%;height:14px;margin-bottom:12px"></span>
+                    <span class="mk-line lt" style="width:82%;height:6px;margin-bottom:14px"></span>
+                    <div class="mk-row"><span class="mk-btn"></span><span class="mk-btn sec"></span></div>
+                  </div>
+                  <div class="mk-pad"><div class="mk-img" style="height:120px"></div></div>
+                  <div class="mk-pad">
+                    <div class="mk-grid3">
+                      <div class="mk-card"><div class="mk-img" style="height:36px;margin-bottom:6px"></div><span class="mk-line lt" style="width:74%;height:5px"></span></div>
+                      <div class="mk-card"><div class="mk-img" style="height:36px;margin-bottom:6px"></div><span class="mk-line lt" style="width:84%;height:5px"></span></div>
+                      <div class="mk-card"><div class="mk-img" style="height:36px;margin-bottom:6px"></div><span class="mk-line lt" style="width:66%;height:5px"></span></div>
+                    </div>
+                  </div>
+                  <div class="mk-pad"><div class="mk-img" style="height:110px"></div></div>
+                </div>
               </div>
-            </div>
-            <div data-body></div>
-            <div class="app__foot">
-              <div><span>Orders</span><b data-stat="orders">6</b></div>
-              <div><span>Unpaid</span><b data-stat="due">EGP 18,400</b></div>
-              <div><span>Today</span><b data-stat="total">EGP 46,120</b></div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="pad" id="process">
-    <div class="wrap">
-      <div class="head rv">
-        <span class="eyebrow">How it works</span>
-        <h2>Four steps, and you can stop after any of them</h2>
-      </div>
-      <div class="steps rv">
-        <div class="step"><b>01</b><h3>Send the brief</h3><p>Tell us what the business does and what slows it down. Fifteen minutes is enough, and no call is needed if you would rather write.</p></div>
-        <div class="step"><b>02</b><h3>Read the quote</h3><p>A written price and a delivery date within 24 hours, listing exactly what is in and what is out. Nothing is billed yet.</p></div>
-        <div class="step"><b>03</b><h3>Watch the build</h3><p>A link to the work as it happens, so you comment while changes are cheap rather than after delivery.</p></div>
-        <div class="step"><b>04</b><h3>Take the keys</h3><p>Training for your staff, the domain in your name, the code handed over. The monthly plan only if you want it.</p></div>
+        <!-- STORE -->
+        <div class="pane" data-pane="store">
+          <div>
+            <h3 data-i18n="p.store.h">A store that takes money properly</h3>
+            <p data-i18n="p.store.p">Catalogue, cart and checkout through Fawry, Paymob or InstaPay, with a dashboard your staff can actually run. A WhatsApp alert lands on every order.</p>
+            <ul>
+              <li data-i18n="p.store.1">Products, categories and stock counts</li>
+              <li data-i18n="p.store.2">Fawry, Paymob, InstaPay and cash on delivery</li>
+              <li data-i18n="p.store.3">Order dashboard and delivery notes</li>
+              <li data-i18n="p.store.4">Training for whoever packs the orders</li>
+            </ul>
+            <div class="tagrow"><span class="chip">Fawry</span><span class="chip">Paymob</span><span class="chip">InstaPay</span><span class="chip">3 weeks</span></div>
+            <a class="btn btn--pri" href="#contact"><span data-i18n="cta.from">From</span>&nbsp;<span class="mono" data-price="shop">$700</span></a>
+          </div>
+          <div class="shot">
+            <div class="browser" style="width:100%">
+              <div class="browser__bar"><div class="browser__dots"><i></i><i></i><i></i></div><div class="browser__url">shop.nilefabrics.com</div></div>
+              <div class="browser__view" style="height:360px">
+                <span class="cartbadge" data-cart>3</span>
+                <div class="mock">
+                  <div class="mk-nav"><span class="mk-logo"></span><span class="mk-line" style="width:44px"></span><span style="flex:1"></span><span class="mk-line lt" style="width:30px"></span></div>
+                  <div class="mk-pad">
+                    <span class="mk-line" style="width:40%;height:11px;margin-bottom:14px"></span>
+                    <div class="mk-grid3" data-store-grid style="gap:9px"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- APP -->
+        <div class="pane" data-pane="app">
+          <div>
+            <h3 data-i18n="p.app.h">An app that installs from the browser</h3>
+            <p data-i18n="p.app.p">It sits on the home screen, works without a connection and sends notifications — with no app store account, no review queue and no yearly fee.</p>
+            <ul>
+              <li data-i18n="p.app.1">Installs straight from a link</li>
+              <li data-i18n="p.app.2">Works offline and syncs when it reconnects</li>
+              <li data-i18n="p.app.3">Push notifications to your customers</li>
+              <li data-i18n="p.app.4">Fully native quoted separately when you need it</li>
+            </ul>
+            <div class="tagrow"><span class="chip">PWA</span><span class="chip">Offline</span><span class="chip">Push</span><span class="chip">3–4 weeks</span></div>
+            <a class="btn btn--pri" href="#contact"><span data-i18n="cta.from">From</span>&nbsp;<span class="mono" data-price="app">$900</span></a>
+          </div>
+          <div class="shot">
+            <div class="phone">
+              <div class="phone__screen">
+                <span class="phone__notch"></span>
+                <div class="screens">
+                  <div>
+                    <div class="ap-top"><span class="mk-line" style="width:52%;height:10px;margin-bottom:7px"></span><span class="mk-line lt" style="width:34%;height:6px"></span></div>
+                    <div class="ap-item"><span class="ap-dot hot"></span><div style="flex:1"><span class="mk-line" style="width:64%;height:6px;margin-bottom:5px"></span><span class="mk-line lt" style="width:40%;height:5px"></span></div></div>
+                    <div class="ap-item"><span class="ap-dot"></span><div style="flex:1"><span class="mk-line" style="width:54%;height:6px;margin-bottom:5px"></span><span class="mk-line lt" style="width:46%;height:5px"></span></div></div>
+                    <div class="ap-item"><span class="ap-dot"></span><div style="flex:1"><span class="mk-line" style="width:70%;height:6px;margin-bottom:5px"></span><span class="mk-line lt" style="width:32%;height:5px"></span></div></div>
+                    <div class="ap-item"><span class="ap-dot"></span><div style="flex:1"><span class="mk-line" style="width:48%;height:6px;margin-bottom:5px"></span><span class="mk-line lt" style="width:52%;height:5px"></span></div></div>
+                  </div>
+                  <div>
+                    <div class="ap-top"><span class="mk-line" style="width:44%;height:10px"></span></div>
+                    <div style="padding:13px"><div class="mk-img" style="height:118px;margin-bottom:12px"></div>
+                      <span class="mk-line" style="width:72%;height:8px;margin-bottom:7px"></span>
+                      <span class="mk-line lt" style="width:56%;height:6px;margin-bottom:16px"></span>
+                      <span class="mk-btn" style="width:100%;height:30px;display:block"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ap-top"><span class="mk-line" style="width:38%;height:10px"></span></div>
+                    <div style="padding:13px;display:grid;gap:9px">
+                      <div class="kpi"><span>TODAY</span><b>EGP 12,400</b></div>
+                      <div class="chart" style="height:76px"><i style="--h:44%"></i><i style="--h:68%"></i><i style="--h:36%"></i><i style="--h:82%"></i><i style="--h:58%"></i><i style="--h:94%"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ap-tabs"><i class="on"></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SYSTEM -->
+        <div class="pane" data-pane="system">
+          <div>
+            <h3 data-i18n="p.system.h">The system the business actually runs on</h3>
+            <p data-i18n="p.system.p">Stock, invoices, customers and staff permissions in one place, with approval before anything posts to the books. Built to fit how you already work.</p>
+            <ul>
+              <li data-i18n="p.system.1">Stock, invoices, customers and suppliers</li>
+              <li data-i18n="p.system.2">A different permission level per employee</li>
+              <li data-i18n="p.system.3">Review and approval before posting</li>
+              <li data-i18n="p.system.4">Reports and account statements</li>
+            </ul>
+            <div class="tagrow"><span class="chip">Postgres</span><span class="chip">Roles</span><span class="chip">Audit trail</span><span class="chip">4–6 weeks</span></div>
+            <a class="btn btn--pri" href="#contact"><span data-i18n="cta.from">From</span>&nbsp;<span class="mono" data-price="system">$1,500</span></a>
+          </div>
+          <div class="shot">
+            <div class="browser" style="width:100%">
+              <div class="browser__bar"><div class="browser__dots"><i></i><i></i><i></i></div><div class="browser__url">app.axiom.example / orders</div></div>
+              <div class="browser__view" style="height:360px">
+                <div class="dash">
+                  <div class="dash__row">
+                    <div class="kpi"><span>ORDERS</span><b data-tick="18">0</b></div>
+                    <div class="kpi"><span>UNPAID</span><b>EGP <span data-tick="26850">0</span></b></div>
+                    <div class="kpi"><span>STOCK LINES</span><b data-tick="142">0</b></div>
+                  </div>
+                  <div class="chart"><i style="--h:38%"></i><i style="--h:62%"></i><i style="--h:48%"></i><i style="--h:78%"></i><i style="--h:56%"></i><i style="--h:88%"></i><i style="--h:70%"></i><i style="--h:96%"></i></div>
+                  <div class="tbl">
+                    <div><span class="mk-line" style="width:54px;height:6px"></span><span class="mk-line lt" style="width:88px;height:6px"></span><span class="pill ok">PAID</span></div>
+                    <div><span class="mk-line" style="width:54px;height:6px"></span><span class="mk-line lt" style="width:74px;height:6px"></span><span class="pill due">UNPAID</span></div>
+                    <div><span class="mk-line" style="width:54px;height:6px"></span><span class="mk-line lt" style="width:96px;height:6px"></span><span class="pill ok">PAID</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AUTOMATION -->
+        <div class="pane" data-pane="auto">
+          <div>
+            <h3 data-i18n="p.auto.h">The work that repeats every morning, gone</h3>
+            <p data-i18n="p.auto.p">Reports that send themselves, data moved between two tools without retyping, stock alerts before you run out, and a WhatsApp reply when you are closed.</p>
+            <ul>
+              <li data-i18n="p.auto.1">Daily and weekly reports, sent on a schedule</li>
+              <li data-i18n="p.auto.2">Data moved between your tools automatically</li>
+              <li data-i18n="p.auto.3">Stock and overdue-payment alerts</li>
+              <li data-i18n="p.auto.4">Automatic WhatsApp replies out of hours</li>
+            </ul>
+            <div class="tagrow"><span class="chip">Scheduled</span><span class="chip">Webhooks</span><span class="chip">WhatsApp</span><span class="chip">1–2 weeks</span></div>
+            <a class="btn btn--pri" href="#contact"><span data-i18n="cta.from">From</span>&nbsp;<span class="mono" data-price="auto">$400</span></a>
+          </div>
+          <div class="shot">
+            <div class="browser" style="width:100%">
+              <div class="browser__bar"><div class="browser__dots"><i></i><i></i><i></i></div><div class="browser__url">axiom — automation</div></div>
+              <div class="browser__view" style="height:360px">
+                <div class="flow">
+                  <div class="flow__row"><span class="node">New order</span><span class="wire"></span><span class="node hot">Axiom</span><span class="wire"></span><span class="node">WhatsApp</span></div>
+                  <div class="flow__row"><span class="node">Stock &lt; 60</span><span class="wire"></span><span class="node hot">Alert</span><span class="wire"></span><span class="node">Purchase</span></div>
+                  <div class="flow__row"><span class="node">Every 08:00</span><span class="wire"></span><span class="node hot">Report</span><span class="wire"></span><span class="node">Email</span></div>
+                  <div style="margin-top:6px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px">
+                    <div class="kpi"><span>RUNS / DAY</span><b data-tick="46">0</b></div>
+                    <div class="kpi"><span>HOURS SAVED</span><b data-tick="31">0</b></div>
+                    <div class="kpi"><span>ERRORS</span><b>0</b></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <hr class="rule">
 
+  <!-- ============ pricing ============ -->
   <section class="pad" id="pricing">
     <div class="wrap">
       <div class="head rv">
-        <span class="eyebrow">Pricing</span>
-        <h2>Our prices are public</h2>
-        <p class="lede">Most studios say "it depends". Pick your market and read the number. Gulf projects cost more because the market pays more, not because the work differs.</p>
+        <span class="eyebrow" data-i18n="price.eyebrow">Pricing</span>
+        <h2 data-i18n="price.h2">Our prices are public</h2>
+        <p class="lede" data-i18n="price.lede">Most studios say "it depends". Pick your market and read the number. Gulf projects cost more because the market pays more, not because the work differs.</p>
       </div>
-      <div class="market rv" role="group" aria-label="Market">
-        <button type="button" id="mEG" aria-pressed="true">Egypt</button>
-        <button type="button" id="mGulf" aria-pressed="false">Gulf</button>
+      <div class="market rv" role="group">
+        <button type="button" id="mEG" aria-pressed="true" data-i18n="market.eg">Egypt</button>
+        <button type="button" id="mGulf" aria-pressed="false" data-i18n="market.gulf">Gulf</button>
       </div>
       <div class="plans rv">
         <article class="plan">
-          <h3>Business website</h3>
-          <p class="who">A credible presence that Google can find.</p>
-          <div class="amt" data-price="site">$300</div>
-          <div class="per">one-off · 10 days</div>
-          <ul>
-            <li>Up to 5 pages, Arabic and English</li>
-            <li>Built mobile-first</li>
-            <li>WhatsApp, Maps and contact form</li>
-            <li>Search-engine setup</li>
-          </ul>
-          <a class="btn btn--line" href="#contact">Get a quote</a>
+          <h3 data-i18n="tab.site">Websites</h3>
+          <p class="who" data-i18n="plan.site.w">A credible presence that Google can find.</p>
+          <div class="amt mono" data-price="site">$300</div>
+          <div class="per" data-i18n="plan.site.t">one-off · 10 days</div>
+          <ul><li data-i18n="p.site.1">Up to five pages, both languages</li><li data-i18n="p.site.2">WhatsApp button, map and contact form</li><li data-i18n="p.site.3">Search-engine setup and a speed pass</li></ul>
+          <a class="btn btn--line" href="#contact" data-i18n="cta.quote">Get a quote</a>
         </article>
         <article class="plan plan--key">
-          <span class="plan__tag">Most asked</span>
-          <h3>Online store</h3>
-          <p class="who">Sell online and take money properly.</p>
-          <div class="amt" data-price="shop">$700</div>
-          <div class="per">one-off · 3 weeks</div>
-          <ul>
-            <li>Catalogue, cart and checkout</li>
-            <li>Fawry, Paymob and InstaPay</li>
-            <li>Orders and stock dashboard</li>
-            <li>WhatsApp alert on every order</li>
-          </ul>
-          <a class="btn btn--pri" href="#contact">Get a quote</a>
+          <span class="plan__tag" data-i18n="plan.popular">Most asked</span>
+          <h3 data-i18n="tab.store">Online stores</h3>
+          <p class="who" data-i18n="plan.store.w">Sell online and take money properly.</p>
+          <div class="amt mono" data-price="shop">$700</div>
+          <div class="per" data-i18n="plan.store.t">one-off · 3 weeks</div>
+          <ul><li data-i18n="p.store.1">Products, categories and stock counts</li><li data-i18n="p.store.2">Fawry, Paymob, InstaPay and cash on delivery</li><li data-i18n="p.store.3">Order dashboard and delivery notes</li></ul>
+          <a class="btn btn--pri" href="#contact" data-i18n="cta.quote">Get a quote</a>
         </article>
         <article class="plan">
-          <h3>Mobile app</h3>
-          <p class="who">On the home screen, working offline.</p>
-          <div class="amt" data-price="app">$900</div>
-          <div class="per">one-off · 3–4 weeks</div>
-          <ul>
-            <li>Installs from the browser</li>
-            <li>Works without a connection</li>
-            <li>Push notifications</li>
-            <li>Fully native quoted separately</li>
-          </ul>
-          <a class="btn btn--line" href="#contact">Get a quote</a>
+          <h3 data-i18n="tab.app">Mobile apps</h3>
+          <p class="who" data-i18n="plan.app.w">On the home screen, working offline.</p>
+          <div class="amt mono" data-price="app">$900</div>
+          <div class="per" data-i18n="plan.app.t">one-off · 3–4 weeks</div>
+          <ul><li data-i18n="p.app.1">Installs straight from a link</li><li data-i18n="p.app.2">Works offline and syncs when it reconnects</li><li data-i18n="p.app.3">Push notifications to your customers</li></ul>
+          <a class="btn btn--line" href="#contact" data-i18n="cta.quote">Get a quote</a>
         </article>
         <article class="plan">
-          <h3>Business system</h3>
-          <p class="who">When spreadsheets stop coping.</p>
-          <div class="amt" data-price="system">$1,500</div>
-          <div class="per">one-off · 4–6 weeks</div>
-          <ul>
-            <li>Stock, invoices, customers, suppliers</li>
-            <li>Permissions and approval before posting</li>
-            <li>Reports and account statements</li>
-            <li>Runs on phone and desktop</li>
-          </ul>
-          <a class="btn btn--line" href="#contact">Get a quote</a>
+          <h3 data-i18n="tab.system">Business systems</h3>
+          <p class="who" data-i18n="plan.system.w">When spreadsheets stop coping.</p>
+          <div class="amt mono" data-price="system">$1,500</div>
+          <div class="per" data-i18n="plan.system.t">one-off · 4–6 weeks</div>
+          <ul><li data-i18n="p.system.1">Stock, invoices, customers and suppliers</li><li data-i18n="p.system.2">A different permission level per employee</li><li data-i18n="p.system.4">Reports and account statements</li></ul>
+          <a class="btn btn--line" href="#contact" data-i18n="cta.quote">Get a quote</a>
         </article>
       </div>
 
       <div class="care rv">
         <div>
-          <h3>Monthly care</h3>
-          <p class="lede" style="margin-bottom:16px">A site is not bought once and forgotten. This keeps yours online, secure and current, with a named person to go back to.</p>
-          <div class="amt" data-price="care">$50</div>
-          <div class="per muted">per month · cancel any time</div>
+          <h3 data-i18n="care.h">Monthly care</h3>
+          <p class="lede" style="margin-bottom:16px" data-i18n="care.p">A site is not bought once and forgotten. This keeps yours online, secure and current, with a named person to go back to.</p>
+          <div class="amt mono" data-price="care">$50</div>
+          <div class="per muted" data-i18n="care.t">per month · cancel any time</div>
         </div>
         <ul>
-          <li>Hosting, domain and SSL certificate</li>
-          <li>Daily backups and uptime monitoring</li>
-          <li>Security updates as they are released</li>
-          <li>Up to two hours of changes a month</li>
-          <li>WhatsApp support, Sunday to Thursday, reply within 24 hours</li>
-          <li>Leave whenever you like — we hand over the files</li>
+          <li data-i18n="care.1">Hosting, domain and SSL certificate</li>
+          <li data-i18n="care.2">Daily backups and uptime monitoring</li>
+          <li data-i18n="care.3">Security updates as they are released</li>
+          <li data-i18n="care.4">Up to two hours of changes a month</li>
+          <li data-i18n="care.5">WhatsApp support, Sunday to Thursday, reply within 24 hours</li>
+          <li data-i18n="care.6">Leave whenever you like — we hand over the files</li>
         </ul>
       </div>
     </div>
@@ -282,50 +403,66 @@
 
   <hr class="rule">
 
-  <section class="pad" id="questions">
-    <div class="wrap faq">
-      <div class="rv">
-        <span class="eyebrow">Questions</span>
-        <h2>The ones we get every week</h2>
-        <p class="lede" style="margin-top:12px">Anything else, ask before you commit to anything at all.</p>
+  <!-- ============ process ============ -->
+  <section class="pad" id="process">
+    <div class="wrap">
+      <div class="head rv">
+        <span class="eyebrow" data-i18n="proc.eyebrow">How it works</span>
+        <h2 data-i18n="proc.h2">Four steps, and you can stop after any of them</h2>
       </div>
-      <div class="faq__list rv">
-        <div class="faq__item"><h3>Why is the price lower than other studios?</h3><p>Because the work takes less time, not because it is worth less. Modern tooling removes the repetitive parts, so a job that takes two months elsewhere takes us two weeks. We pass that on instead of keeping it.</p></div>
-        <div class="faq__item"><h3>Is the price final?</h3><p>Yes. The quote is written and lists what is included. Anything extra is priced and agreed before it starts, never added at the end.</p></div>
-        <div class="faq__item"><h3>Who owns the site and the domain?</h3><p>You do. The domain is registered in your name and the code is handed over. If you leave, we package everything up for you first.</p></div>
-        <div class="faq__item"><h3>Is the monthly plan compulsory?</h3><p>No. Take the site and host it anywhere. Most owners would simply rather not deal with hosting, backups and updates, which is what the plan covers.</p></div>
-        <div class="faq__item"><h3>What does daily support actually mean?</h3><p>A named person replies on WhatsApp, Sunday to Thursday, within 24 hours and usually much sooner. Small changes are included up to two hours a month. Larger work is quoted first.</p></div>
-        <div class="faq__item"><h3>Do you work outside Egypt?</h3><p>Yes, across Saudi Arabia, the UAE, Kuwait and Qatar. Meetings are online and contracts are in US dollars. Gulf pricing is shown above when you switch market.</p></div>
-        <div class="faq__item"><h3>Can you add payments to a store I already have?</h3><p>Yes. Fawry and Paymob both offer hosted checkout, so we never touch card data. The merchant account is yours to open and the paperwork takes a few weeks, so plan around that rather than around the code.</p></div>
+      <div class="steps rv">
+        <div class="step"><b>01</b><h3 data-i18n="proc.1.h">Send the brief</h3><p data-i18n="proc.1.p">Tell us what the business does and what slows it down. Fifteen minutes is enough, and no call is needed if you would rather write.</p></div>
+        <div class="step"><b>02</b><h3 data-i18n="proc.2.h">Read the quote</h3><p data-i18n="proc.2.p">A written price and a delivery date within 24 hours, listing exactly what is in and what is out. Nothing is billed yet.</p></div>
+        <div class="step"><b>03</b><h3 data-i18n="proc.3.h">Watch the build</h3><p data-i18n="proc.3.p">A link to the work as it happens, so you comment while changes are cheap rather than after delivery.</p></div>
+        <div class="step"><b>04</b><h3 data-i18n="proc.4.h">Take the keys</h3><p data-i18n="proc.4.p">Training for your staff, the domain in your name, the code handed over. The monthly plan only if you want it.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="pad stage" id="contact">
+  <hr class="rule">
+
+  <!-- ============ faq ============ -->
+  <section class="pad" id="questions">
+    <div class="wrap faq">
+      <div class="rv">
+        <span class="eyebrow" data-i18n="faq.eyebrow">Questions</span>
+        <h2 data-i18n="faq.h2">The ones we get every week</h2>
+        <p class="lede" style="margin-top:12px" data-i18n="faq.lede">Anything else, ask before you commit to anything at all.</p>
+      </div>
+      <div class="rv">
+        <div class="faq__item"><h3 data-i18n="q1">Why is the price lower than other studios?</h3><p data-i18n="a1">Because the work takes less time, not because it is worth less. Modern tooling removes the repetitive parts, so a job that takes two months elsewhere takes us two weeks. We pass that on instead of keeping it.</p></div>
+        <div class="faq__item"><h3 data-i18n="q2">Is the price final?</h3><p data-i18n="a2">Yes. The quote is written and lists what is included. Anything extra is priced and agreed before it starts, never added at the end.</p></div>
+        <div class="faq__item"><h3 data-i18n="q3">Who owns the site and the domain?</h3><p data-i18n="a3">You do. The domain is registered in your name and the code is handed over. If you leave, we package everything up for you first.</p></div>
+        <div class="faq__item"><h3 data-i18n="q4">Is the monthly plan compulsory?</h3><p data-i18n="a4">No. Take the site and host it anywhere. Most owners would simply rather not deal with hosting, backups and updates, which is what the plan covers.</p></div>
+        <div class="faq__item"><h3 data-i18n="q5">What does daily support actually mean?</h3><p data-i18n="a5">A named person replies on WhatsApp, Sunday to Thursday, within 24 hours and usually much sooner. Small changes are included up to two hours a month. Larger work is quoted first.</p></div>
+        <div class="faq__item"><h3 data-i18n="q6">Do you work outside Egypt?</h3><p data-i18n="a6">Yes, across Saudi Arabia, the UAE, Kuwait and Qatar. Meetings are online and contracts are in US dollars. Gulf pricing is shown above when you switch market.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ contact ============ -->
+  <section class="pad" id="contact">
     <div class="wrap contact">
       <div class="rv">
-        <span class="eyebrow eyebrow--d">Start here</span>
-        <h2>Tell us what the business needs</h2>
-        <p class="lede" style="margin-top:12px">Send this and you get a written price and a delivery date back. There is no call until you want one, and nothing is billed until you agree the quote.</p>
-        <p class="lede" style="margin-top:18px;font-size:.9rem">We reply Sunday to Thursday, within 24 hours.</p>
+        <span class="eyebrow" data-i18n="ct.eyebrow">Start here</span>
+        <h2 data-i18n="ct.h2">Tell us what the business needs</h2>
+        <p class="lede" style="margin-top:12px" data-i18n="ct.p">Send this and you get a written price and a delivery date back. There is no call until you want one, and nothing is billed until you agree the quote.</p>
+        <p class="lede" style="margin-top:18px;font-size:.9rem" data-i18n="ct.hours">We reply Sunday to Thursday, within 24 hours.</p>
       </div>
       <form class="form rv" id="quote" novalidate>
         <div class="two">
-          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
-          <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" type="text" autocomplete="organization"></div>
+          <div class="field"><label for="f-name" data-i18n="ct.name">Your name</label><input id="f-name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-company" data-i18n="ct.company">Company</label><input id="f-company" type="text" autocomplete="organization"></div>
         </div>
         <div class="two">
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-          <div class="field"><label for="f-wa">WhatsApp</label><input id="f-wa" name="whatsapp" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="f-email" data-i18n="ct.email">Email</label><input id="f-email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-wa" data-i18n="ct.wa">WhatsApp</label><input id="f-wa" type="tel" autocomplete="tel"></div>
         </div>
-        <div class="field"><label for="f-need">What you need</label>
-          <select id="f-need" name="need">
-            <option>Business website</option><option>Online store</option><option>Mobile app</option>
-            <option>Business system</option><option>Automation</option><option>Not sure yet</option>
-          </select>
+        <div class="field"><label for="f-need" data-i18n="ct.need">What you need</label>
+          <select id="f-need"></select>
         </div>
-        <div class="field"><label for="f-note">What slows the business down today</label><textarea id="f-note" name="note" rows="3"></textarea></div>
-        <button class="btn btn--pri btn--lg" type="submit">Get a quote</button>
+        <div class="field"><label for="f-note" data-i18n="ct.note">What slows the business down today</label><textarea id="f-note" rows="3"></textarea></div>
+        <button class="btn btn--pri btn--lg" type="submit" data-i18n="cta.quote">Get a quote</button>
         <p class="muted" style="font-size:.8rem" data-form-status role="status"></p>
       </form>
     </div>
@@ -338,13 +475,23 @@
     <div class="foot">
       <div>
         <a class="logo" href="#" style="margin-bottom:12px"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 20 12 4l8 16h-4.1L12 12.3 8.1 20z"/></svg>Axiom</a>
-        <p class="muted" style="font-size:.885rem;max-width:30ch">Websites, apps and business systems for companies in Egypt and the Gulf.</p>
+        <p class="muted" style="font-size:.885rem;max-width:30ch" data-i18n="foot.lede">Websites, apps and business systems for companies in Egypt and the Gulf.</p>
       </div>
-      <div><h4>Build</h4><ul><li><a href="#build">Websites</a></li><li><a href="#build">Online stores</a></li><li><a href="#build">Mobile apps</a></li><li><a href="#build">Business systems</a></li></ul></div>
-      <div><h4>Company</h4><ul><li><a href="#system">Live system</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#process">Process</a></li><li><a href="#questions">Questions</a></li></ul></div>
-      <div><h4>Talk</h4><ul><li><a href="#contact">Get a quote</a></li><li><a href="#contact">WhatsApp</a></li><li><a href="#contact">Email</a></li></ul></div>
+      <div><h4 data-i18n="foot.build">Build</h4><ul>
+        <li><a href="#work" data-i18n="tab.site">Websites</a></li>
+        <li><a href="#work" data-i18n="tab.store">Online stores</a></li>
+        <li><a href="#work" data-i18n="tab.app">Mobile apps</a></li>
+        <li><a href="#work" data-i18n="tab.system">Business systems</a></li></ul></div>
+      <div><h4 data-i18n="foot.company">Company</h4><ul>
+        <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="#process" data-i18n="nav.process">Process</a></li>
+        <li><a href="#questions" data-i18n="nav.faq">Questions</a></li></ul></div>
+      <div><h4 data-i18n="foot.talk">Talk</h4><ul>
+        <li><a href="#contact" data-i18n="cta.quote">Get a quote</a></li>
+        <li><a href="#contact">WhatsApp</a></li>
+        <li><a href="#contact" data-i18n="ct.email">Email</a></li></ul></div>
     </div>
-    <div class="foot__legal"><span>Axiom, 2026</span><span class="mono">Built in Cairo</span></div>
+    <div class="foot__legal"><span>Axiom, 2026</span><span class="mono" data-i18n="foot.made">Built in Cairo</span></div>
   </div>
 </footer>
 
