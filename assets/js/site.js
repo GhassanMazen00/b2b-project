@@ -1,4 +1,4 @@
-/* Axiom — language gate, bilingual copy, example tabs, motion. */
+/* Axiom — language popup, bilingual copy, auto-playing examples, scroll-driven motion. */
 
 const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -330,7 +330,7 @@ const NEEDS = ["tab.site","tab.store","tab.app","tab.system","tab.auto","ct.nots
 /* =========================== language =========================== */
 let lang = localStorage.getItem("axiom.lang");
 
-function applyLang(next) {
+function applyLang(next, persist = true) {
   lang = next;
   const d = document.documentElement;
   d.lang = lang;
@@ -356,20 +356,23 @@ function applyLang(next) {
 
   $("#langBtn").textContent = lang === "ar" ? "English" : "العربية";
   requestAnimationFrame(fitScreens);
-  try { localStorage.setItem("axiom.lang", lang); } catch {}
+  if (persist) { try { localStorage.setItem("axiom.lang", lang); } catch {} }
 }
 
+/* The language question is a popup over the live site, not a wall in
+   front of it. The page behind is already running in a best-guess
+   language; nothing is remembered until the visitor actually chooses. */
 function openGate() {
   const gate = $("#gate");
-  for (const b of $$(".gate__btn", gate)) {
-    b.addEventListener("click", () => {
-      applyLang(b.dataset.lang);
-      gate.classList.add("gone");
-      document.body.classList.remove("locked");
-      setTimeout(() => gate.remove(), 700);
-      start();
-    });
-  }
+  const choose = (l) => {
+    applyLang(l);
+    gate.classList.remove("open");
+    document.body.classList.remove("locked");
+    setTimeout(() => gate.remove(), 600);
+  };
+  for (const b of $$(".gate__btn", gate)) b.addEventListener("click", () => choose(b.dataset.lang));
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && gate.isConnected) choose(lang); });
+  setTimeout(() => { gate.classList.add("open"); $(".gate__btn", gate).focus({ preventScroll: true }); }, 650);
 }
 
 /* =========================== pricing =========================== */
@@ -388,23 +391,71 @@ function paintPrices() {
 }
 
 /* =========================== example tabs =========================== */
+/* The examples play through on their own. The timer is the progress bar
+   on the active tab: when its CSS animation ends the next tab opens, so
+   pausing the bar (hover, focus, off-screen) pauses the rotation too. */
 function initTabs() {
-  const panes = $$(".pane");
-  for (const t of $$(".tab")) {
-    t.addEventListener("click", () => {
-      for (const o of $$(".tab")) o.setAttribute("aria-selected", String(o === t));
-      for (const p of panes) p.classList.toggle("on", p.dataset.pane === t.dataset.tab);
-      // Restart the animations inside the pane that just appeared.
-      const live = panes.find((p) => p.dataset.pane === t.dataset.tab);
-      for (const n of $$(".bars i, .scroller, .s-shop .p, .s-auto .w", live)) {
-        n.style.animation = "none";
-        void n.offsetWidth;
-        n.style.animation = "";
-      }
-      fitScreens();
-      countUp(live);
-    });
+  const tabs = $$(".tab"), panes = $$(".pane");
+  const bar = $(".tabs"), box = $(".panes");
+  let idx = 0;
+
+  function show(i, dir = 1) {
+    idx = (i + tabs.length) % tabs.length;
+    const t = tabs[idx];
+    const live = panes.find((p) => p.dataset.pane === t.dataset.tab);
+    const rtl = document.documentElement.dir === "rtl" ? -1 : 1;
+    box.style.setProperty("--dx", dir * rtl * 40 + "px");
+    for (const o of tabs) o.setAttribute("aria-selected", String(o === t));
+    for (const p of panes) p.classList.toggle("on", p === live);
+
+    // Restart the animations inside the pane that just appeared, and the timer.
+    for (const n of $$(".bars i, .scroller, .s-shop .p, .s-auto .w", live).concat($(".tab__bar", t))) {
+      n.style.animation = "none";
+      void n.offsetWidth;
+      n.style.animation = "";
+    }
+    fitScreens();
+    countUp(live);
+
+    // Hold the tallest height seen so the page below does not jump.
+    box.style.minHeight = Math.max(parseFloat(box.style.minHeight) || 0, live.offsetHeight) + "px";
+
+    // Keep the active tab in view when the row scrolls sideways (phones).
+    if (bar.scrollWidth > bar.clientWidth) {
+      const tr = t.getBoundingClientRect(), br = bar.getBoundingClientRect();
+      bar.scrollBy({ left: tr.left - br.left - (br.width - tr.width) / 2, behavior: "smooth" });
+    }
   }
+
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => show(i, i >= idx ? 1 : -1));
+    $(".tab__bar", t).addEventListener("animationend", () => show(idx + 1, 1));
+  });
+
+  // Pause while someone is reading, tabbing through, or looking elsewhere.
+  const why = new Set(["offscreen"]);
+  const hold = (k, on) => { on ? why.add(k) : why.delete(k); bar.classList.toggle("paused", why.size > 0); };
+  hold("offscreen", true);
+  box.addEventListener("mouseenter", () => hold("hover", true));
+  box.addEventListener("mouseleave", () => hold("hover", false));
+  box.addEventListener("focusin",  () => hold("focus", true));
+  box.addEventListener("focusout", () => hold("focus", false));
+  new IntersectionObserver(([e]) => hold("offscreen", !e.isIntersecting), { threshold: 0.25 }).observe(box);
+
+  // Swipe between examples on touch screens.
+  let x0 = null, y0 = 0;
+  box.addEventListener("pointerdown", (e) => { x0 = e.clientX; y0 = e.clientY; });
+  box.addEventListener("pointerup", (e) => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0, dy = e.clientY - y0;
+    x0 = null;
+    if (Math.abs(dx) < 56 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    const fwd = (dx < 0) === (document.documentElement.dir !== "rtl");
+    show(idx + (fwd ? 1 : -1), fwd ? 1 : -1);
+  });
+  box.addEventListener("pointercancel", () => { x0 = null; });
+
+  addEventListener("resize", () => { box.style.minHeight = ""; }, { passive: true });
 }
 
 /* The clinic page appears twice (hero and the Websites tab), so it is
@@ -477,7 +528,7 @@ function fitScreens() {
     sc.style.transform = "scale(" + k + ")";
     if (sc.dataset.fit === "phone") continue;          // fixed-height frame
     const h = sc.dataset.pan
-      ? Math.min(Number(sc.dataset.vh) * k, 470)
+      ? Math.min(Number(sc.dataset.vh) * k, 640)
       : sc.offsetHeight * k;
     view.style.height = Math.round(h) + "px";
   }
@@ -491,7 +542,7 @@ function countUp(scope = document) {
     if (REDUCED) { el.textContent = to.toLocaleString(loc); continue; }
     const t0 = performance.now(), dur = 1200;
     (function step(now) {
-      const k = Math.min(1, (now - t0) / dur);
+      const k = Math.max(0, Math.min(1, (now - t0) / dur));
       el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))).toLocaleString(loc);
       if (k < 1) requestAnimationFrame(step);
     })(t0);
@@ -519,9 +570,24 @@ function start() {
   }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
   for (const n of $$(".rv")) io.observe(n);
 
-  addEventListener("scroll", () => {
+  // Scroll drives the background: the grid drifts, its spotlight travels
+  // down the page, the light changes colour, and the hero frame flattens.
+  const root = document.documentElement;
+  let queued = false;
+  const onScroll = () => {
     $("#nav").classList.toggle("stuck", scrollY > 8);
-  }, { passive: true });
+    if (REDUCED || queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      queued = false;
+      const max = Math.max(1, root.scrollHeight - innerHeight);
+      root.style.setProperty("--p", Math.min(1, scrollY / max).toFixed(4));
+      root.style.setProperty("--h", Math.min(1, scrollY / (innerHeight * 0.75)).toFixed(4));
+      root.style.setProperty("--g", (-(scrollY * 0.2) % 64).toFixed(1) + "px");
+    });
+  };
+  addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
   $("#quote").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -534,12 +600,14 @@ function start() {
 buildClinics();
 
 if (lang === "ar" || lang === "en") {
-  // Returning visitor: skip the gate.
+  // Returning visitor: no popup.
   applyLang(lang);
   $("#gate").remove();
   document.body.classList.remove("locked");
   start();
 } else {
-  applyLang("en");          // so the page behind the gate is not empty
+  // First visit: run the site in the browser's language, then ask.
+  applyLang((navigator.language || "").toLowerCase().startsWith("ar") ? "ar" : "en", false);
+  start();
   openGate();
 }

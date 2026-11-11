@@ -8,11 +8,25 @@ dependencies. Around 70 KB plus Google Fonts.
 
 ## How it works
 
-**A language gate opens the site.** First visit asks العربية or English before
-anything else; the choice is remembered, and returning visitors go straight in.
-Every string lives in the `T` dictionary in `assets/js/site.js` — pick a key,
-write both languages, done. Switching flips `lang` and `dir`, and the whole
-layout mirrors because the CSS uses logical properties throughout.
+**A language popup greets first-time visitors.** The site loads and runs
+behind it in the browser's own language; the popup asks العربية or English, and
+only an actual choice is remembered. Returning visitors never see it. Every
+string lives in the `T` dictionary in `assets/js/site.js` — pick a key, write
+both languages, done. Switching flips `lang` and `dir`, and the layout mirrors
+because the CSS uses logical properties throughout.
+
+**The mark is the centrepiece of the hero**: a tile with rings pulsing out of
+it and soft beams turning behind, headline centred underneath, and the example
+site below it tilted back until you scroll, when it rises flat.
+
+**The background answers to scroll.** A fixed grid drifts at its own speed, its
+spotlight travels down the page with you, and the light behind it moves from
+blue through teal to violet. `site.js` writes three CSS variables (`--p`,
+`--h`, `--g`) on scroll; everything else is CSS.
+
+**The examples play themselves.** The progress bar on the active tab is the
+timer — when it fills, the next example slides in. Hovering, focusing or
+scrolling away pauses it; on a phone you can swipe.
 
 **Dark, and almost monochrome.** Near-black, near-white, one faint blue for
 small labels. The colour on the page comes from the work, not from the chrome
@@ -57,8 +71,8 @@ rather than shrinking the type to mush.
 
 ## Verified
 
-Chromium at 1440 and 390, in both languages: the gate sets the language and
-flips the page, all five example tabs swap and restart their animations, the
+Chromium at 1440 and 390, in both languages: the popup sets the language and
+flips the page, the five examples advance on their own and pause on hover, the
 example screens mirror to RTL and scale into their frames, both price markets
 update, no horizontal overflow, no console errors.
 
