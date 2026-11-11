@@ -14,10 +14,10 @@ taste, except where the brief asked for something else.
 
 | Section | What it shows |
 |---|---|
-| Hero (centred, dealt) | The Axiom mark large on the page axis, the headline, two buttons, and a clinic's website scrolling itself in a lit frame |
+| Hero | The Axiom mark, a folded peak, drawn line by line on load with a slow band of light running down it; the headline and two buttons under it |
 | Work (tabs tour) | Five real example screens: a clinic site, a fabric store, a delivery app, an invoices system, three automations. They move on by themselves every 7 s and pause on hover, focus or off screen (the brief) |
 | Systems (big scene) | `powers-of-ten-pullback`: the invoices system fills the screen and the scroll pulls the camera back until it is a device on the lit ground |
-| Tools (the one inverse band) | A hub diagram with the real WhatsApp, Gmail, Maps, Instagram, Facebook, Visa, Mastercard and Apple Pay marks; Fawry, Paymob and InstaPay named in type |
+| Tools | A hub diagram with the real WhatsApp, Gmail, Maps, Instagram, Facebook, Visa, Mastercard and Apple Pay marks; Fawry, Paymob and InstaPay named in type |
 | Prices (two screens) | The Egypt / Gulf switch, four plans, then automation (a lanes diagram) and monthly care (the owner's status panel) |
 | Questions | Six answers, open |
 | Quote | The form, beside a phone showing the quote arriving on WhatsApp |
@@ -27,9 +27,13 @@ taste, except where the brief asked for something else.
 Every string is in the `T` dictionary in `assets/js/site.js`; the example screens
 switch language and direction with the page.
 
-**Dark by default**, near-black with sand-coloured type and one cobalt action
-colour. The colour on the page comes from the work: the sage lit ground, the
-example screens and the real logos.
+**The logo** is a folded peak: two triangles sharing an apex, one sand and one
+cobalt, meeting on a fold line. It is in the nav, the footer, the language
+popup, the favicon and, drawn in lines, the hero.
+
+**Dark throughout.** Every ground is near-black, with sand-coloured type and one
+cobalt action colour; the kit's lit grounds are re-toned to their evening grade.
+The only light surfaces are inside the example screens, which are clients' sites.
 
 ## Make it yours
 

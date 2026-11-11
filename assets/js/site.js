@@ -13,7 +13,7 @@ const T = {
     "nav.work":"Work","nav.system":"Systems","nav.prices":"Prices","nav.faq":"Questions",
     "cta.quote":"Get a quote","cta.work":"See the work",
     "hero.h1":"Web, app and system studio in Cairo",
-    "hero.lead":"Websites, online stores, apps and business systems for companies in Egypt and the Gulf. Websites from $300, live in 14 days, with WhatsApp support every working day.",
+    "hero.lead":"Websites, stores, apps and business systems for Egypt and the Gulf. From $300, live in 14 days.","hero.art":"The Axiom mark, a folded peak, drawn in lines",
     "hero.alt":"A dental clinic's website built by Axiom, with its prices, doctors and booking button",
 
     "work.h2":"Websites, stores, apps and systems.","work.h2b":"Pick one to see it.",
@@ -155,7 +155,7 @@ const T = {
     "nav.work":"أعمالنا","nav.system":"الأنظمة","nav.prices":"الأسعار","nav.faq":"أسئلة",
     "cta.quote":"اطلب عرض سعر","cta.work":"شوف الشغل",
     "hero.h1":"استوديو مواقع وتطبيقات وأنظمة في القاهرة",
-    "hero.lead":"مواقع ومتاجر إلكترونية وتطبيقات وأنظمة إدارة لشركات مصر والخليج. المواقع من ٣٠٠ دولار، وتشتغل خلال ١٤ يوم، ودعم على واتساب كل يوم عمل.",
+    "hero.lead":"مواقع ومتاجر وتطبيقات وأنظمة إدارة لمصر والخليج. من ٣٠٠ دولار، وتشتغل خلال ١٤ يوم.","hero.art":"شعار أكسيوم، قمة مطوية مرسومة بالخطوط",
     "hero.alt":"موقع عيادة أسنان من تنفيذ أكسيوم، فيه الأسعار والأطباء وزر الحجز",
 
     "work.h2":"مواقع ومتاجر وتطبيقات وأنظمة.","work.h2b":"اختار واحدة وشوفها.",

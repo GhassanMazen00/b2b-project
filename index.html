@@ -55,11 +55,11 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
 </head>
 <body>
 <!-- type: software (a studio that builds websites, stores, apps and business systems; the subject is the software it ships)
-     deal: hero centred, nav nav-cards dealt -> nav-split (no photographs for picture cards; puts the name in the middle,
+     deal: hero centred (its window left out: the client wants the mark alone up top), nav nav-cards dealt -> nav-split (no photographs for picture cards; puts the name in the middle,
      as the client asked), close close-type, footer footer-dark, rhythm dark-band, buttons pill, mark initial.
      palette: the client's own (start.mjs brand): dark by default as the client asked, the dealt cobalt-on-sand turned to
      its evening grade (sand ink on near-black, the cobalt as the one action colour). type outfit (+ Readex Pro for Arabic).
-     lit ground: sage. grounds: hero bg-dots, work bg-band (pick.mjs, --effect).
+     all grounds dark, as the client asked: the lit ground re-toned to the evening grade; no light band (rhythm: space).
      the one effect: big scene powers-of-ten-pullback (#system, 1 screen at rest, 2 live).
      moment: marquee-row (the trades and cities row, last element of #work). Seven sections: one moment.
      brief over the kit (waived in .taste-skill/waivers.json): the language popup on first visit, and the examples that
@@ -68,7 +68,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
 <!-- language popup: the client's brief (asked on the first visit, never again) -->
 <div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-t">
   <div class="gate__in">
-    <span class="mark mark--initial gate__mark" aria-hidden="true">A</span>
+    <svg class="logo-mark gate__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3.5 28.5 16 22z" fill="var(--logo-a, #ede7da)"/><path d="M16 3 28.5 28.5 16 22z" fill="var(--logo-b, #3358e6)"/></svg>
     <p class="gate__t" id="gate-t">Welcome · أهلاً بيك</p>
     <p class="gate__q">Choose a language · اختار اللغة</p>
     <div class="gate__btns">
@@ -81,7 +81,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
 <header class="nav nav--split">
   <div class="wrap nav__bar">
     <a class="skip-link" href="#top" data-i18n="skip">Skip to content</a>
-    <a class="nav__logo" href="#top"><span class="mark mark--initial" aria-hidden="true">A</span>Axiom</a>
+    <a class="nav__logo" href="#top"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3.5 28.5 16 22z" fill="var(--logo-a, #ede7da)"/><path d="M16 3 28.5 28.5 16 22z" fill="var(--logo-b, #3358e6)"/></svg><span class="logo-word">axiom</span></a>
     <nav class="nav__links" aria-label="Main">
       <div class="nav__item"><a class="nav__link" href="#work" data-i18n="nav.work">Work</a></div>
       <div class="nav__item"><a class="nav__link" href="#system" data-i18n="nav.system">Systems</a></div>
@@ -100,25 +100,26 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
 
 <main id="top">
 
-  <!-- 1 HERO (centred, x.ai's): the mark large on the page axis, the h1, the line, two buttons, then one window
-       rising out of the lit frame: a clinic's site, scrolling itself -->
-  <section class="hero hero--centred bg-dots" data-enter aria-labelledby="hero-h">
+  <!-- 1 HERO: the mark as the picture, drawn in lines on the dark ground, then the h1, the line and two buttons.
+       The examples live in their own section below. -->
+  <section class="hero hero--centred hero--mark" data-enter aria-labelledby="hero-h">
+    <div class="hero__glow" aria-hidden="true"></div>
     <div class="wrap"><div class="hero-text">
       <div class="hero__c">
-        <span class="hero__mark" aria-hidden="true"><span class="mark mark--initial">A</span></span>
+        <svg class="peak" viewBox="0 0 480 400" role="img" aria-label="The Axiom mark, a folded peak, drawn in lines" data-i18n-label="hero.art">
+          <defs>
+            <clipPath id="peak-l"><path d="M240 20 40 380 240 292z"/></clipPath>
+            <clipPath id="peak-r"><path d="M240 20 240 292 440 380z"/></clipPath>
+          </defs>
+          <g class="peak__l" clip-path="url(#peak-l)"><line x1="20" y1="28" x2="250" y2="28" pathLength="1" style="--i:0"/><line x1="20" y1="36" x2="250" y2="36" pathLength="1" style="--i:1"/><line x1="20" y1="44" x2="250" y2="44" pathLength="1" style="--i:2"/><line x1="20" y1="52" x2="250" y2="52" pathLength="1" style="--i:3"/><line x1="20" y1="60" x2="250" y2="60" pathLength="1" style="--i:4"/><line x1="20" y1="68" x2="250" y2="68" pathLength="1" style="--i:5"/><line x1="20" y1="76" x2="250" y2="76" pathLength="1" style="--i:6"/><line x1="20" y1="84" x2="250" y2="84" pathLength="1" style="--i:7"/><line x1="20" y1="92" x2="250" y2="92" pathLength="1" style="--i:8"/><line x1="20" y1="100" x2="250" y2="100" pathLength="1" style="--i:9"/><line x1="20" y1="108" x2="250" y2="108" pathLength="1" style="--i:10"/><line x1="20" y1="116" x2="250" y2="116" pathLength="1" style="--i:11"/><line x1="20" y1="124" x2="250" y2="124" pathLength="1" style="--i:12"/><line x1="20" y1="132" x2="250" y2="132" pathLength="1" style="--i:13"/><line x1="20" y1="140" x2="250" y2="140" pathLength="1" style="--i:14"/><line x1="20" y1="148" x2="250" y2="148" pathLength="1" style="--i:15"/><line x1="20" y1="156" x2="250" y2="156" pathLength="1" style="--i:16"/><line x1="20" y1="164" x2="250" y2="164" pathLength="1" style="--i:17"/><line x1="20" y1="172" x2="250" y2="172" pathLength="1" style="--i:18"/><line x1="20" y1="180" x2="250" y2="180" pathLength="1" style="--i:19"/><line x1="20" y1="188" x2="250" y2="188" pathLength="1" style="--i:20"/><line x1="20" y1="196" x2="250" y2="196" pathLength="1" style="--i:21"/><line x1="20" y1="204" x2="250" y2="204" pathLength="1" style="--i:22"/><line x1="20" y1="212" x2="250" y2="212" pathLength="1" style="--i:23"/><line x1="20" y1="220" x2="250" y2="220" pathLength="1" style="--i:24"/><line x1="20" y1="228" x2="250" y2="228" pathLength="1" style="--i:25"/><line x1="20" y1="236" x2="250" y2="236" pathLength="1" style="--i:26"/><line x1="20" y1="244" x2="250" y2="244" pathLength="1" style="--i:27"/><line x1="20" y1="252" x2="250" y2="252" pathLength="1" style="--i:28"/><line x1="20" y1="260" x2="250" y2="260" pathLength="1" style="--i:29"/><line x1="20" y1="268" x2="250" y2="268" pathLength="1" style="--i:30"/><line x1="20" y1="276" x2="250" y2="276" pathLength="1" style="--i:31"/><line x1="20" y1="284" x2="250" y2="284" pathLength="1" style="--i:32"/><line x1="20" y1="292" x2="250" y2="292" pathLength="1" style="--i:33"/><line x1="20" y1="300" x2="250" y2="300" pathLength="1" style="--i:34"/><line x1="20" y1="308" x2="250" y2="308" pathLength="1" style="--i:35"/><line x1="20" y1="316" x2="250" y2="316" pathLength="1" style="--i:36"/><line x1="20" y1="324" x2="250" y2="324" pathLength="1" style="--i:37"/><line x1="20" y1="332" x2="250" y2="332" pathLength="1" style="--i:38"/><line x1="20" y1="340" x2="250" y2="340" pathLength="1" style="--i:39"/><line x1="20" y1="348" x2="250" y2="348" pathLength="1" style="--i:40"/><line x1="20" y1="356" x2="250" y2="356" pathLength="1" style="--i:41"/><line x1="20" y1="364" x2="250" y2="364" pathLength="1" style="--i:42"/><line x1="20" y1="372" x2="250" y2="372" pathLength="1" style="--i:43"/><line x1="20" y1="380" x2="250" y2="380" pathLength="1" style="--i:44"/></g>
+          <g class="peak__r" clip-path="url(#peak-r)"><line x1="244" y1="10" x2="244" y2="390" pathLength="1" style="--i:0"/><line x1="252" y1="10" x2="252" y2="390" pathLength="1" style="--i:1"/><line x1="260" y1="10" x2="260" y2="390" pathLength="1" style="--i:2"/><line x1="268" y1="10" x2="268" y2="390" pathLength="1" style="--i:3"/><line x1="276" y1="10" x2="276" y2="390" pathLength="1" style="--i:4"/><line x1="284" y1="10" x2="284" y2="390" pathLength="1" style="--i:5"/><line x1="292" y1="10" x2="292" y2="390" pathLength="1" style="--i:6"/><line x1="300" y1="10" x2="300" y2="390" pathLength="1" style="--i:7"/><line x1="308" y1="10" x2="308" y2="390" pathLength="1" style="--i:8"/><line x1="316" y1="10" x2="316" y2="390" pathLength="1" style="--i:9"/><line x1="324" y1="10" x2="324" y2="390" pathLength="1" style="--i:10"/><line x1="332" y1="10" x2="332" y2="390" pathLength="1" style="--i:11"/><line x1="340" y1="10" x2="340" y2="390" pathLength="1" style="--i:12"/><line x1="348" y1="10" x2="348" y2="390" pathLength="1" style="--i:13"/><line x1="356" y1="10" x2="356" y2="390" pathLength="1" style="--i:14"/><line x1="364" y1="10" x2="364" y2="390" pathLength="1" style="--i:15"/><line x1="372" y1="10" x2="372" y2="390" pathLength="1" style="--i:16"/><line x1="380" y1="10" x2="380" y2="390" pathLength="1" style="--i:17"/><line x1="388" y1="10" x2="388" y2="390" pathLength="1" style="--i:18"/><line x1="396" y1="10" x2="396" y2="390" pathLength="1" style="--i:19"/><line x1="404" y1="10" x2="404" y2="390" pathLength="1" style="--i:20"/><line x1="412" y1="10" x2="412" y2="390" pathLength="1" style="--i:21"/><line x1="420" y1="10" x2="420" y2="390" pathLength="1" style="--i:22"/><line x1="428" y1="10" x2="428" y2="390" pathLength="1" style="--i:23"/><line x1="436" y1="10" x2="436" y2="390" pathLength="1" style="--i:24"/></g>
+          <path class="peak__edge" d="M40 380 240 20 440 380 240 292z M240 20 240 292" pathLength="1"/>
+        </svg>
         <h1 id="hero-h" data-i18n="hero.h1">Web, app and system studio in Cairo</h1>
-        <p class="hero__lead" data-i18n="hero.lead">Websites, online stores, apps and business systems for companies in Egypt and the Gulf. Websites from $300, live in 14 days, with WhatsApp support every working day.</p>
+        <p class="hero__lead" data-i18n="hero.lead">Websites, stores, apps and business systems for Egypt and the Gulf. From $300, live in 14 days.</p>
         <div class="btn-row">
           <a class="btn btn--primary" href="#quote"><span data-i18n="cta.quote">Get a quote</span><svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
           <a class="btn btn--secondary" href="#work" data-i18n="cta.work">See the work</a>
-        </div>
-      </div>
-      <div class="hero__window" role="img" aria-label="A dental clinic's website built by Axiom, with its prices, doctors and booking button" data-i18n-label="hero.alt">
-        <div class="ly-piece win d-win" aria-hidden="true">
-          <div class="win__bar"><span class="win__dots"><i></i><i></i><i></i></span><span class="win__url">nileclinic.com</span></div>
-          <div class="view">
-            <div class="screen s-clinic ui ui-screen" data-w="1280" data-pan="1" data-vh="760"><div class="scroller" data-clinic></div></div>
-          </div>
         </div>
       </div>
     </div></div>
@@ -127,7 +128,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
   <!-- 2 WORK (tabs-tour, bg-band): five things, each a real screen in one still frame; the client asked for them to
        advance by themselves (site.js clicks the next tab every 7 s, paused on hover, focus or off screen). Last element:
        the marquee row of trades and cities (the page's one moment). -->
-  <section class="section bg-band bg-bleed" id="work" aria-labelledby="work-h">
+  <section class="section" id="work" aria-labelledby="work-h">
     <div class="wrap">
       <div class="grid work">
         <div class="span-5 work__text">
@@ -355,7 +356,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
   </section>
 
   <!-- 4 TOOLS (dark-band rhythm: the one inverse section, sand on the dark page): the hub diagram with the real marks -->
-  <section class="section ground-inverse" id="tools" aria-labelledby="tools-h">
+  <section class="section" id="tools" aria-labelledby="tools-h">
     <div class="wrap">
       <div class="grid">
         <div class="span-5 stack-5">
@@ -542,7 +543,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
     <div class="closing__links">
       <div class="grid">
         <div class="span-4 stack-4">
-          <a class="footer__mark" href="#top"><span class="mark mark--initial" aria-hidden="true">A</span>Axiom</a>
+          <a class="footer__mark" href="#top"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3.5 28.5 16 22z" fill="var(--logo-a, #ede7da)"/><path d="M16 3 28.5 28.5 16 22z" fill="var(--logo-b, #3358e6)"/></svg><span class="logo-word">axiom</span></a>
           <p class="footer__lede" data-i18n="foot.lede">Websites, apps and business systems for companies in Egypt and the Gulf.</p>
         </div>
         <div class="span-2 start-7 footer__col"><h3 data-i18n="foot.build">Build</h3><ul>
