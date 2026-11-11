@@ -1,516 +1,572 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-type="software" data-radius="soft" data-ground="sage" data-buttons="pill" data-motion>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Axiom — websites, apps and business systems</title>
-<meta name="description" content="Axiom builds websites, online stores, mobile apps and business systems for companies in Egypt and the Gulf. Published prices from $300, delivered in two weeks.">
+<title>Axiom: web, app and system studio for Egypt and the Gulf</title>
+<meta name="description" content="Websites from $300 live in 14 days, plus online stores, mobile apps and business systems, with WhatsApp support every working day.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Axiom — websites, apps and business systems">
-<meta property="og:description" content="Published prices. Two-week delivery. A named person who answers every working day.">
-<meta name="theme-color" content="#0A0A0C">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0C'/%3E%3Cpath d='M8.5 24 16 8l7.5 16' fill='none' stroke='%23FAFAFA' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='20.6' r='2.3' fill='%23FAFAFA'/%3E%3C/svg%3E">
+<meta property="og:title" content="Axiom: web, app and system studio for Egypt and the Gulf">
+<meta property="og:description" content="Websites from $300 live in 14 days, with WhatsApp support every working day.">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0b0b0d">
+<!-- <link rel="canonical" href="https://[the client's domain]/"> -->
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Readex+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..700&family=DM+Mono:wght@400;500&family=Readex+Pro:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<style>
+:root {
+  --p-bg: #0b0b0d; --p-surface: #141417; --p-ink: #ede7da; --p-muted: #a39d92;
+  --p-accent: #3358e6; --p-accent-ink: #ffffff; --p-action: #3358e6; --p-action-ink: #ffffff;
+  --p-inv-bg: #ede7da; --p-inv-surface: #dbd5c9; --p-inv-ink: #0b0b0d; --p-inv-muted: #565451;
+  --p-inv-accent: #3358e6; --p-inv-accent-ink: #ffffff; --p-inv-action: #3358e6; --p-inv-action-ink: #ffffff;
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-text: "Outfit", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 400;
+  --display-tracking: -0.03em;
+  --display-tracking-xl: -0.04em;
+}
+/* Arabic: the same jobs in Readex Pro, which has the Arabic letters Outfit lacks */
+html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-text: "Readex Pro", "Outfit", sans-serif; --display-tracking: 0; --display-tracking-xl: 0; }
+</style>
+<link rel="stylesheet" href="assets/scenes/scenes.css">
+<link rel="stylesheet" href="assets/scenes/powers-of-ten-pullback/scene.css">
+<link rel="stylesheet" href="assets/diagrams/diagram.css">
+<link rel="stylesheet" href="assets/css/screens.css">
 <link rel="stylesheet" href="assets/css/site.css">
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script>document.documentElement.classList.add('sc-js');setTimeout(()=>document.documentElement.classList.add('sc-safe'),2500)</script>
+<script src="assets/backgrounds/backgrounds.js"></script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/marquee-row/moment.js">
 </head>
-<body class="locked">
+<body>
+<!-- type: software (a studio that builds websites, stores, apps and business systems; the subject is the software it ships)
+     deal: hero centred, nav nav-cards dealt -> nav-split (no photographs for picture cards; puts the name in the middle,
+     as the client asked), close close-type, footer footer-dark, rhythm dark-band, buttons pill, mark initial.
+     palette: the client's own (start.mjs brand): dark by default as the client asked, the dealt cobalt-on-sand turned to
+     its evening grade (sand ink on near-black, the cobalt as the one action colour). type outfit (+ Readex Pro for Arabic).
+     lit ground: sage. grounds: hero bg-dots, work bg-band (pick.mjs, --effect).
+     the one effect: big scene powers-of-ten-pullback (#system, 1 screen at rest, 2 live).
+     moment: marquee-row (the trades and cities row, last element of #work). Seven sections: one moment.
+     brief over the kit (waived in .taste-skill/waivers.json): the language popup on first visit, and the examples that
+     advance by themselves. -->
 
-<!-- ============ scroll-driven background ============ -->
-<div class="bg" aria-hidden="true"><i class="bg__grid"></i><i class="bg__a"></i><i class="bg__b"></i><i class="bg__c"></i></div>
-
-<!-- ============ language popup ============ -->
-<div id="gate" role="dialog" aria-modal="true" aria-label="Choose a language">
+<!-- language popup: the client's brief (asked on the first visit, never again) -->
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-t">
   <div class="gate__in">
-    <div class="gate__mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 19.5 12 4.5l7.5 15" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="16.4" r="2.1" fill="currentColor"/></svg></div>
-    <p class="gate__t">Welcome · أهلاً بيك</p>
-    <p class="gate__q">Which language would you like? · تحب تتصفح بأي لغة؟</p>
+    <span class="mark mark--initial gate__mark" aria-hidden="true">A</span>
+    <p class="gate__t" id="gate-t">Welcome · أهلاً بيك</p>
+    <p class="gate__q">Choose a language · اختار اللغة</p>
     <div class="gate__btns">
-      <button class="gate__btn" type="button" data-lang="ar"><b>العربية</b><span>ARABIC</span></button>
-      <button class="gate__btn" type="button" data-lang="en"><b>English</b><span>ENGLISH</span></button>
+      <button class="btn btn--secondary gate__btn" type="button" data-lang="ar" lang="ar">العربية</button>
+      <button class="btn btn--secondary gate__btn" type="button" data-lang="en" lang="en">English</button>
     </div>
   </div>
 </div>
 
-<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
-
-<header class="nav" id="nav">
+<header class="nav nav--split">
   <div class="wrap nav__bar">
-    <a class="logo" href="#"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 19.5 12 4.5l7.5 15" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="16.4" r="2.1" fill="currentColor"/></svg>Axiom</a>
+    <a class="skip-link" href="#top" data-i18n="skip">Skip to content</a>
+    <a class="nav__logo" href="#top"><span class="mark mark--initial" aria-hidden="true">A</span>Axiom</a>
     <nav class="nav__links" aria-label="Main">
-      <a href="#work" data-i18n="nav.work">Our work</a>
-      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
-      <a href="#process" data-i18n="nav.process">Process</a>
-      <a href="#questions" data-i18n="nav.faq">Questions</a>
+      <div class="nav__item"><a class="nav__link" href="#work" data-i18n="nav.work">Work</a></div>
+      <div class="nav__item"><a class="nav__link" href="#system" data-i18n="nav.system">Systems</a></div>
+      <div class="nav__item"><a class="nav__link" href="#prices" data-i18n="nav.prices">Prices</a></div>
+      <div class="nav__item"><a class="nav__link" href="#questions" data-i18n="nav.faq">Questions</a></div>
     </nav>
-    <div class="nav__end">
-      <button class="lang" id="langBtn" type="button">العربية</button>
-      <a class="btn btn--pri" href="#contact" data-i18n="cta.quote">Get a quote</a>
+    <div class="nav__actions">
+      <button class="nav__link lang-switch" type="button" id="langBtn" lang="ar">العربية</button>
+      <a class="btn btn--primary" href="#quote" data-i18n="cta.quote">Get a quote</a>
     </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
   </div>
 </header>
 
-<main id="main">
+<main id="top">
 
-  <!-- ============ hero ============ -->
-  <section class="hero">
-    <div class="wrap hero__in">
-      <div class="emblem" aria-hidden="true">
-        <div class="emblem__rays"></div>
-        <span class="ring"></span><span class="ring"></span><span class="ring"></span>
-        <div class="emblem__tile"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 19.5 12 4.5l7.5 15" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="16.4" r="2.1" fill="currentColor"/></svg></div>
+  <!-- 1 HERO (centred, x.ai's): the mark large on the page axis, the h1, the line, two buttons, then one window
+       rising out of the lit frame: a clinic's site, scrolling itself -->
+  <section class="hero hero--centred bg-dots" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text">
+      <div class="hero__c">
+        <span class="hero__mark" aria-hidden="true"><span class="mark mark--initial">A</span></span>
+        <h1 id="hero-h" data-i18n="hero.h1">Web, app and system studio in Cairo</h1>
+        <p class="hero__lead" data-i18n="hero.lead">Websites, online stores, apps and business systems for companies in Egypt and the Gulf. Websites from $300, live in 14 days, with WhatsApp support every working day.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="#quote"><span data-i18n="cta.quote">Get a quote</span><svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+          <a class="btn btn--secondary" href="#work" data-i18n="cta.work">See the work</a>
+        </div>
       </div>
-      <span class="eyebrow" data-i18n="hero.eyebrow">Egypt · Gulf · Middle East</span>
-      <h1 data-i18n="hero.h1">We build the systems your business runs on.</h1>
-      <p class="lede" data-i18n="hero.lede">Websites, online stores, mobile apps and the internal software that keeps stock, invoices and customers in one place. The price is published before you call.</p>
-      <div class="hero__acts">
-        <a class="btn btn--pri btn--lg" href="#contact" data-i18n="cta.quote">Get a quote</a>
-        <a class="btn btn--line btn--lg" href="#work" data-i18n="cta.work">See our work</a>
-      </div>
-      <dl class="hero__facts">
-        <div><dt data-i18n="fact.from">Websites from</dt><dd class="price-n">$300</dd></div>
-        <div><dt data-i18n="fact.delivery">Delivery</dt><dd data-i18n="fact.delivery.v">14 days</dd></div>
-        <div><dt data-i18n="fact.reply">Reply within</dt><dd data-i18n="fact.reply.v">24 hours</dd></div>
-        <div><dt data-i18n="fact.own">You own</dt><dd data-i18n="fact.own.v">Everything</dd></div>
-      </dl>
-
-      <div class="hero__shot">
-        <div class="frame">
-          <div class="frame__bar">
-            <div class="frame__dots"><i></i><i></i><i></i></div>
-            <div class="frame__url">nileclinic.com</div>
-          </div>
+      <div class="hero__window" role="img" aria-label="A dental clinic's website built by Axiom, with its prices, doctors and booking button" data-i18n-label="hero.alt">
+        <div class="ly-piece win d-win" aria-hidden="true">
+          <div class="win__bar"><span class="win__dots"><i></i><i></i><i></i></span><span class="win__url">nileclinic.com</span></div>
           <div class="view">
-            <div class="screen s-clinic" data-w="1280" data-pan="1" data-vh="780">
-              <div class="scroller" data-clinic></div>
-            </div>
+            <div class="screen s-clinic ui ui-screen" data-w="1280" data-pan="1" data-vh="760"><div class="scroller" data-clinic></div></div>
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
   </section>
 
-  <!-- ============ work / examples ============ -->
-  <section class="pad" id="work">
+  <!-- 2 WORK (tabs-tour, bg-band): five things, each a real screen in one still frame; the client asked for them to
+       advance by themselves (site.js clicks the next tab every 7 s, paused on hover, focus or off screen). Last element:
+       the marquee row of trades and cities (the page's one moment). -->
+  <section class="section bg-band bg-bleed" id="work" aria-labelledby="work-h">
     <div class="wrap">
-      <div class="head rv">
-        <span class="eyebrow" data-i18n="work.eyebrow">What we build</span>
-        <h2 data-i18n="work.h2">Five things, and what each one actually looks like</h2>
-        <p class="lede" data-i18n="work.lede">Not a list of services. Pick one and look at the screen you would get, with the price and the delivery time attached.</p>
-      </div>
-
-      <div class="tabs rv" role="tablist">
-        <button class="tab" role="tab" aria-selected="true" data-tab="site"><span data-i18n="tab.site">Websites</span><i class="tab__bar"></i></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="store"><span data-i18n="tab.store">Online stores</span><i class="tab__bar"></i></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="app"><span data-i18n="tab.app">Mobile apps</span><i class="tab__bar"></i></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="system"><span data-i18n="tab.system">Business systems</span><i class="tab__bar"></i></button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="auto"><span data-i18n="tab.auto">Automation</span><i class="tab__bar"></i></button>
-      </div>
-
-      <div class="panes">
-
-        <!-- WEBSITE -->
-        <div class="pane on" data-pane="site">
-          <div>
-            <h3 data-i18n="p.site.h">A website that works on a phone first</h3>
-            <p data-i18n="p.site.p">Five pages in Arabic and English, fast on mobile data, structured so Google can actually find you. Built for a clinic, a fabric wholesaler or a workshop.</p>
-            <ul>
-              <li data-i18n="p.site.1">Up to five pages, both languages</li>
-              <li data-i18n="p.site.2">WhatsApp button, map and contact form</li>
-              <li data-i18n="p.site.3">Search-engine setup and a speed pass</li>
-              <li data-i18n="p.site.4">You own the domain and the code</li>
-            </ul>
-            <div class="tagrow"><span class="chip">AR / EN</span><span class="chip">SEO</span><span class="chip" data-i18n="ch.d10">10 days</span></div>
-            <a class="btn btn--pri" href="#contact"><span data-i18n="cta.from">From</span>&nbsp;<span class="price-n" data-price="site">$300</span></a>
+      <div class="grid work">
+        <div class="span-5 work__text">
+          <div class="section-head">
+            <h2 id="work-h"><span data-i18n="work.h2">Websites, stores, apps and systems.</span> <span class="muted" data-i18n="work.h2b">Pick one to see it.</span></h2>
           </div>
-          <div class="shot">
-            <div class="frame" style="width:100%">
-              <div class="frame__bar"><div class="frame__dots"><i></i><i></i><i></i></div><div class="frame__url">nileclinic.com</div></div>
-              <div class="view">
-                <div class="screen s-clinic" data-w="1280" data-pan="1" data-vh="900">
-                  <div class="scroller" data-clinic></div>
-                </div>
-              </div>
+          <div class="tabs work__tabs" role="tablist" aria-labelledby="work-h">
+            <button class="tab" role="tab" id="tab-site"   aria-selected="true"  aria-controls="tp-site sc-site"><span data-i18n="tab.site">Get a website</span><i class="tab__bar" aria-hidden="true"></i></button>
+            <button class="tab" role="tab" id="tab-store"  aria-selected="false" aria-controls="tp-store sc-store"><span data-i18n="tab.store">Sell online</span><i class="tab__bar" aria-hidden="true"></i></button>
+            <button class="tab" role="tab" id="tab-app"    aria-selected="false" aria-controls="tp-app sc-app"><span data-i18n="tab.app">Launch an app</span><i class="tab__bar" aria-hidden="true"></i></button>
+            <button class="tab" role="tab" id="tab-system" aria-selected="false" aria-controls="tp-system sc-system"><span data-i18n="tab.system">Run the business</span><i class="tab__bar" aria-hidden="true"></i></button>
+            <button class="tab" role="tab" id="tab-auto"   aria-selected="false" aria-controls="tp-auto sc-auto"><span data-i18n="tab.auto">Automate the routine</span><i class="tab__bar" aria-hidden="true"></i></button>
+          </div>
+          <div class="work__panels">
+            <div role="tabpanel" id="tp-site" aria-labelledby="tab-site"><p data-i18n="tp.site">Five pages in Arabic and English, built for phones and set up so Google finds you. From <b data-price="site">$300</b>, live in 10 days.</p></div>
+            <div role="tabpanel" id="tp-store" aria-labelledby="tab-store" hidden><p data-i18n="tp.store">A catalogue with stock counts and checkout through Fawry, Paymob, InstaPay or cash on delivery. From <b data-price="shop">$700</b>, live in 3 weeks.</p></div>
+            <div role="tabpanel" id="tp-app" aria-labelledby="tab-app" hidden><p data-i18n="tp.app">An app your customers install from a link, with offline use and push notifications. From <b data-price="app">$900</b>, live in 3 to 4 weeks.</p></div>
+            <div role="tabpanel" id="tp-system" aria-labelledby="tab-system" hidden><p data-i18n="tp.system">Stock, invoices, customers and staff permissions in one place, with approval before anything posts. From <b data-price="system">$1,500</b>.</p></div>
+            <div role="tabpanel" id="tp-auto" aria-labelledby="tab-auto" hidden><p data-i18n="tp.auto">Reports that send themselves, stock alerts and WhatsApp replies after hours. From <b data-price="auto">$400</b>, running in 1 to 2 weeks.</p></div>
+          </div>
+        </div>
+        <div class="frame frame--split span-7 start-6 work__frame">
+          <div class="stage stage--fade-br">
+            <div class="at-corner to-edge work__slot" id="sc-site" role="img" aria-label="A dental clinic's website in Heliopolis" data-i18n-label="sc.site">
+              <div class="win d-win" aria-hidden="true"><div class="win__bar"><span class="win__dots"><i></i><i></i><i></i></span><span class="win__url">nileclinic.com</span></div>
+                <div class="view"><div class="screen s-clinic ui ui-screen" data-w="1280" data-pan="1" data-vh="860"><div class="scroller" data-clinic></div></div></div></div>
+            </div>
+            <div class="at-corner to-edge work__slot" id="sc-store" role="img" aria-label="A fabric shop's online store with six fabrics, prices per metre and four ways to pay" data-i18n-label="sc.store" hidden>
+              <div class="win d-win" aria-hidden="true"><div class="win__bar"><span class="win__dots"><i></i><i></i><i></i></span><span class="win__url">shop.nilefabrics.com</span></div>
+                <div class="view"><div class="screen s-shop ui ui-screen" data-w="1280">
+<div class="x-top">
+<span class="x-brand" data-i18n="sh.brand">Nile Fabrics</span>
+<span class="x-lnk" data-i18n="sh.n1">Cotton</span>
+<span class="x-lnk" data-i18n="sh.n2">Linen</span>
+<span class="x-lnk" data-i18n="sh.n3">Silk</span>
+<span class="x-lnk" data-i18n="sh.n4">Wholesale</span>
+<span class="x-bag"><i>3</i><span data-i18n="sh.bag">Cart · EGP 1,480</span></span>
+</div>
+<div class="x-hd">
+<p data-h="1" data-i18n="sh.h1">Cotton by the metre</p>
+<span data-i18n="sh.count">42 fabrics · delivery in Cairo within 48 hours</span>
+</div>
+<div class="x-grid">
+<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p1">Egyptian cotton, 240gsm</p><p class="x-meta" data-i18n="sh.m1">Natural · 150cm wide</p><p class="x-pr" data-i18n="sh.r1"></p></div></div>
+<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p2">Denim, indigo wash</p><p class="x-meta" data-i18n="sh.m2">In stock · 310 m</p><p class="x-pr" data-i18n="sh.r2"></p></div></div>
+<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p3">Poplin, off-white</p><p class="x-meta" data-i18n="sh.m3">Shirting · 145cm</p><p class="x-pr" data-i18n="sh.r3"></p></div></div>
+<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p4">Wool blend, burgundy</p><p class="x-meta" data-i18n="sh.m4">Winter · 160cm</p><p class="x-pr" data-i18n="sh.r4"></p></div></div>
+<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p5">Linen, sage</p><p class="x-meta" data-i18n="sh.m5">Pre-washed · 140cm</p><p class="x-pr" data-i18n="sh.r5"></p></div></div>
+<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p6">Raw silk, gold</p><p class="x-meta" data-i18n="sh.m6">Limited · 48 m left</p><p class="x-pr" data-i18n="sh.r6"></p></div></div>
+</div>
+<div class="x-pay"><span data-i18n="sh.pay">Pay with</span><b>Fawry</b><b>Paymob</b><b>InstaPay</b><b data-i18n="sh.cod">Cash on delivery</b></div>
+</div></div></div>
+            </div>
+            <div class="at-center work__slot work__slot--phone" id="sc-app" role="img" aria-label="A delivery app on a phone, listing today's drops and the cash collected" data-i18n-label="sc.app" hidden>
+              <div class="phone" aria-hidden="true"><div class="phone__screen"><span class="phone__notch"></span><div class="view" style="height:100%"><div class="screen s-app ui ui-screen" data-w="390" data-fit="phone">
+<div class="x-bar">
+<p class="x-hi" data-i18n="ap.hi">Saturday, 14 March</p>
+<p data-h="2" data-i18n="ap.h2">Today's deliveries</p>
+</div>
+<div class="x-sum"><span data-i18n="ap.sumlbl">Collected today</span><b data-i18n="ap.sumv">EGP 12,480</b></div>
+<p class="x-lbl" data-i18n="ap.lbl">ON THE ROAD · 4</p>
+<div class="x-o"><span class="x-av x-a1">MH</span><div class="x-t"><b data-i18n="ap.n1">Mahmoud Hassan</b><span data-i18n="ap.s1">Nasr City · delivered 11:20</span></div><span class="x-amt" data-i18n="ap.v1"></span></div>
+<div class="x-o"><span class="x-av x-a2">SA</span><div class="x-t"><b data-i18n="ap.n2">Sara Abdelrahman</b><span data-i18n="ap.s2">Maadi · out for delivery</span></div><span class="x-amt" data-i18n="ap.v2"></span></div>
+<div class="x-o"><span class="x-av x-a3">KF</span><div class="x-t"><b data-i18n="ap.n3">Karim Fouad</b><span data-i18n="ap.s3">Zamalek · picked up 10:05</span></div><span class="x-amt" data-i18n="ap.v3"></span></div>
+<div class="x-o"><span class="x-av x-a4">NE</span><div class="x-t"><b data-i18n="ap.n4">Nour Eldin</b><span data-i18n="ap.s4">6th October · failed, retry</span></div><span class="x-amt" data-i18n="ap.v4"></span></div>
+<p class="x-lbl" style="padding-top:16px" data-i18n="ap.lbl2">DELIVERED EARLIER · 9</p>
+<div class="x-o"><span class="x-av x-a1">RT</span><div class="x-t"><b data-i18n="ap.n5">Rana Tarek</b><span data-i18n="ap.s5">Dokki · delivered 09:40</span></div><span class="x-amt" data-i18n="ap.v5"></span></div>
+<div class="x-o"><span class="x-av x-a3">AS</span><div class="x-t"><b data-i18n="ap.n6">Ahmed Samir</b><span data-i18n="ap.s6">Heliopolis · delivered 09:05</span></div><span class="x-amt" data-i18n="ap.v6"></span></div>
+<div class="x-o"><span class="x-av x-a2">LM</span><div class="x-t"><b data-i18n="ap.n7">Laila Mansour</b><span data-i18n="ap.s7">Garden City · delivered 08:30</span></div><span class="x-amt" data-i18n="ap.v7"></span></div>
+<div class="x-tb"><i class="x-on" data-i18n="ap.t1">Today</i><i data-i18n="ap.t2">Routes</i><i data-i18n="ap.t3">Cash</i><i data-i18n="ap.t4">More</i></div>
+</div></div></div></div>
+            </div>
+            <div class="at-corner to-edge work__slot" id="sc-system" role="img" aria-label="An invoices dashboard with this month's totals, a chart and five invoices" data-i18n-label="sc.system" hidden>
+              <div class="win d-win" aria-hidden="true"><div class="win__bar"><span class="win__dots"><i></i><i></i><i></i></span><span class="win__url">app.nilefabrics.com/invoices</span></div>
+                <div class="view"><div class="screen s-sys ui ui-screen" data-w="1280">
+<aside class="x-side">
+<div class="x-bd" data-i18n="sh.brand">Nile Fabrics</div>
+<a><i></i><span data-i18n="sy.m1">Dashboard</span></a>
+<a class="x-on"><i></i><span data-i18n="sy.m2">Invoices</span></a>
+<a><i></i><span data-i18n="sy.m3">Stock</span></a>
+<a><i></i><span data-i18n="sy.m4">Customers</span></a>
+<a><i></i><span data-i18n="sy.m5">Suppliers</span></a>
+<a><i></i><span data-i18n="sy.m6">Reports</span></a>
+<a><i></i><span data-i18n="sy.m7">Staff</span></a>
+</aside>
+<div class="x-main">
+<div class="x-hd">
+<p data-h="2" data-i18n="sy.h2">Invoices</p>
+<span class="x-add" data-i18n="sy.add">+ New invoice</span>
+</div>
+<div class="x-kpis">
+<div class="x-k"><span data-i18n="sy.k1">Invoiced this month (EGP)</span><b data-tick="486200">0</b><em>+12%</em></div>
+<div class="x-k"><span data-i18n="sy.k2">Collected (EGP)</span><b data-tick="341900">0</b></div>
+<div class="x-k"><span data-i18n="sy.k3">Overdue (EGP)</span><b data-tick="68400">0</b></div>
+<div class="x-k"><span data-i18n="sy.k4">Open invoices</span><b data-tick="37">0</b></div>
+</div>
+<div class="x-panel" style="margin-bottom:16px">
+<div class="x-ph"><span data-i18n="sy.chart">Collected, last 8 weeks</span><span data-i18n="sy.chartsub">EGP thousands</span></div>
+<div class="x-bars"><i style="--h:42%"></i><i style="--h:58%"></i><i style="--h:49%"></i><i style="--h:71%"></i><i style="--h:63%"></i><i style="--h:88%"></i><i style="--h:76%"></i><i style="--h:97%"></i></div>
+</div>
+<div class="x-panel">
+<div class="x-ph"><span data-i18n="sy.recent">Recent invoices</span><span data-i18n="sy.all">View all 37</span></div>
+<table>
+<thead><tr>
+<th data-i18n="sy.th1">Number</th><th data-i18n="sy.th2">Customer</th>
+<th data-i18n="sy.th3">Date</th><th class="x-n" data-i18n="sy.th4">Amount</th><th data-i18n="sy.th5">Status</th>
+</tr></thead>
+<tbody>
+<tr><td class="x-num">INV-2041</td><td data-i18n="sy.c1">El Shorouk Garments</td><td class="x-num" data-i18n="sy.d1"></td><td class="x-n" data-i18n="sy.a1"></td><td><span class="x-pill x-ok" data-i18n="sy.ok">Paid</span></td></tr>
+<tr><td class="x-num">INV-2040</td><td data-i18n="sy.c2">Zahran Textiles</td><td class="x-num" data-i18n="sy.d2"></td><td class="x-n" data-i18n="sy.a2"></td><td><span class="x-pill x-part" data-i18n="sy.part">Part paid</span></td></tr>
+<tr><td class="x-num">INV-2039</td><td data-i18n="sy.c3">Maison Laila</td><td class="x-num" data-i18n="sy.d3"></td><td class="x-n" data-i18n="sy.a3"></td><td><span class="x-pill x-due" data-i18n="sy.due">14 days overdue</span></td></tr>
+<tr><td class="x-num">INV-2038</td><td data-i18n="sy.c4">Gouna Interiors</td><td class="x-num" data-i18n="sy.d4"></td><td class="x-n" data-i18n="sy.a4"></td><td><span class="x-pill x-ok" data-i18n="sy.ok">Paid</span></td></tr>
+<tr><td class="x-num">INV-2037</td><td data-i18n="sy.c5">Arkan Uniforms</td><td class="x-num" data-i18n="sy.d5"></td><td class="x-n" data-i18n="sy.a5"></td><td><span class="x-pill x-ok" data-i18n="sy.ok">Paid</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div></div>
+            </div>
+            <div class="at-corner to-edge work__slot" id="sc-auto" role="img" aria-label="Three automations: new orders, low stock and the morning report" data-i18n-label="sc.auto" hidden>
+              <div class="win d-win" aria-hidden="true"><div class="win__bar"><span class="win__dots"><i></i><i></i><i></i></span><span class="win__url">axiom — automations</span></div>
+                <div class="view"><div class="screen s-auto ui ui-screen" data-w="1280">
+<p data-h="2" data-i18n="au.h2">Three automations, running since January</p>
+<p class="x-sb" data-i18n="au.sb">Nobody opens a spreadsheet for any of this any more.</p>
+<div class="x-row">
+<span class="x-nd"><b data-i18n="au.trig">TRIGGER</b><span data-i18n="au.r1a">New order on the store</span></span>
+<span class="x-w"></span>
+<span class="x-nd x-hot"><b data-i18n="au.act">ACTION</b><span data-i18n="au.r1b">Create the invoice, reserve the stock</span></span>
+<span class="x-w"></span>
+<span class="x-nd"><b data-i18n="au.out">RESULT</b><span data-i18n="au.r1c">WhatsApp to packing</span></span>
+</div>
+<div class="x-row">
+<span class="x-nd"><b data-i18n="au.trig">TRIGGER</b><span data-i18n="au.r2a">Stock under 60 metres</span></span>
+<span class="x-w"></span>
+<span class="x-nd x-hot"><b data-i18n="au.act">ACTION</b><span data-i18n="au.r2b">Draft the purchase order</span></span>
+<span class="x-w"></span>
+<span class="x-nd"><b data-i18n="au.out">RESULT</b><span data-i18n="au.r2c">Sent to the owner to approve</span></span>
+</div>
+<div class="x-row">
+<span class="x-nd"><b data-i18n="au.trig">TRIGGER</b><span data-i18n="au.r3a">Every day at 08:00</span></span>
+<span class="x-w"></span>
+<span class="x-nd x-hot"><b data-i18n="au.act">ACTION</b><span data-i18n="au.r3b">Yesterday's sales and overdue list</span></span>
+<span class="x-w"></span>
+<span class="x-nd"><b data-i18n="au.out">RESULT</b><span data-i18n="au.r3c">Email and WhatsApp</span></span>
+</div>
+<div class="x-stats">
+<div class="x-st"><span data-i18n="au.s1">Runs a day</span><b data-tick="46">0</b></div>
+<div class="x-st"><span data-i18n="au.s2">Hours saved a month</span><b data-tick="31">0</b></div>
+<div class="x-st"><span data-i18n="au.s3">Failures since January</span><b>0</b></div>
+</div>
+</div></div></div>
             </div>
           </div>
         </div>
-
-        <!-- STORE -->
-        <div class="pane" data-pane="store">
-          <div>
-            <h3 data-i18n="p.store.h">A store that takes money properly</h3>
-            <p data-i18n="p.store.p">Catalogue, cart and checkout through Fawry, Paymob or InstaPay, with a dashboard your staff can actually run. A WhatsApp alert lands on every order.</p>
-            <ul>
-              <li data-i18n="p.store.1">Products, categories and stock counts</li>
-              <li data-i18n="p.store.2">Fawry, Paymob, InstaPay and cash on delivery</li>
-              <li data-i18n="p.store.3">Order dashboard and delivery notes</li>
-              <li data-i18n="p.store.4">Training for whoever packs the orders</li>
-            </ul>
-            <div class="tagrow"><span class="chip">Fawry</span><span class="chip">Paymob</span><span class="chip">InstaPay</span><span class="chip" data-i18n="ch.w3">3 weeks</span></div>
-            <a class="btn btn--pri" href="#contact"><span data-i18n="cta.from">From</span>&nbsp;<span class="price-n" data-price="shop">$700</span></a>
-          </div>
-          <div class="shot">
-            <div class="frame" style="width:100%">
-              <div class="frame__bar"><div class="frame__dots"><i></i><i></i><i></i></div><div class="frame__url">shop.nilefabrics.com</div></div>
-              <div class="view">
-                <div class="screen s-shop" data-w="1280">
-                  <div class="top">
-                    <span class="brand" data-i18n="sh.brand">Nile Fabrics</span>
-                    <span class="lnk" data-i18n="sh.n1">Cotton</span>
-                    <span class="lnk" data-i18n="sh.n2">Linen</span>
-                    <span class="lnk" data-i18n="sh.n3">Silk</span>
-                    <span class="lnk" data-i18n="sh.n4">Wholesale</span>
-                    <span class="bag"><i>3</i><span data-i18n="sh.bag">Cart · EGP 1,480</span></span>
-                  </div>
-                  <div class="hd">
-                    <h1 data-i18n="sh.h1">Cotton by the metre</h1>
-                    <span data-i18n="sh.count">42 fabrics · delivery in Cairo within 48 hours</span>
-                  </div>
-                  <div class="grid">
-                    <div class="p"><div class="im"></div><div class="bd"><h4 data-i18n="sh.p1">Egyptian cotton, 240gsm</h4><p class="meta" data-i18n="sh.m1">Natural · 150cm wide</p><p class="pr" data-i18n="sh.r1"></p></div></div>
-                    <div class="p"><div class="im"></div><div class="bd"><h4 data-i18n="sh.p2">Denim, indigo wash</h4><p class="meta" data-i18n="sh.m2">In stock · 310 m</p><p class="pr" data-i18n="sh.r2"></p></div></div>
-                    <div class="p"><div class="im"></div><div class="bd"><h4 data-i18n="sh.p3">Poplin, off-white</h4><p class="meta" data-i18n="sh.m3">Shirting · 145cm</p><p class="pr" data-i18n="sh.r3"></p></div></div>
-                    <div class="p"><div class="im"></div><div class="bd"><h4 data-i18n="sh.p4">Wool blend, burgundy</h4><p class="meta" data-i18n="sh.m4">Winter · 160cm</p><p class="pr" data-i18n="sh.r4"></p></div></div>
-                    <div class="p"><div class="im"></div><div class="bd"><h4 data-i18n="sh.p5">Linen, sage</h4><p class="meta" data-i18n="sh.m5">Pre-washed · 140cm</p><p class="pr" data-i18n="sh.r5"></p></div></div>
-                    <div class="p"><div class="im"></div><div class="bd"><h4 data-i18n="sh.p6">Raw silk, gold</h4><p class="meta" data-i18n="sh.m6">Limited · 48 m left</p><p class="pr" data-i18n="sh.r6"></p></div></div>
-                  </div>
-                  <div class="pay"><span data-i18n="sh.pay">Pay with</span><b>Fawry</b><b>Paymob</b><b>InstaPay</b><b data-i18n="sh.cod">Cash on delivery</b></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- APP -->
-        <div class="pane" data-pane="app">
-          <div>
-            <h3 data-i18n="p.app.h">An app that installs from the browser</h3>
-            <p data-i18n="p.app.p">It sits on the home screen, works without a connection and sends notifications — with no app store account, no review queue and no yearly fee.</p>
-            <ul>
-              <li data-i18n="p.app.1">Installs straight from a link</li>
-              <li data-i18n="p.app.2">Works offline and syncs when it reconnects</li>
-              <li data-i18n="p.app.3">Push notifications to your customers</li>
-              <li data-i18n="p.app.4">Fully native quoted separately when you need it</li>
-            </ul>
-            <div class="tagrow"><span class="chip">PWA</span><span class="chip" data-i18n="ch.off">Offline</span><span class="chip" data-i18n="ch.push">Push</span><span class="chip" data-i18n="ch.w34">3–4 weeks</span></div>
-            <a class="btn btn--pri" href="#contact"><span data-i18n="cta.from">From</span>&nbsp;<span class="price-n" data-price="app">$900</span></a>
-          </div>
-          <div class="shot">
-            <div class="phone">
-              <div class="phone__screen">
-                <span class="phone__notch"></span>
-                <div class="view" style="height:100%">
-                  <div class="screen s-app" data-w="390" data-fit="phone">
-                    <div class="bar">
-                      <p class="hi" data-i18n="ap.hi">Saturday, 14 March</p>
-                      <h2 data-i18n="ap.h2">Today's deliveries</h2>
-                    </div>
-                    <div class="sum"><span data-i18n="ap.sumlbl">Collected today</span><b data-i18n="ap.sumv">EGP 12,480</b></div>
-                    <p class="lbl" data-i18n="ap.lbl">ON THE ROAD · 4</p>
-                    <div class="o"><span class="av a1">MH</span><div class="t"><b data-i18n="ap.n1">Mahmoud Hassan</b><span data-i18n="ap.s1">Nasr City · delivered 11:20</span></div><span class="amt" data-i18n="ap.v1"></span></div>
-                    <div class="o"><span class="av a2">SA</span><div class="t"><b data-i18n="ap.n2">Sara Abdelrahman</b><span data-i18n="ap.s2">Maadi · out for delivery</span></div><span class="amt" data-i18n="ap.v2"></span></div>
-                    <div class="o"><span class="av a3">KF</span><div class="t"><b data-i18n="ap.n3">Karim Fouad</b><span data-i18n="ap.s3">Zamalek · picked up 10:05</span></div><span class="amt" data-i18n="ap.v3"></span></div>
-                    <div class="o"><span class="av a4">NE</span><div class="t"><b data-i18n="ap.n4">Nour Eldin</b><span data-i18n="ap.s4">6th October · failed, retry</span></div><span class="amt" data-i18n="ap.v4"></span></div>
-                    <p class="lbl" style="padding-top:16px" data-i18n="ap.lbl2">DELIVERED EARLIER · 9</p>
-                    <div class="o"><span class="av a1">RT</span><div class="t"><b data-i18n="ap.n5">Rana Tarek</b><span data-i18n="ap.s5">Dokki · delivered 09:40</span></div><span class="amt" data-i18n="ap.v5"></span></div>
-                    <div class="o"><span class="av a3">AS</span><div class="t"><b data-i18n="ap.n6">Ahmed Samir</b><span data-i18n="ap.s6">Heliopolis · delivered 09:05</span></div><span class="amt" data-i18n="ap.v6"></span></div>
-                    <div class="o"><span class="av a2">LM</span><div class="t"><b data-i18n="ap.n7">Laila Mansour</b><span data-i18n="ap.s7">Garden City · delivered 08:30</span></div><span class="amt" data-i18n="ap.v7"></span></div>
-                    <div class="tb"><i class="on" data-i18n="ap.t1">Today</i><i data-i18n="ap.t2">Routes</i><i data-i18n="ap.t3">Cash</i><i data-i18n="ap.t4">More</i></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SYSTEM -->
-        <div class="pane" data-pane="system">
-          <div>
-            <h3 data-i18n="p.system.h">The system the business actually runs on</h3>
-            <p data-i18n="p.system.p">Stock, invoices, customers and staff permissions in one place, with approval before anything posts to the books. Built to fit how you already work.</p>
-            <ul>
-              <li data-i18n="p.system.1">Stock, invoices, customers and suppliers</li>
-              <li data-i18n="p.system.2">A different permission level per employee</li>
-              <li data-i18n="p.system.3">Review and approval before posting</li>
-              <li data-i18n="p.system.4">Reports and account statements</li>
-            </ul>
-            <div class="tagrow"><span class="chip">Postgres</span><span class="chip" data-i18n="ch.roles">Roles</span><span class="chip" data-i18n="ch.audit">Audit trail</span><span class="chip" data-i18n="ch.w46">4–6 weeks</span></div>
-            <a class="btn btn--pri" href="#contact"><span data-i18n="cta.from">From</span>&nbsp;<span class="price-n" data-price="system">$1,500</span></a>
-          </div>
-          <div class="shot">
-            <div class="frame" style="width:100%">
-              <div class="frame__bar"><div class="frame__dots"><i></i><i></i><i></i></div><div class="frame__url">app.nilefabrics.com/invoices</div></div>
-              <div class="view">
-                <div class="screen s-sys" data-w="1280">
-                  <aside class="side">
-                    <div class="bd" data-i18n="sh.brand">Nile Fabrics</div>
-                    <a><i></i><span data-i18n="sy.m1">Dashboard</span></a>
-                    <a class="on"><i></i><span data-i18n="sy.m2">Invoices</span></a>
-                    <a><i></i><span data-i18n="sy.m3">Stock</span></a>
-                    <a><i></i><span data-i18n="sy.m4">Customers</span></a>
-                    <a><i></i><span data-i18n="sy.m5">Suppliers</span></a>
-                    <a><i></i><span data-i18n="sy.m6">Reports</span></a>
-                    <a><i></i><span data-i18n="sy.m7">Staff</span></a>
-                  </aside>
-                  <div class="main">
-                    <div class="hd">
-                      <h2 data-i18n="sy.h2">Invoices</h2>
-                      <span class="add" data-i18n="sy.add">+ New invoice</span>
-                    </div>
-                    <div class="kpis">
-                      <div class="k"><span data-i18n="sy.k1">Invoiced this month (EGP)</span><b data-tick="486200">0</b><em>+12%</em></div>
-                      <div class="k"><span data-i18n="sy.k2">Collected (EGP)</span><b data-tick="341900">0</b></div>
-                      <div class="k"><span data-i18n="sy.k3">Overdue (EGP)</span><b data-tick="68400">0</b></div>
-                      <div class="k"><span data-i18n="sy.k4">Open invoices</span><b data-tick="37">0</b></div>
-                    </div>
-                    <div class="panel" style="margin-bottom:16px">
-                      <div class="ph"><span data-i18n="sy.chart">Collected, last 8 weeks</span><span data-i18n="sy.chartsub">EGP thousands</span></div>
-                      <div class="bars"><i style="--h:42%"></i><i style="--h:58%"></i><i style="--h:49%"></i><i style="--h:71%"></i><i style="--h:63%"></i><i style="--h:88%"></i><i style="--h:76%"></i><i style="--h:97%"></i></div>
-                    </div>
-                    <div class="panel">
-                      <div class="ph"><span data-i18n="sy.recent">Recent invoices</span><span data-i18n="sy.all">View all 37</span></div>
-                      <table>
-                        <thead><tr>
-                          <th data-i18n="sy.th1">Number</th><th data-i18n="sy.th2">Customer</th>
-                          <th data-i18n="sy.th3">Date</th><th class="n" data-i18n="sy.th4">Amount</th><th data-i18n="sy.th5">Status</th>
-                        </tr></thead>
-                        <tbody>
-                          <tr><td class="num">INV-2041</td><td data-i18n="sy.c1">El Shorouk Garments</td><td class="num" data-i18n="sy.d1"></td><td class="n" data-i18n="sy.a1"></td><td><span class="pill ok" data-i18n="sy.ok">Paid</span></td></tr>
-                          <tr><td class="num">INV-2040</td><td data-i18n="sy.c2">Zahran Textiles</td><td class="num" data-i18n="sy.d2"></td><td class="n" data-i18n="sy.a2"></td><td><span class="pill part" data-i18n="sy.part">Part paid</span></td></tr>
-                          <tr><td class="num">INV-2039</td><td data-i18n="sy.c3">Maison Laila</td><td class="num" data-i18n="sy.d3"></td><td class="n" data-i18n="sy.a3"></td><td><span class="pill due" data-i18n="sy.due">14 days overdue</span></td></tr>
-                          <tr><td class="num">INV-2038</td><td data-i18n="sy.c4">Gouna Interiors</td><td class="num" data-i18n="sy.d4"></td><td class="n" data-i18n="sy.a4"></td><td><span class="pill ok" data-i18n="sy.ok">Paid</span></td></tr>
-                          <tr><td class="num">INV-2037</td><td data-i18n="sy.c5">Arkan Uniforms</td><td class="num" data-i18n="sy.d5"></td><td class="n" data-i18n="sy.a5"></td><td><span class="pill ok" data-i18n="sy.ok">Paid</span></td></tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- AUTOMATION -->
-        <div class="pane" data-pane="auto">
-          <div>
-            <h3 data-i18n="p.auto.h">The work that repeats every morning, gone</h3>
-            <p data-i18n="p.auto.p">Reports that send themselves, data moved between two tools without retyping, stock alerts before you run out, and a WhatsApp reply when you are closed.</p>
-            <ul>
-              <li data-i18n="p.auto.1">Daily and weekly reports, sent on a schedule</li>
-              <li data-i18n="p.auto.2">Data moved between your tools automatically</li>
-              <li data-i18n="p.auto.3">Stock and overdue-payment alerts</li>
-              <li data-i18n="p.auto.4">Automatic WhatsApp replies out of hours</li>
-            </ul>
-            <div class="tagrow"><span class="chip" data-i18n="ch.sched">Scheduled</span><span class="chip">Webhooks</span><span class="chip" data-i18n="ch.wa">WhatsApp</span><span class="chip" data-i18n="ch.w12">1–2 weeks</span></div>
-            <a class="btn btn--pri" href="#contact"><span data-i18n="cta.from">From</span>&nbsp;<span class="price-n" data-price="auto">$400</span></a>
-          </div>
-          <div class="shot">
-            <div class="frame" style="width:100%">
-              <div class="frame__bar"><div class="frame__dots"><i></i><i></i><i></i></div><div class="frame__url">axiom — automations</div></div>
-              <div class="view">
-                <div class="screen s-auto" data-w="1280">
-                  <h2 data-i18n="au.h2">Three automations, running since January</h2>
-                  <p class="sb" data-i18n="au.sb">Nobody opens a spreadsheet for any of this any more.</p>
-                  <div class="row">
-                    <span class="nd"><b data-i18n="au.trig">TRIGGER</b><span data-i18n="au.r1a">New order on the store</span></span>
-                    <span class="w"></span>
-                    <span class="nd hot"><b data-i18n="au.act">ACTION</b><span data-i18n="au.r1b">Create the invoice, reserve the stock</span></span>
-                    <span class="w"></span>
-                    <span class="nd"><b data-i18n="au.out">RESULT</b><span data-i18n="au.r1c">WhatsApp to packing</span></span>
-                  </div>
-                  <div class="row">
-                    <span class="nd"><b data-i18n="au.trig">TRIGGER</b><span data-i18n="au.r2a">Stock under 60 metres</span></span>
-                    <span class="w"></span>
-                    <span class="nd hot"><b data-i18n="au.act">ACTION</b><span data-i18n="au.r2b">Draft the purchase order</span></span>
-                    <span class="w"></span>
-                    <span class="nd"><b data-i18n="au.out">RESULT</b><span data-i18n="au.r2c">Sent to the owner to approve</span></span>
-                  </div>
-                  <div class="row">
-                    <span class="nd"><b data-i18n="au.trig">TRIGGER</b><span data-i18n="au.r3a">Every day at 08:00</span></span>
-                    <span class="w"></span>
-                    <span class="nd hot"><b data-i18n="au.act">ACTION</b><span data-i18n="au.r3b">Yesterday's sales and overdue list</span></span>
-                    <span class="w"></span>
-                    <span class="nd"><b data-i18n="au.out">RESULT</b><span data-i18n="au.r3c">Email and WhatsApp</span></span>
-                  </div>
-                  <div class="stats">
-                    <div class="st"><span data-i18n="au.s1">Runs a day</span><b data-tick="46">0</b></div>
-                    <div class="st"><span data-i18n="au.s2">Hours saved a month</span><b data-tick="31">0</b></div>
-                    <div class="st"><span data-i18n="au.s3">Failures since January</span><b>0</b></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
-
-  <hr class="rule">
-
-  <!-- ============ pricing ============ -->
-  <section class="pad" id="pricing">
-    <div class="wrap">
-      <div class="head rv">
-        <span class="eyebrow" data-i18n="price.eyebrow">Pricing</span>
-        <h2 data-i18n="price.h2">Our prices are public</h2>
-        <p class="lede" data-i18n="price.lede">Most studios say "it depends". Pick your market and read the number. Gulf projects cost more because the market pays more, not because the work differs.</p>
-      </div>
-      <div class="market rv" role="group">
-        <button type="button" id="mEG" aria-pressed="true" data-i18n="market.eg">Egypt</button>
-        <button type="button" id="mGulf" aria-pressed="false" data-i18n="market.gulf">Gulf</button>
-      </div>
-      <div class="plans rv">
-        <article class="plan">
-          <h3 data-i18n="tab.site">Websites</h3>
-          <p class="who" data-i18n="plan.site.w">A credible presence that Google can find.</p>
-          <div class="amt" data-price="site">$300</div>
-          <div class="per" data-i18n="plan.site.t">one-off · 10 days</div>
-          <ul><li data-i18n="p.site.1">Up to five pages, both languages</li><li data-i18n="p.site.2">WhatsApp button, map and contact form</li><li data-i18n="p.site.3">Search-engine setup and a speed pass</li></ul>
-          <a class="btn btn--line" href="#contact" data-i18n="cta.quote">Get a quote</a>
-        </article>
-        <article class="plan plan--key">
-          <span class="plan__tag" data-i18n="plan.popular">Most asked</span>
-          <h3 data-i18n="tab.store">Online stores</h3>
-          <p class="who" data-i18n="plan.store.w">Sell online and take money properly.</p>
-          <div class="amt" data-price="shop">$700</div>
-          <div class="per" data-i18n="plan.store.t">one-off · 3 weeks</div>
-          <ul><li data-i18n="p.store.1">Products, categories and stock counts</li><li data-i18n="p.store.2">Fawry, Paymob, InstaPay and cash on delivery</li><li data-i18n="p.store.3">Order dashboard and delivery notes</li></ul>
-          <a class="btn btn--pri" href="#contact" data-i18n="cta.quote">Get a quote</a>
-        </article>
-        <article class="plan">
-          <h3 data-i18n="tab.app">Mobile apps</h3>
-          <p class="who" data-i18n="plan.app.w">On the home screen, working offline.</p>
-          <div class="amt" data-price="app">$900</div>
-          <div class="per" data-i18n="plan.app.t">one-off · 3–4 weeks</div>
-          <ul><li data-i18n="p.app.1">Installs straight from a link</li><li data-i18n="p.app.2">Works offline and syncs when it reconnects</li><li data-i18n="p.app.3">Push notifications to your customers</li></ul>
-          <a class="btn btn--line" href="#contact" data-i18n="cta.quote">Get a quote</a>
-        </article>
-        <article class="plan">
-          <h3 data-i18n="tab.system">Business systems</h3>
-          <p class="who" data-i18n="plan.system.w">When spreadsheets stop coping.</p>
-          <div class="amt" data-price="system">$1,500</div>
-          <div class="per" data-i18n="plan.system.t">one-off · 4–6 weeks</div>
-          <ul><li data-i18n="p.system.1">Stock, invoices, customers and suppliers</li><li data-i18n="p.system.2">A different permission level per employee</li><li data-i18n="p.system.4">Reports and account statements</li></ul>
-          <a class="btn btn--line" href="#contact" data-i18n="cta.quote">Get a quote</a>
-        </article>
-      </div>
-
-      <div class="care rv">
-        <div>
-          <h3 data-i18n="care.h">Monthly care</h3>
-          <p class="lede" style="margin-bottom:16px" data-i18n="care.p">A site is not bought once and forgotten. This keeps yours online, secure and current, with a named person to go back to.</p>
-          <div class="amt" data-price="care">$50</div>
-          <div class="per muted" data-i18n="care.t">per month · cancel any time</div>
-        </div>
-        <ul>
-          <li data-i18n="care.1">Hosting, domain and SSL certificate</li>
-          <li data-i18n="care.2">Daily backups and uptime monitoring</li>
-          <li data-i18n="care.3">Security updates as they are released</li>
-          <li data-i18n="care.4">Up to two hours of changes a month</li>
-          <li data-i18n="care.5">WhatsApp support, Sunday to Thursday, reply within 24 hours</li>
-          <li data-i18n="care.6">Leave whenever you like — we hand over the files</li>
+      <figure class="work__row" data-moment="marquee-row" data-moment-opts='{"speed": 34}'>
+        <ul class="mo-mq__track">
+          <li data-i18n="mq.1">Clinics</li><li data-i18n="mq.2">Fabric traders</li><li data-i18n="mq.3">Restaurants</li>
+          <li data-i18n="mq.4">Pharmacies</li><li data-i18n="mq.5">Workshops</li><li data-i18n="mq.6">Schools</li>
+          <li data-i18n="mq.7">Cairo</li><li data-i18n="mq.8">Alexandria</li><li data-i18n="mq.9">Riyadh</li>
+          <li data-i18n="mq.10">Jeddah</li><li data-i18n="mq.11">Dubai</li><li data-i18n="mq.12">Kuwait City</li><li data-i18n="mq.13">Doha</li>
         </ul>
-      </div>
+      </figure>
     </div>
   </section>
 
-  <hr class="rule">
+  <!-- 3 SYSTEM: the big scene, powers-of-ten-pullback. The invoices system fills the screen, and the scroll pulls the
+       camera back until it is a device on the lit ground, with the words arriving at its left. -->
+  <section class="sc" id="system" data-big-scene="powers-of-ten-pullback" data-big-scene-opts='{"hold": 1}' style="--h: 1" aria-labelledby="pb-h">
+    <div class="sc__stage">
+      <div class="pb__ground" aria-hidden="true"></div>
+      <div class="pb__copy">
+        <p class="t-label" data-i18n="pb.label">Business systems</p>
+        <h2 id="pb-h" data-i18n="pb.h2">Stock, invoices and staff in one system</h2>
+        <p data-i18n="pb.p">Each employee sees what their role allows, and nothing posts to the books until someone approves it. From $1,500, built in 4 to 6 weeks.</p>
+        <a class="link" href="#prices" data-i18n="pb.btn">See system prices</a>
+      </div>
+      <div class="pb__device"><div class="pb__screen" role="img" aria-label="The invoices screen of a business system: totals, a chart and recent invoices" data-i18n-label="sc.system">
+        <div class="view pb__view" aria-hidden="true"><div class="screen s-sys ui ui-screen" data-w="1280">
+<aside class="x-side">
+<div class="x-bd" data-i18n="sh.brand">Nile Fabrics</div>
+<a><i></i><span data-i18n="sy.m1">Dashboard</span></a>
+<a class="x-on"><i></i><span data-i18n="sy.m2">Invoices</span></a>
+<a><i></i><span data-i18n="sy.m3">Stock</span></a>
+<a><i></i><span data-i18n="sy.m4">Customers</span></a>
+<a><i></i><span data-i18n="sy.m5">Suppliers</span></a>
+<a><i></i><span data-i18n="sy.m6">Reports</span></a>
+<a><i></i><span data-i18n="sy.m7">Staff</span></a>
+</aside>
+<div class="x-main">
+<div class="x-hd">
+<p data-h="2" data-i18n="sy.h2">Invoices</p>
+<span class="x-add" data-i18n="sy.add">+ New invoice</span>
+</div>
+<div class="x-kpis">
+<div class="x-k"><span data-i18n="sy.k1">Invoiced this month (EGP)</span><b data-tick="486200">0</b><em>+12%</em></div>
+<div class="x-k"><span data-i18n="sy.k2">Collected (EGP)</span><b data-tick="341900">0</b></div>
+<div class="x-k"><span data-i18n="sy.k3">Overdue (EGP)</span><b data-tick="68400">0</b></div>
+<div class="x-k"><span data-i18n="sy.k4">Open invoices</span><b data-tick="37">0</b></div>
+</div>
+<div class="x-panel" style="margin-bottom:16px">
+<div class="x-ph"><span data-i18n="sy.chart">Collected, last 8 weeks</span><span data-i18n="sy.chartsub">EGP thousands</span></div>
+<div class="x-bars"><i style="--h:42%"></i><i style="--h:58%"></i><i style="--h:49%"></i><i style="--h:71%"></i><i style="--h:63%"></i><i style="--h:88%"></i><i style="--h:76%"></i><i style="--h:97%"></i></div>
+</div>
+<div class="x-panel">
+<div class="x-ph"><span data-i18n="sy.recent">Recent invoices</span><span data-i18n="sy.all">View all 37</span></div>
+<table>
+<thead><tr>
+<th data-i18n="sy.th1">Number</th><th data-i18n="sy.th2">Customer</th>
+<th data-i18n="sy.th3">Date</th><th class="x-n" data-i18n="sy.th4">Amount</th><th data-i18n="sy.th5">Status</th>
+</tr></thead>
+<tbody>
+<tr><td class="x-num">INV-2041</td><td data-i18n="sy.c1">El Shorouk Garments</td><td class="x-num" data-i18n="sy.d1"></td><td class="x-n" data-i18n="sy.a1"></td><td><span class="x-pill x-ok" data-i18n="sy.ok">Paid</span></td></tr>
+<tr><td class="x-num">INV-2040</td><td data-i18n="sy.c2">Zahran Textiles</td><td class="x-num" data-i18n="sy.d2"></td><td class="x-n" data-i18n="sy.a2"></td><td><span class="x-pill x-part" data-i18n="sy.part">Part paid</span></td></tr>
+<tr><td class="x-num">INV-2039</td><td data-i18n="sy.c3">Maison Laila</td><td class="x-num" data-i18n="sy.d3"></td><td class="x-n" data-i18n="sy.a3"></td><td><span class="x-pill x-due" data-i18n="sy.due">14 days overdue</span></td></tr>
+<tr><td class="x-num">INV-2038</td><td data-i18n="sy.c4">Gouna Interiors</td><td class="x-num" data-i18n="sy.d4"></td><td class="x-n" data-i18n="sy.a4"></td><td><span class="x-pill x-ok" data-i18n="sy.ok">Paid</span></td></tr>
+<tr><td class="x-num">INV-2037</td><td data-i18n="sy.c5">Arkan Uniforms</td><td class="x-num" data-i18n="sy.d5"></td><td class="x-n" data-i18n="sy.a5"></td><td><span class="x-pill x-ok" data-i18n="sy.ok">Paid</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+      </div></div>
+    </div>
+  </section>
 
-  <!-- ============ process ============ -->
-  <section class="pad" id="process">
+  <!-- 4 TOOLS (dark-band rhythm: the one inverse section, sand on the dark page): the hub diagram with the real marks -->
+  <section class="section ground-inverse" id="tools" aria-labelledby="tools-h">
     <div class="wrap">
-      <div class="head rv">
-        <span class="eyebrow" data-i18n="proc.eyebrow">How it works</span>
-        <h2 data-i18n="proc.h2">Four steps, and you can stop after any of them</h2>
-      </div>
-      <div class="steps rv">
-        <div class="step"><b>01</b><h3 data-i18n="proc.1.h">Send the brief</h3><p data-i18n="proc.1.p">Tell us what the business does and what slows it down. Fifteen minutes is enough, and no call is needed if you would rather write.</p></div>
-        <div class="step"><b>02</b><h3 data-i18n="proc.2.h">Read the quote</h3><p data-i18n="proc.2.p">A written price and a delivery date within 24 hours, listing exactly what is in and what is out. Nothing is billed yet.</p></div>
-        <div class="step"><b>03</b><h3 data-i18n="proc.3.h">Watch the build</h3><p data-i18n="proc.3.p">A link to the work as it happens, so you comment while changes are cheap rather than after delivery.</p></div>
-        <div class="step"><b>04</b><h3 data-i18n="proc.4.h">Take the keys</h3><p data-i18n="proc.4.p">Training for your staff, the domain in your name, the code handed over. The monthly plan only if you want it.</p></div>
+      <div class="grid">
+        <div class="span-5 stack-5">
+          <div class="section-head">
+            <h2 id="tools-h"><span data-i18n="tools.h2">Works with WhatsApp and your payments.</span> <span class="muted" data-i18n="tools.h2b">Fawry, Paymob and InstaPay included.</span></h2>
+          </div>
+          <p class="t-lead" data-i18n="tools.p">Orders arrive on WhatsApp, receipts go out by email, and customers pay the way they already do. You see all of it in one place.</p>
+          <ul class="tools__list">
+            <li data-i18n="tools.1">Fawry, Paymob and InstaPay at checkout</li>
+            <li data-i18n="tools.2">Visa, Mastercard, Apple Pay and Google Pay</li>
+            <li data-i18n="tools.3">WhatsApp alerts on every order</li>
+          </ul>
+        </div>
+        <div class="span-7 start-6 tools__panel">
+          <div class="dg" data-diagram data-icon-base="assets/icons/"><script type="application/json">{"layout": "hub", "size": "band", "alt": "Your system in the middle, joined to WhatsApp, Gmail, Google Maps, Instagram, Facebook, Visa, Mastercard and Apple Pay.", "center": {"label": "Your system", "icon": "ui:layout-dashboard"}, "spokes": [{"label": "WhatsApp", "icon": "whatsapp"}, {"label": "Gmail", "icon": "gmail"}, {"label": "Google Maps", "icon": "google-maps"}, {"label": "Instagram", "icon": "instagram"}, {"label": "Facebook", "icon": "facebook"}, {"label": "Visa", "icon": "visa"}, {"label": "Mastercard", "icon": "mastercard"}, {"label": "Apple Pay", "icon": "apple-pay"}]}</script></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <hr class="rule">
-
-  <!-- ============ faq ============ -->
-  <section class="pad" id="questions">
-    <div class="wrap faq">
-      <div class="rv">
-        <span class="eyebrow" data-i18n="faq.eyebrow">Questions</span>
-        <h2 data-i18n="faq.h2">The ones we get every week</h2>
-        <p class="lede" style="margin-top:12px" data-i18n="faq.lede">Anything else, ask before you commit to anything at all.</p>
+  <!-- 5 PRICES (two screens, .g2): row 1 the market switch and the four plans; row 2 automation and the monthly
+       care, each with its picture (the lanes diagram; the care panel as the owner sees it) -->
+  <section class="section g2" id="prices" style="--h: 2" aria-labelledby="prices-h">
+    <div class="wrap">
+      <div class="group">
+        <div class="section-head section-head--split prices__head">
+        <h2 id="prices-h"><span data-i18n="price.h2">Prices in dollars.</span> <span class="muted" data-i18n="price.h2b">Written down before you call.</span></h2>
+        <div class="market tabs" role="tablist" aria-label="Market" data-i18n-label="market.label">
+          <button class="tab" role="tab" type="button" id="mEG" aria-selected="true" data-market="eg" data-i18n="market.eg">Egypt</button>
+          <button class="tab" role="tab" type="button" id="mGulf" aria-selected="false" data-market="gulf" data-i18n="market.gulf">Gulf</button>
+        </div>
       </div>
-      <div class="rv">
-        <div class="faq__item"><h3 data-i18n="q1">Why is the price lower than other studios?</h3><p data-i18n="a1">Because the work takes less time, not because it is worth less. Modern tooling removes the repetitive parts, so a job that takes two months elsewhere takes us two weeks. We pass that on instead of keeping it.</p></div>
-        <div class="faq__item"><h3 data-i18n="q2">Is the price final?</h3><p data-i18n="a2">Yes. The quote is written and lists what is included. Anything extra is priced and agreed before it starts, never added at the end.</p></div>
-        <div class="faq__item"><h3 data-i18n="q3">Who owns the site and the domain?</h3><p data-i18n="a3">You do. The domain is registered in your name and the code is handed over. If you leave, we package everything up for you first.</p></div>
-        <div class="faq__item"><h3 data-i18n="q4">Is the monthly plan compulsory?</h3><p data-i18n="a4">No. Take the site and host it anywhere. Most owners would simply rather not deal with hosting, backups and updates, which is what the plan covers.</p></div>
-        <div class="faq__item"><h3 data-i18n="q5">What does daily support actually mean?</h3><p data-i18n="a5">A named person replies on WhatsApp, Sunday to Thursday, within 24 hours and usually much sooner. Small changes are included up to two hours a month. Larger work is quoted first.</p></div>
-        <div class="faq__item"><h3 data-i18n="q6">Do you work outside Egypt?</h3><p data-i18n="a6">Yes, across Saudi Arabia, the UAE, Kuwait and Qatar. Meetings are online and contracts are in US dollars. Gulf pricing is shown above when you switch market.</p></div>
+      <div class="grid plans">
+        <article class="card card--plan span-3">
+          <h3 data-i18n="plan.site">Website</h3>
+          <p class="price"><span class="t-stat" data-price="site">$300</span></p>
+          <p class="muted t-small" data-i18n="plan.site.t">One-off · ready in 10 days</p>
+          <ul class="checks"><li data-i18n="plan.site.1">Five pages, Arabic and English</li><li data-i18n="plan.site.2">WhatsApp button and map</li><li data-i18n="plan.site.3">Set up for Google search</li></ul>
+          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.site" data-i18n="order.site">Order a website</a>
+        </article>
+        <article class="card card--plan span-3 is-featured">
+          <span class="badge plan__badge" data-i18n="plan.popular">Most asked</span>
+          <h3 data-i18n="plan.store">Online store</h3>
+          <p class="price"><span class="t-stat" data-price="shop">$700</span></p>
+          <p class="muted t-small" data-i18n="plan.store.t">One-off · ready in 3 weeks</p>
+          <ul class="checks"><li data-i18n="plan.store.1">Products, stock and orders</li><li data-i18n="plan.store.2">Fawry, Paymob, InstaPay, cash</li><li data-i18n="plan.store.3">A WhatsApp alert per order</li></ul>
+          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.store" data-i18n="order.store">Order a store</a>
+        </article>
+        <article class="card card--plan span-3">
+          <h3 data-i18n="plan.app">Mobile app</h3>
+          <p class="price"><span class="t-stat" data-price="app">$900</span></p>
+          <p class="muted t-small" data-i18n="plan.app.t">One-off · ready in 3 to 4 weeks</p>
+          <ul class="checks"><li data-i18n="plan.app.1">Installs from a link</li><li data-i18n="plan.app.2">Works offline</li><li data-i18n="plan.app.3">Push notifications</li></ul>
+          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.app" data-i18n="order.app">Order an app</a>
+        </article>
+        <article class="card card--plan span-3">
+          <h3 data-i18n="plan.system">Business system</h3>
+          <p class="price"><span class="t-stat" data-price="system">$1,500</span></p>
+          <p class="muted t-small" data-i18n="plan.system.t">One-off · ready in 4 to 6 weeks</p>
+          <ul class="checks"><li data-i18n="plan.system.1">Stock, invoices, customers</li><li data-i18n="plan.system.2">A role for each employee</li><li data-i18n="plan.system.3">Approval before posting</li></ul>
+          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.system" data-i18n="order.system">Order a system</a>
+        </article>
+      </div>
+      </div>
+      <div class="grid plans--wide">
+        <article class="card card--row card--open span-6">
+          <h3 data-i18n="plan.auto.h">Automation for daily work</h3>
+          <p><span data-i18n="plan.auto.p">Daily reports, stock alerts and WhatsApp replies, set up once.</span> <b class="plan__from" data-price="auto">$400</b></p>
+          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.auto" data-i18n="order.auto">Order automation</a>
+          <div class="panel"><div class="dg" data-diagram data-icon-base="assets/icons/"><script type="application/json">{"layout": "lanes", "size": "card", "alt": "A new order on the store becomes an invoice, reserves the stock and sends a WhatsApp message to packing.", "input": {"label": "New order", "icon": "ui:shopping-bag", "sub": "Store"}, "core": {"label": "Automation", "icon": "ui:zap"}, "lanes": [{"label": "Invoice created", "icon": "ui:receipt", "done": true, "sub": "INV-2042"}, {"label": "Stock reserved", "icon": "ui:package", "done": true, "sub": "12 m linen"}, {"label": "Packing told", "icon": "whatsapp", "done": true, "sub": "WhatsApp"}]}</script></div></div>
+        </article>
+        <article class="card card--row card--open span-6">
+          <h3 data-i18n="plan.care.h">Monthly care for your site</h3>
+          <p><span data-i18n="plan.care.p">Hosting, backups, updates and a person on WhatsApp, Sunday to Thursday.</span> <b class="plan__from"><span data-price="care">$50</span><span data-i18n="plan.care.per"> a month</span></b></p>
+          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.care" data-i18n="order.care">Add monthly care</a>
+          <div class="panel">
+            <div class="stage"><div class="at-corner to-edge care__slot" role="img" aria-label="The monthly care panel: last backup, uptime, the certificate date and the change hours used" data-i18n-label="care.alt">
+              <div class="care ui ui-care" aria-hidden="true">
+                <p class="care__h" data-i18n="care.h">nileclinic.com · this month</p>
+                <ul class="care__rows">
+                  <li><span data-i18n="care.r1">Last backup</span><b data-i18n="care.v1">Today, 03:00</b></li>
+                  <li><span data-i18n="care.r2">Online</span><b data-i18n="care.v2">99.98%</b></li>
+                  <li><span data-i18n="care.r3">Security certificate</span><b data-i18n="care.v3">Renews 12 August</b></li>
+                  <li><span data-i18n="care.r4">Changes used</span><b data-i18n="care.v4">1 h 20 of 2 h</b></li>
+                </ul>
+                <div class="care__bar"><i style="width:67%"></i></div>
+              </div>
+            </div></div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ contact ============ -->
-  <section class="pad" id="contact">
-    <div class="wrap contact">
-      <div class="rv">
-        <span class="eyebrow" data-i18n="ct.eyebrow">Start here</span>
-        <h2 data-i18n="ct.h2">Tell us what the business needs</h2>
-        <p class="lede" style="margin-top:12px" data-i18n="ct.p">Send this and you get a written price and a delivery date back. There is no call until you want one, and nothing is billed until you agree the quote.</p>
-        <p class="lede" style="margin-top:18px;font-size:.9rem" data-i18n="ct.hours">We reply Sunday to Thursday, within 24 hours.</p>
+  <!-- 6 QUESTIONS: the split, every answer open -->
+  <section class="section" id="questions" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <h2 id="faq-h" data-i18n="faq.h2">Questions</h2>
+          <p class="muted" data-i18n="faq.p">The six we hear every week.</p>
+        </div>
+        <div class="span-7 start-6 faq">
+          <div class="faq__item"><h3 data-i18n="q1">Why is the price lower than other studios?</h3><p data-i18n="a1">Because the work takes less time. Modern tools remove the repetitive parts, so a job that takes two months elsewhere takes us two weeks, and we charge for the two weeks.</p></div>
+          <div class="faq__item"><h3 data-i18n="q2">Is the price final?</h3><p data-i18n="a2">Yes. The quote is written and lists what is included. Anything extra is priced and agreed before it starts.</p></div>
+          <div class="faq__item"><h3 data-i18n="q3">Who owns the website and the domain?</h3><p data-i18n="a3">You do. The domain is registered in your name and the code is handed over at the end.</p></div>
+          <div class="faq__item"><h3 data-i18n="q4">Do I have to pay the $50 a month?</h3><p data-i18n="a4">No. You can host it anywhere. The monthly care is for owners who would rather not handle hosting, backups and updates.</p></div>
+          <div class="faq__item"><h3 data-i18n="q5">What does daily support mean?</h3><p data-i18n="a5">A person answers on WhatsApp, Sunday to Thursday, within 24 hours and usually the same day.</p></div>
+          <div class="faq__item"><h3 data-i18n="q6">Do you work outside Egypt?</h3><p data-i18n="a6">Yes, in Saudi Arabia, the UAE, Kuwait and Qatar. Meetings are online and Gulf prices show when you switch the market above.</p></div>
+        </div>
       </div>
-      <form class="form rv" id="quote" novalidate>
-        <div class="two">
-          <div class="field"><label for="f-name" data-i18n="ct.name">Your name</label><input id="f-name" type="text" autocomplete="name" required></div>
-          <div class="field"><label for="f-company" data-i18n="ct.company">Company</label><input id="f-company" type="text" autocomplete="organization"></div>
-        </div>
-        <div class="two">
-          <div class="field"><label for="f-email" data-i18n="ct.email">Email</label><input id="f-email" type="email" autocomplete="email" required></div>
-          <div class="field"><label for="f-wa" data-i18n="ct.wa">WhatsApp</label><input id="f-wa" type="tel" autocomplete="tel"></div>
-        </div>
-        <div class="field"><label for="f-need" data-i18n="ct.need">What you need</label>
-          <select id="f-need"></select>
-        </div>
-        <div class="field"><label for="f-note" data-i18n="ct.note">What slows the business down today</label><textarea id="f-note" rows="3"></textarea></div>
-        <button class="btn btn--pri btn--lg" type="submit" data-i18n="cta.quote">Get a quote</button>
-        <p class="muted" style="font-size:.8rem" data-form-status role="status"></p>
-      </form>
     </div>
   </section>
 
+  <!-- 7 QUOTE: the booking-form recipe (system.js runs it; a mailto on .example stands in until the client's form
+       address), beside its picture: the quote as it arrives on the customer's WhatsApp -->
+  <section class="section" id="quote" style="--hm: 2" aria-labelledby="quote-h">
+    <div class="wrap">
+      <div class="grid quote">
+        <div class="span-5 stack-5">
+          <div class="section-head">
+            <h2 id="quote-h" data-i18n="quote.h2">A written quote in 24 hours</h2>
+            <p data-i18n="quote.p">Tell us what the business does. You get a price and a delivery date back, and nothing is billed until you agree.</p>
+          </div>
+          <form class="form quote__form" action="mailto:hello@axiom.example" method="post" enctype="text/plain" data-endpoint="" data-sent="Your quote request is in. We reply within 24 hours." novalidate>
+                  <div class="field"><label for="f-name" data-i18n="f.name">Your name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+        <p class="field__error" id="f-name-err" hidden data-i18n="f.name.err">Write your name.</p></div>
+      <div class="field"><label for="f-company" data-i18n="f.company">Company</label>
+        <input id="f-company" name="company" type="text" autocomplete="organization"></div>
+                  <div class="field"><label for="f-email" data-i18n="f.email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err">
+        <p class="field__error" id="f-email-err" hidden data-i18n="f.email.err">Write an email address with an @.</p></div>
+      <div class="field"><label for="f-wa" data-i18n="f.wa">WhatsApp number</label>
+        <input id="f-wa" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel"></div>
+    <div class="field field--full"><label for="f-need" data-i18n="f.need">What you need</label>
+      <select id="f-need" name="need"></select></div>
+    <div class="field field--full"><label for="f-note" data-i18n="f.note">What slows the business down</label>
+      <textarea id="f-note" name="note" rows="2"></textarea></div>
+    <div class="btn-row"><button class="btn btn--primary" type="submit" data-i18n="cta.quote">Get a quote</button></div>
+    <p class="form__status" role="status" data-form-status></p>
+    <p class="t-small muted" data-i18n="f.reply">We reply on WhatsApp or by email, Sunday to Thursday, within 24 hours.</p>
+  </form>
+        </div>
+        <div class="span-7 start-6 quote__shot">
+          <div class="phone" role="img" aria-label="The quote arriving on WhatsApp: a website, $300, live on 24 March" data-i18n-label="wa.alt">
+            <div class="phone__screen" aria-hidden="true"><span class="phone__notch"></span>
+              <div class="view" style="height:100%">
+                <div class="screen s-wa ui ui-screen" data-w="390" data-fit="phone">
+                  <div class="x-top"><span class="x-av">A</span><div><b>Axiom</b><span data-i18n="wa.online">online</span></div></div>
+                  <div class="x-chat">
+                    <p class="x-day" data-i18n="wa.day">Today</p>
+                    <p class="x-me" data-i18n="wa.q">Hi, we need a site for the clinic in Arabic and English, with booking.</p>
+                    <div class="x-them">
+                      <p data-i18n="wa.a1">Here is your quote for Nile Dental:</p>
+                      <div class="x-quote">
+                        <p class="x-q1" data-i18n="wa.qt">Website, five pages</p>
+                        <p class="x-q2"><span data-price="site">$300</span></p>
+                        <ul><li data-i18n="wa.l1">Arabic and English</li><li data-i18n="wa.l2">Booking button and map</li><li data-i18n="wa.l3">Live on 24 March</li></ul>
+                      </div>
+                      <p data-i18n="wa.a2">Reply OK and we start on Sunday.</p>
+                    </div>
+                    <p class="x-me" data-i18n="wa.ok">OK 👍</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer>
+<footer class="footer closing footer--dark ground-inverse" id="contact" aria-labelledby="close-h">
   <div class="wrap">
-    <div class="foot">
-      <div>
-        <a class="logo" href="#" style="margin-bottom:12px"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.5 19.5 12 4.5l7.5 15" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="16.4" r="2.1" fill="currentColor"/></svg>Axiom</a>
-        <p class="muted" style="font-size:.885rem;max-width:30ch" data-i18n="foot.lede">Websites, apps and business systems for companies in Egypt and the Gulf.</p>
+    <div class="closing__cta close--type">
+      <div class="section-head">
+        <h2 id="close-h" data-i18n="close.h2">Tell us what the business needs</h2>
+        <p data-i18n="close.p">A written price and a delivery date, within 24 hours.</p>
       </div>
-      <div><h4 data-i18n="foot.build">Build</h4><ul>
-        <li><a href="#work" data-i18n="tab.site">Websites</a></li>
-        <li><a href="#work" data-i18n="tab.store">Online stores</a></li>
-        <li><a href="#work" data-i18n="tab.app">Mobile apps</a></li>
-        <li><a href="#work" data-i18n="tab.system">Business systems</a></li></ul></div>
-      <div><h4 data-i18n="foot.company">Company</h4><ul>
-        <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
-        <li><a href="#process" data-i18n="nav.process">Process</a></li>
-        <li><a href="#questions" data-i18n="nav.faq">Questions</a></li></ul></div>
-      <div><h4 data-i18n="foot.talk">Talk</h4><ul>
-        <li><a href="#contact" data-i18n="cta.quote">Get a quote</a></li>
-        <li><a href="#contact">WhatsApp</a></li>
-        <li><a href="#contact" data-i18n="ct.email">Email</a></li></ul></div>
+      <a class="btn btn--primary btn--xl btn--wide" href="#quote"><span data-i18n="cta.quote">Get a quote</span><svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
     </div>
-    <div class="foot__legal"><span>Axiom, 2026</span><span class="mono" data-i18n="foot.made">Built in Cairo</span></div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="footer__mark" href="#top"><span class="mark mark--initial" aria-hidden="true">A</span>Axiom</a>
+          <p class="footer__lede" data-i18n="foot.lede">Websites, apps and business systems for companies in Egypt and the Gulf.</p>
+        </div>
+        <div class="span-2 start-7 footer__col"><h3 data-i18n="foot.build">Build</h3><ul>
+          <li><a href="#work" data-i18n="plan.site">Website</a></li><li><a href="#work" data-i18n="plan.store">Online store</a></li>
+          <li><a href="#work" data-i18n="plan.app">Mobile app</a></li><li><a href="#system" data-i18n="plan.system">Business system</a></li></ul></div>
+        <div class="span-2 footer__col"><h3 data-i18n="foot.studio">Studio</h3><ul>
+          <li><a href="#prices" data-i18n="nav.prices">Prices</a></li><li><a href="#tools" data-i18n="foot.tools">Tools we connect</a></li>
+          <li><a href="#questions" data-i18n="nav.faq">Questions</a></li></ul></div>
+        <div class="span-2 footer__col"><h3 data-i18n="foot.talk">Talk to us</h3><ul>
+          <li><a href="#quote" data-i18n="cta.quote">Get a quote</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Axiom</span>
+        <span class="t-small" data-i18n="foot.tm">Product names and logos are trademarks of their owners.</span>
+      </div>
+    </div>
   </div>
 </footer>
 
-<script src="assets/js/site.js" type="module"></script>
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+<script type="module" src="assets/diagrams/mount.js"></script>
+<script type="module" src="assets/scenes/scenes.js"></script>
+<script type="module" src="assets/js/site.js"></script>
 </body>
 </html>

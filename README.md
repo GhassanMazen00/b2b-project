@@ -3,81 +3,55 @@
 Marketing site for a studio that builds websites, online stores, mobile apps,
 business systems and automation for companies in Egypt and the Gulf.
 
-Static HTML, one stylesheet, one script. No build step, no framework, no
-dependencies. Around 70 KB plus Google Fonts.
+Static HTML, no build step. Built on the taste-skill kit (its system, hero,
+scene, moment and diagram files under `assets/`), with the page's own copy,
+example screens and script in `assets/css` and `assets/js`. About 800 KB.
 
-## How it works
+## What the page is
 
-**A language popup greets first-time visitors.** The site loads and runs
-behind it in the browser's own language; the popup asks العربية or English, and
-only an actual choice is remembered. Returning visitors never see it. Every
-string lives in the `T` dictionary in `assets/js/site.js` — pick a key, write
-both languages, done. Switching flips `lang` and `dir`, and the layout mirrors
-because the CSS uses logical properties throughout.
+Every part below was dealt by the kit (`references/sections.md`), not picked by
+taste, except where the brief asked for something else.
 
-**The mark is the centrepiece of the hero**: a tile with rings pulsing out of
-it and soft beams turning behind, headline centred underneath, and the example
-site below it tilted back until you scroll, when it rises flat.
-
-**The background answers to scroll.** A fixed grid drifts at its own speed, its
-spotlight travels down the page with you, and the light behind it moves from
-blue through teal to violet. `site.js` writes three CSS variables (`--p`,
-`--h`, `--g`) on scroll; everything else is CSS.
-
-**The examples play themselves.** The progress bar on the active tab is the
-timer — when it fills, the next example slides in. Hovering, focusing or
-scrolling away pauses it; on a phone you can swipe.
-
-**Dark, and almost monochrome.** Near-black, near-white, one faint blue for
-small labels. The colour on the page comes from the work, not from the chrome
-— the way a portfolio should read.
-
-**The examples are real screens, not wireframes.** Each service tab holds a
-page designed at its own full size — 1280px for the desktop ones, 390px for
-the phone — and scaled into the frame with a transform. Real Arabic and
-English copy, real prices, real layout, each with its own palette:
-
-| Tab | Screen |
+| Section | What it shows |
 |---|---|
-| Websites | a dental clinic site, scrolling itself through five sections |
-| Online stores | a fabric shop, six products staggering in, Fawry/Paymob/InstaPay at the foot |
-| Mobile apps | a delivery app on a phone, seven live drops and a cash total |
-| Business systems | an invoices dashboard, counters running up and a bar chart drawing |
-| Automation | three trigger → action → result flows with pulses on the wires |
+| Hero (centred, dealt) | The Axiom mark large on the page axis, the headline, two buttons, and a clinic's website scrolling itself in a lit frame |
+| Work (tabs tour) | Five real example screens: a clinic site, a fabric store, a delivery app, an invoices system, three automations. They move on by themselves every 7 s and pause on hover, focus or off screen (the brief) |
+| Systems (big scene) | `powers-of-ten-pullback`: the invoices system fills the screen and the scroll pulls the camera back until it is a device on the lit ground |
+| Tools (the one inverse band) | A hub diagram with the real WhatsApp, Gmail, Maps, Instagram, Facebook, Visa, Mastercard and Apple Pay marks; Fawry, Paymob and InstaPay named in type |
+| Prices (two screens) | The Egypt / Gulf switch, four plans, then automation (a lanes diagram) and monthly care (the owner's status panel) |
+| Questions | Six answers, open |
+| Quote | The form, beside a phone showing the quote arriving on WhatsApp |
+| Footer | The close (one large button) and the dark footer |
 
-They are HTML and CSS, so they weigh nothing, never go stale, and switch to
-Arabic with the rest of the site. Swap any one for a real client screenshot
-the moment you have it.
+**Language.** A popup asks Arabic or English on the first visit and never again.
+Every string is in the `T` dictionary in `assets/js/site.js`; the example screens
+switch language and direction with the page.
 
-On a phone a 1280px page is held at a minimum scale and the frame crops it,
-rather than shrinking the type to mush.
+**Dark by default**, near-black with sand-coloured type and one cobalt action
+colour. The colour on the page comes from the work: the sage lit ground, the
+example screens and the real logos.
 
 ## Make it yours
 
 | What | Where |
 |---|---|
-| All copy, both languages | the `T` dictionary at the top of `assets/js/site.js` |
+| All copy, both languages | `T` in `assets/js/site.js` |
 | Prices, both markets | `PRICES` in the same file |
-| The clinic example's markup | the `CLINIC` template in `assets/js/site.js` |
-| The other four examples | the `.screen` blocks in `index.html` |
-| Example styling | the bottom third of `assets/css/site.css` |
-| Form endpoint | the `submit` handler — it currently says it is not connected rather than faking success |
-| Colours and type | the `:root` block in `assets/css/site.css` |
-| Name | find and replace `Axiom` |
+| The example screens | the `.screen` blocks in `index.html` and `CLINIC` in `site.js`; their styles in `assets/css/screens.css` |
+| Form endpoint | `data-endpoint` on the quote form; until then it opens an email to `hello@axiom.example` |
+| Domain | the commented `canonical` line in the head |
 
-## Publishing
+## Checked
 
-**Settings → Pages → Deploy from a branch → this branch → `/ (root)`.**
+The kit's own checks, in headless Chromium:
 
-## Verified
-
-Chromium at 1440 and 390, in both languages: the popup sets the language and
-flips the page, the five examples advance on their own and pause on hover, the
-example screens mirror to RTL and scale into their frames, both price markets
-update, no horizontal overflow, no console errors.
+- `copy-lint`: 0 FAIL, 0 WARN.
+- `layout/check.mjs` at 1440x900, 1024x768, 820x1180, 768x1024 and 390x844: no findings.
+- `gate.mjs`: OPEN after its three rounds, with five waivers in `.taste-skill/waivers.json`
+  (the language popup, the marquee, the scene's markup, the centred hero's frame, the band's
+  contrast). The open findings are listed in the build report.
 
 ## Still to do
 
-- **A real form endpoint.** Formspree, a Supabase function, or your own handler.
-- **WhatsApp number and social links** — the footer links are anchors today.
-- **Replace the examples with real client work** as you ship it.
+- A real form endpoint and the WhatsApp number.
+- Real client work in place of the example screens as it ships.

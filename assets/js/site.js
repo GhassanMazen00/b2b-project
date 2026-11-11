@@ -1,100 +1,94 @@
-/* Axiom — language popup, bilingual copy, auto-playing examples, scroll-driven motion. */
+/* Axiom — the page's own script: the copy in Arabic and English, the language popup the client
+   asked for, the examples that advance by themselves (the client's brief), the example screens
+   scaled into their frames, and the market switch on the prices. Nav, tabs, the form, the moment,
+   the scene, hovers and the diagram are the kit's (system.js, motion.js, scenes.js, mount.js). */
 
 const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* =========================== copy =========================== */
 const T = {
   en: {
     "skip":"Skip to content",
-    "nav.work":"Our work","nav.pricing":"Pricing","nav.process":"Process","nav.faq":"Questions",
-    "cta.quote":"Get a quote","cta.work":"See our work","cta.from":"From",
-    "hero.eyebrow":"Egypt · Gulf · Middle East",
-    "hero.h1":"We build the systems your business runs on.",
-    "hero.lede":"Websites, online stores, mobile apps and the internal software that keeps stock, invoices and customers in one place. The price is published before you call.",
-    "fact.from":"Websites from","fact.delivery":"Delivery","fact.delivery.v":"14 days",
-    "fact.reply":"Reply within","fact.reply.v":"24 hours","fact.own":"You own","fact.own.v":"Everything",
+    "nav.work":"Work","nav.system":"Systems","nav.prices":"Prices","nav.faq":"Questions",
+    "cta.quote":"Get a quote","cta.work":"See the work",
+    "hero.h1":"Web, app and system studio in Cairo",
+    "hero.lead":"Websites, online stores, apps and business systems for companies in Egypt and the Gulf. Websites from $300, live in 14 days, with WhatsApp support every working day.",
+    "hero.alt":"A dental clinic's website built by Axiom, with its prices, doctors and booking button",
 
-    "work.eyebrow":"What we build","work.h2":"Five things, and what each one actually looks like",
-    "work.lede":"Not a list of services. Pick one and look at the screen you would get, with the price and the delivery time attached.",
-    "tab.site":"Websites","tab.store":"Online stores","tab.app":"Mobile apps",
-    "tab.system":"Business systems","tab.auto":"Automation",
+    "work.h2":"Websites, stores, apps and systems.","work.h2b":"Pick one to see it.",
+    "tab.site":"Get a website","tab.store":"Sell online","tab.app":"Launch an app",
+    "tab.system":"Run the business","tab.auto":"Automate the routine",
+    "tp.site":"Five pages in Arabic and English, built for phones and set up so Google finds you. From {site}, live in 10 days.",
+    "tp.store":"A catalogue with stock counts and checkout through Fawry, Paymob, InstaPay or cash on delivery. From {shop}, live in 3 weeks.",
+    "tp.app":"An app your customers install from a link, with offline use and push notifications. From {app}, live in 3 to 4 weeks.",
+    "tp.system":"Stock, invoices, customers and staff permissions in one place, with approval before anything posts. From {system}.",
+    "tp.auto":"Reports that send themselves, stock alerts and WhatsApp replies after hours. From {auto}, running in 1 to 2 weeks.",
+    "work.link":"See every price",
+    "sc.site":"A dental clinic's website in Heliopolis",
+    "sc.store":"A fabric shop's online store with six fabrics, prices per metre and four ways to pay",
+    "sc.app":"A delivery app on a phone, listing today's drops and the cash collected",
+    "sc.system":"An invoices dashboard with this month's totals, a chart and five invoices",
+    "sc.auto":"Three automations: new orders, low stock and the morning report",
+    "mq.1":"Clinics","mq.2":"Fabric traders","mq.3":"Restaurants","mq.4":"Pharmacies","mq.5":"Workshops","mq.6":"Schools",
+    "mq.7":"Cairo","mq.8":"Alexandria","mq.9":"Riyadh","mq.10":"Jeddah","mq.11":"Dubai","mq.12":"Kuwait City","mq.13":"Doha",
 
-    "p.site.h":"A website that works on a phone first",
-    "p.site.p":"Five pages in Arabic and English, fast on mobile data, structured so Google can actually find you. Built for a fabric wholesaler, a clinic or a workshop.",
-    "p.site.1":"Up to five pages, both languages","p.site.2":"WhatsApp button, map and contact form",
-    "p.site.3":"Search-engine setup and a speed pass","p.site.4":"You own the domain and the code",
+    "pb.label":"Business systems","pb.h2":"Stock, invoices and staff in one system",
+    "pb.p":"Each employee sees what their role allows, and nothing posts to the books until someone approves it. From $1,500, built in 4 to 6 weeks.",
+    "pb.btn":"See system prices",
 
-    "p.store.h":"A store that takes money properly",
-    "p.store.p":"Catalogue, cart and checkout through Fawry, Paymob or InstaPay, with a dashboard your staff can actually run. A WhatsApp alert lands on every order.",
-    "p.store.1":"Products, categories and stock counts","p.store.2":"Fawry, Paymob, InstaPay and cash on delivery",
-    "p.store.3":"Order dashboard and delivery notes","p.store.4":"Training for whoever packs the orders",
+    "tools.h2":"Works with WhatsApp and your payments.","tools.h2b":"Fawry, Paymob and InstaPay included.",
+    "tools.p":"Orders arrive on WhatsApp, receipts go out by email, and customers pay the way they already do. You see all of it in one place.",
+    "tools.1":"Fawry, Paymob and InstaPay at checkout","tools.2":"Visa, Mastercard, Apple Pay and Google Pay","tools.3":"WhatsApp alerts on every order",
 
-    "p.app.h":"An app that installs from the browser",
-    "p.app.p":"It sits on the home screen, works without a connection and sends notifications — with no app store account, no review queue and no yearly fee.",
-    "p.app.1":"Installs straight from a link","p.app.2":"Works offline and syncs when it reconnects",
-    "p.app.3":"Push notifications to your customers","p.app.4":"Fully native quoted separately when you need it",
+    "price.h2":"Prices in dollars.","price.h2b":"Written down before you call.",
+    "market.label":"Market","market.eg":"Egypt","market.gulf":"Gulf",
+    "plan.popular":"Most asked",
+    "plan.site":"Website","plan.site.t":"One-off · ready in 10 days",
+    "plan.site.1":"Five pages, Arabic and English","plan.site.2":"WhatsApp button and map","plan.site.3":"Set up for Google search",
+    "plan.store":"Online store","plan.store.t":"One-off · ready in 3 weeks",
+    "plan.store.1":"Products, stock and orders","plan.store.2":"Fawry, Paymob, InstaPay, cash","plan.store.3":"A WhatsApp alert per order",
+    "plan.app":"Mobile app","plan.app.t":"One-off · ready in 3 to 4 weeks",
+    "plan.app.1":"Installs from a link","plan.app.2":"Works offline","plan.app.3":"Push notifications",
+    "plan.system":"Business system","plan.system.t":"One-off · ready in 4 to 6 weeks",
+    "plan.system.1":"Stock, invoices, customers","plan.system.2":"A role for each employee","plan.system.3":"Approval before posting",
+    "plan.auto":"Automation","plan.auto.t":"One-off · running in 1 to 2 weeks","plan.auto.p":"Daily reports, stock alerts and WhatsApp replies, set up once. From",
+    "plan.care":"Monthly care","plan.care.t":"Per month · stop any time","plan.care.p":"Hosting, backups, updates and a person on WhatsApp, Sunday to Thursday.",
 
-    "p.system.h":"The system the business actually runs on",
-    "p.system.p":"Stock, invoices, customers and staff permissions in one place, with approval before anything posts to the books. Built to fit how you already work.",
-    "p.system.1":"Stock, invoices, customers and suppliers","p.system.2":"A different permission level per employee",
-    "p.system.3":"Review and approval before posting","p.system.4":"Reports and account statements",
-
-    "p.auto.h":"The work that repeats every morning, gone",
-    "p.auto.p":"Reports that send themselves, data moved between two tools without retyping, stock alerts before you run out, and a WhatsApp reply when you are closed.",
-    "p.auto.1":"Daily and weekly reports, sent on a schedule","p.auto.2":"Data moved between your tools automatically",
-    "p.auto.3":"Stock and overdue-payment alerts","p.auto.4":"Automatic WhatsApp replies out of hours",
-
-    "price.eyebrow":"Pricing","price.h2":"Our prices are public",
-    "price.lede":"Most studios say \"it depends\". Pick your market and read the number. Gulf projects cost more because the market pays more, not because the work differs.",
-    "market.eg":"Egypt","market.gulf":"Gulf","plan.popular":"Most asked",
-    "plan.site.w":"A credible presence that Google can find.","plan.site.t":"one-off · 10 days",
-    "plan.store.w":"Sell online and take money properly.","plan.store.t":"one-off · 3 weeks",
-    "plan.app.w":"On the home screen, working offline.","plan.app.t":"one-off · 3–4 weeks",
-    "plan.system.w":"When spreadsheets stop coping.","plan.system.t":"one-off · 4–6 weeks",
-
-    "care.h":"Monthly care",
-    "care.p":"A site is not bought once and forgotten. This keeps yours online, secure and current, with a named person to go back to.",
-    "care.t":"per month · cancel any time",
-    "care.1":"Hosting, domain and SSL certificate","care.2":"Daily backups and uptime monitoring",
-    "care.3":"Security updates as they are released","care.4":"Up to two hours of changes a month",
-    "care.5":"WhatsApp support, Sunday to Thursday, reply within 24 hours",
-    "care.6":"Leave whenever you like — we hand over the files",
-
-    "proc.eyebrow":"How it works","proc.h2":"Four steps, and you can stop after any of them",
-    "proc.1.h":"Send the brief","proc.1.p":"Tell us what the business does and what slows it down. Fifteen minutes is enough, and no call is needed if you would rather write.",
-    "proc.2.h":"Read the quote","proc.2.p":"A written price and a delivery date within 24 hours, listing exactly what is in and what is out. Nothing is billed yet.",
-    "proc.3.h":"Watch the build","proc.3.p":"A link to the work as it happens, so you comment while changes are cheap rather than after delivery.",
-    "proc.4.h":"Take the keys","proc.4.p":"Training for your staff, the domain in your name, the code handed over. The monthly plan only if you want it.",
-
-    "faq.eyebrow":"Questions","faq.h2":"The ones we get every week","faq.lede":"Anything else, ask before you commit to anything at all.",
+    "faq.h2":"Questions","faq.p":"The six we hear every week.","faq.link":"Ask us yours",
     "q1":"Why is the price lower than other studios?",
-    "a1":"Because the work takes less time, not because it is worth less. Modern tooling removes the repetitive parts, so a job that takes two months elsewhere takes us two weeks. We pass that on instead of keeping it.",
-    "q2":"Is the price final?",
-    "a2":"Yes. The quote is written and lists what is included. Anything extra is priced and agreed before it starts, never added at the end.",
-    "q3":"Who owns the site and the domain?",
-    "a3":"You do. The domain is registered in your name and the code is handed over. If you leave, we package everything up for you first.",
-    "q4":"Is the monthly plan compulsory?",
-    "a4":"No. Take the site and host it anywhere. Most owners would simply rather not deal with hosting, backups and updates, which is what the plan covers.",
-    "q5":"What does daily support actually mean?",
-    "a5":"A named person replies on WhatsApp, Sunday to Thursday, within 24 hours and usually much sooner. Small changes are included up to two hours a month. Larger work is quoted first.",
-    "q6":"Do you work outside Egypt?",
-    "a6":"Yes, across Saudi Arabia, the UAE, Kuwait and Qatar. Meetings are online and contracts are in US dollars. Gulf pricing is shown above when you switch market.",
+    "a1":"Because the work takes less time. Modern tools remove the repetitive parts, so a job that takes two months elsewhere takes us two weeks, and we charge for the two weeks.",
+    "q2":"Is the price final?","a2":"Yes. The quote is written and lists what is included. Anything extra is priced and agreed before it starts.",
+    "q3":"Who owns the website and the domain?","a3":"You do. The domain is registered in your name and the code is handed over at the end.",
+    "q4":"Do I have to pay the $50 a month?","a4":"No. You can host it anywhere. The monthly care is for owners who would rather not handle hosting, backups and updates.",
+    "q5":"What does daily support mean?","a5":"A person answers on WhatsApp, Sunday to Thursday, within 24 hours and usually the same day.",
+    "q6":"Do you work outside Egypt?","a6":"Yes, in Saudi Arabia, the UAE, Kuwait and Qatar. Meetings are online and Gulf prices show when you switch the market above.",
 
-    "ct.eyebrow":"Start here","ct.h2":"Tell us what the business needs",
-    "ct.p":"Send this and you get a written price and a delivery date back. There is no call until you want one, and nothing is billed until you agree the quote.",
-    "ct.hours":"We reply Sunday to Thursday, within 24 hours.",
-    "ct.name":"Your name","ct.company":"Company","ct.email":"Email","ct.wa":"WhatsApp",
-    "ct.need":"What you need","ct.note":"What slows the business down today",
-    "ct.notsure":"Not sure yet",
+    "quote.h2":"A written quote in 24 hours",
+    "quote.p":"Tell us what the business does. You get a price and a delivery date back, and nothing is billed until you agree.",
+    "st.1":"You send this form","st.1p":"Five minutes, no call needed.",
+    "st.2":"We send the quote","st.2p":"Price, date and what is included.",
+    "st.3":"You watch it being built","st.3p":"A link to the work in progress.",
+    "st.4":"You get the keys","st.4p":"Domain, code and training.",
+    "f.name":"Your name","f.name.err":"Write your name.","f.company":"Company",
+    "f.email":"Email","f.email.err":"Write an email address with an @.","f.wa":"WhatsApp number",
+    "f.need":"What you need","f.note":"What slows the business down","f.reply":"We reply on WhatsApp or by email, Sunday to Thursday, within 24 hours.",
+    "f.sent":"Your quote request is in. We reply within 24 hours.","f.notsure":"Not sure yet",
+
+    "close.h2":"Tell us what the business needs","close.p":"A written price and a delivery date, within 24 hours.",
     "foot.lede":"Websites, apps and business systems for companies in Egypt and the Gulf.",
-    "foot.build":"Build","foot.company":"Company","foot.talk":"Talk","foot.made":"Built in Cairo",
-    "form.err":"Add an email we can reply to.",
-    "form.todo":"Not connected yet — add your form endpoint in assets/js/site.js before launch.",
-
-    "sc.note":"Example screens. Real client work replaces them as it ships.",
-
+    "foot.build":"Build","foot.studio":"Studio","foot.talk":"Talk to us","foot.tools":"Tools we connect",
+    "foot.tm":"Product names and logos are trademarks of their owners.",
+    "gate.label":"Choose a language",
+    "plan.care.per":" a month","care.alt":"The monthly care panel: last backup, uptime, the certificate date and the change hours used",
+    "care.h":"nileclinic.com · this month","care.r1":"Last backup","care.v1":"Today, 03:00","care.r2":"Online","care.v2":"99.98%",
+    "care.r3":"Security certificate","care.v3":"Renews 12 August","care.r4":"Changes used","care.v4":"1 h 20 of 2 h",
+    "wa.alt":"The quote arriving on WhatsApp: a website, $300, live on 24 March","wa.online":"online","wa.day":"Today",
+    "wa.q":"Hi, we need a site for the clinic in Arabic and English, with booking.","wa.a1":"Here is your quote for Nile Dental:",
+    "wa.qt":"Website, five pages","wa.l1":"Arabic and English","wa.l2":"Booking button and map","wa.l3":"Live on 24 March",
+    "wa.a2":"Reply OK and we start on Sunday.","wa.ok":"OK 👍",
+    "plan.auto.h":"Automation for daily work","plan.care.h":"Monthly care for your site",
+    "order.site":"Order a website","order.store":"Order a store","order.app":"Order an app","order.system":"Order a system","order.auto":"Order automation","order.care":"Add monthly care",
     "cl.brand":"Nile Dental",
     "cl.n1":"Services","cl.n2":"Doctors","cl.n3":"Prices","cl.n4":"Contact","cl.cta":"Book now",
     "cl.h1":"Dental care in Heliopolis, booked in thirty seconds.",
@@ -110,10 +104,9 @@ const T = {
     "cl.d3n":"Dr Hana Mostafa","cl.d3s":"Children · 8 years",
     "cl.q":"I booked at eleven at night and I was in the chair the next morning. Nobody asked me to call back.",
     "cl.qn":"Mariam S. · Sheraton",
-    "cl.bandh":"Open Saturday to Thursday, 10am until 9pm. 12 Nasr Road, Heliopolis.",
+    "cl.bandh":"Open Saturday to Thursday, 10am until 9pm, on Nasr Road in Heliopolis.",
     "cl.bandb":"Book an appointment",
-    "cl.f":"Nile Dental · 12 Nasr Road, Heliopolis, Cairo · 0100 123 4567",
-
+    "cl.f":"Nile Dental · Nasr Road, Heliopolis, Cairo",
     "sh.brand":"Nile Fabrics","sh.n1":"Cotton","sh.n2":"Linen","sh.n3":"Silk","sh.n4":"Wholesale",
     "sh.bag":"Cart · EGP 1,480","sh.h1":"Cotton by the metre",
     "sh.count":"42 fabrics · delivered in Cairo within 48 hours","sh.per":"/ metre",
@@ -124,7 +117,6 @@ const T = {
     "sh.p5":"Linen, sage","sh.m5":"Pre-washed · 140cm",
     "sh.p6":"Raw silk, gold","sh.m6":"Limited · 48 m left",
     "sh.pay":"Pay with","sh.cod":"Cash on delivery",
-
     "ap.hi":"Saturday, 14 March","ap.h2":"Today's deliveries",
     "ap.sumlbl":"Collected today","ap.lbl":"ON THE ROAD · 4",
     "ap.n1":"Mahmoud Hassan","ap.s1":"Nasr City · delivered 11:20",
@@ -132,7 +124,6 @@ const T = {
     "ap.n3":"Karim Fouad","ap.s3":"Zamalek · picked up 10:05",
     "ap.n4":"Nour Eldin","ap.s4":"6th October · failed, retry",
     "ap.t1":"Today","ap.t2":"Routes","ap.t3":"Cash","ap.t4":"More",
-
     "sy.m1":"Dashboard","sy.m2":"Invoices","sy.m3":"Stock","sy.m4":"Customers",
     "sy.m5":"Suppliers","sy.m6":"Reports","sy.m7":"Staff",
     "sy.h2":"Invoices","sy.add":"+ New invoice",
@@ -143,7 +134,6 @@ const T = {
     "sy.c1":"El Shorouk Garments","sy.c2":"Zahran Textiles","sy.c3":"Maison Laila",
     "sy.c4":"Gouna Interiors","sy.c5":"Arkan Uniforms",
     "sy.ok":"Paid","sy.part":"Part paid","sy.due":"14 days overdue",
-
     "au.h2":"Three automations, running since January",
     "au.sb":"Nobody opens a spreadsheet for any of this any more.",
     "au.trig":"TRIGGER","au.act":"ACTION","au.out":"RESULT",
@@ -159,101 +149,88 @@ const T = {
     "ap.n6":"Ahmed Samir","ap.s6":"Heliopolis · delivered 09:05","ap.v6":"1,760",
     "ap.n7":"Laila Mansour","ap.s7":"Garden City · delivered 08:30","ap.v7":"420",
     "sy.d1":"12 Mar","sy.d2":"11 Mar","sy.d3":"09 Mar","sy.d4":"08 Mar","sy.d5":"06 Mar",
-    "sy.a1":"84,500","sy.a2":"31,200","sy.a3":"12,860","sy.a4":"57,400","sy.a5":"22,150",
-    "ch.d10":"10 days","ch.w3":"3 weeks","ch.off":"Offline","ch.push":"Push",
-    "ch.w34":"3–4 weeks","ch.roles":"Roles","ch.audit":"Audit trail","ch.w46":"4–6 weeks",
-    "ch.sched":"Scheduled","ch.wa":"WhatsApp","ch.w12":"1–2 weeks",
-  },
-
+    "sy.a1":"84,500","sy.a2":"31,200","sy.a3":"12,860","sy.a4":"57,400","sy.a5":"22,150",  },
   ar: {
-    "skip":"تخطَّ إلى المحتوى",
-    "nav.work":"أعمالنا","nav.pricing":"الأسعار","nav.process":"طريقة الشغل","nav.faq":"أسئلة شائعة",
-    "cta.quote":"اطلب عرض سعر","cta.work":"شوف أعمالنا","cta.from":"من",
-    "hero.eyebrow":"مصر · الخليج · الشرق الأوسط",
-    "hero.h1":"بنبني الأنظمة اللي شغلك بيقوم عليها.",
-    "hero.lede":"مواقع ومتاجر إلكترونية وتطبيقات، والبرامج الداخلية اللي بتجمع المخزون والفواتير والعملاء في مكان واحد. السعر معلن قبل ما تكلمنا.",
-    "fact.from":"المواقع تبدأ من","fact.delivery":"التسليم","fact.delivery.v":"١٤ يوم",
-    "fact.reply":"الرد خلال","fact.reply.v":"٢٤ ساعة","fact.own":"الملكية","fact.own.v":"كلها ليك",
+    "skip":"انتقل إلى المحتوى",
+    "nav.work":"أعمالنا","nav.system":"الأنظمة","nav.prices":"الأسعار","nav.faq":"أسئلة",
+    "cta.quote":"اطلب عرض سعر","cta.work":"شوف الشغل",
+    "hero.h1":"استوديو مواقع وتطبيقات وأنظمة في القاهرة",
+    "hero.lead":"مواقع ومتاجر إلكترونية وتطبيقات وأنظمة إدارة لشركات مصر والخليج. المواقع من ٣٠٠ دولار، وتشتغل خلال ١٤ يوم، ودعم على واتساب كل يوم عمل.",
+    "hero.alt":"موقع عيادة أسنان من تنفيذ أكسيوم، فيه الأسعار والأطباء وزر الحجز",
 
-    "work.eyebrow":"اللي بنبنيه","work.h2":"خمس حاجات، وكل واحدة شكلها إيه بالظبط",
-    "work.lede":"مش مجرد قايمة خدمات. اختار واحدة وبص على الشاشة اللي هتستلمها، وبكام وفي خلال كام يوم.",
-    "tab.site":"المواقع","tab.store":"المتاجر الإلكترونية","tab.app":"تطبيقات الموبايل",
-    "tab.system":"أنظمة إدارة الأعمال","tab.auto":"الأتمتة",
+    "work.h2":"مواقع ومتاجر وتطبيقات وأنظمة.","work.h2b":"اختار واحدة وشوفها.",
+    "tab.site":"اعمل موقعك","tab.store":"بيع أونلاين","tab.app":"نزّل تطبيقك",
+    "tab.system":"أدِر شغلك","tab.auto":"خلّي الروتين أوتوماتيك",
+    "tp.site":"خمس صفحات بالعربي والإنجليزي، مبنية للموبايل ومجهزة علشان جوجل يلاقيك. من {site}، وتشتغل خلال ١٠ أيام.",
+    "tp.store":"كتالوج بأرصدة المخزون ودفع بفوري أو باي موب أو إنستاباي أو عند الاستلام. من {shop}، ويشتغل خلال ٣ أسابيع.",
+    "tp.app":"تطبيق عملاءك بينزلوه من لينك، يشتغل من غير نت ويبعت إشعارات. من {app}، خلال ٣ إلى ٤ أسابيع.",
+    "tp.system":"المخزون والفواتير والعملاء وصلاحيات الموظفين في مكان واحد، ومراجعة قبل أي ترحيل. من {system}.",
+    "tp.auto":"تقارير بتتبعت لوحدها، وتنبيهات مخزون، وردود واتساب بعد المواعيد. من {auto}، وتشتغل خلال أسبوع لأسبوعين.",
+    "work.link":"شوف كل الأسعار",
+    "sc.site":"موقع عيادة أسنان في مصر الجديدة",
+    "sc.store":"متجر أقمشة أونلاين فيه ست أقمشة بسعر المتر وأربع طرق دفع",
+    "sc.app":"تطبيق توصيل على الموبايل فيه توصيلات اليوم والمبلغ المحصّل",
+    "sc.system":"لوحة فواتير فيها إجماليات الشهر ورسم بياني وخمس فواتير",
+    "sc.auto":"تلات أتمتات: الطلبات الجديدة والمخزون القليل وتقرير الصبح",
+    "mq.1":"عيادات","mq.2":"تجار أقمشة","mq.3":"مطاعم","mq.4":"صيدليات","mq.5":"ورش","mq.6":"مدارس",
+    "mq.7":"القاهرة","mq.8":"الإسكندرية","mq.9":"الرياض","mq.10":"جدة","mq.11":"دبي","mq.12":"الكويت","mq.13":"الدوحة",
 
-    "p.site.h":"موقع مبني للموبايل الأول",
-    "p.site.p":"خمس صفحات بالعربي والإنجليزي، سريع على بيانات الموبايل، ومترتب علشان جوجل يلاقيك فعلاً. زي اللي بنعمله لتاجر أقمشة أو عيادة أو ورشة.",
-    "p.site.1":"حتى خمس صفحات، باللغتين","p.site.2":"زر واتساب وخريطة ونموذج تواصل",
-    "p.site.3":"تهيئة لمحركات البحث ومراجعة سرعة","p.site.4":"الدومين والكود ملكك",
+    "pb.label":"أنظمة إدارة الأعمال","pb.h2":"المخزون والفواتير والموظفين في نظام واحد",
+    "pb.p":"كل موظف بيشوف اللي صلاحيته تسمح بيه، ومفيش حاجة بتترحّل للدفاتر قبل ما حد يوافق. من ١٥٠٠ دولار، والتنفيذ من ٤ لـ ٦ أسابيع.",
+    "pb.btn":"شوف أسعار الأنظمة",
 
-    "p.store.h":"متجر بيستلم فلوسك صح",
-    "p.store.p":"كتالوج وسلة ودفع عن طريق فوري أو باي موب أو إنستاباي، مع لوحة تحكم موظفينك يقدروا يشتغلوا عليها فعلاً. وإشعار واتساب بيوصلك مع كل طلب.",
-    "p.store.1":"منتجات وأقسام وأرصدة مخزون","p.store.2":"فوري وباي موب وإنستاباي والدفع عند الاستلام",
-    "p.store.3":"لوحة طلبات وأذون تسليم","p.store.4":"تدريب لأي حد بيجهّز الطلبات",
+    "tools.h2":"بيشتغل مع واتساب ومع طرق الدفع.","tools.h2b":"فوري وباي موب وإنستاباي ضمنها.",
+    "tools.p":"الطلبات بتوصل على واتساب، والإيصالات بتروح بالإيميل، والعملاء بيدفعوا بالطريقة اللي متعودين عليها. وإنت شايف كل ده في مكان واحد.",
+    "tools.1":"فوري وباي موب وإنستاباي في الدفع","tools.2":"فيزا وماستركارد وآبل باي وجوجل باي","tools.3":"تنبيه واتساب مع كل طلب",
 
-    "p.app.h":"تطبيق بيتثبّت من المتصفح",
-    "p.app.p":"بيقعد على شاشة الموبايل، وبيشتغل من غير إنترنت، وبيبعت إشعارات — من غير حساب في المتجر ولا مراجعة ولا رسوم سنوية.",
-    "p.app.1":"بيتثبّت من لينك على طول","p.app.2":"بيشتغل أوفلاين وبيزامن لما النت يرجع",
-    "p.app.3":"إشعارات لعملائك","p.app.4":"التطبيق الأصلي بعرض سعر منفصل لما تحتاجه",
+    "price.h2":"الأسعار بالدولار.","price.h2b":"مكتوبة قبل ما تكلمنا.",
+    "market.label":"السوق","market.eg":"مصر","market.gulf":"الخليج",
+    "plan.popular":"الأكثر طلباً",
+    "plan.site":"موقع","plan.site.t":"مرة واحدة · جاهز في ١٠ أيام",
+    "plan.site.1":"خمس صفحات بالعربي والإنجليزي","plan.site.2":"زر واتساب وخريطة","plan.site.3":"مجهز لبحث جوجل",
+    "plan.store":"متجر إلكتروني","plan.store.t":"مرة واحدة · جاهز في ٣ أسابيع",
+    "plan.store.1":"منتجات ومخزون وطلبات","plan.store.2":"فوري وباي موب وإنستاباي وكاش","plan.store.3":"تنبيه واتساب مع كل طلب",
+    "plan.app":"تطبيق موبايل","plan.app.t":"مرة واحدة · جاهز في ٣ إلى ٤ أسابيع",
+    "plan.app.1":"بيتثبّت من لينك","plan.app.2":"بيشتغل من غير نت","plan.app.3":"إشعارات للعملاء",
+    "plan.system":"نظام إدارة","plan.system.t":"مرة واحدة · جاهز في ٤ إلى ٦ أسابيع",
+    "plan.system.1":"مخزون وفواتير وعملاء","plan.system.2":"صلاحية لكل موظف","plan.system.3":"موافقة قبل الترحيل",
+    "plan.auto":"أتمتة","plan.auto.t":"مرة واحدة · تشتغل خلال أسبوع لأسبوعين","plan.auto.p":"تقارير يومية وتنبيهات مخزون وردود واتساب، بتتظبط مرة واحدة. من",
+    "plan.care":"المتابعة الشهرية","plan.care.t":"شهرياً · توقفها أي وقت","plan.care.p":"استضافة ونسخ احتياطي وتحديثات وحد بيرد على واتساب من الأحد للخميس.",
 
-    "p.system.h":"النظام اللي الشغل بيمشي عليه فعلاً",
-    "p.system.p":"مخزون وفواتير وعملاء وصلاحيات للموظفين في مكان واحد، ومراجعة قبل ما أي حاجة تترحّل للدفاتر. مبني على مقاس طريقة شغلك.",
-    "p.system.1":"مخزون وفواتير وعملاء وموردين","p.system.2":"صلاحية مختلفة لكل موظف",
-    "p.system.3":"مراجعة واعتماد قبل الترحيل","p.system.4":"تقارير وكشوف حساب",
-
-    "p.auto.h":"الشغل اللي بيتكرر كل صباح، يروح",
-    "p.auto.p":"تقارير بتتبعت لوحدها، وبيانات بتتنقل بين برنامجين من غير إعادة إدخال، وتنبيهات مخزون قبل ما يخلص، ورد واتساب وأنت قافل.",
-    "p.auto.1":"تقارير يومية وأسبوعية بمواعيد ثابتة","p.auto.2":"نقل بيانات بين أدواتك تلقائياً",
-    "p.auto.3":"تنبيهات المخزون والمتأخرات","p.auto.4":"ردود واتساب تلقائية خارج المواعيد",
-
-    "price.eyebrow":"الأسعار","price.h2":"أسعارنا معلنة",
-    "price.lede":"معظم المكاتب بتقول «حسب المشروع». اختار السوق بتاعك واقرا الرقم. مشاريع الخليج أغلى لأن السوق بيدفع أكتر، مش لأن الشغل مختلف.",
-    "market.eg":"مصر","market.gulf":"الخليج","plan.popular":"الأكثر طلباً",
-    "plan.site.w":"وجود محترم على الإنترنت جوجل يلاقيه.","plan.site.t":"مرة واحدة · ١٠ أيام",
-    "plan.store.w":"بيع أونلاين واستلم فلوسك صح.","plan.store.t":"مرة واحدة · ٣ أسابيع",
-    "plan.app.w":"على شاشة الموبايل، وشغال أوفلاين.","plan.app.t":"مرة واحدة · ٣–٤ أسابيع",
-    "plan.system.w":"لما الإكسل والورق ما بقاش كفاية.","plan.system.t":"مرة واحدة · ٤–٦ أسابيع",
-
-    "care.h":"باقة المتابعة الشهرية",
-    "care.p":"الموقع مش حاجة بتشتريها مرة وتنساها. الباقة بتخليه شغال وآمن ومحدَّث، ومعاك حد بالاسم ترجع له.",
-    "care.t":"شهرياً · توقفها أي وقت",
-    "care.1":"استضافة ودومين وشهادة أمان","care.2":"نسخ احتياطي يومي ومتابعة الأعطال",
-    "care.3":"تحديثات أمان أول بأول","care.4":"تعديلات حتى ساعتين شهرياً",
-    "care.5":"دعم واتساب، الأحد–الخميس، رد خلال ٢٤ ساعة",
-    "care.6":"تمشي في أي وقت — وبنسلمك ملفاتك",
-
-    "proc.eyebrow":"طريقة الشغل","proc.h2":"أربع خطوات، وتقدر توقف بعد أي واحدة",
-    "proc.1.h":"ابعت لنا التفاصيل","proc.1.p":"قول لنا شغلك بيعمل إيه وإيه اللي معطّلك. ربع ساعة تكفي، ومش لازم مكالمة لو تحب تكتب.",
-    "proc.2.h":"اقرا العرض","proc.2.p":"سعر مكتوب وتاريخ تسليم خلال ٢٤ ساعة، وفيه بالظبط إيه اللي داخل وإيه اللي بره. ومحدش دفع حاجة لسه.",
-    "proc.3.h":"تابع التنفيذ","proc.3.p":"لينك تشوف عليه الشغل وهو بيتعمل، علشان تقول رأيك والتعديل لسه رخيص، مش بعد التسليم.",
-    "proc.4.h":"استلم المفاتيح","proc.4.p":"تدريب لموظفينك، والدومين باسمك، والكود بيتسلّم لك. وباقة المتابعة لو حبيت بس.",
-
-    "faq.eyebrow":"أسئلة شائعة","faq.h2":"الأسئلة اللي بتيجي كل أسبوع","faq.lede":"أي حاجة تانية، اسأل قبل ما تلتزم بأي حاجة.",
+    "faq.h2":"أسئلة","faq.p":"الست أسئلة اللي بتيجي كل أسبوع.","faq.link":"ابعت لنا سؤالك",
     "q1":"ليه السعر أقل من مكاتب تانية؟",
-    "a1":"لأن الشغل بياخد وقت أقل، مش لأن قيمته أقل. الأدوات الحديثة بتشيل الجزء المتكرر، فالمشروع اللي بياخد شهرين عند غيرنا بناخده في أسبوعين. والفرق ده بنوفره عليك بدل ما ناخده.",
-    "q2":"السعر ده نهائي؟",
-    "a2":"أيوه. العرض مكتوب وفيه كل اللي داخل. أي إضافة بتتسعّر ويتفق عليها قبل ما تبدأ، ومش بتتحط في آخر فاتورة.",
-    "q3":"الموقع والدومين ملك مين؟",
-    "a3":"ملكك إنت. الدومين بيتسجل باسمك والكود بيتسلّم لك. ولو قررت تمشي، بنجهز لك كل حاجة الأول.",
-    "q4":"باقة المتابعة إلزامية؟",
-    "a4":"لأ. خد الموقع واستضيفه عند أي حد. بس معظم أصحاب الأعمال مش بيحبوا يتعاملوا مع الاستضافة والنسخ الاحتياطي والتحديثات، وده اللي الباقة بتعمله.",
-    "q5":"يعني إيه «دعم يومي»؟",
-    "a5":"في حد بالاسم بيرد عليك على واتساب، الأحد لحد الخميس، خلال ٢٤ ساعة وغالباً أسرع بكتير. التعديلات الصغيرة داخلة لحد ساعتين شهرياً، واللي أكبر بيتسعّر الأول.",
-    "q6":"بتشتغلوا بره مصر؟",
-    "a6":"أيوه، في السعودية والإمارات والكويت وقطر. الاجتماعات أونلاين والتعاقد بالدولار. وأسعار الخليج بتظهر فوق لما تغيّر السوق.",
+    "a1":"لأن الشغل بياخد وقت أقل. الأدوات الحديثة بتشيل الجزء المتكرر، فالمشروع اللي بياخد شهرين عند غيرنا بناخده في أسبوعين، وبنحاسبك على الأسبوعين.",
+    "q2":"السعر نهائي؟","a2":"أيوه. العرض مكتوب وفيه كل اللي داخل. أي إضافة بتتسعّر ونتفق عليها قبل ما تبدأ.",
+    "q3":"الموقع والدومين ملك مين؟","a3":"ملكك إنت. الدومين بيتسجل باسمك والكود بيتسلّم لك في الآخر.",
+    "q4":"لازم أدفع الـ ٥٠ دولار في الشهر؟","a4":"لأ. تقدر تستضيفه في أي مكان. المتابعة الشهرية لأصحاب الشغل اللي مش عايزين يتعاملوا مع الاستضافة والنسخ الاحتياطي والتحديثات.",
+    "q5":"يعني إيه دعم يومي؟","a5":"في حد بيرد عليك على واتساب، من الأحد للخميس، خلال ٢٤ ساعة وغالباً في نفس اليوم.",
+    "q6":"بتشتغلوا برة مصر؟","a6":"أيوه، في السعودية والإمارات والكويت وقطر. الاجتماعات أونلاين وأسعار الخليج بتظهر لما تغيّر السوق فوق.",
 
-    "ct.eyebrow":"ابدأ من هنا","ct.h2":"قول لنا شغلك محتاج إيه",
-    "ct.p":"ابعت ده وهيوصلك سعر مكتوب وتاريخ تسليم. مفيش مكالمة غير لما تطلبها، ومحدش بيدفع حاجة قبل ما يوافق على العرض.",
-    "ct.hours":"بنرد من الأحد للخميس، خلال ٢٤ ساعة.",
-    "ct.name":"اسمك","ct.company":"الشركة","ct.email":"الإيميل","ct.wa":"واتساب",
-    "ct.need":"محتاج إيه","ct.note":"إيه اللي معطّل شغلك دلوقتي",
-    "ct.notsure":"لسه مش متأكد",
+    "quote.h2":"عرض سعر مكتوب خلال ٢٤ ساعة",
+    "quote.p":"قول لنا شغلك بيعمل إيه. هيوصلك سعر وتاريخ تسليم، ومحدش بيدفع حاجة قبل ما يوافق.",
+    "st.1":"تبعت النموذج ده","st.1p":"خمس دقايق، من غير مكالمة.",
+    "st.2":"نبعت لك العرض","st.2p":"السعر والتاريخ وكل اللي داخل.",
+    "st.3":"تتابع التنفيذ","st.3p":"لينك تشوف عليه الشغل وهو بيتعمل.",
+    "st.4":"تستلم المفاتيح","st.4p":"الدومين والكود والتدريب.",
+    "f.name":"اسمك","f.name.err":"اكتب اسمك.","f.company":"الشركة",
+    "f.email":"الإيميل","f.email.err":"اكتب إيميل فيه @.","f.wa":"رقم الواتساب",
+    "f.need":"محتاج إيه","f.note":"إيه اللي معطّل شغلك","f.reply":"بنرد على واتساب أو بالإيميل، من الأحد للخميس، خلال ٢٤ ساعة.",
+    "f.sent":"طلب عرض السعر وصل. هنرد خلال ٢٤ ساعة.","f.notsure":"لسه مش متأكد",
+
+    "close.h2":"قول لنا شغلك محتاج إيه","close.p":"سعر مكتوب وتاريخ تسليم، خلال ٢٤ ساعة.",
     "foot.lede":"مواقع وتطبيقات وأنظمة إدارة لشركات مصر والخليج.",
-    "foot.build":"اللي بنبنيه","foot.company":"الشركة","foot.talk":"تواصل","foot.made":"صُنع في القاهرة",
-    "form.err":"اكتب إيميل نقدر نرد عليه.",
-    "form.todo":"لسه مش متوصّل — ضيف عنوان النموذج في assets/js/site.js قبل الإطلاق.",
-
-    "sc.note":"شاشات توضيحية. بنستبدلها بأعمال عملاء حقيقية أول ما تنزل.",
-
+    "foot.build":"اللي بنبنيه","foot.studio":"الاستوديو","foot.talk":"كلّمنا","foot.tools":"الأدوات اللي بنربطها",
+    "foot.tm":"أسماء المنتجات وشعاراتها علامات تجارية لأصحابها.",
+    "gate.label":"اختار اللغة",
+    "plan.care.per":" في الشهر","care.alt":"لوحة المتابعة الشهرية: آخر نسخة احتياطية ونسبة التشغيل وتاريخ الشهادة وساعات التعديل",
+    "care.h":"nileclinic.com · الشهر ده","care.r1":"آخر نسخة احتياطية","care.v1":"النهارده، ٣:٠٠ ص","care.r2":"شغال","care.v2":"٩٩٫٩٨٪",
+    "care.r3":"شهادة الأمان","care.v3":"بتتجدد ١٢ أغسطس","care.r4":"التعديلات المستخدمة","care.v4":"ساعة و٢٠ من ساعتين",
+    "wa.alt":"عرض السعر واصل على واتساب: موقع بـ ٣٠٠ دولار، يشتغل ٢٤ مارس","wa.online":"متصل","wa.day":"النهارده",
+    "wa.q":"أهلاً، محتاجين موقع للعيادة بالعربي والإنجليزي، وفيه حجز.","wa.a1":"ده عرض السعر لنايل دنتال:",
+    "wa.qt":"موقع، خمس صفحات","wa.l1":"عربي وإنجليزي","wa.l2":"زر حجز وخريطة","wa.l3":"يشتغل ٢٤ مارس",
+    "wa.a2":"رد بـ تمام ونبدأ يوم الأحد.","wa.ok":"تمام 👍",
+    "plan.auto.h":"أتمتة للشغل اليومي","plan.care.h":"متابعة شهرية لموقعك",
+    "order.site":"اطلب موقع","order.store":"اطلب متجر","order.app":"اطلب تطبيق","order.system":"اطلب نظام","order.auto":"اطلب أتمتة","order.care":"ضيف المتابعة الشهرية",
     "cl.brand":"نايل دنتال",
     "cl.n1":"الخدمات","cl.n2":"الأطباء","cl.n3":"الأسعار","cl.n4":"تواصل","cl.cta":"احجز الآن",
     "cl.h1":"علاج أسنان في مصر الجديدة، بتحجزه في ٣٠ ثانية.",
@@ -269,10 +246,9 @@ const T = {
     "cl.d3n":"د. هنا مصطفى","cl.d3s":"أطفال · ٨ سنين",
     "cl.q":"حجزت الساعة ١١ بالليل وكنت على الكرسي الصبح. محدش قال لي كلمنا تاني.",
     "cl.qn":"مريم س. · شيراتون",
-    "cl.bandh":"مفتوح من السبت للخميس، من ١٠ صباحاً لـ ٩ مساءً. ١٢ شارع النصر، مصر الجديدة.",
+    "cl.bandh":"مفتوح من السبت للخميس، من ١٠ صباحاً لـ ٩ مساءً، في شارع النصر بمصر الجديدة.",
     "cl.bandb":"احجز ميعاد",
-    "cl.f":"نايل دنتال · ١٢ شارع النصر، مصر الجديدة، القاهرة · ٠١٠٠ ١٢٣ ٤٥٦٧",
-
+    "cl.f":"نايل دنتال · شارع النصر، مصر الجديدة، القاهرة",
     "sh.brand":"أقمشة النيل","sh.n1":"قطن","sh.n2":"كتان","sh.n3":"حرير","sh.n4":"جملة",
     "sh.bag":"السلة · ١٤٨٠ جنيه","sh.h1":"قطن بالمتر",
     "sh.count":"٤٢ قماش · التوصيل في القاهرة خلال ٤٨ ساعة","sh.per":"/ المتر",
@@ -283,7 +259,6 @@ const T = {
     "sh.p5":"كتان، أخضر فاتح","sh.m5":"مغسول مسبقاً · ١٤٠ سم",
     "sh.p6":"حرير خام، ذهبي","sh.m6":"كمية محدودة · باقي ٤٨ متر",
     "sh.pay":"الدفع بـ","sh.cod":"الدفع عند الاستلام",
-
     "ap.hi":"السبت، ١٤ مارس","ap.h2":"توصيلات اليوم",
     "ap.sumlbl":"المحصّل اليوم","ap.lbl":"في الطريق · ٤",
     "ap.n1":"محمود حسن","ap.s1":"مدينة نصر · تم التسليم ١١:٢٠",
@@ -291,7 +266,6 @@ const T = {
     "ap.n3":"كريم فؤاد","ap.s3":"الزمالك · تم الاستلام ١٠:٠٥",
     "ap.n4":"نور الدين","ap.s4":"٦ أكتوبر · فشل، إعادة محاولة",
     "ap.t1":"اليوم","ap.t2":"الخطوط","ap.t3":"التحصيل","ap.t4":"المزيد",
-
     "sy.m1":"الرئيسية","sy.m2":"الفواتير","sy.m3":"المخزون","sy.m4":"العملاء",
     "sy.m5":"الموردين","sy.m6":"التقارير","sy.m7":"الموظفين",
     "sy.h2":"الفواتير","sy.add":"+ فاتورة جديدة",
@@ -302,7 +276,6 @@ const T = {
     "sy.c1":"الشروق للملابس","sy.c2":"زهران للمنسوجات","sy.c3":"ميزون ليلى",
     "sy.c4":"الجونة للديكور","sy.c5":"أركان يونيفورم",
     "sy.ok":"مدفوعة","sy.part":"مدفوعة جزئياً","sy.due":"متأخرة ١٤ يوم",
-
     "au.h2":"تلات أتمتات، شغالة من يناير",
     "au.sb":"محدش بيفتح شيت إكسل لأي حاجة من دي تاني.",
     "au.trig":"الحدث","au.act":"الإجراء","au.out":"النتيجة",
@@ -318,229 +291,184 @@ const T = {
     "ap.n6":"أحمد سمير","ap.s6":"مصر الجديدة · تم التسليم ٩:٠٥","ap.v6":"١٬٧٦٠",
     "ap.n7":"ليلى منصور","ap.s7":"جاردن سيتي · تم التسليم ٨:٣٠","ap.v7":"٤٢٠",
     "sy.d1":"١٢ مارس","sy.d2":"١١ مارس","sy.d3":"٩ مارس","sy.d4":"٨ مارس","sy.d5":"٦ مارس",
-    "sy.a1":"٨٤٬٥٠٠","sy.a2":"٣١٬٢٠٠","sy.a3":"١٢٬٨٦٠","sy.a4":"٥٧٬٤٠٠","sy.a5":"٢٢٬١٥٠",
-    "ch.d10":"١٠ أيام","ch.w3":"٣ أسابيع","ch.off":"أوفلاين","ch.push":"إشعارات",
-    "ch.w34":"٣–٤ أسابيع","ch.roles":"صلاحيات","ch.audit":"سجل تدقيق","ch.w46":"٤–٦ أسابيع",
-    "ch.sched":"مواعيد ثابتة","ch.wa":"واتساب","ch.w12":"أسبوع لأسبوعين",
-  },
+    "sy.a1":"٨٤٬٥٠٠","sy.a2":"٣١٬٢٠٠","sy.a3":"١٢٬٨٦٠","sy.a4":"٥٧٬٤٠٠","sy.a5":"٢٢٬١٥٠",  },
 };
 
-const NEEDS = ["tab.site","tab.store","tab.app","tab.system","tab.auto","ct.notsure"];
+const NEEDS = ["plan.site","plan.store","plan.app","plan.system","plan.auto","f.notsure"];
 
-/* =========================== language =========================== */
-let lang = localStorage.getItem("axiom.lang");
-
-function applyLang(next, persist = true) {
-  lang = next;
-  const d = document.documentElement;
-  d.lang = lang;
-  d.dir = lang === "ar" ? "rtl" : "ltr";
-  const dict = T[lang];
-
-  for (const el of $$("[data-i18n]")) {
-    const v = dict[el.dataset.i18n];
-    if (v !== undefined) el.textContent = v;
-  }
-
-  // The "what you need" options are built from the same keys as the tabs.
-  const sel = $("#f-need");
-  sel.innerHTML = "";
-  for (const k of NEEDS) sel.append(new Option(dict[k], k));
-
-  // The example screens are pages in their own right, so they take the
-  // language and the direction too.
-  for (const sc of $$(".screen")) {
-    sc.dir = lang === "ar" ? "rtl" : "ltr";
-    sc.classList.toggle("ar", lang === "ar");
-  }
-
-  $("#langBtn").textContent = lang === "ar" ? "English" : "العربية";
-  requestAnimationFrame(fitScreens);
-  if (persist) { try { localStorage.setItem("axiom.lang", lang); } catch {} }
-}
-
-/* The language question is a popup over the live site, not a wall in
-   front of it. The page behind is already running in a best-guess
-   language; nothing is remembered until the visitor actually chooses. */
-function openGate() {
-  const gate = $("#gate");
-  const choose = (l) => {
-    applyLang(l);
-    gate.classList.remove("open");
-    document.body.classList.remove("locked");
-    setTimeout(() => gate.remove(), 600);
-  };
-  for (const b of $$(".gate__btn", gate)) b.addEventListener("click", () => choose(b.dataset.lang));
-  addEventListener("keydown", (e) => { if (e.key === "Escape" && gate.isConnected) choose(lang); });
-  setTimeout(() => { gate.classList.add("open"); $(".gate__btn", gate).focus({ preventScroll: true }); }, 650);
-}
-
-/* =========================== pricing =========================== */
+/* =========================== prices, by market =========================== */
 const PRICES = {
   eg:   { site: 300,  shop: 700,  app: 900,  system: 1500, auto: 400,  care: 50  },
   gulf: { site: 1500, shop: 3500, app: 4500, system: 7500, auto: 2000, care: 200 },
 };
-let market = localStorage.getItem("axiom.market") || "eg";
+let market = "eg";
+try { market = localStorage.getItem("axiom.market") === "gulf" ? "gulf" : "eg"; } catch {}
+const money = (n) => "$" + n.toLocaleString("en-US");
+
+/* =========================== language =========================== */
+let lang = null;
+try { lang = localStorage.getItem("axiom.lang"); } catch {}
+
+function fill(key, el) {
+  let v = T[lang][key];
+  if (v === undefined) return;
+  // a panel line carries its price as {id}, so the market switch and the language share one sentence
+  if (v.includes("{")) { el.innerHTML = v.replace(/\{(\w+)\}/g, (_, k) => `<b data-price="${k}">${money(PRICES[market][k])}</b>`); return; }
+  el.textContent = v;
+}
+
+function applyLang(next, keep = true) {
+  lang = next;
+  const d = document.documentElement;
+  d.lang = lang;
+  d.dir = lang === "ar" ? "rtl" : "ltr";
+  for (const el of $$("[data-i18n]")) fill(el.dataset.i18n, el);
+  for (const el of $$("[data-i18n-label]")) { const v = T[lang][el.dataset.i18nLabel]; if (v) el.setAttribute("aria-label", v); }
+  const sel = $("#f-need");
+  sel.innerHTML = "";
+  for (const k of NEEDS) sel.append(new Option(T[lang][k], k));
+  $("#quote form").dataset.sent = T[lang]["f.sent"];
+  for (const sc of $$(".screen")) { sc.dir = lang === "ar" ? "rtl" : "ltr"; sc.classList.toggle("ar", lang === "ar"); }
+  const b = $("#langBtn");
+  b.textContent = lang === "ar" ? "English" : "العربية";
+  b.lang = lang === "ar" ? "en" : "ar";
+  paintPrices();
+  requestAnimationFrame(fitScreens);
+  if (keep) { try { localStorage.setItem("axiom.lang", lang); } catch {} }
+}
+
+/* The client asked for the language to be asked once, as a popup over the live page. The page
+   behind it already runs in the browser's language; nothing is kept until the visitor chooses. */
+function openGate() {
+  const gate = $("#gate");
+  // while it is open the page behind it takes no focus and no clicks
+  const behind = [$("header.nav"), $("main"), $("footer")];
+  for (const el of behind) el.inert = true;
+  const choose = (l) => {
+    applyLang(l);
+    for (const el of behind) el.inert = false;
+    gate.classList.remove("is-open");
+    document.body.classList.remove("is-locked");
+    setTimeout(() => gate.remove(), 500);
+  };
+  for (const b of $$(".gate__btn", gate)) b.addEventListener("click", () => choose(b.dataset.lang));
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && gate.isConnected) choose(lang); });
+  document.body.classList.add("is-locked");
+  setTimeout(() => { gate.classList.add("is-open"); $(".gate__btn", gate).focus({ preventScroll: true }); }, 500);
+}
 
 function paintPrices() {
-  const p = PRICES[market];
-  for (const n of $$("[data-price]")) n.textContent = "$" + p[n.dataset.price].toLocaleString("en-US");
-  $("#mEG").setAttribute("aria-pressed", String(market === "eg"));
-  $("#mGulf").setAttribute("aria-pressed", String(market === "gulf"));
-  try { localStorage.setItem("axiom.market", market); } catch {}
+  for (const n of $$("[data-price]")) n.textContent = money(PRICES[market][n.dataset.price]);
+  $("#mEG").setAttribute("aria-selected", String(market === "eg"));
+  $("#mGulf").setAttribute("aria-selected", String(market === "gulf"));
 }
 
-/* =========================== example tabs =========================== */
-/* The examples play through on their own. The timer is the progress bar
-   on the active tab: when its CSS animation ends the next tab opens, so
-   pausing the bar (hover, focus, off-screen) pauses the rotation too. */
-function initTabs() {
-  const tabs = $$(".tab"), panes = $$(".pane");
-  const bar = $(".tabs"), box = $(".panes");
-  let idx = 0;
-
-  function show(i, dir = 1) {
-    idx = (i + tabs.length) % tabs.length;
-    const t = tabs[idx];
-    const live = panes.find((p) => p.dataset.pane === t.dataset.tab);
-    const rtl = document.documentElement.dir === "rtl" ? -1 : 1;
-    box.style.setProperty("--dx", dir * rtl * 40 + "px");
-    for (const o of tabs) o.setAttribute("aria-selected", String(o === t));
-    for (const p of panes) p.classList.toggle("on", p === live);
-
-    // Restart the animations inside the pane that just appeared, and the timer.
-    for (const n of $$(".bars i, .scroller, .s-shop .p, .s-auto .w", live).concat($(".tab__bar", t))) {
-      n.style.animation = "none";
-      void n.offsetWidth;
-      n.style.animation = "";
-    }
-    fitScreens();
-    countUp(live);
-
-    // Hold the tallest height seen so the page below does not jump.
-    box.style.minHeight = Math.max(parseFloat(box.style.minHeight) || 0, live.offsetHeight) + "px";
-
-    // Keep the active tab in view when the row scrolls sideways (phones).
-    if (bar.scrollWidth > bar.clientWidth) {
-      const tr = t.getBoundingClientRect(), br = bar.getBoundingClientRect();
-      bar.scrollBy({ left: tr.left - br.left - (br.width - tr.width) / 2, behavior: "smooth" });
-    }
-  }
-
-  tabs.forEach((t, i) => {
-    t.addEventListener("click", () => show(i, i >= idx ? 1 : -1));
-    $(".tab__bar", t).addEventListener("animationend", () => show(idx + 1, 1));
-  });
-
-  // Pause while someone is reading, tabbing through, or looking elsewhere.
-  const why = new Set(["offscreen"]);
-  const hold = (k, on) => { on ? why.add(k) : why.delete(k); bar.classList.toggle("paused", why.size > 0); };
-  hold("offscreen", true);
-  box.addEventListener("mouseenter", () => hold("hover", true));
-  box.addEventListener("mouseleave", () => hold("hover", false));
-  box.addEventListener("focusin",  () => hold("focus", true));
-  box.addEventListener("focusout", () => hold("focus", false));
-  new IntersectionObserver(([e]) => hold("offscreen", !e.isIntersecting), { threshold: 0.25 }).observe(box);
-
-  // Swipe between examples on touch screens.
-  let x0 = null, y0 = 0;
-  box.addEventListener("pointerdown", (e) => { x0 = e.clientX; y0 = e.clientY; });
-  box.addEventListener("pointerup", (e) => {
-    if (x0 === null) return;
-    const dx = e.clientX - x0, dy = e.clientY - y0;
-    x0 = null;
-    if (Math.abs(dx) < 56 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
-    const fwd = (dx < 0) === (document.documentElement.dir !== "rtl");
-    show(idx + (fwd ? 1 : -1), fwd ? 1 : -1);
-  });
-  box.addEventListener("pointercancel", () => { x0 = null; });
-
-  addEventListener("resize", () => { box.style.minHeight = ""; }, { passive: true });
-}
-
-/* The clinic page appears twice (hero and the Websites tab), so it is
-   written once here. Every string is a dictionary key, so the example
-   screen is in Arabic when the site is. */
+/* =========================== the example screens =========================== */
 const CLINIC = `
-<div class="hdr">
-  <span class="brand" data-i18n="cl.brand">Nile Dental</span>
-  <span class="lnk" data-i18n="cl.n1">Services</span>
-  <span class="lnk" data-i18n="cl.n2">Doctors</span>
-  <span class="lnk" data-i18n="cl.n3">Prices</span>
-  <span class="lnk" data-i18n="cl.n4">Contact</span>
-  <span class="cta" data-i18n="cl.cta">Book now</span>
+<div class="x-hdr">
+  <span class="x-brand" data-i18n="cl.brand">Nile Dental</span>
+  <span class="x-lnk" data-i18n="cl.n1">Services</span>
+  <span class="x-lnk" data-i18n="cl.n2">Doctors</span>
+  <span class="x-lnk" data-i18n="cl.n3">Prices</span>
+  <span class="x-lnk" data-i18n="cl.n4">Contact</span>
+  <span class="x-cta" data-i18n="cl.cta">Book now</span>
 </div>
-<div class="hero">
+<div class="x-hero">
   <div>
-    <h1 data-i18n="cl.h1">Dental care in Heliopolis, booked in thirty seconds.</h1>
-    <p class="sub" data-i18n="cl.sub">Six dentists, one published price list, and an appointment you pick yourself.</p>
-    <div class="btns">
-      <span class="b1" data-i18n="cl.b1">Book an appointment</span>
-      <span class="b2" data-i18n="cl.b2">See the price list</span>
+    <p data-h="1" data-i18n="cl.h1">Dental care in Heliopolis, booked in thirty seconds.</p>
+    <p class="x-sub" data-i18n="cl.sub">Six dentists, one published price list, and an appointment you pick yourself.</p>
+    <div class="x-btns">
+      <span class="x-b1" data-i18n="cl.b1">Book an appointment</span>
+      <span class="x-b2" data-i18n="cl.b2">See the price list</span>
     </div>
   </div>
-  <div class="pic"></div>
+  <div class="x-pic"></div>
 </div>
-<div class="sec">
-  <h2 data-i18n="cl.sh">The three people ask for most</h2>
-  <div class="strip">
-    <div class="card"><h3 data-i18n="cl.s1h">Scale and polish</h3><p data-i18n="cl.s1p"></p><p class="price" data-i18n="cl.s1pr">EGP 450</p></div>
-    <div class="card"><h3 data-i18n="cl.s2h">Whitening</h3><p data-i18n="cl.s2p"></p><p class="price" data-i18n="cl.s2pr">EGP 2,400</p></div>
-    <div class="card"><h3 data-i18n="cl.s3h">Implants</h3><p data-i18n="cl.s3p"></p><p class="price" data-i18n="cl.s3pr">from EGP 9,000</p></div>
+<div class="x-sec">
+  <p data-h="2" data-i18n="cl.sh">The three people ask for most</p>
+  <div class="x-strip">
+    <div class="x-card"><p data-h="3" data-i18n="cl.s1h">Scale and polish</p><p data-i18n="cl.s1p"></p><p class="x-price" data-i18n="cl.s1pr">EGP 450</p></div>
+    <div class="x-card"><p data-h="3" data-i18n="cl.s2h">Whitening</p><p data-i18n="cl.s2p"></p><p class="x-price" data-i18n="cl.s2pr">EGP 2,400</p></div>
+    <div class="x-card"><p data-h="3" data-i18n="cl.s3h">Implants</p><p data-i18n="cl.s3p"></p><p class="x-price" data-i18n="cl.s3pr">from EGP 9,000</p></div>
   </div>
 </div>
-<div class="sec">
-  <h2 data-i18n="cl.dh">Who you will actually see</h2>
-  <div class="strip">
-    <div class="doc"><span class="av"></span><div><h3 data-i18n="cl.d1n">Dr Yasmine Adel</h3><p data-i18n="cl.d1s"></p></div></div>
-    <div class="doc"><span class="av"></span><div><h3 data-i18n="cl.d2n">Dr Omar Shafik</h3><p data-i18n="cl.d2s"></p></div></div>
-    <div class="doc"><span class="av"></span><div><h3 data-i18n="cl.d3n">Dr Hana Mostafa</h3><p data-i18n="cl.d3s"></p></div></div>
+<div class="x-sec">
+  <p data-h="2" data-i18n="cl.dh">Who you will actually see</p>
+  <div class="x-strip">
+    <div class="x-doc"><span class="x-av"></span><div><p data-h="3" data-i18n="cl.d1n">Dr Yasmine Adel</p><p data-i18n="cl.d1s"></p></div></div>
+    <div class="x-doc"><span class="x-av"></span><div><p data-h="3" data-i18n="cl.d2n">Dr Omar Shafik</p><p data-i18n="cl.d2s"></p></div></div>
+    <div class="x-doc"><span class="x-av"></span><div><p data-h="3" data-i18n="cl.d3n">Dr Hana Mostafa</p><p data-i18n="cl.d3s"></p></div></div>
   </div>
 </div>
-<div class="quote">
+<div class="x-quote">
   <p data-i18n="cl.q"></p>
   <span data-i18n="cl.qn">Mariam S.</span>
 </div>
-<div class="band">
-  <h2 data-i18n="cl.bandh">Open Saturday to Thursday, 10am until 9pm.</h2>
-  <span class="b1" data-i18n="cl.bandb">Book an appointment</span>
+<div class="x-band">
+  <p data-h="2" data-i18n="cl.bandh">Open Saturday to Thursday, 10am until 9pm.</p>
+  <span class="x-b1" data-i18n="cl.bandb">Book an appointment</span>
 </div>
-<div class="ft" data-i18n="cl.f">Nile Dental, 12 Nasr Road, Heliopolis, Cairo</div>
+<div class="x-ft" data-i18n="cl.f">Nile Dental, 12 Nasr Road, Heliopolis, Cairo</div>
 `;
 
-function buildClinics() {
-  for (const n of $$("[data-clinic]")) n.innerHTML = CLINIC;
-}
 
-/* Each example is a real page laid out at its own design width, then
-   scaled into the frame. That is why it reads as a screenshot: the type,
-   spacing and colour are the ones the live page would have. */
+function buildClinics() { for (const n of $$("[data-clinic]")) n.innerHTML = CLINIC; }
+
+/* Each example is a page laid out at its own design width, then scaled to its frame, so its type,
+   spacing and colour are the ones the live page would have. Below a phone width a 1280px page is
+   held at half size and the frame crops it, rather than shrinking the type to nothing. */
 function fitScreens() {
   for (const sc of $$(".screen")) {
     const view = sc.parentElement;
     const w = Number(sc.dataset.w) || 1280;
     const avail = view.clientWidth;
     if (!avail) continue;
-    // Below about a phone width, shrinking a 1280px page to fit makes the
-    // type unreadable, so hold a floor and let the frame crop instead.
-    const k = avail < 560 && w > 600 ? Math.max(avail / w, 0.5) : avail / w;
+    const k = avail / w;
     sc.style.width = w + "px";
     sc.style.transform = "scale(" + k + ")";
-    if (sc.dataset.fit === "phone") continue;          // fixed-height frame
-    const h = sc.dataset.pan
-      ? Math.min(Number(sc.dataset.vh) * k, 640)
-      : sc.offsetHeight * k;
-    view.style.height = Math.round(h) + "px";
+    if (sc.dataset.fit === "phone" || view.closest(".work__slot, .pb__screen")) continue;   // the frame sets the height
+    view.style.height = Math.round((sc.dataset.pan ? Number(sc.dataset.vh) : sc.offsetHeight) * k) + "px";
   }
 }
 
-/* =========================== counters =========================== */
-function countUp(scope = document) {
+/* =========================== the examples move on by themselves =========================== */
+/* The client asked for it. The kit's tabs stay the kit's (system.js shows a tab's line and screen); the
+   timer is the active tab's bar, so pausing the bar on hover, focus or off screen pauses the turn. */
+function autoTour() {
+  const list = $(".work__tabs");
+  const tabs = $$('[role="tab"]', list);
+  const box = $("#work .work");
+  const why = new Set(["off"]);
+  const hold = (k, on) => { on ? why.add(k) : why.delete(k); list.classList.toggle("is-paused", why.size > 0); };
+  hold("off", true);
+  const restart = (t) => { const bar = $(".tab__bar", t); bar.style.animation = "none"; void bar.offsetWidth; bar.style.animation = ""; };
+  for (const t of tabs) {
+    t.addEventListener("click", () => {
+      restart(t);
+      requestAnimationFrame(fitScreens);
+      // the shown screen starts its own story again
+      const shown = document.getElementById(t.getAttribute("aria-controls").split(" ")[1]);
+      for (const n of $$(".x-bars i, .scroller, .s-shop .x-p, .s-auto .x-w", shown)) { n.style.animation = "none"; void n.offsetWidth; n.style.animation = ""; }
+      countUp(shown);
+    });
+    $(".tab__bar", t).addEventListener("animationend", () => {
+      const i = tabs.indexOf(t);
+      tabs[(i + 1) % tabs.length].click();
+    });
+  }
+  box.addEventListener("pointerenter", () => hold("hover", true));
+  box.addEventListener("pointerleave", () => hold("hover", false));
+  box.addEventListener("focusin", () => hold("focus", true));
+  box.addEventListener("focusout", () => hold("focus", false));
+  new IntersectionObserver(([e]) => hold("off", !e.isIntersecting), { threshold: 0.35 }).observe(box);
+}
+
+function countUp(scope) {
+  const loc = lang === "ar" ? "ar-EG" : "en-US";
   for (const el of $$("[data-tick]", scope)) {
     const to = Number(el.dataset.tick);
-    const loc = lang === "ar" ? "ar-EG" : "en-US";
     if (REDUCED) { el.textContent = to.toLocaleString(loc); continue; }
-    const t0 = performance.now(), dur = 1200;
+    const t0 = performance.now(), dur = 1100;
     (function step(now) {
       const k = Math.max(0, Math.min(1, (now - t0) / dur));
       el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))).toLocaleString(loc);
@@ -550,64 +478,21 @@ function countUp(scope = document) {
 }
 
 /* =========================== boot =========================== */
-function start() {
-  paintPrices();
-  initTabs();
-  fitScreens();
-  addEventListener("resize", fitScreens, { passive: true });
-
-  $("#mEG").addEventListener("click",   () => { market = "eg";   paintPrices(); });
-  $("#mGulf").addEventListener("click", () => { market = "gulf"; paintPrices(); });
-  $("#langBtn").addEventListener("click", () => applyLang(lang === "ar" ? "en" : "ar"));
-
-  const io = new IntersectionObserver((es) => {
-    for (const e of es) {
-      if (!e.isIntersecting) continue;
-      e.target.classList.add("in");
-      countUp(e.target);
-      io.unobserve(e.target);
-    }
-  }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
-  for (const n of $$(".rv")) io.observe(n);
-
-  // Scroll drives the background: the grid drifts, its spotlight travels
-  // down the page, the light changes colour, and the hero frame flattens.
-  const root = document.documentElement;
-  let queued = false;
-  const onScroll = () => {
-    $("#nav").classList.toggle("stuck", scrollY > 8);
-    if (REDUCED || queued) return;
-    queued = true;
-    requestAnimationFrame(() => {
-      queued = false;
-      const max = Math.max(1, root.scrollHeight - innerHeight);
-      root.style.setProperty("--p", Math.min(1, scrollY / max).toFixed(4));
-      root.style.setProperty("--h", Math.min(1, scrollY / (innerHeight * 0.75)).toFixed(4));
-      root.style.setProperty("--g", (-(scrollY * 0.2) % 64).toFixed(1) + "px");
-    });
-  };
-  addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
-  $("#quote").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const s = $("[data-form-status]");
-    const email = $("#f-email").value.trim();
-    s.textContent = (!email || !email.includes("@")) ? T[lang]["form.err"] : T[lang]["form.todo"];
-  });
-}
-
 buildClinics();
+const chosen = lang === "ar" || lang === "en";
+applyLang(chosen ? lang : ((navigator.language || "").toLowerCase().startsWith("ar") ? "ar" : "en"), chosen);
+if (chosen) $("#gate").remove(); else openGate();
 
-if (lang === "ar" || lang === "en") {
-  // Returning visitor: no popup.
-  applyLang(lang);
-  $("#gate").remove();
-  document.body.classList.remove("locked");
-  start();
-} else {
-  // First visit: run the site in the browser's language, then ask.
-  applyLang((navigator.language || "").toLowerCase().startsWith("ar") ? "ar" : "en", false);
-  start();
-  openGate();
-}
+for (const b of [$("#mEG"), $("#mGulf")]) b.addEventListener("click", () => {
+  market = b.dataset.market;
+  try { localStorage.setItem("axiom.market", market); } catch {}
+  paintPrices();
+});
+$("#langBtn").addEventListener("click", () => applyLang(lang === "ar" ? "en" : "ar"));
+// a plan's own button picks its kind of work in the form
+for (const b of $$("[data-need]")) b.addEventListener("click", () => { $("#f-need").value = b.dataset.need; });
+autoTour();
+countUp(document);
+addEventListener("resize", fitScreens, { passive: true });
+document.fonts?.ready.then(fitScreens);
+fitScreens();
