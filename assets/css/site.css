@@ -356,20 +356,21 @@ html[lang="ar"] .hero--field .hero__lead { font-family: "Readex Pro", var(--font
 .hero--field .btn-row { margin-top: var(--s-4); }
 
 
-/* ================================================================ the mark: a prompt, ">_" */
-.logo-caret { animation: pm-blink 1.1s steps(1) infinite; }
-.hero__mark { width: clamp(150px, 15vw, 220px); height: auto; overflow: visible; margin-bottom: var(--s-2); }
-.pm-chev, .pm-echo { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.pm-chev { stroke: url(#pm-ch); stroke-width: 13; stroke-dasharray: 100; stroke-dashoffset: 100;
-  animation: pm-draw .7s cubic-bezier(.22,1,.36,1) .15s forwards; }
-.pm-echo { stroke: #5d7cff; stroke-width: 4; opacity: 0; animation: pm-flow 2.4s cubic-bezier(.4,0,.2,1) calc(.9s + var(--i) * .8s) infinite; }
-.pm-caret { fill: #ede7da; opacity: 0; animation: pm-in .01s linear .8s forwards, pm-blink 1.1s steps(1) .8s infinite; }
-.pm-glow { transform-box: fill-box; transform-origin: center; animation: pm-breathe 5s ease-in-out infinite; }
-@keyframes pm-draw { to { stroke-dashoffset: 0; } }
-@keyframes pm-flow { 0% { transform: translateX(-58px); opacity: 0; } 35% { opacity: .55; } 100% { transform: translateX(-4px); opacity: 0; } }
-@keyframes pm-in { to { opacity: 1; } }
+/* ================================================================ the mark: a frame, a block in focus */
+.hero__mark { width: clamp(120px, 11vw, 160px); height: auto; overflow: visible; margin-bottom: var(--s-3); }
+/* the brackets close in like a lens finding focus, then breathe */
+.fm-c { transform: translate(calc(var(--x) * 9px), calc(var(--y) * 9px)); opacity: 0;
+  animation: fm-focus .9s cubic-bezier(.16,1,.3,1) .15s forwards, fm-breathe 4.8s ease-in-out 1.2s infinite; }
+.fm-block { transform-box: fill-box; transform-origin: center; transform: scale(0);
+  animation: fm-pop .6s cubic-bezier(.34,1.56,.64,1) .55s forwards; }
+.fm-shine { opacity: 0; animation: fm-shine .4s ease .95s forwards; }
+.fm-glow { transform-box: fill-box; transform-origin: center; opacity: 0; animation: fm-glow 4.8s ease-in-out 1s infinite; }
+@keyframes fm-focus { to { transform: translate(0, 0); opacity: 1; } }
+@keyframes fm-breathe { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(calc(var(--x) * 2.2px), calc(var(--y) * 2.2px)); } }
+@keyframes fm-pop { to { transform: scale(1); } }
+@keyframes fm-shine { to { opacity: .35; } }
+@keyframes fm-glow { 0%, 100% { opacity: .55; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.08); } }
 @keyframes pm-blink { 50% { opacity: 0; } }
-@keyframes pm-breathe { 0%, 100% { opacity: .7; transform: scale(.95); } 50% { opacity: 1; transform: scale(1.05); } }
 
 /* the name, with its terminal cursor */
 .hero__cursor { display: inline-block; width: .42em; height: .1em; align-self: flex-end; margin-block-end: .16em; margin-inline-start: .1em;
@@ -380,9 +381,8 @@ html[lang="ar"] .hero--field .hero__lead { font-family: "Readex Pro", var(--font
 @keyframes pm-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-caret, .pm-caret, .pm-echo, .pm-glow { animation: none; }
-  .pm-caret { opacity: 1; }
-  .pm-chev { animation: none; stroke-dashoffset: 0; }
+  .fm-c, .fm-block, .fm-shine, .fm-glow { animation: none; transform: none; opacity: 1; }
+  .fm-shine { opacity: .35; }
   .hero__cursor, .hero--field .hero__lead, .hero--field .btn-row { animation: none; }
 }
 

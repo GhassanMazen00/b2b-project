@@ -15,7 +15,7 @@ taste, except where the brief asked for something else.
 | Section | What it shows |
 |---|---|
 | Header | A glass capsule floating over the page: four words, the logo in the middle and the main button. On phones and tablets, the kit's solid bar and menu sheet. The language is chosen once, in the popup on arrival |
-| Hero | Centred: the logo drawn large (a cobalt prompt chevron with fainter chevrons streaming into it, and a blinking cursor), the name **axiom** typing itself in, a one-line `>` prompt and two buttons, over `dot-terrain`, a field of light points rolling toward a horizon |
+| Hero | Centred: the logo drawn large (its brackets close in like a lens finding focus, then breathe, the cobalt block glowing), the name **axiom** with a blinking cursor, a one-line `>` prompt and two buttons, over `dot-terrain`, a field of light points rolling toward a horizon |
 | Work (tabs tour) | Five real example screens: a clinic site, a clinic's booking page, a delivery app, an invoices system, three automations. They move on by themselves every 7 s and pause on hover, focus or off screen |
 | Care | Automation (a lanes diagram) and monthly care (the owner's status panel), each with its order button |
 | One system | A hub diagram: your system in the middle, joined to clients, bookings, bills, income, expenses, stock, staff and reports, beside the line "Your whole business in one system" |
@@ -31,7 +31,7 @@ system for reduced motion.
 Every string is in the `T` dictionary in `assets/js/site.js`; the example screens
 switch language and direction with the page.
 
-**The logo** is a prompt, `>_`: a cobalt chevron and a sand cursor that blinks. It is in the hero, the footer, the language popup and the favicon; the header carries the word alone.
+**The logo** is a frame: four corner brackets around one cobalt block, a cursor in focus. It is in the hero, the footer, the language popup and the favicon; the header carries the word alone.
 
 **Code theme.** All text is set in JetBrains Mono (Arabic letters fall through to Readex Pro). Each section headline opens with a `// 01` comment, the header links read as `/paths`, questions open with `>`, and included features are listed with `+`. The example screens keep their own type: they are clients' sites.
 

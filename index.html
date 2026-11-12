@@ -65,7 +65,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "JetBrains Mono", sans-serif; --
 <!-- language popup: the client's brief (asked on the first visit, never again) -->
 <div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-t">
   <div class="gate__in">
-    <svg class="logo-mark gate__mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M17 17 32 32 17 47" fill="none" stroke="var(--logo-b, #3358e6)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><rect class="logo-caret" x="36" y="42" width="16" height="7" rx="2" fill="var(--logo-a, #ede7da)"/></svg>
+    <svg class="logo-mark gate__mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 22V8h14M42 8h14v14M56 42v14H42M22 56H8V42" fill="none" stroke="var(--logo-a, #ede7da)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="22" y="22" width="20" height="20" rx="4" fill="var(--logo-b, #3358e6)"/></svg>
     <p class="gate__t" id="gate-t">Welcome · أهلاً بيك</p>
     <p class="gate__q">Choose a language · اختار اللغة</p>
     <div class="gate__btns">
@@ -102,15 +102,17 @@ html[lang="ar"] { --font-display: "Readex Pro", "JetBrains Mono", sans-serif; --
     <div class="hero__fx" data-fx="dot-terrain" data-fx-seed="7" data-fx-params='{"spacing": 16, "dot": 2.6, "amplitude": 0.15, "waveScale": 0.7, "speed": 0.06, "opacity": 0.9, "shade": 0.7, "crest": 0.9, "horizon": 0.6, "fog": 0.45, "haze": 0.5, "calm": 0.0, "calmX": 0.5, "calmY": 0.3}' aria-hidden="true"></div>
     <div class="wrap"><div class="hero-text">
       <div class="hero__copy">
-        <svg class="hero__mark" viewBox="12 0 160 100" aria-hidden="true">
-          <defs>
-            <linearGradient id="pm-ch" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7d97ff"/><stop offset="1" stop-color="#3358e6"/></linearGradient>
-            <radialGradient id="pm-glow"><stop offset="0" stop-color="#3358e6" stop-opacity=".5"/><stop offset="1" stop-color="#3358e6" stop-opacity="0"/></radialGradient>
-          </defs>
-          <ellipse class="pm-glow" cx="92" cy="52" rx="78" ry="48" fill="url(#pm-glow)"/>
-          <g class="pm-echoes"><path class="pm-echo" style="--i:0" d="M60 22 84 50 60 78"/><path class="pm-echo" style="--i:1" d="M60 22 84 50 60 78"/><path class="pm-echo" style="--i:2" d="M60 22 84 50 60 78"/></g>
-          <path class="pm-chev" d="M60 22 84 50 60 78" pathLength="100"/>
-          <rect class="pm-caret" x="94" y="68" width="30" height="10" rx="3"/>
+        <svg class="hero__mark" viewBox="0 0 64 64" aria-hidden="true">
+          <defs><radialGradient id="fm-glow"><stop offset="0" stop-color="#3358e6" stop-opacity=".55"/><stop offset="1" stop-color="#3358e6" stop-opacity="0"/></radialGradient></defs>
+          <circle class="fm-glow" cx="32" cy="32" r="30" fill="url(#fm-glow)"/>
+          <g class="fm-corners" fill="none" stroke="#ede7da" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <path class="fm-c" style="--x:-1;--y:-1" d="M8 22V8h14"/>
+            <path class="fm-c" style="--x:1;--y:-1" d="M42 8h14v14"/>
+            <path class="fm-c" style="--x:1;--y:1" d="M56 42v14H42"/>
+            <path class="fm-c" style="--x:-1;--y:1" d="M22 56H8V42"/>
+          </g>
+          <rect class="fm-block" x="22" y="22" width="20" height="20" rx="4" fill="#3358e6"/>
+          <rect class="fm-shine" x="24.5" y="24.5" width="7" height="2.4" rx="1.2" fill="#fff" opacity=".35"/>
         </svg>
         <h1 id="hero-h" class="hero__name">axiom<span class="hero__cursor" aria-hidden="true"></span><span class="sr-only" data-i18n="hero.sr">: websites, booking pages, apps and business systems for Egypt and the Gulf</span></h1>
         <p class="hero__lead"><span class="hero__prompt" aria-hidden="true">&gt;</span><span data-i18n="hero.lead">Websites, bookings, apps and systems for Egypt and the Gulf.</span></p>
@@ -492,7 +494,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "JetBrains Mono", sans-serif; --
     <div class="closing__links">
       <div class="grid">
         <div class="span-4 stack-4">
-          <a class="footer__mark" href="#top"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M17 17 32 32 17 47" fill="none" stroke="var(--logo-b, #3358e6)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><rect class="logo-caret" x="36" y="42" width="16" height="7" rx="2" fill="var(--logo-a, #ede7da)"/></svg><span class="logo-word">axiom</span></a>
+          <a class="footer__mark" href="#top"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 22V8h14M42 8h14v14M56 42v14H42M22 56H8V42" fill="none" stroke="var(--logo-a, #ede7da)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="22" y="22" width="20" height="20" rx="4" fill="var(--logo-b, #3358e6)"/></svg><span class="logo-word">axiom</span></a>
           <p class="footer__lede" data-i18n="foot.lede">Websites, apps and business systems for companies in Egypt and the Gulf.</p>
         </div>
         <div class="span-2 start-7 footer__col"><h3 data-i18n="foot.build">Build</h3><ul>
