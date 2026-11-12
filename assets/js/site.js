@@ -13,7 +13,7 @@ const T = {
     "nav.work":"Work","nav.system":"Systems","nav.prices":"Prices","nav.faq":"Questions",
     "cta.quote":"Get a quote","cta.work":"See the work",
     "hero.h1":"Web, app and system studio in Cairo",
-    "hero.lead":"Websites, stores, apps and business systems for Egypt and the Gulf. From $300, live in 14 days.","hero.art":"The Axiom mark, a folded peak, drawn in lines",
+    "hero.lead":"Websites, online stores, apps and the systems behind them, built for the way business is done here.","hero.art":"The Axiom mark, a folded peak, drawn in lines",
     "hero.alt":"A dental clinic's website built by Axiom, with its prices, doctors and booking button",
 
     "work.h2":"Websites, stores, apps and systems.","work.h2b":"Pick one to see it.",
@@ -80,6 +80,9 @@ const T = {
     "foot.build":"Build","foot.studio":"Studio","foot.talk":"Talk to us","foot.tools":"Tools we connect",
     "foot.tm":"Product names and logos are trademarks of their owners.",
     "gate.label":"Choose a language",
+    "nav.care":"Care","care.h2":"Automation and monthly care.","care.h2b":"The work after launch.",
+    "hero.note":"Taking projects in Egypt and the Gulf","hero.h1a":"Web, app and system studio","hero.h1b":"in Cairo",
+    "fact.1":"Websites from","fact.2":"Live in","fact.2v":"14 days","fact.3":"WhatsApp replies","fact.3v":"Within 24 h",
     "plan.care.per":" a month","care.alt":"The monthly care panel: last backup, uptime, the certificate date and the change hours used",
     "care.h":"nileclinic.com · this month","care.r1":"Last backup","care.v1":"Today, 03:00","care.r2":"Online","care.v2":"99.98%",
     "care.r3":"Security certificate","care.v3":"Renews 12 August","care.r4":"Changes used","care.v4":"1 h 20 of 2 h",
@@ -155,7 +158,7 @@ const T = {
     "nav.work":"أعمالنا","nav.system":"الأنظمة","nav.prices":"الأسعار","nav.faq":"أسئلة",
     "cta.quote":"اطلب عرض سعر","cta.work":"شوف الشغل",
     "hero.h1":"استوديو مواقع وتطبيقات وأنظمة في القاهرة",
-    "hero.lead":"مواقع ومتاجر وتطبيقات وأنظمة إدارة لمصر والخليج. من ٣٠٠ دولار، وتشتغل خلال ١٤ يوم.","hero.art":"شعار أكسيوم، قمة مطوية مرسومة بالخطوط",
+    "hero.lead":"مواقع ومتاجر إلكترونية وتطبيقات والأنظمة اللي وراها، مبنية على طريقة الشغل هنا.","hero.art":"شعار أكسيوم، قمة مطوية مرسومة بالخطوط",
     "hero.alt":"موقع عيادة أسنان من تنفيذ أكسيوم، فيه الأسعار والأطباء وزر الحجز",
 
     "work.h2":"مواقع ومتاجر وتطبيقات وأنظمة.","work.h2b":"اختار واحدة وشوفها.",
@@ -222,6 +225,9 @@ const T = {
     "foot.build":"اللي بنبنيه","foot.studio":"الاستوديو","foot.talk":"كلّمنا","foot.tools":"الأدوات اللي بنربطها",
     "foot.tm":"أسماء المنتجات وشعاراتها علامات تجارية لأصحابها.",
     "gate.label":"اختار اللغة",
+    "nav.care":"المتابعة","care.h2":"الأتمتة والمتابعة الشهرية.","care.h2b":"الشغل اللي بعد الإطلاق.",
+    "hero.note":"بنستقبل مشاريع في مصر والخليج","hero.h1a":"استوديو مواقع وتطبيقات وأنظمة","hero.h1b":"في القاهرة",
+    "fact.1":"المواقع من","fact.2":"تشتغل خلال","fact.2v":"١٤ يوم","fact.3":"الرد على واتساب","fact.3v":"خلال ٢٤ ساعة",
     "plan.care.per":" في الشهر","care.alt":"لوحة المتابعة الشهرية: آخر نسخة احتياطية ونسبة التشغيل وتاريخ الشهادة وساعات التعديل",
     "care.h":"nileclinic.com · الشهر ده","care.r1":"آخر نسخة احتياطية","care.v1":"النهارده، ٣:٠٠ ص","care.r2":"شغال","care.v2":"٩٩٫٩٨٪",
     "care.r3":"شهادة الأمان","care.v3":"بتتجدد ١٢ أغسطس","care.r4":"التعديلات المستخدمة","care.v4":"ساعة و٢٠ من ساعتين",
@@ -330,7 +336,8 @@ function applyLang(next, keep = true) {
   $("#quote form").dataset.sent = T[lang]["f.sent"];
   for (const sc of $$(".screen")) { sc.dir = lang === "ar" ? "rtl" : "ltr"; sc.classList.toggle("ar", lang === "ar"); }
   const b = $("#langBtn");
-  b.textContent = lang === "ar" ? "English" : "العربية";
+  b.textContent = lang === "ar" ? "EN" : "ع";
+  b.setAttribute("aria-label", lang === "ar" ? "English" : "العربية");
   b.lang = lang === "ar" ? "en" : "ar";
   paintPrices();
   requestAnimationFrame(fitScreens);

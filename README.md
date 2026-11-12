@@ -14,14 +14,18 @@ taste, except where the brief asked for something else.
 
 | Section | What it shows |
 |---|---|
-| Hero | The Axiom mark, a folded peak, drawn line by line on load with a slow band of light running down it; the headline and two buttons under it |
-| Work (tabs tour) | Five real example screens: a clinic site, a fabric store, a delivery app, an invoices system, three automations. They move on by themselves every 7 s and pause on hover, focus or off screen (the brief) |
-| Systems (big scene) | `powers-of-ten-pullback`: the invoices system fills the screen and the scroll pulls the camera back until it is a device on the lit ground |
+| Header | A glass capsule floating over the page: four words, the logo in the middle, the language switch (ع / EN) and the main button. On phones and tablets, the kit's solid bar and menu sheet |
+| Hero | A note that projects are open, the Axiom mark drawn line by line on load with a slow band of light running down it, the headline on one line, two buttons and three facts in one row |
+| Work (tabs tour) | Five real example screens: a clinic site, a fabric store, a delivery app, an invoices system, three automations. They move on by themselves every 7 s and pause on hover, focus or off screen |
+| Care | Automation (a lanes diagram) and monthly care (the owner's status panel), each with its order button |
 | Tools | A hub diagram with the real WhatsApp, Gmail, Maps, Instagram, Facebook, Visa, Mastercard and Apple Pay marks; Fawry, Paymob and InstaPay named in type |
-| Prices (two screens) | The Egypt / Gulf switch, four plans, then automation (a lanes diagram) and monthly care (the owner's status panel) |
+| Prices | The Egypt / Gulf switch and four plans, each with its order button |
 | Questions | Six answers, open |
 | Quote | The form, beside a phone showing the quote arriving on WhatsApp |
 | Footer | The close (one large button) and the dark footer |
+
+A fine film grain moves over the whole page; it holds still for anyone who has asked their
+system for reduced motion.
 
 **Language.** A popup asks Arabic or English on the first visit and never again.
 Every string is in the `T` dictionary in `assets/js/site.js`; the example screens
@@ -51,9 +55,8 @@ The kit's own checks, in headless Chromium:
 
 - `copy-lint`: 0 FAIL, 0 WARN.
 - `layout/check.mjs` at 1440x900, 1024x768, 820x1180, 768x1024 and 390x844: no findings.
-- `gate.mjs`: OPEN after its three rounds, with five waivers in `.taste-skill/waivers.json`
-  (the language popup, the marquee, the scene's markup, the centred hero's frame, the band's
-  contrast). The open findings are listed in the build report.
+- The scroll scene was taken out at the client's request; the page's motion is the hero's drawn
+  mark, the examples, the marquee row, the diagrams and the grain.
 
 ## Still to do
 

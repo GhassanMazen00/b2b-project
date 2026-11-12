@@ -40,13 +40,10 @@
 /* Arabic: the same jobs in Readex Pro, which has the Arabic letters Outfit lacks */
 html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-text: "Readex Pro", "Outfit", sans-serif; --display-tracking: 0; --display-tracking-xl: 0; }
 </style>
-<link rel="stylesheet" href="assets/scenes/scenes.css">
-<link rel="stylesheet" href="assets/scenes/powers-of-ten-pullback/scene.css">
 <link rel="stylesheet" href="assets/diagrams/diagram.css">
 <link rel="stylesheet" href="assets/css/screens.css">
 <link rel="stylesheet" href="assets/css/site.css">
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script>document.documentElement.classList.add('sc-js');setTimeout(()=>document.documentElement.classList.add('sc-safe'),2500)</script>
 <script src="assets/backgrounds/backgrounds.js"></script>
 <script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
 <link rel="modulepreload" href="assets/moments/moments.js">
@@ -60,7 +57,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
      palette: the client's own (start.mjs brand): dark by default as the client asked, the dealt cobalt-on-sand turned to
      its evening grade (sand ink on near-black, the cobalt as the one action colour). type outfit (+ Readex Pro for Arabic).
      all grounds dark, as the client asked: the lit ground re-toned to the evening grade; no light band (rhythm: space).
-     the one effect: big scene powers-of-ten-pullback (#system, 1 screen at rest, 2 live).
+     the scroll scene was taken out at the client's request; the hero's drawn mark and the page grain carry the motion.
      moment: marquee-row (the trades and cities row, last element of #work). Seven sections: one moment.
      brief over the kit (waived in .taste-skill/waivers.json): the language popup on first visit, and the examples that
      advance by themselves. -->
@@ -78,18 +75,18 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
   </div>
 </div>
 
-<header class="nav nav--split">
+<header class="nav nav--split nav--float">
   <div class="wrap nav__bar">
     <a class="skip-link" href="#top" data-i18n="skip">Skip to content</a>
     <a class="nav__logo" href="#top"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3.5 28.5 16 22z" fill="var(--logo-a, #ede7da)"/><path d="M16 3 28.5 28.5 16 22z" fill="var(--logo-b, #3358e6)"/></svg><span class="logo-word">axiom</span></a>
     <nav class="nav__links" aria-label="Main">
       <div class="nav__item"><a class="nav__link" href="#work" data-i18n="nav.work">Work</a></div>
-      <div class="nav__item"><a class="nav__link" href="#system" data-i18n="nav.system">Systems</a></div>
+      <div class="nav__item"><a class="nav__link" href="#care" data-i18n="nav.care">Care</a></div>
       <div class="nav__item"><a class="nav__link" href="#prices" data-i18n="nav.prices">Prices</a></div>
       <div class="nav__item"><a class="nav__link" href="#questions" data-i18n="nav.faq">Questions</a></div>
     </nav>
     <div class="nav__actions">
-      <button class="nav__link lang-switch" type="button" id="langBtn" lang="ar">العربية</button>
+      <button class="lang-switch" type="button" id="langBtn" lang="ar">ع</button>
       <a class="btn btn--primary" href="#quote" data-i18n="cta.quote">Get a quote</a>
     </div>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
@@ -106,6 +103,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
     <div class="hero__glow" aria-hidden="true"></div>
     <div class="wrap"><div class="hero-text">
       <div class="hero__c">
+        <p class="hero__note"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.note">Taking projects in Egypt and the Gulf</span></p>
         <svg class="peak" viewBox="0 0 480 400" role="img" aria-label="The Axiom mark, a folded peak, drawn in lines" data-i18n-label="hero.art">
           <defs>
             <clipPath id="peak-l"><path d="M240 20 40 380 240 292z"/></clipPath>
@@ -115,12 +113,17 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
           <g class="peak__r" clip-path="url(#peak-r)"><line x1="244" y1="10" x2="244" y2="390" pathLength="1" style="--i:0"/><line x1="252" y1="10" x2="252" y2="390" pathLength="1" style="--i:1"/><line x1="260" y1="10" x2="260" y2="390" pathLength="1" style="--i:2"/><line x1="268" y1="10" x2="268" y2="390" pathLength="1" style="--i:3"/><line x1="276" y1="10" x2="276" y2="390" pathLength="1" style="--i:4"/><line x1="284" y1="10" x2="284" y2="390" pathLength="1" style="--i:5"/><line x1="292" y1="10" x2="292" y2="390" pathLength="1" style="--i:6"/><line x1="300" y1="10" x2="300" y2="390" pathLength="1" style="--i:7"/><line x1="308" y1="10" x2="308" y2="390" pathLength="1" style="--i:8"/><line x1="316" y1="10" x2="316" y2="390" pathLength="1" style="--i:9"/><line x1="324" y1="10" x2="324" y2="390" pathLength="1" style="--i:10"/><line x1="332" y1="10" x2="332" y2="390" pathLength="1" style="--i:11"/><line x1="340" y1="10" x2="340" y2="390" pathLength="1" style="--i:12"/><line x1="348" y1="10" x2="348" y2="390" pathLength="1" style="--i:13"/><line x1="356" y1="10" x2="356" y2="390" pathLength="1" style="--i:14"/><line x1="364" y1="10" x2="364" y2="390" pathLength="1" style="--i:15"/><line x1="372" y1="10" x2="372" y2="390" pathLength="1" style="--i:16"/><line x1="380" y1="10" x2="380" y2="390" pathLength="1" style="--i:17"/><line x1="388" y1="10" x2="388" y2="390" pathLength="1" style="--i:18"/><line x1="396" y1="10" x2="396" y2="390" pathLength="1" style="--i:19"/><line x1="404" y1="10" x2="404" y2="390" pathLength="1" style="--i:20"/><line x1="412" y1="10" x2="412" y2="390" pathLength="1" style="--i:21"/><line x1="420" y1="10" x2="420" y2="390" pathLength="1" style="--i:22"/><line x1="428" y1="10" x2="428" y2="390" pathLength="1" style="--i:23"/><line x1="436" y1="10" x2="436" y2="390" pathLength="1" style="--i:24"/></g>
           <path class="peak__edge" d="M40 380 240 20 440 380 240 292z M240 20 240 292" pathLength="1"/>
         </svg>
-        <h1 id="hero-h" data-i18n="hero.h1">Web, app and system studio in Cairo</h1>
-        <p class="hero__lead" data-i18n="hero.lead">Websites, stores, apps and business systems for Egypt and the Gulf. From $300, live in 14 days.</p>
+        <h1 id="hero-h"><span data-i18n="hero.h1a">Web, app and system studio</span> <span class="hero__soft" data-i18n="hero.h1b">in Cairo</span></h1>
+        <p class="hero__lead" data-i18n="hero.lead">Websites, online stores, apps and the systems behind them, built for the way business is done here.</p>
         <div class="btn-row">
           <a class="btn btn--primary" href="#quote"><span data-i18n="cta.quote">Get a quote</span><svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
           <a class="btn btn--secondary" href="#work" data-i18n="cta.work">See the work</a>
         </div>
+        <dl class="hero__facts">
+          <div><dt data-i18n="fact.1">Websites from</dt><dd data-price="site">$300</dd></div>
+          <div><dt data-i18n="fact.2">Live in</dt><dd data-i18n="fact.2v">14 days</dd></div>
+          <div><dt data-i18n="fact.3">WhatsApp replies</dt><dd data-i18n="fact.3v">Within 24 h</dd></div>
+        </dl>
       </div>
     </div></div>
   </section>
@@ -295,63 +298,39 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
     </div>
   </section>
 
-  <!-- 3 SYSTEM: the big scene, powers-of-ten-pullback. The invoices system fills the screen, and the scroll pulls the
-       camera back until it is a device on the lit ground, with the words arriving at its left. -->
-  <section class="sc" id="system" data-big-scene="powers-of-ten-pullback" data-big-scene-opts='{"hold": 1}' style="--h: 1" aria-labelledby="pb-h">
-    <div class="sc__stage">
-      <div class="pb__ground" aria-hidden="true"></div>
-      <div class="pb__copy">
-        <p class="t-label" data-i18n="pb.label">Business systems</p>
-        <h2 id="pb-h" data-i18n="pb.h2">Stock, invoices and staff in one system</h2>
-        <p data-i18n="pb.p">Each employee sees what their role allows, and nothing posts to the books until someone approves it. From $1,500, built in 4 to 6 weeks.</p>
-        <a class="link" href="#prices" data-i18n="pb.btn">See system prices</a>
+  <!-- 3 CARE: what runs after launch, each with its picture (the lanes diagram; the care panel as the owner sees it) -->
+  <section class="section" id="care" aria-labelledby="care-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="care-h"><span data-i18n="care.h2">Automation and monthly care.</span> <span class="muted" data-i18n="care.h2b">The work after launch.</span></h2>
       </div>
-      <div class="pb__device"><div class="pb__screen" role="img" aria-label="The invoices screen of a business system: totals, a chart and recent invoices" data-i18n-label="sc.system">
-        <div class="view pb__view" aria-hidden="true"><div class="screen s-sys ui ui-screen" data-w="1280">
-<aside class="x-side">
-<div class="x-bd" data-i18n="sh.brand">Nile Fabrics</div>
-<a><i></i><span data-i18n="sy.m1">Dashboard</span></a>
-<a class="x-on"><i></i><span data-i18n="sy.m2">Invoices</span></a>
-<a><i></i><span data-i18n="sy.m3">Stock</span></a>
-<a><i></i><span data-i18n="sy.m4">Customers</span></a>
-<a><i></i><span data-i18n="sy.m5">Suppliers</span></a>
-<a><i></i><span data-i18n="sy.m6">Reports</span></a>
-<a><i></i><span data-i18n="sy.m7">Staff</span></a>
-</aside>
-<div class="x-main">
-<div class="x-hd">
-<p data-h="2" data-i18n="sy.h2">Invoices</p>
-<span class="x-add" data-i18n="sy.add">+ New invoice</span>
-</div>
-<div class="x-kpis">
-<div class="x-k"><span data-i18n="sy.k1">Invoiced this month (EGP)</span><b data-tick="486200">0</b><em>+12%</em></div>
-<div class="x-k"><span data-i18n="sy.k2">Collected (EGP)</span><b data-tick="341900">0</b></div>
-<div class="x-k"><span data-i18n="sy.k3">Overdue (EGP)</span><b data-tick="68400">0</b></div>
-<div class="x-k"><span data-i18n="sy.k4">Open invoices</span><b data-tick="37">0</b></div>
-</div>
-<div class="x-panel" style="margin-bottom:16px">
-<div class="x-ph"><span data-i18n="sy.chart">Collected, last 8 weeks</span><span data-i18n="sy.chartsub">EGP thousands</span></div>
-<div class="x-bars"><i style="--h:42%"></i><i style="--h:58%"></i><i style="--h:49%"></i><i style="--h:71%"></i><i style="--h:63%"></i><i style="--h:88%"></i><i style="--h:76%"></i><i style="--h:97%"></i></div>
-</div>
-<div class="x-panel">
-<div class="x-ph"><span data-i18n="sy.recent">Recent invoices</span><span data-i18n="sy.all">View all 37</span></div>
-<table>
-<thead><tr>
-<th data-i18n="sy.th1">Number</th><th data-i18n="sy.th2">Customer</th>
-<th data-i18n="sy.th3">Date</th><th class="x-n" data-i18n="sy.th4">Amount</th><th data-i18n="sy.th5">Status</th>
-</tr></thead>
-<tbody>
-<tr><td class="x-num">INV-2041</td><td data-i18n="sy.c1">El Shorouk Garments</td><td class="x-num" data-i18n="sy.d1"></td><td class="x-n" data-i18n="sy.a1"></td><td><span class="x-pill x-ok" data-i18n="sy.ok">Paid</span></td></tr>
-<tr><td class="x-num">INV-2040</td><td data-i18n="sy.c2">Zahran Textiles</td><td class="x-num" data-i18n="sy.d2"></td><td class="x-n" data-i18n="sy.a2"></td><td><span class="x-pill x-part" data-i18n="sy.part">Part paid</span></td></tr>
-<tr><td class="x-num">INV-2039</td><td data-i18n="sy.c3">Maison Laila</td><td class="x-num" data-i18n="sy.d3"></td><td class="x-n" data-i18n="sy.a3"></td><td><span class="x-pill x-due" data-i18n="sy.due">14 days overdue</span></td></tr>
-<tr><td class="x-num">INV-2038</td><td data-i18n="sy.c4">Gouna Interiors</td><td class="x-num" data-i18n="sy.d4"></td><td class="x-n" data-i18n="sy.a4"></td><td><span class="x-pill x-ok" data-i18n="sy.ok">Paid</span></td></tr>
-<tr><td class="x-num">INV-2037</td><td data-i18n="sy.c5">Arkan Uniforms</td><td class="x-num" data-i18n="sy.d5"></td><td class="x-n" data-i18n="sy.a5"></td><td><span class="x-pill x-ok" data-i18n="sy.ok">Paid</span></td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</div></div>
-      </div></div>
+      <div class="grid plans--wide">
+        <article class="card card--row card--open span-6">
+          <h3 data-i18n="plan.auto.h">Automation for daily work</h3>
+          <p><span data-i18n="plan.auto.p">Daily reports, stock alerts and WhatsApp replies, set up once.</span> <b class="plan__from" data-price="auto">$400</b></p>
+          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.auto" data-i18n="order.auto">Order automation</a>
+          <div class="panel"><div class="dg" data-diagram data-icon-base="assets/icons/"><script type="application/json">{"layout": "lanes", "size": "card", "alt": "A new order on the store becomes an invoice, reserves the stock and sends a WhatsApp message to packing.", "input": {"label": "New order", "icon": "ui:shopping-bag", "sub": "Store"}, "core": {"label": "Automation", "icon": "ui:zap"}, "lanes": [{"label": "Invoice created", "icon": "ui:receipt", "done": true, "sub": "INV-2042"}, {"label": "Stock reserved", "icon": "ui:package", "done": true, "sub": "12 m linen"}, {"label": "Packing told", "icon": "whatsapp", "done": true, "sub": "WhatsApp"}]}</script></div></div>
+        </article>
+        <article class="card card--row card--open span-6">
+          <h3 data-i18n="plan.care.h">Monthly care for your site</h3>
+          <p><span data-i18n="plan.care.p">Hosting, backups, updates and a person on WhatsApp, Sunday to Thursday.</span> <b class="plan__from"><span data-price="care">$50</span><span data-i18n="plan.care.per"> a month</span></b></p>
+          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.care" data-i18n="order.care">Add monthly care</a>
+          <div class="panel">
+            <div class="stage"><div class="at-corner to-edge care__slot" role="img" aria-label="The monthly care panel: last backup, uptime, the certificate date and the change hours used" data-i18n-label="care.alt">
+              <div class="care ui ui-care" aria-hidden="true">
+                <p class="care__h" data-i18n="care.h">nileclinic.com · this month</p>
+                <ul class="care__rows">
+                  <li><span data-i18n="care.r1">Last backup</span><b data-i18n="care.v1">Today, 03:00</b></li>
+                  <li><span data-i18n="care.r2">Online</span><b data-i18n="care.v2">99.98%</b></li>
+                  <li><span data-i18n="care.r3">Security certificate</span><b data-i18n="care.v3">Renews 12 August</b></li>
+                  <li><span data-i18n="care.r4">Changes used</span><b data-i18n="care.v4">1 h 20 of 2 h</b></li>
+                </ul>
+                <div class="care__bar"><i style="width:67%"></i></div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -377,9 +356,8 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
     </div>
   </section>
 
-  <!-- 5 PRICES (two screens, .g2): row 1 the market switch and the four plans; row 2 automation and the monthly
-       care, each with its picture (the lanes diagram; the care panel as the owner sees it) -->
-  <section class="section g2" id="prices" style="--h: 2" aria-labelledby="prices-h">
+  <!-- 5 PRICES: the market switch and the four plans -->
+  <section class="section" id="prices" style="--hm: 2" aria-labelledby="prices-h">
     <div class="wrap">
       <div class="group">
         <div class="section-head section-head--split prices__head">
@@ -420,33 +398,6 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
           <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.system" data-i18n="order.system">Order a system</a>
         </article>
       </div>
-      </div>
-      <div class="grid plans--wide">
-        <article class="card card--row card--open span-6">
-          <h3 data-i18n="plan.auto.h">Automation for daily work</h3>
-          <p><span data-i18n="plan.auto.p">Daily reports, stock alerts and WhatsApp replies, set up once.</span> <b class="plan__from" data-price="auto">$400</b></p>
-          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.auto" data-i18n="order.auto">Order automation</a>
-          <div class="panel"><div class="dg" data-diagram data-icon-base="assets/icons/"><script type="application/json">{"layout": "lanes", "size": "card", "alt": "A new order on the store becomes an invoice, reserves the stock and sends a WhatsApp message to packing.", "input": {"label": "New order", "icon": "ui:shopping-bag", "sub": "Store"}, "core": {"label": "Automation", "icon": "ui:zap"}, "lanes": [{"label": "Invoice created", "icon": "ui:receipt", "done": true, "sub": "INV-2042"}, {"label": "Stock reserved", "icon": "ui:package", "done": true, "sub": "12 m linen"}, {"label": "Packing told", "icon": "whatsapp", "done": true, "sub": "WhatsApp"}]}</script></div></div>
-        </article>
-        <article class="card card--row card--open span-6">
-          <h3 data-i18n="plan.care.h">Monthly care for your site</h3>
-          <p><span data-i18n="plan.care.p">Hosting, backups, updates and a person on WhatsApp, Sunday to Thursday.</span> <b class="plan__from"><span data-price="care">$50</span><span data-i18n="plan.care.per"> a month</span></b></p>
-          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.care" data-i18n="order.care">Add monthly care</a>
-          <div class="panel">
-            <div class="stage"><div class="at-corner to-edge care__slot" role="img" aria-label="The monthly care panel: last backup, uptime, the certificate date and the change hours used" data-i18n-label="care.alt">
-              <div class="care ui ui-care" aria-hidden="true">
-                <p class="care__h" data-i18n="care.h">nileclinic.com · this month</p>
-                <ul class="care__rows">
-                  <li><span data-i18n="care.r1">Last backup</span><b data-i18n="care.v1">Today, 03:00</b></li>
-                  <li><span data-i18n="care.r2">Online</span><b data-i18n="care.v2">99.98%</b></li>
-                  <li><span data-i18n="care.r3">Security certificate</span><b data-i18n="care.v3">Renews 12 August</b></li>
-                  <li><span data-i18n="care.r4">Changes used</span><b data-i18n="care.v4">1 h 20 of 2 h</b></li>
-                </ul>
-                <div class="care__bar"><i style="width:67%"></i></div>
-              </div>
-            </div></div>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -548,7 +499,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
         </div>
         <div class="span-2 start-7 footer__col"><h3 data-i18n="foot.build">Build</h3><ul>
           <li><a href="#work" data-i18n="plan.site">Website</a></li><li><a href="#work" data-i18n="plan.store">Online store</a></li>
-          <li><a href="#work" data-i18n="plan.app">Mobile app</a></li><li><a href="#system" data-i18n="plan.system">Business system</a></li></ul></div>
+          <li><a href="#work" data-i18n="plan.app">Mobile app</a></li><li><a href="#work" data-i18n="plan.system">Business system</a></li></ul></div>
         <div class="span-2 footer__col"><h3 data-i18n="foot.studio">Studio</h3><ul>
           <li><a href="#prices" data-i18n="nav.prices">Prices</a></li><li><a href="#tools" data-i18n="foot.tools">Tools we connect</a></li>
           <li><a href="#questions" data-i18n="nav.faq">Questions</a></li></ul></div>
@@ -563,11 +514,12 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
   </div>
 </footer>
 
+<div class="grain" aria-hidden="true"></div>
+
 <script type="module" src="assets/system.js"></script>
 <script type="module" src="assets/motion/motion.js"></script>
 <script type="module" src="assets/layout/layout.js"></script>
 <script type="module" src="assets/diagrams/mount.js"></script>
-<script type="module" src="assets/scenes/scenes.js"></script>
 <script type="module" src="assets/js/site.js"></script>
 </body>
 </html>
