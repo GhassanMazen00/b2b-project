@@ -15,7 +15,7 @@ taste, except where the brief asked for something else.
 | Section | What it shows |
 |---|---|
 | Header | A glass capsule floating over the page: four words, the logo in the middle and the main button. On phones and tablets, the kit's solid bar and menu sheet. The language is chosen once, in the popup on arrival |
-| Hero | Centred and symmetrical: a note, the headline, the line, two buttons and three facts, over the page's one effect, `dot-terrain`, a field of light points rolling toward a horizon in the lower part of the screen |
+| Hero | Centred: the hub logo, large, drawing itself in with a slow pulse at its centre; the name **axiom** under it, one line, and two buttons, over the page's one effect, `dot-terrain`, a field of light points rolling toward a horizon. The header carries the word axiom alone |
 | Work (tabs tour) | Five real example screens: a clinic site, a clinic's booking page, a delivery app, an invoices system, three automations. They move on by themselves every 7 s and pause on hover, focus or off screen |
 | Care | Automation (a lanes diagram) and monthly care (the owner's status panel), each with its order button |
 | One system | A hub diagram: your system in the middle, joined to clients, bookings, bills, income, expenses, stock, staff and reports, beside the line "Your whole business in one system" |
@@ -32,7 +32,7 @@ Every string is in the `T` dictionary in `assets/js/site.js`; the example screen
 switch language and direction with the page.
 
 **The logo** is a hub: one cobalt centre with four points joined to it, the idea of
-everything in one place. It is in the nav, the footer, the language popup and the favicon.
+everything in one place. It is the centre of the first screen, and is in the footer, the language popup and the favicon.
 
 **Dark throughout.** Every ground is near-black, with sand-coloured type and one
 cobalt action colour; the kit's lit grounds are re-toned to their evening grade.

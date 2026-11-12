@@ -78,7 +78,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
 <header class="nav nav--split nav--float">
   <div class="wrap nav__bar">
     <a class="skip-link" href="#top" data-i18n="skip">Skip to content</a>
-    <a class="nav__logo" href="#top"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><g stroke="var(--logo-a, #ede7da)" stroke-width="2" stroke-linecap="round" opacity=".55"><path d="M16 16 6.5 6.5M16 16l9.5-9.5M16 16l-9.5 9.5M16 16l9.5 9.5"/></g><g fill="var(--logo-a, #ede7da)"><circle cx="6" cy="6" r="3"/><circle cx="26" cy="6" r="3"/><circle cx="6" cy="26" r="3"/><circle cx="26" cy="26" r="3"/></g><circle cx="16" cy="16" r="6" fill="var(--logo-b, #3358e6)"/></svg><span class="logo-word">axiom</span></a>
+    <a class="nav__logo" href="#top" aria-label="Axiom"><span class="logo-word">axiom</span></a>
     <nav class="nav__links" aria-label="Main">
       <div class="nav__item"><a class="nav__link" href="#work" data-i18n="nav.work">Work</a></div>
       <div class="nav__item"><a class="nav__link" href="#care" data-i18n="nav.care">Care</a></div>
@@ -102,18 +102,13 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
     <div class="hero__fx" data-fx="dot-terrain" data-fx-seed="7" data-fx-params='{"spacing": 16, "dot": 2.6, "amplitude": 0.15, "waveScale": 0.7, "speed": 0.06, "opacity": 0.9, "shade": 0.7, "crest": 0.9, "horizon": 0.6, "fog": 0.45, "haze": 0.5, "calm": 0.0, "calmX": 0.5, "calmY": 0.3}' aria-hidden="true"></div>
     <div class="wrap"><div class="hero-text">
       <div class="hero__copy">
-        <p class="hero__note"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.note">Built in Cairo for Egypt and the Gulf</span></p>
-        <h1 id="hero-h"><span data-i18n="hero.h1a">Your business, online and organised</span> <span class="hero__soft" data-i18n="hero.h1b">in 14 days.</span></h1>
-        <p class="hero__lead" data-i18n="hero.lead">We build the website your customers find you on, the booking page they use at midnight, and the system you open every morning. One fixed price, written down before we start.</p>
+        <svg class="hero__mark" viewBox="0 0 32 32" aria-hidden="true"><g class="hero__spokes" stroke="var(--logo-a, #ede7da)" stroke-width="1.4" stroke-linecap="round" opacity=".5"><path d="M16 16 6.5 6.5M16 16l9.5-9.5M16 16l-9.5 9.5M16 16l9.5 9.5"/></g><g class="hero__nodes" fill="var(--logo-a, #ede7da)"><circle cx="6" cy="6" r="2.6"/><circle cx="26" cy="6" r="2.6"/><circle cx="6" cy="26" r="2.6"/><circle cx="26" cy="26" r="2.6"/></g><circle class="hero__halo" cx="16" cy="16" r="6" fill="var(--logo-b, #3358e6)"/><circle class="hero__core" cx="16" cy="16" r="5.4" fill="var(--logo-b, #3358e6)"/></svg>
+        <h1 id="hero-h" class="hero__name">axiom<span class="sr-only" data-i18n="hero.sr">: websites, booking pages, apps and business systems for Egypt and the Gulf</span></h1>
+        <p class="hero__lead" data-i18n="hero.lead">Websites, bookings, apps and systems for Egypt and the Gulf.</p>
         <div class="btn-row">
           <a class="btn btn--primary" href="#quote"><span data-i18n="cta.quote">Get a quote</span><svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
           <a class="btn btn--secondary" href="#work" data-i18n="cta.work">See what we build</a>
         </div>
-        <dl class="hero__facts">
-          <div><dt data-i18n="fact.1">Fixed-price websites from</dt><dd data-price="site">$300</dd></div>
-          <div><dt data-i18n="fact.2">From brief to live</dt><dd data-i18n="fact.2v">14 days</dd></div>
-          <div><dt data-i18n="fact.3">Support on WhatsApp</dt><dd data-i18n="fact.3v">Every day</dd></div>
-        </dl>
       </div>
     </div></div>
   </section>

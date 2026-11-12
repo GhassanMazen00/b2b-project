@@ -341,3 +341,26 @@ html[lang="ar"] .hero--field h1 { font-size: clamp(36px, 4.4vw, 64px); line-heig
 /* prices: the currency beside every figure, and room for the longer lists */
 .price__cur { font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: .04em; margin-inline-start: 6px; }
 #prices .checks { gap: var(--s-2); font-size: 15px; }
+
+/* ================================================================ the hero: the mark, the name, one line */
+.hero--field .hero-text { align-items: center; padding-top: 0; padding-bottom: clamp(80px, 18vh, 200px); }
+.hero--field .hero__copy { gap: var(--s-3); }
+.hero__mark { width: clamp(88px, 10vw, 132px); height: auto; overflow: visible; margin-bottom: var(--s-3); }
+.hero--field h1.hero__name, html[lang="ar"] .hero--field h1.hero__name {
+  font: 500 clamp(64px, 11vw, 168px)/0.9 "Outfit", var(--font-display); letter-spacing: -0.06em; max-width: none; }
+.hero--field .hero__lead { max-width: 52ch; font-size: clamp(16px, 1.4vw, 20px); }
+.hero--field .btn-row { margin-top: var(--s-4); }
+/* the mark draws itself once, then the centre breathes */
+.hero__spokes path { stroke-dasharray: 14; stroke-dashoffset: 14; animation: mk-draw 900ms cubic-bezier(.22,1,.36,1) 200ms forwards; }
+.hero__nodes circle { transform-box: fill-box; transform-origin: center; transform: scale(0); animation: mk-pop 600ms cubic-bezier(.34,1.56,.64,1) forwards; }
+.hero__nodes circle:nth-child(1) { animation-delay: 700ms; } .hero__nodes circle:nth-child(2) { animation-delay: 780ms; }
+.hero__nodes circle:nth-child(3) { animation-delay: 860ms; } .hero__nodes circle:nth-child(4) { animation-delay: 940ms; }
+.hero__core { transform-box: fill-box; transform-origin: center; transform: scale(0); animation: mk-pop 700ms cubic-bezier(.34,1.56,.64,1) forwards; }
+.hero__halo { transform-box: fill-box; transform-origin: center; opacity: 0; animation: mk-halo 3.2s ease-out 1.4s infinite; }
+@keyframes mk-draw { to { stroke-dashoffset: 0; } }
+@keyframes mk-pop { to { transform: scale(1); } }
+@keyframes mk-halo { 0% { opacity: .45; transform: scale(1); } 100% { opacity: 0; transform: scale(2.4); } }
+@media (prefers-reduced-motion: reduce) {
+  .hero__spokes path, .hero__nodes circle, .hero__core { animation: none; stroke-dashoffset: 0; transform: none; }
+  .hero__halo { animation: none; }
+}
