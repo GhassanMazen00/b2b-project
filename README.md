@@ -14,8 +14,8 @@ taste, except where the brief asked for something else.
 
 | Section | What it shows |
 |---|---|
-| Header | A glass capsule floating over the page: four words, the logo in the middle, the language switch (ع / EN) and the main button. On phones and tablets, the kit's solid bar and menu sheet |
-| Hero | A note that projects are open, the Axiom mark drawn line by line on load with a slow band of light running down it, the headline on one line, two buttons and three facts in one row |
+| Header | A glass capsule floating over the page: four words, the logo in the middle and the main button. On phones and tablets, the kit's solid bar and menu sheet. The language is chosen once, in the popup on arrival |
+| Hero | The page's one effect, `prism-dispersion`: a beam of white light crosses the dark, meets the Axiom prism drawn in lines and breaks into a fan of colour that lands across the screen. The words sit low on the calm side; in Arabic the whole picture is mirrored |
 | Work (tabs tour) | Five real example screens: a clinic site, a fabric store, a delivery app, an invoices system, three automations. They move on by themselves every 7 s and pause on hover, focus or off screen |
 | Care | Automation (a lanes diagram) and monthly care (the owner's status panel), each with its order button |
 | Tools | A hub diagram with the real WhatsApp, Gmail, Maps, Instagram, Facebook, Visa, Mastercard and Apple Pay marks; Fawry, Paymob and InstaPay named in type |
@@ -55,8 +55,8 @@ The kit's own checks, in headless Chromium:
 
 - `copy-lint`: 0 FAIL, 0 WARN.
 - `layout/check.mjs` at 1440x900, 1024x768, 820x1180, 768x1024 and 390x844: no findings.
-- The scroll scene was taken out at the client's request; the page's motion is the hero's drawn
-  mark, the examples, the marquee row, the diagrams and the grain.
+- The page's motion: the hero's light and drawn prism, the examples, the marquee row, the diagrams
+  and the grain. The hero's light holds still on phones and under reduced motion.
 
 ## Still to do
 

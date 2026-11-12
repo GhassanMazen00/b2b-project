@@ -335,10 +335,13 @@ function applyLang(next, keep = true) {
   for (const k of NEEDS) sel.append(new Option(T[lang][k], k));
   $("#quote form").dataset.sent = T[lang]["f.sent"];
   for (const sc of $$(".screen")) { sc.dir = lang === "ar" ? "rtl" : "ltr"; sc.classList.toggle("ar", lang === "ar"); }
-  const b = $("#langBtn");
-  b.textContent = lang === "ar" ? "EN" : "ع";
-  b.setAttribute("aria-label", lang === "ar" ? "English" : "العربية");
-  b.lang = lang === "ar" ? "en" : "ar";
+  // the hero's light: its calm side follows the words, so Arabic gets the mirror image
+  const fxEl = $(".hero__fx");
+  if (fxEl) {
+    const calmX = lang === "ar" ? 0.73 : 0.27;
+    try { fxEl.dataset.fxParams = JSON.stringify({ ...JSON.parse(fxEl.dataset.fxParams || "{}"), calmX }); } catch {}
+    if (fxEl.__fx) fxEl.__fx.set({ calmX });
+  }
   paintPrices();
   requestAnimationFrame(fitScreens);
   if (keep) { try { localStorage.setItem("axiom.lang", lang); } catch {} }
@@ -438,6 +441,15 @@ function fitScreens() {
   }
 }
 
+/* the app example: the phone stands whole in its frame, scaled down to the frame's height when it is short */
+function fitPhone() {
+  const slot = $(".work__slot--phone"), phone = slot && $(".phone", slot);
+  if (!slot || slot.hidden || !slot.clientHeight) return;
+  phone.style.transform = "";
+  const k = Math.min(1, (slot.clientHeight - 32) / phone.offsetHeight, (slot.clientWidth - 32) / phone.offsetWidth);
+  phone.style.transform = "scale(" + k.toFixed(3) + ")";
+}
+
 /* =========================== the examples move on by themselves =========================== */
 /* The client asked for it. The kit's tabs stay the kit's (system.js shows a tab's line and screen); the
    timer is the active tab's bar, so pausing the bar on hover, focus or off screen pauses the turn. */
@@ -452,7 +464,7 @@ function autoTour() {
   for (const t of tabs) {
     t.addEventListener("click", () => {
       restart(t);
-      requestAnimationFrame(fitScreens);
+      requestAnimationFrame(() => { fitScreens(); fitPhone(); });
       // the shown screen starts its own story again
       const shown = document.getElementById(t.getAttribute("aria-controls").split(" ")[1]);
       for (const n of $$(".x-bars i, .scroller, .s-shop .x-p, .s-auto .x-w", shown)) { n.style.animation = "none"; void n.offsetWidth; n.style.animation = ""; }
@@ -495,11 +507,11 @@ for (const b of [$("#mEG"), $("#mGulf")]) b.addEventListener("click", () => {
   try { localStorage.setItem("axiom.market", market); } catch {}
   paintPrices();
 });
-$("#langBtn").addEventListener("click", () => applyLang(lang === "ar" ? "en" : "ar"));
 // a plan's own button picks its kind of work in the form
 for (const b of $$("[data-need]")) b.addEventListener("click", () => { $("#f-need").value = b.dataset.need; });
 autoTour();
 countUp(document);
-addEventListener("resize", fitScreens, { passive: true });
+addEventListener("resize", () => { fitScreens(); fitPhone(); }, { passive: true });
 document.fonts?.ready.then(fitScreens);
 fitScreens();
+fitPhone();

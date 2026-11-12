@@ -57,7 +57,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
      palette: the client's own (start.mjs brand): dark by default as the client asked, the dealt cobalt-on-sand turned to
      its evening grade (sand ink on near-black, the cobalt as the one action colour). type outfit (+ Readex Pro for Arabic).
      all grounds dark, as the client asked: the lit ground re-toned to the evening grade; no light band (rhythm: space).
-     the scroll scene was taken out at the client's request; the hero's drawn mark and the page grain carry the motion.
+     the one effect: prism-dispersion in the hero (the scroll scene was taken out at the client's request).
      moment: marquee-row (the trades and cities row, last element of #work). Seven sections: one moment.
      brief over the kit (waived in .taste-skill/waivers.json): the language popup on first visit, and the examples that
      advance by themselves. -->
@@ -86,7 +86,6 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
       <div class="nav__item"><a class="nav__link" href="#questions" data-i18n="nav.faq">Questions</a></div>
     </nav>
     <div class="nav__actions">
-      <button class="lang-switch" type="button" id="langBtn" lang="ar">ع</button>
       <a class="btn btn--primary" href="#quote" data-i18n="cta.quote">Get a quote</a>
     </div>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
@@ -97,14 +96,13 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
 
 <main id="top">
 
-  <!-- 1 HERO: the mark as the picture, drawn in lines on the dark ground, then the h1, the line and two buttons.
-       The examples live in their own section below. -->
-  <section class="hero hero--centred hero--mark" data-enter aria-labelledby="hero-h">
-    <div class="hero__glow" aria-hidden="true"></div>
-    <div class="wrap"><div class="hero-text">
-      <div class="hero__c">
-        <p class="hero__note"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.note">Taking projects in Egypt and the Gulf</span></p>
-        <svg class="peak" viewBox="0 0 480 400" role="img" aria-label="The Axiom mark, a folded peak, drawn in lines" data-i18n-label="hero.art">
+  <!-- 1 HERO: the page's one effect, prism-dispersion, fills the first screen: a beam of white light crosses the
+       dark and breaks into colour where it meets the Axiom prism, drawn in lines. The words stand on the calm left. -->
+  <section class="hero hero--prism" data-enter aria-labelledby="hero-h">
+    <div class="hero__fx" data-fx="prism-dispersion" data-fx-seed="11"
+         data-fx-params='{"splitX": 0.29, "splitY": 0.42, "bend": 28, "fanSpread": 0.52, "hueSpread": 58, "beamWidth": 0.005, "haze": 0.62, "intensity": 1.05, "sway": 0.012, "calm": 0.7, "calmX": 0.27, "calmY": 0.72}' aria-hidden="true"></div>
+    <div class="hero__prism" aria-hidden="true">
+      <svg class="peak" viewBox="0 0 480 400" aria-hidden="true" focusable="false">
           <defs>
             <clipPath id="peak-l"><path d="M240 20 40 380 240 292z"/></clipPath>
             <clipPath id="peak-r"><path d="M240 20 240 292 440 380z"/></clipPath>
@@ -113,6 +111,10 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
           <g class="peak__r" clip-path="url(#peak-r)"><line x1="244" y1="10" x2="244" y2="390" pathLength="1" style="--i:0"/><line x1="252" y1="10" x2="252" y2="390" pathLength="1" style="--i:1"/><line x1="260" y1="10" x2="260" y2="390" pathLength="1" style="--i:2"/><line x1="268" y1="10" x2="268" y2="390" pathLength="1" style="--i:3"/><line x1="276" y1="10" x2="276" y2="390" pathLength="1" style="--i:4"/><line x1="284" y1="10" x2="284" y2="390" pathLength="1" style="--i:5"/><line x1="292" y1="10" x2="292" y2="390" pathLength="1" style="--i:6"/><line x1="300" y1="10" x2="300" y2="390" pathLength="1" style="--i:7"/><line x1="308" y1="10" x2="308" y2="390" pathLength="1" style="--i:8"/><line x1="316" y1="10" x2="316" y2="390" pathLength="1" style="--i:9"/><line x1="324" y1="10" x2="324" y2="390" pathLength="1" style="--i:10"/><line x1="332" y1="10" x2="332" y2="390" pathLength="1" style="--i:11"/><line x1="340" y1="10" x2="340" y2="390" pathLength="1" style="--i:12"/><line x1="348" y1="10" x2="348" y2="390" pathLength="1" style="--i:13"/><line x1="356" y1="10" x2="356" y2="390" pathLength="1" style="--i:14"/><line x1="364" y1="10" x2="364" y2="390" pathLength="1" style="--i:15"/><line x1="372" y1="10" x2="372" y2="390" pathLength="1" style="--i:16"/><line x1="380" y1="10" x2="380" y2="390" pathLength="1" style="--i:17"/><line x1="388" y1="10" x2="388" y2="390" pathLength="1" style="--i:18"/><line x1="396" y1="10" x2="396" y2="390" pathLength="1" style="--i:19"/><line x1="404" y1="10" x2="404" y2="390" pathLength="1" style="--i:20"/><line x1="412" y1="10" x2="412" y2="390" pathLength="1" style="--i:21"/><line x1="420" y1="10" x2="420" y2="390" pathLength="1" style="--i:22"/><line x1="428" y1="10" x2="428" y2="390" pathLength="1" style="--i:23"/><line x1="436" y1="10" x2="436" y2="390" pathLength="1" style="--i:24"/></g>
           <path class="peak__edge" d="M40 380 240 20 440 380 240 292z M240 20 240 292" pathLength="1"/>
         </svg>
+    </div>
+    <div class="wrap"><div class="hero-text">
+      <div class="hero__copy">
+        <p class="hero__note"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.note">Taking projects in Egypt and the Gulf</span></p>
         <h1 id="hero-h"><span data-i18n="hero.h1a">Web, app and system studio</span> <span class="hero__soft" data-i18n="hero.h1b">in Cairo</span></h1>
         <p class="hero__lead" data-i18n="hero.lead">Websites, online stores, apps and the systems behind them, built for the way business is done here.</p>
         <div class="btn-row">
