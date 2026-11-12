@@ -57,7 +57,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
      palette: the client's own (start.mjs brand): dark by default as the client asked, the dealt cobalt-on-sand turned to
      its evening grade (sand ink on near-black, the cobalt as the one action colour). type outfit (+ Readex Pro for Arabic).
      all grounds dark, as the client asked: the lit ground re-toned to the evening grade; no light band (rhythm: space).
-     the one effect: prism-dispersion in the hero (the scroll scene was taken out at the client's request).
+     the one effect: dot-terrain in the hero (the scroll scene and the prism light were taken out at the client's request).
      moment: marquee-row (the trades and cities row, last element of #work). Seven sections: one moment.
      brief over the kit (waived in .taste-skill/waivers.json): the language popup on first visit, and the examples that
      advance by themselves. -->
@@ -65,7 +65,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
 <!-- language popup: the client's brief (asked on the first visit, never again) -->
 <div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-t">
   <div class="gate__in">
-    <svg class="logo-mark gate__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3.5 28.5 16 22z" fill="var(--logo-a, #ede7da)"/><path d="M16 3 28.5 28.5 16 22z" fill="var(--logo-b, #3358e6)"/></svg>
+    <svg class="logo-mark gate__mark" viewBox="0 0 32 32" aria-hidden="true"><g stroke="var(--logo-a, #ede7da)" stroke-width="2" stroke-linecap="round" opacity=".55"><path d="M16 16 6.5 6.5M16 16l9.5-9.5M16 16l-9.5 9.5M16 16l9.5 9.5"/></g><g fill="var(--logo-a, #ede7da)"><circle cx="6" cy="6" r="3"/><circle cx="26" cy="6" r="3"/><circle cx="6" cy="26" r="3"/><circle cx="26" cy="26" r="3"/></g><circle cx="16" cy="16" r="6" fill="var(--logo-b, #3358e6)"/></svg>
     <p class="gate__t" id="gate-t">Welcome · أهلاً بيك</p>
     <p class="gate__q">Choose a language · اختار اللغة</p>
     <div class="gate__btns">
@@ -78,7 +78,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
 <header class="nav nav--split nav--float">
   <div class="wrap nav__bar">
     <a class="skip-link" href="#top" data-i18n="skip">Skip to content</a>
-    <a class="nav__logo" href="#top"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3.5 28.5 16 22z" fill="var(--logo-a, #ede7da)"/><path d="M16 3 28.5 28.5 16 22z" fill="var(--logo-b, #3358e6)"/></svg><span class="logo-word">axiom</span></a>
+    <a class="nav__logo" href="#top"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><g stroke="var(--logo-a, #ede7da)" stroke-width="2" stroke-linecap="round" opacity=".55"><path d="M16 16 6.5 6.5M16 16l9.5-9.5M16 16l-9.5 9.5M16 16l9.5 9.5"/></g><g fill="var(--logo-a, #ede7da)"><circle cx="6" cy="6" r="3"/><circle cx="26" cy="6" r="3"/><circle cx="6" cy="26" r="3"/><circle cx="26" cy="26" r="3"/></g><circle cx="16" cy="16" r="6" fill="var(--logo-b, #3358e6)"/></svg><span class="logo-word">axiom</span></a>
     <nav class="nav__links" aria-label="Main">
       <div class="nav__item"><a class="nav__link" href="#work" data-i18n="nav.work">Work</a></div>
       <div class="nav__item"><a class="nav__link" href="#care" data-i18n="nav.care">Care</a></div>
@@ -96,22 +96,10 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
 
 <main id="top">
 
-  <!-- 1 HERO: the page's one effect, prism-dispersion, fills the first screen: a beam of white light crosses the
-       dark and breaks into colour where it meets the Axiom prism, drawn in lines. The words stand on the calm left. -->
-  <section class="hero hero--prism" data-enter aria-labelledby="hero-h">
-    <div class="hero__fx" data-fx="prism-dispersion" data-fx-seed="11"
-         data-fx-params='{"splitX": 0.29, "splitY": 0.42, "bend": 28, "fanSpread": 0.52, "hueSpread": 58, "beamWidth": 0.005, "haze": 0.62, "intensity": 1.05, "sway": 0.012, "calm": 0.7, "calmX": 0.27, "calmY": 0.72}' aria-hidden="true"></div>
-    <div class="hero__prism" aria-hidden="true">
-      <svg class="peak" viewBox="0 0 480 400" aria-hidden="true" focusable="false">
-          <defs>
-            <clipPath id="peak-l"><path d="M240 20 40 380 240 292z"/></clipPath>
-            <clipPath id="peak-r"><path d="M240 20 240 292 440 380z"/></clipPath>
-          </defs>
-          <g class="peak__l" clip-path="url(#peak-l)"><line x1="20" y1="28" x2="250" y2="28" pathLength="1" style="--i:0"/><line x1="20" y1="36" x2="250" y2="36" pathLength="1" style="--i:1"/><line x1="20" y1="44" x2="250" y2="44" pathLength="1" style="--i:2"/><line x1="20" y1="52" x2="250" y2="52" pathLength="1" style="--i:3"/><line x1="20" y1="60" x2="250" y2="60" pathLength="1" style="--i:4"/><line x1="20" y1="68" x2="250" y2="68" pathLength="1" style="--i:5"/><line x1="20" y1="76" x2="250" y2="76" pathLength="1" style="--i:6"/><line x1="20" y1="84" x2="250" y2="84" pathLength="1" style="--i:7"/><line x1="20" y1="92" x2="250" y2="92" pathLength="1" style="--i:8"/><line x1="20" y1="100" x2="250" y2="100" pathLength="1" style="--i:9"/><line x1="20" y1="108" x2="250" y2="108" pathLength="1" style="--i:10"/><line x1="20" y1="116" x2="250" y2="116" pathLength="1" style="--i:11"/><line x1="20" y1="124" x2="250" y2="124" pathLength="1" style="--i:12"/><line x1="20" y1="132" x2="250" y2="132" pathLength="1" style="--i:13"/><line x1="20" y1="140" x2="250" y2="140" pathLength="1" style="--i:14"/><line x1="20" y1="148" x2="250" y2="148" pathLength="1" style="--i:15"/><line x1="20" y1="156" x2="250" y2="156" pathLength="1" style="--i:16"/><line x1="20" y1="164" x2="250" y2="164" pathLength="1" style="--i:17"/><line x1="20" y1="172" x2="250" y2="172" pathLength="1" style="--i:18"/><line x1="20" y1="180" x2="250" y2="180" pathLength="1" style="--i:19"/><line x1="20" y1="188" x2="250" y2="188" pathLength="1" style="--i:20"/><line x1="20" y1="196" x2="250" y2="196" pathLength="1" style="--i:21"/><line x1="20" y1="204" x2="250" y2="204" pathLength="1" style="--i:22"/><line x1="20" y1="212" x2="250" y2="212" pathLength="1" style="--i:23"/><line x1="20" y1="220" x2="250" y2="220" pathLength="1" style="--i:24"/><line x1="20" y1="228" x2="250" y2="228" pathLength="1" style="--i:25"/><line x1="20" y1="236" x2="250" y2="236" pathLength="1" style="--i:26"/><line x1="20" y1="244" x2="250" y2="244" pathLength="1" style="--i:27"/><line x1="20" y1="252" x2="250" y2="252" pathLength="1" style="--i:28"/><line x1="20" y1="260" x2="250" y2="260" pathLength="1" style="--i:29"/><line x1="20" y1="268" x2="250" y2="268" pathLength="1" style="--i:30"/><line x1="20" y1="276" x2="250" y2="276" pathLength="1" style="--i:31"/><line x1="20" y1="284" x2="250" y2="284" pathLength="1" style="--i:32"/><line x1="20" y1="292" x2="250" y2="292" pathLength="1" style="--i:33"/><line x1="20" y1="300" x2="250" y2="300" pathLength="1" style="--i:34"/><line x1="20" y1="308" x2="250" y2="308" pathLength="1" style="--i:35"/><line x1="20" y1="316" x2="250" y2="316" pathLength="1" style="--i:36"/><line x1="20" y1="324" x2="250" y2="324" pathLength="1" style="--i:37"/><line x1="20" y1="332" x2="250" y2="332" pathLength="1" style="--i:38"/><line x1="20" y1="340" x2="250" y2="340" pathLength="1" style="--i:39"/><line x1="20" y1="348" x2="250" y2="348" pathLength="1" style="--i:40"/><line x1="20" y1="356" x2="250" y2="356" pathLength="1" style="--i:41"/><line x1="20" y1="364" x2="250" y2="364" pathLength="1" style="--i:42"/><line x1="20" y1="372" x2="250" y2="372" pathLength="1" style="--i:43"/><line x1="20" y1="380" x2="250" y2="380" pathLength="1" style="--i:44"/></g>
-          <g class="peak__r" clip-path="url(#peak-r)"><line x1="244" y1="10" x2="244" y2="390" pathLength="1" style="--i:0"/><line x1="252" y1="10" x2="252" y2="390" pathLength="1" style="--i:1"/><line x1="260" y1="10" x2="260" y2="390" pathLength="1" style="--i:2"/><line x1="268" y1="10" x2="268" y2="390" pathLength="1" style="--i:3"/><line x1="276" y1="10" x2="276" y2="390" pathLength="1" style="--i:4"/><line x1="284" y1="10" x2="284" y2="390" pathLength="1" style="--i:5"/><line x1="292" y1="10" x2="292" y2="390" pathLength="1" style="--i:6"/><line x1="300" y1="10" x2="300" y2="390" pathLength="1" style="--i:7"/><line x1="308" y1="10" x2="308" y2="390" pathLength="1" style="--i:8"/><line x1="316" y1="10" x2="316" y2="390" pathLength="1" style="--i:9"/><line x1="324" y1="10" x2="324" y2="390" pathLength="1" style="--i:10"/><line x1="332" y1="10" x2="332" y2="390" pathLength="1" style="--i:11"/><line x1="340" y1="10" x2="340" y2="390" pathLength="1" style="--i:12"/><line x1="348" y1="10" x2="348" y2="390" pathLength="1" style="--i:13"/><line x1="356" y1="10" x2="356" y2="390" pathLength="1" style="--i:14"/><line x1="364" y1="10" x2="364" y2="390" pathLength="1" style="--i:15"/><line x1="372" y1="10" x2="372" y2="390" pathLength="1" style="--i:16"/><line x1="380" y1="10" x2="380" y2="390" pathLength="1" style="--i:17"/><line x1="388" y1="10" x2="388" y2="390" pathLength="1" style="--i:18"/><line x1="396" y1="10" x2="396" y2="390" pathLength="1" style="--i:19"/><line x1="404" y1="10" x2="404" y2="390" pathLength="1" style="--i:20"/><line x1="412" y1="10" x2="412" y2="390" pathLength="1" style="--i:21"/><line x1="420" y1="10" x2="420" y2="390" pathLength="1" style="--i:22"/><line x1="428" y1="10" x2="428" y2="390" pathLength="1" style="--i:23"/><line x1="436" y1="10" x2="436" y2="390" pathLength="1" style="--i:24"/></g>
-          <path class="peak__edge" d="M40 380 240 20 440 380 240 292z M240 20 240 292" pathLength="1"/>
-        </svg>
-    </div>
+  <!-- 1 HERO: centred and symmetrical. The page's one effect, dot-terrain: a field of light points rolls toward a
+       horizon in the lower part of the screen, its crests in the cobalt; the words stand in the dark above it. -->
+  <section class="hero hero--field" data-enter aria-labelledby="hero-h">
+    <div class="hero__fx" data-fx="dot-terrain" data-fx-seed="7" data-fx-params='{"spacing": 16, "dot": 2.6, "amplitude": 0.15, "waveScale": 0.7, "speed": 0.06, "opacity": 0.9, "shade": 0.7, "crest": 0.9, "horizon": 0.6, "fog": 0.45, "haze": 0.5, "calm": 0.0, "calmX": 0.5, "calmY": 0.3}' aria-hidden="true"></div>
     <div class="wrap"><div class="hero-text">
       <div class="hero__copy">
         <p class="hero__note"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.note">Taking projects in Egypt and the Gulf</span></p>
@@ -142,14 +130,14 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
           </div>
           <div class="tabs work__tabs" role="tablist" aria-labelledby="work-h">
             <button class="tab" role="tab" id="tab-site"   aria-selected="true"  aria-controls="tp-site sc-site"><span data-i18n="tab.site">Get a website</span><i class="tab__bar" aria-hidden="true"></i></button>
-            <button class="tab" role="tab" id="tab-store"  aria-selected="false" aria-controls="tp-store sc-store"><span data-i18n="tab.store">Sell online</span><i class="tab__bar" aria-hidden="true"></i></button>
+            <button class="tab" role="tab" id="tab-store"  aria-selected="false" aria-controls="tp-store sc-store"><span data-i18n="tab.store">Take bookings</span><i class="tab__bar" aria-hidden="true"></i></button>
             <button class="tab" role="tab" id="tab-app"    aria-selected="false" aria-controls="tp-app sc-app"><span data-i18n="tab.app">Launch an app</span><i class="tab__bar" aria-hidden="true"></i></button>
             <button class="tab" role="tab" id="tab-system" aria-selected="false" aria-controls="tp-system sc-system"><span data-i18n="tab.system">Run the business</span><i class="tab__bar" aria-hidden="true"></i></button>
             <button class="tab" role="tab" id="tab-auto"   aria-selected="false" aria-controls="tp-auto sc-auto"><span data-i18n="tab.auto">Automate the routine</span><i class="tab__bar" aria-hidden="true"></i></button>
           </div>
           <div class="work__panels">
             <div role="tabpanel" id="tp-site" aria-labelledby="tab-site"><p data-i18n="tp.site">Five pages in Arabic and English, built for phones and set up so Google finds you. From <b data-price="site">$300</b>, live in 10 days.</p></div>
-            <div role="tabpanel" id="tp-store" aria-labelledby="tab-store" hidden><p data-i18n="tp.store">A catalogue with stock counts and checkout through Fawry, Paymob, InstaPay or cash on delivery. From <b data-price="shop">$700</b>, live in 3 weeks.</p></div>
+            <div role="tabpanel" id="tp-store" aria-labelledby="tab-store" hidden><p data-i18n="tp.store">Customers pick a service, a day and a time, and get a WhatsApp reminder. Pay on arrival or by transfer. From <b data-price="shop">$700</b>.</p></div>
             <div role="tabpanel" id="tp-app" aria-labelledby="tab-app" hidden><p data-i18n="tp.app">An app your customers install from a link, with offline use and push notifications. From <b data-price="app">$900</b>, live in 3 to 4 weeks.</p></div>
             <div role="tabpanel" id="tp-system" aria-labelledby="tab-system" hidden><p data-i18n="tp.system">Stock, invoices, customers and staff permissions in one place, with approval before anything posts. From <b data-price="system">$1,500</b>.</p></div>
             <div role="tabpanel" id="tp-auto" aria-labelledby="tab-auto" hidden><p data-i18n="tp.auto">Reports that send themselves, stock alerts and WhatsApp replies after hours. From <b data-price="auto">$400</b>, running in 1 to 2 weeks.</p></div>
@@ -161,30 +149,34 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
               <div class="win d-win" aria-hidden="true"><div class="win__bar"><span class="win__dots"><i></i><i></i><i></i></span><span class="win__url">nileclinic.com</span></div>
                 <div class="view"><div class="screen s-clinic ui ui-screen" data-w="1280" data-pan="1" data-vh="860"><div class="scroller" data-clinic></div></div></div></div>
             </div>
-            <div class="at-corner to-edge work__slot" id="sc-store" role="img" aria-label="A fabric shop's online store with six fabrics, prices per metre and four ways to pay" data-i18n-label="sc.store" hidden>
-              <div class="win d-win" aria-hidden="true"><div class="win__bar"><span class="win__dots"><i></i><i></i><i></i></span><span class="win__url">shop.nilefabrics.com</span></div>
-                <div class="view"><div class="screen s-shop ui ui-screen" data-w="1280">
-<div class="x-top">
-<span class="x-brand" data-i18n="sh.brand">Nile Fabrics</span>
-<span class="x-lnk" data-i18n="sh.n1">Cotton</span>
-<span class="x-lnk" data-i18n="sh.n2">Linen</span>
-<span class="x-lnk" data-i18n="sh.n3">Silk</span>
-<span class="x-lnk" data-i18n="sh.n4">Wholesale</span>
-<span class="x-bag"><i>3</i><span data-i18n="sh.bag">Cart · EGP 1,480</span></span>
+            <div class="at-corner to-edge work__slot" id="sc-store" role="img" aria-label="A clinic's booking page: a service, a day and a time chosen, and the confirm button" data-i18n-label="sc.book" hidden>
+              <div class="win d-win" aria-hidden="true"><div class="win__bar"><span class="win__dots"><i></i><i></i><i></i></span><span class="win__url">nileclinic.com/book</span></div>
+                <div class="view"><div class="screen s-book ui ui-screen" data-w="1280">
+<div class="x-top"><span class="x-brand" data-i18n="cl.brand">Nile Dental</span><span class="x-step" data-i18n="bk.step">Book an appointment · step 2 of 3</span></div>
+<div class="x-body">
+  <div class="x-col">
+    <p class="x-h" data-i18n="bk.svc">Service</p>
+    <div class="x-svc x-on"><b data-i18n="bk.s1">Check-up</b><span data-i18n="bk.s1t">30 min · EGP 350</span></div>
+    <div class="x-svc"><b data-i18n="bk.s2">Scale and polish</b><span data-i18n="bk.s2t">40 min · EGP 450</span></div>
+    <div class="x-svc"><b data-i18n="bk.s3">Whitening</b><span data-i18n="bk.s3t">60 min · EGP 2,400</span></div>
+    <p class="x-h" data-i18n="bk.doc">Doctor</p>
+    <div class="x-doc"><span class="x-av"></span><b data-i18n="cl.d1n">Dr Yasmine Adel</b></div>
+  </div>
+  <div class="x-col x-wide">
+    <p class="x-h" data-i18n="bk.day">Day</p>
+    <div class="x-days"><span><i data-i18n="bk.d1">Sat</i>14</span><span class="x-on"><i data-i18n="bk.d2">Sun</i>15</span><span><i data-i18n="bk.d3">Mon</i>16</span><span><i data-i18n="bk.d4">Tue</i>17</span><span class="x-off"><i data-i18n="bk.d5">Wed</i>18</span><span><i data-i18n="bk.d6">Thu</i>19</span></div>
+    <p class="x-h" data-i18n="bk.time">Time</p>
+    <div class="x-times"><span>10:00</span><span class="x-off">10:30</span><span>11:00</span><span class="x-on">11:30</span><span>12:00</span><span class="x-off">12:30</span><span>17:00</span><span>17:30</span><span class="x-off">18:00</span><span>18:30</span><span>19:00</span><span>19:30</span></div>
+  </div>
+  <div class="x-col x-sum">
+    <p class="x-h" data-i18n="bk.sum">Your booking</p>
+    <p class="x-big" data-i18n="bk.when">Sunday 15 March, 11:30</p>
+    <p data-i18n="bk.what">Check-up with Dr Yasmine Adel</p>
+    <p class="x-price" data-i18n="bk.price">EGP 350, paid at the clinic</p>
+    <span class="x-btn" data-i18n="bk.btn">Confirm booking</span>
+    <p class="x-note" data-i18n="bk.note">A confirmation and a reminder come on WhatsApp.</p>
+  </div>
 </div>
-<div class="x-hd">
-<p data-h="1" data-i18n="sh.h1">Cotton by the metre</p>
-<span data-i18n="sh.count">42 fabrics · delivery in Cairo within 48 hours</span>
-</div>
-<div class="x-grid">
-<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p1">Egyptian cotton, 240gsm</p><p class="x-meta" data-i18n="sh.m1">Natural · 150cm wide</p><p class="x-pr" data-i18n="sh.r1"></p></div></div>
-<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p2">Denim, indigo wash</p><p class="x-meta" data-i18n="sh.m2">In stock · 310 m</p><p class="x-pr" data-i18n="sh.r2"></p></div></div>
-<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p3">Poplin, off-white</p><p class="x-meta" data-i18n="sh.m3">Shirting · 145cm</p><p class="x-pr" data-i18n="sh.r3"></p></div></div>
-<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p4">Wool blend, burgundy</p><p class="x-meta" data-i18n="sh.m4">Winter · 160cm</p><p class="x-pr" data-i18n="sh.r4"></p></div></div>
-<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p5">Linen, sage</p><p class="x-meta" data-i18n="sh.m5">Pre-washed · 140cm</p><p class="x-pr" data-i18n="sh.r5"></p></div></div>
-<div class="x-p"><div class="x-im"></div><div class="x-bd"><p data-h="4" data-i18n="sh.p6">Raw silk, gold</p><p class="x-meta" data-i18n="sh.m6">Limited · 48 m left</p><p class="x-pr" data-i18n="sh.r6"></p></div></div>
-</div>
-<div class="x-pay"><span data-i18n="sh.pay">Pay with</span><b>Fawry</b><b>Paymob</b><b>InstaPay</b><b data-i18n="sh.cod">Cash on delivery</b></div>
 </div></div></div>
             </div>
             <div class="at-center work__slot work__slot--phone" id="sc-app" role="img" aria-label="A delivery app on a phone, listing today's drops and the cash collected" data-i18n-label="sc.app" hidden>
@@ -336,23 +328,23 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
     </div>
   </section>
 
-  <!-- 4 TOOLS (dark-band rhythm: the one inverse section, sand on the dark page): the hub diagram with the real marks -->
+  <!-- 4 ONE SYSTEM: the hub diagram, everything the business runs on joined to one centre -->
   <section class="section" id="tools" aria-labelledby="tools-h">
     <div class="wrap">
       <div class="grid">
         <div class="span-5 stack-5">
           <div class="section-head">
-            <h2 id="tools-h"><span data-i18n="tools.h2">Works with WhatsApp and your payments.</span> <span class="muted" data-i18n="tools.h2b">Fawry, Paymob and InstaPay included.</span></h2>
+            <h2 id="tools-h"><span data-i18n="tools.h2">Your whole business in one system.</span> <span class="muted" data-i18n="tools.h2b">Open it in the morning and everything is there.</span></h2>
           </div>
-          <p class="t-lead" data-i18n="tools.p">Orders arrive on WhatsApp, receipts go out by email, and customers pay the way they already do. You see all of it in one place.</p>
+          <p class="t-lead" data-i18n="tools.p">No more notebooks, spreadsheets and five apps that never agree. Clients, bookings, bills and money live in one place, and every number adds up.</p>
           <ul class="tools__list">
-            <li data-i18n="tools.1">Fawry, Paymob and InstaPay at checkout</li>
-            <li data-i18n="tools.2">Visa, Mastercard, Apple Pay and Google Pay</li>
-            <li data-i18n="tools.3">WhatsApp alerts on every order</li>
+            <li data-i18n="tools.1">Every client with their history and what they owe</li>
+            <li data-i18n="tools.2">Bookings, bills and payments received, on one screen</li>
+            <li data-i18n="tools.3">Income and expenses in a report every morning</li>
           </ul>
         </div>
         <div class="span-7 start-6 tools__panel">
-          <div class="dg" data-diagram data-icon-base="assets/icons/"><script type="application/json">{"layout": "hub", "size": "band", "alt": "Your system in the middle, joined to WhatsApp, Gmail, Google Maps, Instagram, Facebook, Visa, Mastercard and Apple Pay.", "center": {"label": "Your system", "icon": "ui:layout-dashboard"}, "spokes": [{"label": "WhatsApp", "icon": "whatsapp"}, {"label": "Gmail", "icon": "gmail"}, {"label": "Google Maps", "icon": "google-maps"}, {"label": "Instagram", "icon": "instagram"}, {"label": "Facebook", "icon": "facebook"}, {"label": "Visa", "icon": "visa"}, {"label": "Mastercard", "icon": "mastercard"}, {"label": "Apple Pay", "icon": "apple-pay"}]}</script></div>
+          <div class="dg" data-diagram data-icon-base="assets/icons/" data-i18n-dg="hub"><script type="application/json">{"layout": "hub", "size": "band", "alt": "Your system in the middle, joined to your clients, bookings, bills, income, expenses, stock, staff and reports.", "center": {"label": "Your system", "icon": "ui:layout-dashboard"}, "spokes": [{"label": "Clients", "icon": "ui:users"}, {"label": "Bookings", "icon": "ui:calendar-check"}, {"label": "Bills", "icon": "ui:receipt"}, {"label": "Income", "icon": "ui:trending-up"}, {"label": "Expenses", "icon": "ui:wallet"}, {"label": "Stock", "icon": "ui:package"}, {"label": "Staff", "icon": "ui:user-cog"}, {"label": "Reports", "icon": "ui:bar-chart-3"}]}</script></div>
         </div>
       </div>
     </div>
@@ -363,7 +355,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
     <div class="wrap">
       <div class="group">
         <div class="section-head section-head--split prices__head">
-        <h2 id="prices-h"><span data-i18n="price.h2">Prices in dollars.</span> <span class="muted" data-i18n="price.h2b">Written down before you call.</span></h2>
+        <h2 id="prices-h"><span data-i18n="price.h2">Prices in US dollars (USD).</span> <span class="muted" data-i18n="price.h2b">Written down before you call.</span></h2>
         <div class="market tabs" role="tablist" aria-label="Market" data-i18n-label="market.label">
           <button class="tab" role="tab" type="button" id="mEG" aria-selected="true" data-market="eg" data-i18n="market.eg">Egypt</button>
           <button class="tab" role="tab" type="button" id="mGulf" aria-selected="false" data-market="gulf" data-i18n="market.gulf">Gulf</button>
@@ -372,31 +364,31 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
       <div class="grid plans">
         <article class="card card--plan span-3">
           <h3 data-i18n="plan.site">Website</h3>
-          <p class="price"><span class="t-stat" data-price="site">$300</span></p>
+          <p class="price"><span class="t-stat" data-price="site">$300</span><span class="price__cur">USD</span></p>
           <p class="muted t-small" data-i18n="plan.site.t">One-off · ready in 10 days</p>
-          <ul class="checks"><li data-i18n="plan.site.1">Five pages, Arabic and English</li><li data-i18n="plan.site.2">WhatsApp button and map</li><li data-i18n="plan.site.3">Set up for Google search</li></ul>
+          <ul class="checks"><li data-i18n="plan.site.1">Up to five pages, Arabic and English</li><li data-i18n="plan.site.2">Built for phones first</li><li data-i18n="plan.site.3">WhatsApp, Instagram, Facebook and TikTok linked</li><li data-i18n="plan.site.4">Google Maps location and opening hours</li><li data-i18n="plan.site.5">Contact form to your email</li><li data-i18n="plan.site.6">Set up for Google search</li><li data-i18n="plan.site.7">Domain and security certificate set up</li></ul>
           <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.site" data-i18n="order.site">Order a website</a>
         </article>
         <article class="card card--plan span-3 is-featured">
           <span class="badge plan__badge" data-i18n="plan.popular">Most asked</span>
-          <h3 data-i18n="plan.store">Online store</h3>
-          <p class="price"><span class="t-stat" data-price="shop">$700</span></p>
-          <p class="muted t-small" data-i18n="plan.store.t">One-off · ready in 3 weeks</p>
-          <ul class="checks"><li data-i18n="plan.store.1">Products, stock and orders</li><li data-i18n="plan.store.2">Fawry, Paymob, InstaPay, cash</li><li data-i18n="plan.store.3">A WhatsApp alert per order</li></ul>
-          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.store" data-i18n="order.store">Order a store</a>
+          <h3 data-i18n="plan.book">Booking website</h3>
+          <p class="price"><span class="t-stat" data-price="shop">$700</span><span class="price__cur">USD</span></p>
+          <p class="muted t-small" data-i18n="plan.book.t">One-off · ready in 3 weeks</p>
+          <ul class="checks"><li data-i18n="plan.book.1">Everything in the website</li><li data-i18n="plan.book.2">Customers book a service, day and time</li><li data-i18n="plan.book.3">Your hours, staff and breaks respected</li><li data-i18n="plan.book.4">WhatsApp and email confirmations and reminders</li><li data-i18n="plan.book.5">A screen to see and move bookings</li><li data-i18n="plan.book.6">Pay on arrival, by InstaPay or bank transfer</li><li data-i18n="plan.book.7">Or an online store: orders on WhatsApp, cash on delivery</li></ul>
+          <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.book" data-i18n="order.book">Order a booking site</a>
         </article>
         <article class="card card--plan span-3">
           <h3 data-i18n="plan.app">Mobile app</h3>
-          <p class="price"><span class="t-stat" data-price="app">$900</span></p>
+          <p class="price"><span class="t-stat" data-price="app">$900</span><span class="price__cur">USD</span></p>
           <p class="muted t-small" data-i18n="plan.app.t">One-off · ready in 3 to 4 weeks</p>
-          <ul class="checks"><li data-i18n="plan.app.1">Installs from a link</li><li data-i18n="plan.app.2">Works offline</li><li data-i18n="plan.app.3">Push notifications</li></ul>
+          <ul class="checks"><li data-i18n="plan.app.1">Installs from a link, your logo on the home screen</li><li data-i18n="plan.app.2">Bookings, orders or loyalty points</li><li data-i18n="plan.app.3">Works offline</li><li data-i18n="plan.app.4">Push notifications to your customers</li><li data-i18n="plan.app.5">A dashboard to manage it all</li><li data-i18n="plan.app.6">App Store and Google Play quoted separately</li></ul>
           <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.app" data-i18n="order.app">Order an app</a>
         </article>
         <article class="card card--plan span-3">
           <h3 data-i18n="plan.system">Business system</h3>
-          <p class="price"><span class="t-stat" data-price="system">$1,500</span></p>
+          <p class="price"><span class="t-stat" data-price="system">$1,500</span><span class="price__cur">USD</span></p>
           <p class="muted t-small" data-i18n="plan.system.t">One-off · ready in 4 to 6 weeks</p>
-          <ul class="checks"><li data-i18n="plan.system.1">Stock, invoices, customers</li><li data-i18n="plan.system.2">A role for each employee</li><li data-i18n="plan.system.3">Approval before posting</li></ul>
+          <ul class="checks"><li data-i18n="plan.system.1">Clients, bookings and bills</li><li data-i18n="plan.system.2">Income, expenses and stock</li><li data-i18n="plan.system.3">A role and permissions for each employee</li><li data-i18n="plan.system.4">Approval before anything is posted</li><li data-i18n="plan.system.5">Daily reports, exported to Excel</li><li data-i18n="plan.system.6">WhatsApp and email alerts</li></ul>
           <a class="btn btn--secondary plan__btn" href="#quote" data-need="plan.system" data-i18n="order.system">Order a system</a>
         </article>
       </div>
@@ -496,14 +488,14 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
     <div class="closing__links">
       <div class="grid">
         <div class="span-4 stack-4">
-          <a class="footer__mark" href="#top"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 3.5 28.5 16 22z" fill="var(--logo-a, #ede7da)"/><path d="M16 3 28.5 28.5 16 22z" fill="var(--logo-b, #3358e6)"/></svg><span class="logo-word">axiom</span></a>
+          <a class="footer__mark" href="#top"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><g stroke="var(--logo-a, #ede7da)" stroke-width="2" stroke-linecap="round" opacity=".55"><path d="M16 16 6.5 6.5M16 16l9.5-9.5M16 16l-9.5 9.5M16 16l9.5 9.5"/></g><g fill="var(--logo-a, #ede7da)"><circle cx="6" cy="6" r="3"/><circle cx="26" cy="6" r="3"/><circle cx="6" cy="26" r="3"/><circle cx="26" cy="26" r="3"/></g><circle cx="16" cy="16" r="6" fill="var(--logo-b, #3358e6)"/></svg><span class="logo-word">axiom</span></a>
           <p class="footer__lede" data-i18n="foot.lede">Websites, apps and business systems for companies in Egypt and the Gulf.</p>
         </div>
         <div class="span-2 start-7 footer__col"><h3 data-i18n="foot.build">Build</h3><ul>
-          <li><a href="#work" data-i18n="plan.site">Website</a></li><li><a href="#work" data-i18n="plan.store">Online store</a></li>
+          <li><a href="#work" data-i18n="plan.site">Website</a></li><li><a href="#work" data-i18n="plan.book">Booking website</a></li>
           <li><a href="#work" data-i18n="plan.app">Mobile app</a></li><li><a href="#work" data-i18n="plan.system">Business system</a></li></ul></div>
         <div class="span-2 footer__col"><h3 data-i18n="foot.studio">Studio</h3><ul>
-          <li><a href="#prices" data-i18n="nav.prices">Prices</a></li><li><a href="#tools" data-i18n="foot.tools">Tools we connect</a></li>
+          <li><a href="#prices" data-i18n="nav.prices">Prices</a></li><li><a href="#tools" data-i18n="foot.tools">One system</a></li>
           <li><a href="#questions" data-i18n="nav.faq">Questions</a></li></ul></div>
         <div class="span-2 footer__col"><h3 data-i18n="foot.talk">Talk to us</h3><ul>
           <li><a href="#quote" data-i18n="cta.quote">Get a quote</a></li></ul></div>

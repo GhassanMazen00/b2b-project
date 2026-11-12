@@ -80,6 +80,28 @@ const T = {
     "foot.build":"Build","foot.studio":"Studio","foot.talk":"Talk to us","foot.tools":"Tools we connect",
     "foot.tm":"Product names and logos are trademarks of their owners.",
     "gate.label":"Choose a language",
+    "tab.store":"Take bookings","price.h2":"Prices in US dollars (USD).",
+    "tp.store":"Customers pick a service, a day and a time, and get a WhatsApp reminder. Pay on arrival or by transfer. From {shop}.",
+    "sc.book":"A clinic's booking page: a service, a day and a time chosen, and the confirm button",
+    "tools.h2":"Your whole business in one system.","tools.h2b":"Open it in the morning and everything is there.",
+    "tools.p":"No more notebooks, spreadsheets and five apps that never agree. Clients, bookings, bills and money live in one place, and every number adds up.",
+    "tools.1":"Every client with their history and what they owe","tools.2":"Bookings, bills and payments received, on one screen","tools.3":"Income and expenses in a report every morning",
+    "foot.tools":"One system",
+    "hub.alt":"Your system in the middle, joined to your clients, bookings, bills, income, expenses, stock, staff and reports.","hub.center":"Your system","hub.1":"Clients","hub.2":"Bookings","hub.3":"Bills","hub.4":"Income","hub.5":"Expenses","hub.6":"Stock","hub.7":"Staff","hub.8":"Reports",
+    "plan.site.1":"Up to five pages, Arabic and English","plan.site.2":"Built for phones first","plan.site.3":"WhatsApp, Instagram, Facebook and TikTok linked",
+    "plan.site.4":"Google Maps location and opening hours","plan.site.5":"Contact form to your email","plan.site.6":"Set up for Google search","plan.site.7":"Domain and security certificate set up",
+    "plan.book":"Booking website","plan.book.t":"One-off · ready in 3 weeks",
+    "plan.book.1":"Everything in the website","plan.book.2":"Customers book a service, day and time","plan.book.3":"Your hours, staff and breaks respected",
+    "plan.book.4":"WhatsApp and email confirmations and reminders","plan.book.5":"A screen to see and move bookings","plan.book.6":"Pay on arrival, by InstaPay or bank transfer",
+    "plan.book.7":"Or an online store: orders on WhatsApp, cash on delivery","order.book":"Order a booking site",
+    "plan.app.1":"Installs from a link, your logo on the home screen","plan.app.2":"Bookings, orders or loyalty points","plan.app.3":"Works offline",
+    "plan.app.4":"Push notifications to your customers","plan.app.5":"A dashboard to manage it all","plan.app.6":"App Store and Google Play quoted separately",
+    "plan.system.1":"Clients, bookings and bills","plan.system.2":"Income, expenses and stock","plan.system.3":"A role and permissions for each employee",
+    "plan.system.4":"Approval before anything is posted","plan.system.5":"Daily reports, exported to Excel","plan.system.6":"WhatsApp and email alerts",
+    "bk.step":"Book an appointment · step 2 of 3","bk.svc":"Service","bk.s1":"Check-up","bk.s1t":"30 min · EGP 350","bk.s2":"Scale and polish","bk.s2t":"40 min · EGP 450",
+    "bk.s3":"Whitening","bk.s3t":"60 min · EGP 2,400","bk.doc":"Doctor","bk.day":"Day","bk.d1":"Sat","bk.d2":"Sun","bk.d3":"Mon","bk.d4":"Tue","bk.d5":"Wed","bk.d6":"Thu",
+    "bk.time":"Time","bk.sum":"Your booking","bk.when":"Sunday 15 March, 11:30","bk.what":"Check-up with Dr Yasmine Adel","bk.price":"EGP 350, paid at the clinic",
+    "bk.btn":"Confirm booking","bk.note":"A confirmation and a reminder come on WhatsApp.",
     "nav.care":"Care","care.h2":"Automation and monthly care.","care.h2b":"The work after launch.",
     "hero.note":"Taking projects in Egypt and the Gulf","hero.h1a":"Web, app and system studio","hero.h1b":"in Cairo",
     "fact.1":"Websites from","fact.2":"Live in","fact.2v":"14 days","fact.3":"WhatsApp replies","fact.3v":"Within 24 h",
@@ -225,6 +247,28 @@ const T = {
     "foot.build":"اللي بنبنيه","foot.studio":"الاستوديو","foot.talk":"كلّمنا","foot.tools":"الأدوات اللي بنربطها",
     "foot.tm":"أسماء المنتجات وشعاراتها علامات تجارية لأصحابها.",
     "gate.label":"اختار اللغة",
+    "tab.store":"استقبل حجوزات","price.h2":"الأسعار بالدولار الأمريكي (USD).",
+    "tp.store":"العميل يختار الخدمة واليوم والميعاد، ويوصله تذكير على واتساب. الدفع عند الحضور أو بالتحويل. من {shop}.",
+    "sc.book":"صفحة حجز عيادة: خدمة ويوم وميعاد متختارين وزر التأكيد",
+    "tools.h2":"شغلك كله في نظام واحد.","tools.h2b":"تفتحه الصبح تلاقي كل حاجة قدامك.",
+    "tools.p":"كفاية كشاكيل وشيتات وخمس برامج مش متفقين. العملاء والحجوزات والفواتير والفلوس في مكان واحد، وكل رقم مظبوط.",
+    "tools.1":"كل عميل بتاريخه واللي عليه","tools.2":"الحجوزات والفواتير والمدفوعات في شاشة واحدة","tools.3":"الدخل والمصروفات في تقرير كل صباح",
+    "foot.tools":"نظام واحد",
+    "hub.alt":"نظامك في النص، ومربوط بيه العملاء والحجوزات والفواتير والدخل والمصروفات والمخزون والموظفين والتقارير.","hub.center":"نظامك","hub.1":"العملاء","hub.2":"الحجوزات","hub.3":"الفواتير","hub.4":"الدخل","hub.5":"المصروفات","hub.6":"المخزون","hub.7":"الموظفين","hub.8":"التقارير",
+    "plan.site.1":"حتى خمس صفحات، عربي وإنجليزي","plan.site.2":"مبني للموبايل الأول","plan.site.3":"واتساب وإنستجرام وفيسبوك وتيك توك مربوطين",
+    "plan.site.4":"موقعك على خرائط جوجل ومواعيد العمل","plan.site.5":"نموذج تواصل يوصل على إيميلك","plan.site.6":"مجهز لبحث جوجل","plan.site.7":"تجهيز الدومين وشهادة الأمان",
+    "plan.book":"موقع حجوزات","plan.book.t":"مرة واحدة · جاهز في ٣ أسابيع",
+    "plan.book.1":"كل اللي في الموقع","plan.book.2":"العميل يحجز خدمة ويوم وميعاد","plan.book.3":"مواعيدك وموظفينك والبريكات محسوبة",
+    "plan.book.4":"تأكيد وتذكير على واتساب والإيميل","plan.book.5":"شاشة تشوف فيها الحجوزات وتغيّرها","plan.book.6":"الدفع عند الحضور أو إنستاباي أو تحويل بنكي",
+    "plan.book.7":"أو متجر أونلاين: الطلبات على واتساب والدفع عند الاستلام","order.book":"اطلب موقع حجوزات",
+    "plan.app.1":"بيتثبّت من لينك، ولوجوك على الشاشة","plan.app.2":"حجوزات أو طلبات أو نقاط ولاء","plan.app.3":"بيشتغل من غير نت",
+    "plan.app.4":"إشعارات لعملائك","plan.app.5":"لوحة تحكم تدير منها كل حاجة","plan.app.6":"آب ستور وجوجل بلاي بعرض سعر منفصل",
+    "plan.system.1":"العملاء والحجوزات والفواتير","plan.system.2":"الدخل والمصروفات والمخزون","plan.system.3":"صلاحيات لكل موظف",
+    "plan.system.4":"موافقة قبل أي ترحيل","plan.system.5":"تقارير يومية تتصدّر لإكسل","plan.system.6":"تنبيهات واتساب وإيميل",
+    "bk.step":"احجز ميعاد · الخطوة ٢ من ٣","bk.svc":"الخدمة","bk.s1":"كشف","bk.s1t":"٣٠ دقيقة · ٣٥٠ جنيه","bk.s2":"تنظيف وتلميع","bk.s2t":"٤٠ دقيقة · ٤٥٠ جنيه",
+    "bk.s3":"تبييض","bk.s3t":"٦٠ دقيقة · ٢٤٠٠ جنيه","bk.doc":"الطبيب","bk.day":"اليوم","bk.d1":"سبت","bk.d2":"أحد","bk.d3":"اتنين","bk.d4":"تلات","bk.d5":"أربع","bk.d6":"خميس",
+    "bk.time":"الميعاد","bk.sum":"حجزك","bk.when":"الأحد ١٥ مارس، ١١:٣٠","bk.what":"كشف مع د. ياسمين عادل","bk.price":"٣٥٠ جنيه، الدفع في العيادة",
+    "bk.btn":"أكّد الحجز","bk.note":"التأكيد والتذكير بيوصلوا على واتساب.",
     "nav.care":"المتابعة","care.h2":"الأتمتة والمتابعة الشهرية.","care.h2b":"الشغل اللي بعد الإطلاق.",
     "hero.note":"بنستقبل مشاريع في مصر والخليج","hero.h1a":"استوديو مواقع وتطبيقات وأنظمة","hero.h1b":"في القاهرة",
     "fact.1":"المواقع من","fact.2":"تشتغل خلال","fact.2v":"١٤ يوم","fact.3":"الرد على واتساب","fact.3v":"خلال ٢٤ ساعة",
@@ -300,7 +344,8 @@ const T = {
     "sy.a1":"٨٤٬٥٠٠","sy.a2":"٣١٬٢٠٠","sy.a3":"١٢٬٨٦٠","sy.a4":"٥٧٬٤٠٠","sy.a5":"٢٢٬١٥٠",  },
 };
 
-const NEEDS = ["plan.site","plan.store","plan.app","plan.system","plan.auto","f.notsure"];
+const HUB_ICONS = ["users","calendar-check","receipt","trending-up","wallet","package","user-cog","bar-chart-3"];
+const NEEDS = ["plan.site","plan.book","plan.app","plan.system","plan.auto","plan.care","f.notsure"];
 
 /* =========================== prices, by market =========================== */
 const PRICES = {
@@ -341,6 +386,16 @@ function applyLang(next, keep = true) {
     const calmX = lang === "ar" ? 0.73 : 0.27;
     try { fxEl.dataset.fxParams = JSON.stringify({ ...JSON.parse(fxEl.dataset.fxParams || "{}"), calmX }); } catch {}
     if (fxEl.__fx) fxEl.__fx.set({ calmX });
+  }
+  // the hub's labels follow the language: diagram.js reads its spec once, so it is drawn again here
+  const hubEl = $("[data-i18n-dg]");
+  if (hubEl && window.TPDiagram) {
+    const t = T[lang];
+    window.TPDiagram.mount(hubEl, {
+      layout: "hub", size: "band", alt: t["hub.alt"],
+      center: { label: t["hub.center"], icon: "ui:layout-dashboard" },
+      spokes: HUB_ICONS.map((icon, i) => ({ label: t["hub." + (i + 1)], icon: "ui:" + icon })),
+    }, { iconBase: "assets/icons/" });
   }
   paintPrices();
   requestAnimationFrame(fitScreens);
