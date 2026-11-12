@@ -15,7 +15,7 @@ taste, except where the brief asked for something else.
 | Section | What it shows |
 |---|---|
 | Header | A glass capsule floating over the page: four links, the name in the middle, a settings button (language, dark or light) and the main button. On phones and tablets, the kit's solid bar with the settings button, the main button and the menu sheet |
-| Hero | Centred: the logo drawn large (its fifteen contour lines draw in one by one, then the land keeps rolling slowly, the crest glowing cobalt), the name **axiom** with a blinking cursor, a one-line `>` prompt and two buttons, over `dot-terrain`, a field of light points rolling toward a horizon |
+| Hero | Centred: the logo drawn large (its fifteen contour lines draw in one by one, then the land keeps rolling slowly, the crest in cobalt), the name **axiom** with a blinking cursor, a one-line `>` prompt and two buttons, over `dot-terrain`, a field of light points rolling toward a horizon |
 | Work (tabs tour) | Five real example screens: a clinic site, a clinic's booking page, a delivery app, an invoices system, three automations. They move on by themselves every 7 s and pause on hover, focus or off screen |
 | Care | Automation (a lanes diagram) and monthly care (the owner's status panel), each with its order button |
 | One system | A hub diagram: your system in the middle, joined to clients, bookings, bills, income, expenses, stock, staff and reports, beside the line "Your whole business in one system" |

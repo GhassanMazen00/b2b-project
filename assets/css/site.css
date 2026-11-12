@@ -362,8 +362,7 @@ html[lang="ar"] .hero--field .hero__lead { font-family: "Readex Pro", var(--font
 html[data-theme="light"] .hero__mark { color: #141416; }
 .tm-l { stroke: currentColor; stroke-dasharray: 1; stroke-dashoffset: 1;
   animation: tm-draw 1.3s cubic-bezier(.65,0,.35,1) calc(.1s + var(--i) * 55ms) forwards; }
-.tm-crest { stroke: var(--logo-b, #3358e6); filter: drop-shadow(0 0 2.5px rgb(51 88 230 / .8)); }
-.tm-glow { opacity: 0; animation: tm-fade 1.2s ease .9s forwards; }
+.tm-crest { stroke: var(--logo-b, #3358e6); }
 @keyframes tm-draw { to { stroke-dashoffset: 0; } }
 @keyframes tm-fade { to { opacity: 1; } }
 @keyframes pm-blink { 50% { opacity: 0; } }
@@ -378,7 +377,6 @@ html[data-theme="light"] .hero__mark { color: #141416; }
 
 @media (prefers-reduced-motion: reduce) {
   .tm-l { animation: none; stroke-dashoffset: 0; }
-  .tm-glow { animation: none; opacity: 1; }
   .hero__cursor, .hero--field .hero__lead, .hero--field .btn-row { animation: none; }
 }
 
@@ -408,7 +406,7 @@ main > :is(section, .section):not(.hero), footer.closing { height: auto; min-hei
 .loop-pause, .ui-pause, .dg-pause, .mo-mq__pause { display: none !important; }
 
 /* ================================================================ the intro waits for its cue (site.js) */
-html.js-intro:not(.is-ready) :is(.tm-l, .tm-glow, .hero__cursor),
+html.js-intro:not(.is-ready) :is(.tm-l, .hero__cursor),
 html.js-intro:not(.is-ready) .hero--field :is(.hero__lead, .btn-row) { animation-play-state: paused !important; }
 html.js-intro:not(.is-ready) .hero__name { opacity: 0; }
 .hero__name { transition: opacity .6s cubic-bezier(.22,1,.36,1) .25s; }
