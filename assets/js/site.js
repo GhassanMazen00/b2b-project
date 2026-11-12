@@ -644,3 +644,36 @@ function settings() {
   });
   applyTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark", false);
 }
+
+/* =========================== the logo: the hero's terrain keeps rolling =========================== */
+/* After its lines draw in, the ridge in the hero's mark drifts and breathes, as the field of points behind it does.
+   The same sum as the still marks, with time in it; it pauses off screen and holds still under reduced motion. */
+(function terrain() {
+  const svg = $("[data-terrain]");
+  if (!svg || REDUCED) return;
+  const paths = $$(".tm-l", svg), N = paths.length;
+  let on = true, t0 = 0;
+  new IntersectionObserver((es) => { on = es[0].isIntersecting; }).observe(svg);
+  const shape = (i, t) => {
+    const depth = i / (N - 1), y0 = 9 + i * 3.35, amp = 4 + 15 * Math.pow(depth, 1.25);
+    const sway = Math.sin(t * 0.55 + depth * 1.6) * 2.2, lift = 1 + 0.07 * Math.sin(t * 0.8 + depth * 2.4);
+    let d = "";
+    for (let x = 0; x <= 64; x += 1) {
+      const u = (x - 30 - sway) / (7 + 9 * depth);
+      const ridge = Math.exp(-u * u) + 0.45 * Math.exp(-Math.pow((x - 46 + sway * 1.4) / (6 + 6 * depth), 2));
+      const y = y0 - amp * lift * ridge * (0.6 + 0.4 * depth);
+      d += (x ? "L" : "M") + x + " " + y.toFixed(2);
+    }
+    return d;
+  };
+  const frame = (now) => {
+    requestAnimationFrame(frame);
+    if (!on || !document.documentElement.classList.contains("is-ready")) return;
+    if (!t0) t0 = now;
+    // eases in over the first two seconds, so the drawn lines start moving without a jump
+    const t = (now - t0) / 1000, k = Math.min(1, Math.max(0, (t - 1.4) / 2));
+    const tt = k * k * (3 - 2 * k) * t;
+    for (let i = 0; i < N; i++) paths[i].setAttribute("d", shape(i, tt));
+  };
+  requestAnimationFrame(frame);
+})();
