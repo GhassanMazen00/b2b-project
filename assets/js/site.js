@@ -425,7 +425,7 @@ function openGate() {
   for (const b of $$(".gate__btn", gate)) b.addEventListener("click", () => choose(b.dataset.lang));
   addEventListener("keydown", (e) => { if (e.key === "Escape" && gate.isConnected) choose(lang); });
   document.body.classList.add("is-locked");
-  setTimeout(() => { gate.classList.add("is-open"); $(".gate__btn", gate).focus({ preventScroll: true }); }, 500);
+  setTimeout(() => { gate.classList.add("is-open"); $(".gate__btn", gate).focus({ preventScroll: true }); }, 120);
 }
 
 function paintPrices() {
@@ -566,7 +566,7 @@ function countUp(scope) {
 buildClinics();
 const chosen = lang === "ar" || lang === "en";
 applyLang(chosen ? lang : ((navigator.language || "").toLowerCase().startsWith("ar") ? "ar" : "en"), chosen);
-if (chosen) { $("#gate").remove(); introWhenReady(); } else openGate();
+if (chosen) { $("#gate").remove(); introWhenReady(); } else openGate();   // (the head script usually starts the intro first)
 settings();
 
 for (const b of [$("#mEG"), $("#mGulf")]) b.addEventListener("click", () => {
@@ -592,15 +592,9 @@ function introGo() {
   requestAnimationFrame(() => requestAnimationFrame(() => d.classList.add("is-ready")));
 }
 function introWhenReady() {
-  const t0 = performance.now();
+  // the fonts, or half a second, whichever comes first: the field of points fades in on its own
   const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
-  fonts.then(() => {
-    (function wait() {
-      const c = $(".hero__fx canvas");
-      if ((c && c.style.opacity === "1") || performance.now() - t0 > 1600) introGo();
-      else requestAnimationFrame(wait);
-    })();
-  });
+  Promise.race([fonts, new Promise((r) => setTimeout(r, 500))]).then(introGo);
 }
 
 /* =========================== settings: language and theme =========================== */

@@ -15,10 +15,10 @@
 <!-- <link rel="canonical" href="https://[the client's domain]/"> -->
 <meta name="site-kind" content="software">
 <meta name="page-type" content="software">
-<script>try{var d=document.documentElement;d.classList.add("js-intro");if(localStorage.getItem("axiom.theme")==="light"){d.dataset.theme="light";}}catch(e){}</script>
+<script>(function(){var d=document.documentElement,go=function(){d.classList.add("is-ready")};d.classList.add("js-intro");try{if(localStorage.getItem("axiom.theme")==="light"){d.dataset.theme="light";}var l=localStorage.getItem("axiom.lang");if(l==="ar"||l==="en"){var f=document.fonts?document.fonts.ready:null;setTimeout(go,400);if(f)f.then(function(){requestAnimationFrame(go)});}}catch(e){go();}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..700&family=JetBrains+Mono:wght@300..700&family=DM+Mono:wght@400;500&family=Readex+Pro:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Readex+Pro:wght@400;500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/system.css">
 <link rel="stylesheet" href="assets/ui/cards.css">
 <link rel="stylesheet" href="assets/motion/motion.css">
@@ -45,7 +45,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "JetBrains Mono", sans-serif; --
 <link rel="stylesheet" href="assets/css/screens.css">
 <link rel="stylesheet" href="assets/css/site.css">
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script src="assets/backgrounds/backgrounds.js"></script>
+<script src="assets/backgrounds/backgrounds.js" defer></script>
 <script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
 <link rel="modulepreload" href="assets/moments/moments.js">
 <link rel="modulepreload" href="assets/moments/lib.js">
