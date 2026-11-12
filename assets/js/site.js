@@ -80,6 +80,7 @@ const T = {
     "foot.build":"Build","foot.studio":"Studio","foot.talk":"Talk to us","foot.tools":"Tools we connect",
     "foot.tm":"Product names and logos are trademarks of their owners.",
     "gate.label":"Choose a language",
+    "set.label":"Settings","set.lang":"Language","set.theme":"Theme","theme.dark":"Dark","theme.light":"Light",
     "hero.sr":": websites, booking pages, apps and business systems for Egypt and the Gulf",
     "hero.lead":"Websites, bookings, apps and systems for Egypt and the Gulf.",
     "cta.work":"See what we build",
@@ -248,6 +249,7 @@ const T = {
     "foot.build":"اللي بنبنيه","foot.studio":"الاستوديو","foot.talk":"كلّمنا","foot.tools":"الأدوات اللي بنربطها",
     "foot.tm":"أسماء المنتجات وشعاراتها علامات تجارية لأصحابها.",
     "gate.label":"اختار اللغة",
+    "set.label":"الإعدادات","set.lang":"اللغة","set.theme":"المظهر","theme.dark":"داكن","theme.light":"فاتح",
     "hero.sr":": مواقع وصفحات حجز وتطبيقات وأنظمة للشركات في مصر والخليج",
     "hero.lead":"مواقع وحجوزات وتطبيقات وأنظمة لمصر والخليج.",
     "cta.work":"شوف بنعمل إيه",
@@ -399,6 +401,7 @@ function applyLang(next, keep = true) {
       spokes: HUB_ICONS.map((icon, i) => ({ label: t["hub." + (i + 1)], icon: "ui:" + icon })),
     }, { iconBase: "assets/icons/" });
   }
+  for (const b of $$("[data-set-lang]")) b.setAttribute("aria-pressed", String(b.dataset.setLang === lang));
   paintPrices();
   requestAnimationFrame(fitScreens);
   if (keep) { try { localStorage.setItem("axiom.lang", lang); } catch {} }
@@ -417,6 +420,7 @@ function openGate() {
     gate.classList.remove("is-open");
     document.body.classList.remove("is-locked");
     setTimeout(() => gate.remove(), 500);
+    introGo();
   };
   for (const b of $$(".gate__btn", gate)) b.addEventListener("click", () => choose(b.dataset.lang));
   addEventListener("keydown", (e) => { if (e.key === "Escape" && gate.isConnected) choose(lang); });
@@ -493,7 +497,12 @@ function fitScreens() {
     const k = avail / w;
     sc.style.width = w + "px";
     sc.style.transform = "scale(" + k + ")";
-    if (sc.dataset.fit === "phone" || view.closest(".work__slot, .pb__screen")) continue;   // the frame sets the height
+    if (sc.dataset.fit === "phone") continue;
+    if (view.closest(".work__slot, .pb__screen")) {
+      // the frame sets the height: the page grows to fill it, so no empty band shows under a short screen
+      sc.style.minHeight = view.clientHeight ? Math.ceil(view.clientHeight / k) + "px" : "";
+      continue;
+    }
     view.style.height = Math.round((sc.dataset.pan ? Number(sc.dataset.vh) : sc.offsetHeight) * k) + "px";
   }
 }
@@ -557,7 +566,8 @@ function countUp(scope) {
 buildClinics();
 const chosen = lang === "ar" || lang === "en";
 applyLang(chosen ? lang : ((navigator.language || "").toLowerCase().startsWith("ar") ? "ar" : "en"), chosen);
-if (chosen) $("#gate").remove(); else openGate();
+if (chosen) { $("#gate").remove(); introWhenReady(); } else openGate();
+settings();
 
 for (const b of [$("#mEG"), $("#mGulf")]) b.addEventListener("click", () => {
   market = b.dataset.market;
@@ -572,3 +582,65 @@ addEventListener("resize", () => { fitScreens(); fitPhone(); }, { passive: true 
 document.fonts?.ready.then(fitScreens);
 fitScreens();
 fitPhone();
+
+/* =========================== the intro: one clean start =========================== */
+/* The hero's words and mark wait (html.js-intro) until the fonts are in and the field of points has drawn
+   its first frame, so the shader's start and the font swap never land in the middle of the animation. */
+function introGo() {
+  const d = document.documentElement;
+  if (d.classList.contains("is-ready")) return;
+  requestAnimationFrame(() => requestAnimationFrame(() => d.classList.add("is-ready")));
+}
+function introWhenReady() {
+  const t0 = performance.now();
+  const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+  fonts.then(() => {
+    (function wait() {
+      const c = $(".hero__fx canvas");
+      if ((c && c.style.opacity === "1") || performance.now() - t0 > 1600) introGo();
+      else requestAnimationFrame(wait);
+    })();
+  });
+}
+
+/* =========================== settings: language and theme =========================== */
+function applyTheme(next, keep = true) {
+  const d = document.documentElement;
+  if (next === "light") d.dataset.theme = "light"; else delete d.dataset.theme;
+  if (keep) { try { localStorage.setItem("axiom.theme", next); } catch {} }
+  const meta = $('meta[name="theme-color"]');
+  if (meta) meta.content = next === "light" ? "#f3f0e8" : "#0b0b0d";
+  for (const b of $$("[data-set-theme]")) b.setAttribute("aria-pressed", String(b.dataset.setTheme === next));
+}
+// the field of points reads its colours when it is mounted, so a new theme mounts it again
+function retintField() {
+  const el = $(".hero__fx");
+  if (!el) return;
+  import(new URL("assets/effects/fx.js", document.baseURI).href).then((m) => {
+    const fx = m.default || m;
+    try { (fx.get ? fx.get(el) : el.__fx)?.destroy(); } catch {}
+    el.__fx = null;
+    el.removeAttribute("data-fx-mounted");
+    for (const c of $$("canvas", el)) c.remove();
+    fx.mountAll(el);
+  }).catch(() => {});
+}
+function settings() {
+  const btn = $(".set__btn"), pop = $("#set-pop");
+  if (!btn || !pop) return;
+  const open = (v) => { pop.hidden = !v; btn.setAttribute("aria-expanded", String(v)); };
+  btn.addEventListener("click", () => open(pop.hidden));
+  // only a real press outside closes it (the examples' tour clicks its own tabs every few seconds)
+  document.addEventListener("pointerdown", (e) => { if (!pop.hidden && !e.target.closest(".set")) open(false); });
+  addEventListener("scroll", () => { if (!pop.hidden && matchMedia("(max-width: 639px)").matches) open(false); }, { passive: true });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && !pop.hidden) { open(false); btn.focus(); } });
+  for (const b of $$("[data-set-lang]", pop)) b.addEventListener("click", () => { if (b.dataset.setLang !== lang) applyLang(b.dataset.setLang); });
+  for (const b of $$("[data-set-theme]", pop)) b.addEventListener("click", () => {
+    const now = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+    if (b.dataset.setTheme === now) return;
+    applyTheme(b.dataset.setTheme);
+    applyLang(lang, false);   // the hub diagram and the screens draw again in the new colours
+    retintField();
+  });
+  applyTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark", false);
+}
