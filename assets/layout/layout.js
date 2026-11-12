@@ -57,7 +57,7 @@ function liveWord(slot) {
     spans.forEach((s, k) => { s.style.transition = 'none'; s.className = k === i ? '' : 'is-next'; void s.offsetWidth; s.style.transition = ''; });
     at = i;
   };
-  if (reduced() || phone() || other()) { show(0); return; }
+  if (reduced() || other()) { show(0); return; }
   const ctl = ui.loop(slot, async api => {
     for (let n = 1; n <= words.length; n++) {
       await api.wait(2000);
@@ -189,7 +189,7 @@ function collage(box) {
   if (!sets.length) return;
   const show = i => sets.forEach((s, k) => { s.classList.toggle('is-on', k === i); s.toggleAttribute('inert', k !== i); s.setAttribute('aria-hidden', String(k !== i)); });
   show(0);
-  if (sets.length < 2 || phone() || other()) return;
+  if (sets.length < 2 || other()) return;
   box.setAttribute('data-ui-pause-host', '');
   ui.loop(box, async api => {
     for (let n = 1; n <= sets.length; n++) { await api.wait(2800); box.classList.add('is-cycling'); show(n % sets.length); await api.wait(700); }
@@ -210,7 +210,7 @@ function steps(box) {
   const set = n => items.forEach((s, k) => s.classList.toggle('is-off', k >= n));
   const done = () => set(items.length);
   done();
-  if (reduced() || phone() || other()) return;
+  if (reduced() || other()) return;
   ui.loop(box, async api => {
     await api.wait(hold);
     set(0);

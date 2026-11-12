@@ -17,7 +17,7 @@
 <meta name="page-type" content="software">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..700&family=JetBrains+Mono:wght@400;500;600&family=DM+Mono:wght@400;500&family=Readex+Pro:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..700&family=JetBrains+Mono:wght@300..700&family=DM+Mono:wght@400;500&family=Readex+Pro:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/system.css">
 <link rel="stylesheet" href="assets/ui/cards.css">
 <link rel="stylesheet" href="assets/motion/motion.css">
@@ -30,15 +30,15 @@
   --p-accent: #3358e6; --p-accent-ink: #ffffff; --p-action: #3358e6; --p-action-ink: #ffffff;
   --p-inv-bg: #ede7da; --p-inv-surface: #dbd5c9; --p-inv-ink: #0b0b0d; --p-inv-muted: #565451;
   --p-inv-accent: #3358e6; --p-inv-accent-ink: #ffffff; --p-inv-action: #3358e6; --p-inv-action-ink: #ffffff;
-  --font-display: "Outfit", system-ui, sans-serif;
-  --font-text: "Outfit", system-ui, sans-serif;
-  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-display: "JetBrains Mono", "Readex Pro", ui-monospace, Menlo, Consolas, monospace;
+  --font-text: "JetBrains Mono", "Readex Pro", ui-monospace, Menlo, Consolas, monospace;
+  --font-mono: "JetBrains Mono", "Readex Pro", ui-monospace, Menlo, Consolas, monospace;
   --display-weight: 400;
-  --display-tracking: -0.03em;
-  --display-tracking-xl: -0.04em;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.045em;
 }
 /* Arabic: the same jobs in Readex Pro, which has the Arabic letters Outfit lacks */
-html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-text: "Readex Pro", "Outfit", sans-serif; --display-tracking: 0; --display-tracking-xl: 0; }
+html[lang="ar"] { --font-display: "Readex Pro", "JetBrains Mono", sans-serif; --font-text: "Readex Pro", "JetBrains Mono", sans-serif; --display-tracking: 0; --display-tracking-xl: 0; }
 </style>
 <link rel="stylesheet" href="assets/diagrams/diagram.css">
 <link rel="stylesheet" href="assets/css/screens.css">
@@ -65,7 +65,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
 <!-- language popup: the client's brief (asked on the first visit, never again) -->
 <div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-t">
   <div class="gate__in">
-    <svg class="logo-mark gate__mark" viewBox="0 0 32 32" aria-hidden="true"><g stroke="var(--logo-a, #ede7da)" stroke-width="2" stroke-linecap="round" opacity=".55"><path d="M16 16 6.5 6.5M16 16l9.5-9.5M16 16l-9.5 9.5M16 16l9.5 9.5"/></g><g fill="var(--logo-a, #ede7da)"><circle cx="6" cy="6" r="3"/><circle cx="26" cy="6" r="3"/><circle cx="6" cy="26" r="3"/><circle cx="26" cy="26" r="3"/></g><circle cx="16" cy="16" r="6" fill="var(--logo-b, #3358e6)"/></svg>
+    <svg class="logo-mark gate__mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M17 17 32 32 17 47" fill="none" stroke="var(--logo-b, #3358e6)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><rect class="logo-caret" x="36" y="42" width="16" height="7" rx="2" fill="var(--logo-a, #ede7da)"/></svg>
     <p class="gate__t" id="gate-t">Welcome · أهلاً بيك</p>
     <p class="gate__q">Choose a language · اختار اللغة</p>
     <div class="gate__btns">
@@ -80,10 +80,10 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
     <a class="skip-link" href="#top" data-i18n="skip">Skip to content</a>
     <a class="nav__logo" href="#top" aria-label="Axiom"><span class="logo-word">axiom</span></a>
     <nav class="nav__links" aria-label="Main">
-      <div class="nav__item"><a class="nav__link" href="#work" data-i18n="nav.work">Work</a></div>
-      <div class="nav__item"><a class="nav__link" href="#care" data-i18n="nav.care">Care</a></div>
-      <div class="nav__item"><a class="nav__link" href="#prices" data-i18n="nav.prices">Prices</a></div>
-      <div class="nav__item"><a class="nav__link" href="#questions" data-i18n="nav.faq">Questions</a></div>
+      <div class="nav__item"><a class="nav__link" href="#work"><span class="nav__slash" aria-hidden="true">/</span><span data-i18n="nav.work">Work</span></a></div>
+      <div class="nav__item"><a class="nav__link" href="#care"><span class="nav__slash" aria-hidden="true">/</span><span data-i18n="nav.care">Care</span></a></div>
+      <div class="nav__item"><a class="nav__link" href="#prices"><span class="nav__slash" aria-hidden="true">/</span><span data-i18n="nav.prices">Prices</span></a></div>
+      <div class="nav__item"><a class="nav__link" href="#questions"><span class="nav__slash" aria-hidden="true">/</span><span data-i18n="nav.faq">Questions</span></a></div>
     </nav>
     <div class="nav__actions">
       <a class="btn btn--primary" href="#quote" data-i18n="cta.quote">Get a quote</a>
@@ -98,27 +98,21 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
 
   <!-- 1 HERO: centred and symmetrical. The page's one effect, dot-terrain: a field of light points rolls toward a
        horizon in the lower part of the screen, its crests in the cobalt; the words stand in the dark above it. -->
-  <section class="hero hero--field" data-enter aria-labelledby="hero-h">
+  <section class="hero hero--field" aria-labelledby="hero-h">
     <div class="hero__fx" data-fx="dot-terrain" data-fx-seed="7" data-fx-params='{"spacing": 16, "dot": 2.6, "amplitude": 0.15, "waveScale": 0.7, "speed": 0.06, "opacity": 0.9, "shade": 0.7, "crest": 0.9, "horizon": 0.6, "fog": 0.45, "haze": 0.5, "calm": 0.0, "calmX": 0.5, "calmY": 0.3}' aria-hidden="true"></div>
     <div class="wrap"><div class="hero-text">
       <div class="hero__copy">
-        <svg class="hero__mark" viewBox="0 0 200 200" aria-hidden="true">
+        <svg class="hero__mark" viewBox="12 0 160 100" aria-hidden="true">
           <defs>
-            <radialGradient id="hm-core" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#9fb4ff"/><stop offset=".45" stop-color="#3f63f0"/><stop offset="1" stop-color="#1d35a8"/></radialGradient>
-            <radialGradient id="hm-glow"><stop offset="0" stop-color="#3358e6" stop-opacity=".55"/><stop offset="1" stop-color="#3358e6" stop-opacity="0"/></radialGradient>
-            <radialGradient id="hm-line" gradientUnits="userSpaceOnUse" cx="100" cy="100" r="80"><stop offset="0" stop-color="#5d7cff"/><stop offset="1" stop-color="#ede7da" stop-opacity=".7"/></radialGradient>
+            <linearGradient id="pm-ch" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7d97ff"/><stop offset="1" stop-color="#3358e6"/></linearGradient>
+            <radialGradient id="pm-glow"><stop offset="0" stop-color="#3358e6" stop-opacity=".5"/><stop offset="1" stop-color="#3358e6" stop-opacity="0"/></radialGradient>
           </defs>
-          <circle cx="100" cy="100" r="98" fill="url(#hm-glow)" class="hm-glow"/>
-          <circle cx="100" cy="100" r="92" class="hm-orbit hm-orbit--a"/>
-          <circle cx="100" cy="100" r="76" class="hm-orbit hm-orbit--b"/>
-          <g class="hm-spokes"><path d="M46 46 100 100" pathLength="100"/><path d="M154 46 100 100" pathLength="100"/><path d="M46 154 100 100" pathLength="100"/><path d="M154 154 100 100" pathLength="100"/></g>
-          <g class="hm-pulses"><path d="M46 46 100 100" pathLength="100"/><path d="M154 46 100 100" pathLength="100"/><path d="M46 154 100 100" pathLength="100"/><path d="M154 154 100 100" pathLength="100"/></g>
-          <g class="hm-node" style="--i:0"><circle cx="46" cy="46" r="11" class="hm-node__ring"/><circle cx="46" cy="46" r="5.5" class="hm-node__dot"/></g><g class="hm-node" style="--i:1"><circle cx="154" cy="46" r="11" class="hm-node__ring"/><circle cx="154" cy="46" r="5.5" class="hm-node__dot"/></g><g class="hm-node" style="--i:2"><circle cx="46" cy="154" r="11" class="hm-node__ring"/><circle cx="46" cy="154" r="5.5" class="hm-node__dot"/></g><g class="hm-node" style="--i:3"><circle cx="154" cy="154" r="11" class="hm-node__ring"/><circle cx="154" cy="154" r="5.5" class="hm-node__dot"/></g>
-          <circle cx="100" cy="100" r="22" class="hm-halo"/>
-          <circle cx="100" cy="100" r="22" fill="url(#hm-core)" class="hm-core"/>
-          <circle cx="93" cy="92" r="6" fill="#fff" opacity=".22" class="hm-shine"/>
+          <ellipse class="pm-glow" cx="92" cy="52" rx="78" ry="48" fill="url(#pm-glow)"/>
+          <g class="pm-echoes"><path class="pm-echo" style="--i:0" d="M60 22 84 50 60 78"/><path class="pm-echo" style="--i:1" d="M60 22 84 50 60 78"/><path class="pm-echo" style="--i:2" d="M60 22 84 50 60 78"/></g>
+          <path class="pm-chev" d="M60 22 84 50 60 78" pathLength="100"/>
+          <rect class="pm-caret" x="94" y="68" width="30" height="10" rx="3"/>
         </svg>
-        <h1 id="hero-h" class="hero__name">axiom<span class="hero__cursor" aria-hidden="true"></span><span class="sr-only" data-i18n="hero.sr">: websites, booking pages, apps and business systems for Egypt and the Gulf</span></h1>
+        <h1 id="hero-h" class="hero__name"><span class="hero__type">axiom</span><span class="sr-only" data-i18n="hero.sr">: websites, booking pages, apps and business systems for Egypt and the Gulf</span></h1>
         <p class="hero__lead"><span class="hero__prompt" aria-hidden="true">&gt;</span><span data-i18n="hero.lead">Websites, bookings, apps and systems for Egypt and the Gulf.</span></p>
         <div class="btn-row">
           <a class="btn btn--primary" href="#quote"><span data-i18n="cta.quote">Get a quote</span><svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
@@ -498,7 +492,7 @@ html[lang="ar"] { --font-display: "Readex Pro", "Outfit", sans-serif; --font-tex
     <div class="closing__links">
       <div class="grid">
         <div class="span-4 stack-4">
-          <a class="footer__mark" href="#top"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><g stroke="var(--logo-a, #ede7da)" stroke-width="2" stroke-linecap="round" opacity=".55"><path d="M16 16 6.5 6.5M16 16l9.5-9.5M16 16l-9.5 9.5M16 16l9.5 9.5"/></g><g fill="var(--logo-a, #ede7da)"><circle cx="6" cy="6" r="3"/><circle cx="26" cy="6" r="3"/><circle cx="6" cy="26" r="3"/><circle cx="26" cy="26" r="3"/></g><circle cx="16" cy="16" r="6" fill="var(--logo-b, #3358e6)"/></svg><span class="logo-word">axiom</span></a>
+          <a class="footer__mark" href="#top"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M17 17 32 32 17 47" fill="none" stroke="var(--logo-b, #3358e6)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><rect class="logo-caret" x="36" y="42" width="16" height="7" rx="2" fill="var(--logo-a, #ede7da)"/></svg><span class="logo-word">axiom</span></a>
           <p class="footer__lede" data-i18n="foot.lede">Websites, apps and business systems for companies in Egypt and the Gulf.</p>
         </div>
         <div class="span-2 start-7 footer__col"><h3 data-i18n="foot.build">Build</h3><ul>

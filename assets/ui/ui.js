@@ -135,7 +135,7 @@ export function plan(root = document) {
   if (!doc.querySelector || !doc.querySelector('[data-ui-loop]')) return;
   const kind = doc.querySelector('meta[name="site-kind"]');
   const other = (doc.documentElement && doc.documentElement.dataset.type === 'place') || (!!kind && kind.content.trim().toLowerCase() === 'other');
-  const phone = other || (typeof matchMedia === 'function' && matchMedia('(max-width: 639px)').matches);
+  const phone = other;   // Axiom: phones move too
   for (const el of root.querySelectorAll('[data-ui-load], [data-ui]')) {
     if (el.parentElement && el.parentElement.closest('[data-ui-load]')) continue;   // inside a loaded one
     if (phone || !el.closest(LOOPS)) el.setAttribute('data-ui-still', '');

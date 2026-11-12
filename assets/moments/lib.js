@@ -33,7 +33,7 @@
 const rq = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : null;
 export const reduced = () => !!(rq && rq.matches);
 const pq = typeof matchMedia === 'function' ? [matchMedia('(max-width: 639px)'), matchMedia('(pointer: coarse) and (max-height: 499px) and (max-width: 959px)')] : [];
-export const phone = () => pq.some(q => q.matches);
+export const phone = () => false;   // Axiom: phones move too
 export const still = () => reduced() || phone();
 export const stillWhy = () => (reduced() ? 'reduced' : phone() ? 'phone' : '');
 export const inCard = el => !!(el && el.closest && el.closest('.card, .plan, .result, .knock, [data-card], .bento > *'));

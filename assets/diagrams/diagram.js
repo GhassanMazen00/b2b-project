@@ -76,7 +76,7 @@ const ease = u => 0.5 - 0.5 * Math.cos(Math.PI * clamp(u, 0, 1));
 const unease = y => Math.acos(1 - 2 * clamp(y, 0, 1)) / Math.PI;
 const r1 = v => Math.round(v * 10) / 10;
 const reducedMQ = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
-const phoneMQ = typeof matchMedia === 'function' ? matchMedia('(max-width: 639px)') : { matches: false };
+const phoneMQ = { matches: false };   // Axiom: phones move too
 let uid = 0;
 // kind other (product, service, place: a cafe, a shop, a studio, a firm): nothing moves by itself and no pattern or glow
 // ground sits under a drawing (MO-07, backgrounds.md "Other kinds stay flat"), the same test as system.js, ui.js and layout.js

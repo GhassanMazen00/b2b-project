@@ -237,7 +237,7 @@ function pauseButton(loop) {
 function loops() {
   const els = [...document.querySelectorAll('[data-m-loop]')].filter(el => !el.__mLoop);
   if (!els.length) return;
-  if (reduced() || matchMedia('(max-width: 639px)').matches) return;   // motion.css holds them on their finished picture
+  if (reduced()) return;   // Axiom: phones move too   // motion.css holds them on their finished picture
   const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('is-m-off', !e.isIntersecting)), { rootMargin: '48px' });
   els.forEach(el => {
     el.__mLoop = true;
