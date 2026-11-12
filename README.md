@@ -15,7 +15,7 @@ taste, except where the brief asked for something else.
 | Section | What it shows |
 |---|---|
 | Header | A glass capsule floating over the page: four words, the logo in the middle and the main button. On phones and tablets, the kit's solid bar and menu sheet. The language is chosen once, in the popup on arrival |
-| Hero | Centred: the hub logo, large, drawing itself in with a slow pulse at its centre; the name **axiom** under it, one line, and two buttons, over the page's one effect, `dot-terrain`, a field of light points rolling toward a horizon. The header carries the word axiom alone |
+| Hero | Centred: the hub logo, large, with two slow orbit rings, light running along its spokes into a glowing cobalt centre; the name **axiom** under it in JetBrains Mono with a blinking cursor, a one-line prompt, one line, and two buttons, over the page's one effect, `dot-terrain`, a field of light points rolling toward a horizon. The header carries the word axiom alone |
 | Work (tabs tour) | Five real example screens: a clinic site, a clinic's booking page, a delivery app, an invoices system, three automations. They move on by themselves every 7 s and pause on hover, focus or off screen |
 | Care | Automation (a lanes diagram) and monthly care (the owner's status panel), each with its order button |
 | One system | A hub diagram: your system in the middle, joined to clients, bookings, bills, income, expenses, stock, staff and reports, beside the line "Your whole business in one system" |
