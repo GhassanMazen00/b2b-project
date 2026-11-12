@@ -371,21 +371,19 @@ html[lang="ar"] .hero--field .hero__lead { font-family: "Readex Pro", var(--font
 @keyframes pm-blink { 50% { opacity: 0; } }
 @keyframes pm-breathe { 0%, 100% { opacity: .7; transform: scale(.95); } 50% { opacity: 1; transform: scale(1.05); } }
 
-/* the name types itself in, then the line and the buttons arrive */
-.hero__type { display: inline-block; overflow: hidden; white-space: nowrap; width: 5ch; border-inline-end: .08em solid transparent;
-  animation: pm-type .9s steps(5) .9s both, pm-caret-off .01s linear 2.6s forwards; }
-@keyframes pm-type { from { width: 0; border-color: #3358e6; } to { width: 5ch; border-color: #3358e6; } }
-@keyframes pm-caret-off { to { border-color: transparent; } }
+/* the name, with its terminal cursor */
+.hero__cursor { display: inline-block; width: .42em; height: .1em; align-self: flex-end; margin-block-end: .16em; margin-inline-start: .1em;
+  background: var(--logo-b, #3358e6); animation: pm-blink 1.1s steps(1) infinite; }
 .hero--field .hero__lead, .hero--field .btn-row { animation: pm-rise .7s cubic-bezier(.22,1,.36,1) both; }
-.hero--field .hero__lead { animation-delay: 1.8s; }
-.hero--field .btn-row { animation-delay: 2s; }
+.hero--field .hero__lead { animation-delay: .5s; }
+.hero--field .btn-row { animation-delay: .65s; }
 @keyframes pm-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   .logo-caret, .pm-caret, .pm-echo, .pm-glow { animation: none; }
   .pm-caret { opacity: 1; }
   .pm-chev { animation: none; stroke-dashoffset: 0; }
-  .hero__type, .hero--field .hero__lead, .hero--field .btn-row { animation: none; }
+  .hero__cursor, .hero--field .hero__lead, .hero--field .btn-row { animation: none; }
 }
 
 /* ================================================================ the code theme */
@@ -406,3 +404,6 @@ html[lang="ar"] .nav__slash { display: none; }
 .plan__badge { position: static; align-self: flex-start; justify-self: start; width: max-content; margin-bottom: calc(-1 * var(--s-2)); }
 @media (max-width: 639px) { .plan__badge { display: inline-flex; } }
 html[lang="ar"] .hero--field .hero__lead, html[lang="ar"] .faq :is(.faq__item > h3, summary)::before { font-family: "Readex Pro", sans-serif; }
+
+/* sections grow with what they hold (the code font sets wider), never laying their last rows over the next */
+main > :is(section, .section):not(.hero), footer.closing { height: auto; min-height: calc(var(--h, 1) * 100vh); min-height: calc(var(--h, 1) * 100svh); }
